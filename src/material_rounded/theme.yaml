@@ -5,16 +5,18 @@ Material Rounded:
       primary-luminance: 88%
       accent-color: rgb(0, 74, 119)
       primary-color: rgb(194, 231, 254)
+      rgb-accent-color: rgb(0, 74, 119)
+      rgb-primary-color: rgb(194, 231, 254)
       state-icon-color: rgb(196, 199, 197)
       mdc-checkbox-unchecked-color: rgb(138, 140, 153)
       sidebar-icon-color: rgb(147, 149, 159)
       primary-text-color: rgb(228, 228, 231)
       secondary-text-color: rgb(138 140 153)
       disabled-text-color: rgba(255, 255, 255, 0.5)
-      lovelace-background: rgb(19, 19, 20)
+      lovelace-background: rgb(25, 25, 26)
       primary-background-color: rgb(30, 31, 32)
       disabled-color: rgb(0, 0, 0)
-      input-background-color: rgb(46, 48, 56)
+      input-background-color: rgb(32, 34, 35)
       card-background-color: rgb(40, 42, 44)
       slider-color: rgb(8, 66, 160)
       md-switch-checked-button-color: var(--accent-color)
@@ -29,6 +31,8 @@ Material Rounded:
       primary-luminance: 10%
       accent-color: rgb(194, 231, 255)
       primary-color: rgb(0, 29, 53)
+      rgb-accent-color: rgb(194, 231, 255)
+      rgb-primary-color: rgb(0, 29, 53)
       state-icon-color: rgb(69, 71, 70)
       mdc-checkbox-unchecked-color: rgb(42, 43, 51)
       sidebar-icon-color: rgb(88, 89, 95)
@@ -38,7 +42,7 @@ Material Rounded:
       lovelace-background: rgb(255, 255, 255)
       primary-background-color: rgb(240, 244, 249)
       disabled-color: rgb(173, 176, 174)
-      input-background-color: rgb(234, 234, 235)
+      input-background-color: rgb(222, 226, 232)
       card-background-color: rgb(233, 238, 246)
       slider-color: rgb(211, 227, 253)
       md-switch-checked-button-color: rgb(255, 255, 255)
@@ -52,10 +56,10 @@ Material Rounded:
 
   # Toolbar
   paper-slider-height: 4px
-  header-height: 48px
+  header-height: 72px
   footer-height: 80px
   mdc-top-app-bar-fixed-box-shadow: none
-  app-header-background-color: var(--lovelace-background)
+  app-header-background-color: var(--navbar-background)
   app-header-text-color: var(--primary-text-color)
   app-header-edit-text-color: var(--app-header-text-color)
   app-header-edit-background-color: var(--primary-background-color)
@@ -64,7 +68,7 @@ Material Rounded:
   paper-tab-ink: rgba(0, 0, 0, 0)
 
   # Typography
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+  font-family: Poppins, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
   primary-font-family: var(--font-family)
   paper-font-common-base_-_font-family: var(--font-family)
@@ -79,7 +83,7 @@ Material Rounded:
   mdc-typography-button-font-family: var(--font-family)
   mdc-typography-body1-font-family: var(--font-family)
   mdc-typography-button-font-weight: var(--title-font-weight)
-  title-font-weight: 600
+  title-font-weight: 500
   title-font-size: 28px
 
   # Text
@@ -101,6 +105,10 @@ Material Rounded:
   mdc-theme-secondary: var(--primary-color)
   mdc-theme-on-secondary: var(--accent-color)
   scrollbar-thumb-color: rgb(46, 48, 56)
+
+  ha-section-grid-row-height: 80px
+  ha-view-sections-row-height: 80px
+  ha-view-sections-column-gap: 24px
 
   # Sidebar
   sidebar-selected-text-color: var(--primary-text-color)

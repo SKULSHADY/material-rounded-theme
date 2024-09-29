@@ -12,34 +12,6 @@ ha-tabs {
 	margin-inline: 0 !important;
 }
 
-/* Make header transparent and add transition */
-.header {
-	background-color: rgb(0, 0, 0, 0) !important;
-	transition: top 100ms ease-in-out 0s;
-}
-
-/* Hide header if not scrolled to top  */
-:host([scrolled]) .header {
-	top: -48px !important;
-	transition: top 100ms ease-in-out 0s;
-}
-
-/* Remove toolbar padding */
-.toolbar {
-	padding: 0 !important;
-}
-
-/* Move menu and action items buttons to top corners outside of toolbar */
-.action-items {
-	position: fixed;
-	right: 0px;
-	padding: 0 12px;
-	transition: top 20ms ease-in-out 0s;
-}
-ha-menu-button {
-	padding: 0 12px;
-}
-
 /* Force hide subview tab just in case */
 .hide-tab {
 	display: none !important;
@@ -56,17 +28,14 @@ paper-tab {
 	flex-direction: column;
 	flex: 1;
 	width: var(--tab-width);
-	--tab-width: clamp(
-		min(calc(((100vw - var(--mdc-drawer-width, 0px)) / 5) - 3px), 72px),
-		((100vw - var(--mdc-drawer-width, 0px)) / var(--view-tabs-count)) - 3px,
-		calc(((100vw - var(--mdc-drawer-width, 0px))) - 3px)
-	);
+	--tab-width: clamp(min(calc(((100vw - var(--mdc-drawer-width, 0px)) / 5) - 3px), 72px),
+			((100vw - var(--mdc-drawer-width, 0px)) / var(--view-tabs-count)) - 3px,
+			calc(((100vw - var(--mdc-drawer-width, 0px))) - 3px));
 }
 
 /* Add background and color current view icon */
 paper-tab.iron-selected ha-icon {
 	width: min(64px, var(--tab-width));
-	color: var(--primary-color);
 	background: var(--accent-color);
 }
 
@@ -136,6 +105,7 @@ paper-tabs {
 	display: inline-flex;
 	flex-direction: column;
 }
+
 #add-view::after {
 	content: 'Add View';
 	text-transform: none;
