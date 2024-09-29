@@ -20,24 +20,8 @@ ha-tabs {
 
 /* Hide header if not scrolled to top  */
 :host([scrolled]) .header {
-	top: -48px !important;
+	top: -64px !important;
 	transition: top 100ms ease-in-out 0s;
-}
-
-/* Remove toolbar padding */
-.toolbar {
-	padding: 0 !important;
-}
-
-/* Move menu and action items buttons to top corners outside of toolbar */
-.action-items {
-	position: fixed;
-	right: 0px;
-	padding: 0 12px;
-	transition: top 20ms ease-in-out 0s;
-}
-ha-menu-button {
-	padding: 0 12px;
 }
 
 /* Force hide subview tab just in case */
@@ -66,7 +50,6 @@ paper-tab {
 /* Add background and color current view icon */
 paper-tab.iron-selected ha-icon {
 	width: min(64px, var(--tab-width));
-	color: var(--primary-color);
 	background: var(--accent-color);
 }
 

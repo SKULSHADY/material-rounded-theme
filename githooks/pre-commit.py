@@ -46,26 +46,33 @@ def main():
 			base_theme = yaml.load(src)[theme_title]
 			output[theme_title] = deepcopy(base_theme)
 
-			# Create a transparent card background version of theme
-			theme_title = 'Material Rounded Transparent Card'
+			# Create a mobile version of theme
+			theme_title = 'Material Rounded Mobile'
 			transparent = 'rgb(0, 0, 0, 0)'
 			output[theme_title] = deepcopy(base_theme)
-			output[theme_title]['ha-card-background'] = transparent
+			output[theme_title]['font-family'] = 'Product Sans'
+
+			# Create a transparent card background version of theme
+			# theme_title = 'Material Rounded Transparent Card'
+			# transparent = 'rgb(0, 0, 0, 0)'
+			# output[theme_title] = deepcopy(base_theme)
+			# output[theme_title]['ha-card-background'] = transparent
 
 			# Create a no mod versions of theme with fixed status and navbar colors
-			theme_title = 'Material Rounded No Mod'
-			output[theme_title] = deepcopy(output['Material Rounded'])
-			output[theme_title]['app-header-background-color'] = 'var(--navbar-background)'
-			output[theme_title]['primary-background-color'] = 'var(--lovelace-background)'
+			# theme_title = 'Material Rounded No Mod'
+			# output[theme_title] = deepcopy(output['Material Rounded'])
+			# output[theme_title]['app-header-background-color'] = 'var(--navbar-background)'
+			# output[theme_title]['primary-background-color'] = 'var(--lovelace-background)'
 			
-			theme_title = 'Material Rounded Transparent Card No Mod'
-			output[theme_title] = deepcopy(output['Material Rounded Transparent Card'])
-			output[theme_title]['app-header-background-color'] = 'var(--navbar-background)'
-			output[theme_title]['primary-background-color'] = 'var(--lovelace-background)'
+			# theme_title = 'Material Rounded Transparent Card No Mod'
+			# output[theme_title] = deepcopy(output['Material Rounded Transparent Card'])
+			# output[theme_title]['app-header-background-color'] = 'var(--navbar-background)'
+			# output[theme_title]['primary-background-color'] = 'var(--lovelace-background)'
 
 			# Add card mod fields to main versions of theme
 			output['Material Rounded']['card-mod-theme'] = 'Material Rounded'
-			output['Material Rounded Transparent Card']['card-mod-theme'] = 'Material Rounded'
+			output['Material Rounded Mobile']['card-mod-theme'] = 'Material Rounded'
+			# output['Material Rounded Transparent Card']['card-mod-theme'] = 'Material Rounded'
 
 			# Load Material Rounded user colors code
 			with open('./src/material_rounded/user_colors.jinja') as f:
@@ -86,40 +93,40 @@ def main():
 					# Save template to buffer and then read to get yaml as string
 					buffer = StringIO()
 					yaml.dump(element_yaml, buffer)
-					output['Material Rounded'][f'card-mod-{element.replace('_', '-')}-yaml'] = buffer.getvalue().strip()
+					output['Material Rounded'][f'card-mod-{element.replace("_", "-")}-yaml'] = buffer.getvalue().strip()
 
 		yaml.dump(output, dist)
 
-	# Create separate light and dark mode versions for special use cases
-	with open('./themes/material_rounded.yaml', 'r+') as f:
-		themes = yaml.load(f)
-		new_themes = {}
-		for theme_name in themes.keys():
-			light = deepcopy(themes[theme_name])
-			dark = deepcopy(themes[theme_name])
-			del light['modes']
-			del dark['modes']
-			card_mod_keys = [
-				key for key in light.keys()
-				if key.startswith('card-mod-')
-				and key != 'card-mod-theme'
-			]
-			for key in card_mod_keys:
-				del light[key]
-				del dark[key]
+	# # Create separate light and dark mode versions for special use cases
+	# with open('./themes/material_rounded.yaml', 'r+') as f:
+	# 	themes = yaml.load(f)
+	# 	new_themes = {}
+	# 	for theme_name in themes.keys():
+	# 		light = deepcopy(themes[theme_name])
+	# 		dark = deepcopy(themes[theme_name])
+	# 		del light['modes']
+	# 		del dark['modes']
+	# 		card_mod_keys = [
+	# 			key for key in light.keys()
+	# 			if key.startswith('card-mod-')
+	# 			and key != 'card-mod-theme'
+	# 		]
+	# 		for key in card_mod_keys:
+	# 			del light[key]
+	# 			del dark[key]
 
-			modes = themes[theme_name]['modes']
-			for attribute in modes['light']:
-				light[attribute] = modes['light'][attribute]
-			for attribute in modes['dark']:
-				dark[attribute] = modes['dark'][attribute]
+	# 		modes = themes[theme_name]['modes']
+	# 		for attribute in modes['light']:
+	# 			light[attribute] = modes['light'][attribute]
+	# 		for attribute in modes['dark']:
+	# 			dark[attribute] = modes['dark'][attribute]
 
-			new_themes[theme_name + ' Light'] = light
-			new_themes[theme_name + ' Dark'] = dark
-		themes = { **themes, **new_themes}
-		f.seek(0)
-		yaml.dump(themes, f)
-		f.truncate()
+	# 		new_themes[theme_name + ' Light'] = light
+	# 		new_themes[theme_name + ' Dark'] = dark
+	# 	themes = { **themes, **new_themes}
+	# 	f.seek(0)
+	# 	yaml.dump(themes, f)
+	# 	f.truncate()
 
 
 def recursiveRender(element, context):
