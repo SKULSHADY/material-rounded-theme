@@ -3,6 +3,9 @@ Material Rounded:
     dark:
       accent-luminance: 23%
       primary-luminance: 88%
+      background-luminance: 2%
+      navbar-luminance: 4%
+      card-luminance: 6%
       accent-color: rgb(0, 74, 119)
       primary-color: rgb(194, 231, 254)
       rgb-accent-color: rgb(0, 74, 119)
@@ -29,6 +32,9 @@ Material Rounded:
     light:
       accent-luminance: 88%
       primary-luminance: 10%
+      background-luminance: 99%
+      card-luminance: 95%
+      navbar-luminance: 95%
       accent-color: rgb(194, 231, 255)
       primary-color: rgb(0, 29, 53)
       rgb-accent-color: rgb(194, 231, 255)
