@@ -55,3 +55,10 @@ paper-icon-item::before {
 :host([expanded]) .iron-selected .notification-badge {
 	color: var(--sidebar-selected-text-color) !important;
 }
+
+/* Change HomeAssistant title font */
+.menu .title {
+	font-weight: 500;
+	font-family: var(--font-family);
+	padding-top: 4px;
+}

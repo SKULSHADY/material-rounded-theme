@@ -24,7 +24,7 @@ Material Rounded:
       # Background and header
       lovelace-background: rgb(19, 19, 20)
       view-background: rgb(19, 19, 20)
-      app-header-background-color: rgb(19, 19, 20)
+      # app-header-background-color: rgb(19, 19, 20)
 
       # Switches
       md-switch-checked-button-color: var(--md-sys-color-on-primary-dark, var(--accent-color))
@@ -67,7 +67,7 @@ Material Rounded:
       # Background and header
       lovelace-background: rgb(255, 255, 255)
       view-background: rgb(255, 255, 255)
-      app-header-background-color: rgb(255, 255, 255)
+      # app-header-background-color: rgb(255, 255, 255)
 
       # Switches
       md-switch-checked-button-color: var(--md-sys-color-on-primary-light, rgb(255, 255, 255))
@@ -95,9 +95,10 @@ Material Rounded:
 
   # Toolbar
   paper-slider-height: 4px
-  header-height: 48px
+  header-height: 72px
   footer-height: 82px
   mdc-top-app-bar-fixed-box-shadow: none
+  app-header-background-color: var(--navbar-background)
   app-header-text-color: var(--primary-text-color)
   app-header-edit-text-color: var(--app-header-text-color)
   app-header-edit-background-color: var(--primary-background-color)
@@ -125,7 +126,7 @@ Material Rounded:
   mdc-typography-button-font-family: var(--font-family)
   mdc-typography-body1-font-family: var(--font-family)
 
-  title-font-weight: 600
+  title-font-weight: 500
   title-font-size: 28px
   mdc-typography-button-font-weight: var(--title-font-weight)
 
@@ -155,6 +156,10 @@ Material Rounded:
   mdc-theme-secondary: var(--primary-color)
   mdc-theme-on-secondary: var(--accent-color)
   scrollbar-thumb-color: rgb(46, 48, 56)
+
+  ha-section-grid-row-height: 80px
+  ha-view-sections-row-height: 80px
+  ha-view-sections-column-gap: 24px
 
   # Cards
   border-radius: 28px

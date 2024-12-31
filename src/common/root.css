@@ -1,152 +1,15 @@
-/* Turn view tabs into a separate footer */
-paper-tabs,
-ha-tabs {
-	position: fixed;
-	top: unset !important;
-	bottom: 0 !important;
-	background: var(--navbar-background) !important;
-	height: var(--footer-height) !important;
-	padding-bottom: env(safe-area-inset-bottom) !important;
-	margin: 0 !important;
-	margin-inline: 0 !important;
-}
-
-/* Make header transparent and add transition */
-.header {
-	background-color: rgb(0, 0, 0, 0) !important;
-	transition: top 100ms ease-in-out 0s;
-}
-
-/* Hide header if not scrolled to top  */
-:host([scrolled]) .header {
-	top: -48px !important;
-	transition: top 100ms ease-in-out 0s;
-}
-
-/* Remove toolbar padding */
-.toolbar {
-	padding: 0 !important;
-}
-
-/* Move menu and action items buttons to top corners outside of toolbar */
-.action-items {
-	position: fixed;
-	right: 0px;
-	padding: 0 12px;
-	transition: top 20ms ease-in-out 0s;
-}
-ha-menu-button {
-	padding: 0 12px;
-}
-
-/* Force hide subview tab just in case */
-.hide-tab {
-	display: none !important;
-}
-
-/*
-Display view tab contents vertically and calculate width to fill entire toolbar.
-While this can be (and previously was) done by making the view tabs parent a flexbox,
-The parent of the view tabs is within a shadow-root which the view tabs are slotted into.
-Styling their parent element is much slower and inconsistent.
-*/
-paper-tab {
-	padding: 8.5px 0 0; /* the md3 docs say to use 12 dp but this better matches md3 apps */
-	flex-direction: column;
-	flex: 1;
-	width: var(--tab-width);
-	--tab-width: clamp(
-		min(calc(((100vw - var(--mdc-drawer-width, 0px)) / 5) - 3px), 72px),
-		((100vw - var(--mdc-drawer-width, 0px)) / var(--view-tabs-count)) - 3px,
-		calc(((100vw - var(--mdc-drawer-width, 0px))) - 3px)
-	);
-}
-
 /* Add background and color current view icon */
 paper-tab.iron-selected ha-icon {
-	width: min(64px, var(--tab-width));
 	color: var(--md-current-tab-icon-color);
 	background: var(--md-current-tab-icon-background);
 }
 
-/* View icon transition and display centering */
-ha-icon {
-	min-width: 24px;
-	width: 24px;
-	height: 32px;
-	border-radius: 16px;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	transition: width 0.2s cubic-bezier(0.2, 0, 0, 1);
-	will-change: width, color, background;
-}
-
-/* Prevent edit mode icon from shrinking on small width displays */
-ha-svg-icon {
-	min-width: 24px;
-}
-
 /* View label */
 paper-tab::after {
-	content: attr(aria-label);
-	text-transform: none;
-	text-wrap: wrap;
-	text-align: center;
-	font-weight: 500;
-	font-size: min(3.6vw, 13px);
-	padding: 0px 1px;
-	overflow: hidden;
-	line-height: 12px;
-	height: 100%;
-	margin-top: 4px;
 	color: var(--md-inactive-tab-text-color);
 }
 
 /* Current view label color */
 paper-tab.iron-selected::after {
 	color: var(--md-current-tab-text-color);
-}
-
-/* Fix edit mode toolbar height and width */
-paper-tabs {
-	height: 50%;
-	width: calc(100% - var(--mdc-drawer-width, 0px));
-}
-
-/* Make edit mode current view tab fit all buttons */
-.edit-mode paper-tab {
-	min-width: fit-content !important;
-}
-
-/* Fix edit mode current view label position */
-.edit-mode paper-tab.iron-selected::after {
-	margin-top: -2px !important;
-}
-
-/* Move edit mode action items back to bottom toolbar */
-.edit-mode .action-items {
-	position: static !important;
-}
-
-/* Style add view button to look like view buttons */
-#add-view {
-	top: 6px;
-	height: 100% !important;
-	display: inline-flex;
-	flex-direction: column;
-}
-#add-view::after {
-	content: 'Add View';
-	text-transform: none;
-	text-wrap: wrap;
-	text-align: center;
-	font-weight: 500;
-	font-size: min(3.6vw, 13px);
-	opacity: 0.8;
-	padding: 0px 1px;
-	overflow: hidden;
-	line-height: 12px;
-	height: 100%;
-	margin-top: -6px;
 }

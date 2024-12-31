@@ -5,3 +5,10 @@ hui-entities-toggle {
 	left: -4px !important;
 	top: 8px !important;
 }
+
+/* Fix sections fonts */
+ha-card.type-heading div.container div.content.title p,
+ha-card.type-heading div.container div.content.subtitle p,
+ha-heading-badge state-display {
+	font-family: var(--font-family) !important;
+}
