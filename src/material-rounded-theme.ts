@@ -123,6 +123,7 @@ async function main() {
 				const themeName = ha.hass?.themes?.theme ?? '';
 				if (
 					themeName.includes('Material Rounded') ||
+					themeName.includes('Material Rounded Mobile') ||
 					themeName.includes('Material You')
 				) {
 					let baseColor: string | undefined;

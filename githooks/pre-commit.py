@@ -47,26 +47,14 @@ def main():
 				base_theme = yaml.load(src)[theme_title]
 				output[theme_title] = deepcopy(base_theme)
 
-				# Create a transparent card background version of theme
-				theme_title = f'{theme_name} Transparent Card'
-				transparent = 'rgb(0, 0, 0, 0)'
+				# Create a mobile version of theme
+				theme_title = f'{theme_name} Mobile'
 				output[theme_title] = deepcopy(base_theme)
-				output[theme_title]['ha-card-background'] = transparent
-
-				# Create a no mod versions of theme with fixed status and navbar colors
-				theme_title = f'{theme_name} No Mod'
-				output[theme_title] = deepcopy(output[theme_name])
-				output[theme_title]['app-header-background-color'] = 'var(--navbar-background)'
-				output[theme_title]['primary-background-color'] = 'var(--lovelace-background)'
-				
-				theme_title = f'{theme_name} Transparent Card No Mod'
-				output[theme_title] = deepcopy(output[f'{theme_name} Transparent Card'])
-				output[theme_title]['app-header-background-color'] = 'var(--navbar-background)'
-				output[theme_title]['primary-background-color'] = 'var(--lovelace-background)'
+				output[theme_title]['font-family'] = 'Product Sans'
 
 				# Add card mod fields to main versions of theme
 				output[theme_name]['card-mod-theme'] = theme_name
-				output[f'{theme_name} Transparent Card']['card-mod-theme'] = theme_name
+				output[f'{theme_name} Mobile']['card-mod-theme'] = theme_name
 				
 				for element in theme_context:
 					if 'yaml' in theme_context[element]:
@@ -80,6 +68,7 @@ def main():
 						buffer = StringIO()
 						yaml.dump(element_yaml, buffer)
 						output[theme_name][f'card-mod-{element.replace("_", "-")}-yaml'] = buffer.getvalue().strip()
+						output[f'{theme_name} Mobile'][f'card-mod-{element.replace("_", "-")}-yaml'] = buffer.getvalue().strip()
 
 		yaml.dump(output, dist)
 
