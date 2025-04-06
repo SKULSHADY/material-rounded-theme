@@ -1,7 +1,18 @@
-import haSwitchStyles from './resources/ha-switch.css';
+/**
+ * Material Design 3 Style Patcher
+ * Monkey patches the firstUpdated lifecycle method of certain Home Assistant components to inject custom styles.
+ */
+
+import haFab from './css/ha-fab.css';
+import haSidebar from './css/ha-sidebar.css';
+import haSlider from './css/ha-slider.css';
+import haSwitch from './css/ha-switch.css';
 
 const elements: Record<string, string> = {
-	'ha-switch': haSwitchStyles.toString(),
+	'ha-switch': haSwitch.toString(),
+	'ha-sidebar': haSidebar.toString(),
+	'ha-slider': haSlider.toString(),
+	'ha-fab': haFab.toString(),
 };
 
 for (const [element, styles] of Object.entries(elements)) {
@@ -18,4 +29,3 @@ for (const [element, styles] of Object.entries(elements)) {
 		};
 	});
 }
-
