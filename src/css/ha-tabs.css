@@ -2,7 +2,7 @@
 :host([slot='title']) #tabsContent {
 	display: flex;
 	width: 100%;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 
 /* Fix visibility of not visible view scroll buttons */

@@ -2,7 +2,6 @@
 :host {
 	padding: 0 !important;
 	position: relative;
-	top: 3px;
 	--switch-checked-button-color: var(--md-switch-checked-button-color);
 	--switch-unchecked-button-color: var(--md-switch-unchecked-button-color);
 	--switch-checked-track-color: var(--md-switch-checked-track-color);
@@ -134,4 +133,3 @@ mwc-ripple {
 .mdc-switch__thumb:active .mdc-switch__native-control {
 	scale: 0.6 !important;
 }
-

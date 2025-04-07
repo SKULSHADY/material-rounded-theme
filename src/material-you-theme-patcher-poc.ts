@@ -5,6 +5,8 @@
 
 import { html } from 'lit';
 
+import haDialog from './css/ha-dialog.css';
+import haEntityToggle from './css/ha-entity-toggle.css';
 import haFab from './css/ha-fab.css';
 import haSidebar from './css/ha-sidebar.css';
 import haSlider from './css/ha-slider.css';
@@ -16,13 +18,16 @@ import huiRoot from './css/hui-root.css';
 import huiViewVisibilityEditor from './css/hui-view-visibility-editor.css';
 
 import { HassElement } from './models/interfaces';
-import { getAsync } from './models/utils';
+import { getAsync, querySelectorAsync } from './models/utils';
 
 let ha = document.querySelector('home-assistant') as HassElement;
 let theme = '';
+let shouldSetStyles = true;
 
 const elements: Record<string, string> = {
 	'paper-tabs': haTabs,
+	'ha-dialog': haDialog,
+	'ha-entity-toggle': haEntityToggle,
 	'ha-fab': haFab,
 	'ha-switch': haSwitch,
 	'ha-sidebar': haSidebar,
@@ -34,12 +39,11 @@ const elements: Record<string, string> = {
 	'hui-view-visibility-editor': huiViewVisibilityEditor,
 };
 
-const optional = ['ha-fab'];
-
 function checkTheme() {
 	if (!theme) {
 		ha = document.querySelector('home-assistant') as HassElement;
 		theme = ha.hass?.themes?.theme;
+		shouldSetStyles = theme?.includes('Material You');
 	}
 }
 
@@ -47,10 +51,7 @@ async function applyMaterialStyles(element: HassElement) {
 	checkTheme();
 
 	const shadowRoot = await getAsync(element, 'shadowRoot');
-	if (
-		!shadowRoot.querySelector('#material-you') &&
-		theme.includes('Material You')
-	) {
+	if (!shadowRoot.querySelector('#material-you') && shouldSetStyles) {
 		const style = document.createElement('style');
 		style.id = 'material-you';
 		style.textContent = elements[element.nodeName.toLowerCase()];
@@ -58,12 +59,9 @@ async function applyMaterialStyles(element: HassElement) {
 	}
 }
 
-async function main() {
-	ha.style.setProperty('display', 'none');
-
-	const promises: Promise<unknown>[] = [];
-	const define = window.CustomElementRegistry.prototype.define;
-	window.CustomElementRegistry.prototype.define = function (
+async function setStyles(target: typeof globalThis) {
+	const define = target.CustomElementRegistry.prototype.define;
+	target.CustomElementRegistry.prototype.define = function (
 		name,
 		constructor,
 		options,
@@ -77,7 +75,7 @@ async function main() {
 				constructor.prototype.render = function () {
 					return html`
 						${render.call(this)}
-						${theme.includes('Material You')
+						${shouldSetStyles
 							? html`<style id="material-you">
 									${elements[name]}
 								</style>`
@@ -106,15 +104,40 @@ async function main() {
 			resolve(true);
 		});
 
-		if (!optional.includes(elements[name])) {
-			promises.push(promise);
-		}
-
 		return define.call(this, name, constructor, options);
 	};
+}
 
-	Promise.all(promises).then(() => {
-		ha.style.removeProperty('display');
+async function main() {
+	await setStyles(window);
+
+	// Trigger on iframe node added to home-assistant-main
+	const haShadowRoot = await getAsync(ha, 'shadowRoot');
+	const haMain = await querySelectorAsync(
+		haShadowRoot,
+		'home-assistant-main',
+	);
+	const haMainShadowRoot = await getAsync(haMain, 'shadowRoot');
+	const observer = new MutationObserver(async (mutations) => {
+		for (const mutation of mutations) {
+			for (const addedNode of mutation.addedNodes) {
+				if (addedNode.nodeName == 'IFRAME') {
+					const iframe = (await querySelectorAsync(
+						haMainShadowRoot,
+						'iframe',
+					)) as HTMLIFrameElement;
+					const contentWindow = await getAsync(
+						iframe,
+						'contentWindow',
+					);
+					await setStyles(contentWindow);
+				}
+			}
+		}
+	});
+	observer.observe(haMainShadowRoot, {
+		subtree: true,
+		childList: true,
 	});
 }
 
