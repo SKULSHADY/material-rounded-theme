@@ -5,6 +5,11 @@
 	--md-slider-handle-shape: 4px;
 }
 
+/** Increase z-index of handle */
+.handle {
+	z-index: 8 !important;
+}
+
 /** Add border to each side of slider */
 .handleNub::after {
 	content: '';
@@ -33,9 +38,11 @@ md-focus-ring {
 }
 
 /** Set label width and position */
+/** TODO fix when in more-info popup */
 .label {
 	width: var(--md-slider-label-container-width);
-	bottom: 38px !important;
+	translate: 0 -12px;
+	z-index: 9;
 }
 
 /** Remove teardrop from label */

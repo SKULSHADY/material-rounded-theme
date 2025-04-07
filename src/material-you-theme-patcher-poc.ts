@@ -5,14 +5,15 @@
 
 import { html } from 'lit';
 
-import haCard from './css/ha-card.css';
 import haFab from './css/ha-fab.css';
 import haSidebar from './css/ha-sidebar.css';
 import haSlider from './css/ha-slider.css';
 import haSwitch from './css/ha-switch.css';
 import haTabs from './css/ha-tabs.css';
 import haUserBadge from './css/ha-user-badge.css';
+import huiEntitiesCard from './css/hui-entities-card.css';
 import huiRoot from './css/hui-root.css';
+import huiViewVisibilityEditor from './css/hui-view-visibility-editor.css';
 
 import { HassElement } from './models/interfaces';
 import { getAsync } from './models/utils';
@@ -22,14 +23,15 @@ let theme = '';
 
 const elements: Record<string, string> = {
 	'paper-tabs': haTabs,
-	'ha-card': haCard,
 	'ha-fab': haFab,
 	'ha-switch': haSwitch,
 	'ha-sidebar': haSidebar,
 	'ha-slider': haSlider,
 	'ha-tabs': haTabs,
 	'ha-user-badge': haUserBadge,
+	'hui-entities-card': huiEntitiesCard,
 	'hui-root': huiRoot,
+	'hui-view-visibility-editor': huiViewVisibilityEditor,
 };
 
 const optional = ['ha-fab'];

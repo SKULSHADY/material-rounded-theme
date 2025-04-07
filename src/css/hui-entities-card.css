@@ -1,4 +1,4 @@
-/* Correct Material 3 header toggle position */
+/* Fix header ha-switch position */
 hui-entities-toggle {
 	position: relative !important;
 	left: -6px !important;

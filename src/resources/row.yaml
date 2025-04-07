@@ -1,6 +1,0 @@
-ha-slider$: >-
-  {{ ha_slider.css }}
-
-ha-entity-toggle$:
-  ha-switch$: >-
-    {{ ha_switch.css }}

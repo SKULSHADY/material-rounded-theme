@@ -4,3 +4,8 @@
 	width: 100%;
 	justify-content: space-between;
 }
+
+/* Fix visibility of not visible view scroll buttons */
+.not-visible {
+	display: none;
+}
