@@ -170,6 +170,8 @@ Material You:
   lovelace-background: var(--md-sys-color-surface)
   view-background: var(--md-sys-color-surface)
   app-header-background-color: var(--md-sys-color-surface)
+  margin-title-ltr: 0
+  margin-title-rtl: 0
 
   # Sidebar
   sidebar-selected-text-color: var(--md-sys-color-on-secondary-container)

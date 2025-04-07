@@ -33,7 +33,7 @@ paper-tab.iron-selected::before {
 }
 .action-items,
 ha-menu-button {
-	padding: 0 12px;
+	padding: 0 4px;
 }
 .action-items,
 .main-title,

@@ -57,6 +57,8 @@ Material You:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   link-text-color: var(--md-sys-color-primary)
   lovelace-background: var(--md-sys-color-surface)
+  margin-title-ltr: 0
+  margin-title-rtl: 0
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -356,6 +358,8 @@ Material You Dark:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   link-text-color: var(--md-sys-color-primary)
   lovelace-background: var(--md-sys-color-surface)
+  margin-title-ltr: 0
+  margin-title-rtl: 0
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -595,6 +599,8 @@ Material You Light:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   link-text-color: var(--md-sys-color-primary)
   lovelace-background: var(--md-sys-color-surface)
+  margin-title-ltr: 0
+  margin-title-rtl: 0
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -832,6 +838,8 @@ Material You Transparent Card:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   link-text-color: var(--md-sys-color-primary)
   lovelace-background: var(--md-sys-color-surface)
+  margin-title-ltr: 0
+  margin-title-rtl: 0
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -1131,6 +1139,8 @@ Material You Transparent Card Dark:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   link-text-color: var(--md-sys-color-primary)
   lovelace-background: var(--md-sys-color-surface)
+  margin-title-ltr: 0
+  margin-title-rtl: 0
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -1370,6 +1380,8 @@ Material You Transparent Card Light:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   link-text-color: var(--md-sys-color-primary)
   lovelace-background: var(--md-sys-color-surface)
+  margin-title-ltr: 0
+  margin-title-rtl: 0
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)

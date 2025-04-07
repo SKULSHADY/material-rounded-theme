@@ -198,9 +198,9 @@ html {
 14. Click `CREATE`.
 15. Hard refresh (`CTRL` + `F5`) your browser or clear app/browser cache to ensure the new resource loads correctly.
 
-## Material You Components, Powered By Card Mod
+## Material You Components
 
-This theme is super-charged by [card-mod](https://github.com/thomasloven/lovelace-card-mod)! Using card-mod many components have received Material You design upgrades.
+This theme's companion module modifies the styles of many Home Assistant components to follow the Material Design 3 specification.
 
 ### Navigation
 
@@ -259,6 +259,17 @@ Desktop sidebar collapsed.
 - Track is taller.
 - Tooltip uses inverse surface colors and is positioned above the slider.
 - Remove ripples, narrow thumb on focus, and only show label on active.
+
+### [Text Buttons](https://m3.material.io/components/buttons/specs#899b9107-0127-4a01-8f4c-87f19323a1b4)
+
+- Font size, weight, height, letter spacing, and capitalization adjusted to match specification.
+- Button height increased.
+- Button border radius made circular.
+- Ripple color changed to match text color.
+
+### [Extended FAB](https://m3.material.io/components/extended-fab/overview)
+
+-
 
 ### Views
 
