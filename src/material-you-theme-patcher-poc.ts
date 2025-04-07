@@ -13,6 +13,7 @@ import haSlider from './css/ha-slider.css';
 import haSwitch from './css/ha-switch.css';
 import haTabs from './css/ha-tabs.css';
 import haUserBadge from './css/ha-user-badge.css';
+import hassTabsSubpage from './css/hass-tabs-subpage.css';
 import huiEntitiesCard from './css/hui-entities-card.css';
 import huiRoot from './css/hui-root.css';
 import huiViewVisibilityEditor from './css/hui-view-visibility-editor.css';
@@ -34,6 +35,7 @@ const elements: Record<string, string> = {
 	'ha-slider': haSlider,
 	'ha-tabs': haTabs,
 	'ha-user-badge': haUserBadge,
+	'hass-tabs-subpage': hassTabsSubpage,
 	'hui-entities-card': huiEntitiesCard,
 	'hui-root': huiRoot,
 	'hui-view-visibility-editor': huiViewVisibilityEditor,

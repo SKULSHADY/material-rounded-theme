@@ -4,13 +4,18 @@
 	z-index: 3 !important;
 }
 
-/* Decrease border radius and increase height */
+/* Decrease border radius, increase height, use primary container colors */
 .mdc-fab {
 	height: 56px !important;
-	border-radius: 12px !important;
+	border-radius: 16px !important;
+	background-color: var(--md-sys-color-primary-container) !important;
+}
+.mdc-fab__label,
+.mdc-fab__icon {
+	color: var(--md-sys-color-on-primary-container) !important;
 }
 .ripple {
-	border-radius: 12px !important;
+	border-radius: 16px !important;
 }
 
 /* Remove all caps */

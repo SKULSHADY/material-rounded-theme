@@ -224,7 +224,7 @@ paper-tabs {
 	color: var(--app-header-edit-text-color);
 }
 
-/* Fix view horizontal overflow scroll */
+/** Fix horizontal overflow */
 #view {
 	overflow-x: hidden;
 }
