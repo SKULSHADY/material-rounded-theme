@@ -5,6 +5,13 @@
 	justify-content: space-evenly;
 }
 
+@media (width > 870px) {
+	/** When sidebar is visible, center view icons */
+	:host([slot='title']) #tabsContent {
+		justify-content: center;
+	}
+}
+
 /* Fix visibility of not visible view scroll buttons */
 .not-visible {
 	display: none;

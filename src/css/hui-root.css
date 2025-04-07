@@ -85,20 +85,14 @@ paper-tab {
 	flex: 1;
 	min-width: 72px;
 	max-width: var(--tab-width);
-	/* --tab-width: clamp(
-		min(calc(((100vw - var(--mdc-drawer-width, 0px)) / 5) - 3px), 72px),
-		((100vw - var(--mdc-drawer-width, 0px)) / var(--view-tabs-count)) - 3px,
-		calc(((100vw - var(--mdc-drawer-width, 0px))) - 3px)
-	); */
-	/* --tab-width: clamp(
-		72px,
-		calc(((100vw - var(--mdc-drawer-width, 0px)) / 5)),
-		calc(((100vw - var(--mdc-drawer-width, 0px))))
-	); */
-
-	/* TODO fix for flexbox */
 	--tab-width: calc((100vw - var(--mdc-drawer-width, 0px)) / 5);
 	--icon-width: min(64px, var(--tab-width));
+}
+@media (width > 870px) {
+	/** When sidebar is visible, use a fixed max tab width */
+	paper-tab {
+		--tab-width: 174px;
+	}
 }
 
 /* Add background and color current view icon */
