@@ -1,0 +1,18 @@
+/* Turn view tabs into a separate footer */
+:host {
+	position: fixed;
+	top: unset !important;
+	bottom: 0 !important;
+	background: var(--navbar-background) !important;
+	height: var(--footer-height) !important;
+	width: 100%;
+	padding-bottom: env(safe-area-inset-bottom) !important;
+	margin: 0 !important;
+	margin-inline: 0 !important;
+	pointer-events: all;
+}
+
+#tabsContent {
+	display: flex;
+	width: 100%;
+}

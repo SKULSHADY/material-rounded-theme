@@ -15,7 +15,7 @@ declare global {
 	}
 
 	declare module '*.css' {
-		const classes: { [key: string]: string };
+		const classes: string;
 		export default classes;
 	}
 }

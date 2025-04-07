@@ -1,0 +1,8 @@
+/* Move user picture above navigation background */
+:host([slot='item-icon']) .initials,
+:host([slot='item-icon']) .picture {
+	position: absolute;
+	z-index: 2;
+	margin: 4px 0;
+	left: 4px;
+}
