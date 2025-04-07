@@ -1,7 +1,6 @@
 /* Fix add card button position  */
-:host {
-	bottom: calc(var(--footer-height) + 16px) !important;
-	z-index: 3 !important;
+button[aria-label='Add card'] {
+	bottom: calc(var(--footer-height) + env(safe-area-inset-bottom)) !important;
 }
 
 /* Decrease border radius, increase height, use primary container colors */
@@ -13,13 +12,8 @@
 .mdc-fab__label,
 .mdc-fab__icon {
 	color: var(--md-sys-color-on-primary-container) !important;
+	font-size: 11pt;
 }
 .ripple {
 	border-radius: 16px !important;
-}
-
-/* Remove all caps */
-.mdc-fab__label {
-	text-transform: none !important;
-	font-size: 11pt;
 }

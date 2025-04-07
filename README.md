@@ -269,7 +269,10 @@ Desktop sidebar collapsed.
 
 ### [Extended FAB](https://m3.material.io/components/extended-fab/overview)
 
--
+- Increase height to 56px.
+- Decrease border radius to 16px.
+- Use primary container colors.
+- Increase bottom position when used as an add card button on legacy views.
 
 ### Views
 
