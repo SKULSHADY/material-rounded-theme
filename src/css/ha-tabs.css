@@ -1,5 +1,5 @@
 /* Turn view tabs container into a full width flexbox*/
-#tabsContent {
+:host([slot='title']) #tabsContent {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;

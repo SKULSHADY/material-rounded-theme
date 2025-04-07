@@ -14,10 +14,11 @@ import haTabs from './css/ha-tabs.css';
 import haUserBadge from './css/ha-user-badge.css';
 import huiRoot from './css/hui-root.css';
 
+import { HassElement } from './models/interfaces';
 import { getAsync } from './models/utils';
 
-const ha = document.querySelector('home-assistant') as HTMLElement;
-ha.style.setProperty('display', 'none');
+let ha = document.querySelector('home-assistant') as HassElement;
+let theme = '';
 
 const elements: Record<string, string> = {
 	'paper-tabs': haTabs,
@@ -32,11 +33,22 @@ const elements: Record<string, string> = {
 };
 
 const optional = ['ha-fab'];
-const promises: Promise<unknown>[] = [];
 
-async function applyMaterialStyles(element: HTMLElement) {
+function checkTheme() {
+	if (!theme) {
+		ha = document.querySelector('home-assistant') as HassElement;
+		theme = ha.hass?.themes?.theme;
+	}
+}
+
+async function applyMaterialStyles(element: HassElement) {
+	checkTheme();
+
 	const shadowRoot = await getAsync(element, 'shadowRoot');
-	if (!shadowRoot.querySelector('#material-you')) {
+	if (
+		!shadowRoot.querySelector('#material-you') &&
+		theme.includes('Material You')
+	) {
 		const style = document.createElement('style');
 		style.id = 'material-you';
 		style.textContent = elements[element.nodeName.toLowerCase()];
@@ -44,52 +56,64 @@ async function applyMaterialStyles(element: HTMLElement) {
 	}
 }
 
-const define = window.CustomElementRegistry.prototype.define;
-window.CustomElementRegistry.prototype.define = function (
-	name,
-	constructor,
-	options,
-) {
-	const promise = new Promise((resolve) => {
-		if (elements[name]) {
-			// Add styles on render
-			const render = constructor.prototype.render;
-			constructor.prototype.render = function () {
-				return html`
-					${render.call(this)}
-					<style id="material-you">
-						${elements[name]}
-					</style>
-				`;
-			};
+async function main() {
+	ha.style.setProperty('display', 'none');
 
-			// Add styles on firstUpdated
-			const firstUpdated = constructor.prototype.firstUpdated;
-			if (firstUpdated) {
-				constructor.prototype.firstUpdated = function () {
+	const promises: Promise<unknown>[] = [];
+	const define = window.CustomElementRegistry.prototype.define;
+	window.CustomElementRegistry.prototype.define = function (
+		name,
+		constructor,
+		options,
+	) {
+		const promise = new Promise((resolve) => {
+			if (elements[name]) {
+				// Add styles on render
+				checkTheme();
+
+				const render = constructor.prototype.render;
+				constructor.prototype.render = function () {
+					return html`
+						${render.call(this)}
+						${theme.includes('Material You')
+							? html`<style id="material-you">
+									${elements[name]}
+								</style>`
+							: ''}
+					`;
+				};
+
+				// Add styles on firstUpdated
+				const firstUpdated = constructor.prototype.firstUpdated;
+				if (firstUpdated) {
+					constructor.prototype.firstUpdated = function () {
+						applyMaterialStyles(this);
+						firstUpdated.call(this);
+					};
+				}
+
+				// Add styles on connectedCallback
+				const connectedCallback =
+					constructor.prototype.connectedCallback;
+				constructor.prototype.connectedCallback = function () {
 					applyMaterialStyles(this);
-					firstUpdated.call(this);
+					connectedCallback.call(this);
 				};
 			}
 
-			// Add styles on connectedCallback
-			const connectedCallback = constructor.prototype.connectedCallback;
-			constructor.prototype.connectedCallback = function () {
-				applyMaterialStyles(this);
-				connectedCallback.call(this);
-			};
+			resolve(true);
+		});
+
+		if (!optional.includes(elements[name])) {
+			promises.push(promise);
 		}
 
-		resolve(true);
+		return define.call(this, name, constructor, options);
+	};
+
+	Promise.all(promises).then(() => {
+		ha.style.removeProperty('display');
 	});
+}
 
-	if (!optional.includes(elements[name])) {
-		promises.push(promise);
-	}
-
-	return define.call(this, name, constructor, options);
-};
-
-Promise.all(promises).then(() => {
-	ha.style.removeProperty('display');
-});
+main();
