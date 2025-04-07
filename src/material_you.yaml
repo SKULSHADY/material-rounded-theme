@@ -271,6 +271,13 @@ Material You:
   # Buttons
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
+  mdc-typography-button-font-size: 14px
+  mdc-typography-button-line-height: 20px
+  mdc-typography-button-letter-spacing: 0.1px
+  mdc-typography-button-font-weight: 500
+  mdc-typography-button-text-transform: capitalize
+  mdc-button-horizontal-padding: 12px
+  button-height: 40px
 
   # Spacings
   horizontal-stack-card-margin: 0px 4px
@@ -307,7 +314,6 @@ Material You:
 
   title-font-weight: 600
   title-font-size: 28px
-  mdc-typography-button-font-weight: var(--title-font-weight)
 
   ha-heading-card-title-font-size: 16px
   ha-heading-card-title-font-weight: 600

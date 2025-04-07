@@ -1,0 +1,5 @@
+/** Make borders circular and change ripple color */
+#button {
+	border-radius: var(--button-height) !important;
+	--mdc-ripple-color: var(--mdc-theme-primary) !important;
+}

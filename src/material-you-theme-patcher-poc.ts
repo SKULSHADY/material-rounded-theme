@@ -5,6 +5,7 @@
 
 import { html } from 'lit';
 
+import haButton from './css/ha-button.css';
 import haDialog from './css/ha-dialog.css';
 import haEntityToggle from './css/ha-entity-toggle.css';
 import haFab from './css/ha-fab.css';
@@ -26,7 +27,8 @@ let theme = '';
 let shouldSetStyles = true;
 
 const elements: Record<string, string> = {
-	'paper-tabs': haTabs,
+	'ha-button': haButton,
+	'mwc-button': haButton,
 	'ha-dialog': haDialog,
 	'ha-entity-toggle': haEntityToggle,
 	'ha-fab': haFab,
@@ -34,6 +36,7 @@ const elements: Record<string, string> = {
 	'ha-sidebar': haSidebar,
 	'ha-slider': haSlider,
 	'ha-tabs': haTabs,
+	'paper-tabs': haTabs,
 	'ha-user-badge': haUserBadge,
 	'hass-tabs-subpage': hassTabsSubpage,
 	'hui-entities-card': huiEntitiesCard,

@@ -11,6 +11,7 @@ Material You:
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
+  button-height: 40px
   card-background-color: var(--md-sys-color-surface-container-low)
   checkbox-checked-border-color: var(--md-sys-color-primary)
   checkbox-checked-icon-color: var(--md-sys-color-on-primary)
@@ -93,6 +94,7 @@ Material You:
   md-sys-typescale-label-medium-size: 12px
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
+  mdc-button-horizontal-padding: 12px
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -119,7 +121,11 @@ Material You:
   mdc-top-app-bar-fixed-box-shadow: none
   mdc-typography-body1-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
-  mdc-typography-button-font-weight: var(--title-font-weight)
+  mdc-typography-button-font-size: 14px
+  mdc-typography-button-font-weight: 500
+  mdc-typography-button-letter-spacing: 0.1px
+  mdc-typography-button-line-height: 20px
+  mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
   modes:
     dark:
@@ -302,6 +308,7 @@ Material You Dark:
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
+  button-height: 40px
   card-background-color: var(--md-sys-color-surface-container-low)
   checkbox-checked-border-color: var(--md-sys-color-primary)
   checkbox-checked-icon-color: var(--md-sys-color-on-primary)
@@ -438,6 +445,7 @@ Material You Dark:
   md-sys-typescale-label-medium-size: 12px
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
+  mdc-button-horizontal-padding: 12px
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -464,7 +472,11 @@ Material You Dark:
   mdc-top-app-bar-fixed-box-shadow: none
   mdc-typography-body1-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
-  mdc-typography-button-font-weight: var(--title-font-weight)
+  mdc-typography-button-font-size: 14px
+  mdc-typography-button-font-weight: 500
+  mdc-typography-button-letter-spacing: 0.1px
+  mdc-typography-button-line-height: 20px
+  mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
@@ -535,6 +547,7 @@ Material You Light:
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
+  button-height: 40px
   card-background-color: var(--md-sys-color-surface-container-low)
   checkbox-checked-border-color: var(--md-sys-color-primary)
   checkbox-checked-icon-color: var(--md-sys-color-on-primary)
@@ -671,6 +684,7 @@ Material You Light:
   md-sys-typescale-label-medium-size: 12px
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
+  mdc-button-horizontal-padding: 12px
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -697,7 +711,11 @@ Material You Light:
   mdc-top-app-bar-fixed-box-shadow: none
   mdc-typography-body1-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
-  mdc-typography-button-font-weight: var(--title-font-weight)
+  mdc-typography-button-font-size: 14px
+  mdc-typography-button-font-weight: 500
+  mdc-typography-button-letter-spacing: 0.1px
+  mdc-typography-button-line-height: 20px
+  mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
@@ -768,6 +786,7 @@ Material You Transparent Card:
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
+  button-height: 40px
   card-background-color: var(--md-sys-color-surface-container-low)
   checkbox-checked-border-color: var(--md-sys-color-primary)
   checkbox-checked-icon-color: var(--md-sys-color-on-primary)
@@ -850,6 +869,7 @@ Material You Transparent Card:
   md-sys-typescale-label-medium-size: 12px
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
+  mdc-button-horizontal-padding: 12px
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -876,7 +896,11 @@ Material You Transparent Card:
   mdc-top-app-bar-fixed-box-shadow: none
   mdc-typography-body1-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
-  mdc-typography-button-font-weight: var(--title-font-weight)
+  mdc-typography-button-font-size: 14px
+  mdc-typography-button-font-weight: 500
+  mdc-typography-button-letter-spacing: 0.1px
+  mdc-typography-button-line-height: 20px
+  mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
   modes:
     dark:
@@ -1059,6 +1083,7 @@ Material You Transparent Card Dark:
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
+  button-height: 40px
   card-background-color: var(--md-sys-color-surface-container-low)
   checkbox-checked-border-color: var(--md-sys-color-primary)
   checkbox-checked-icon-color: var(--md-sys-color-on-primary)
@@ -1195,6 +1220,7 @@ Material You Transparent Card Dark:
   md-sys-typescale-label-medium-size: 12px
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
+  mdc-button-horizontal-padding: 12px
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -1221,7 +1247,11 @@ Material You Transparent Card Dark:
   mdc-top-app-bar-fixed-box-shadow: none
   mdc-typography-body1-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
-  mdc-typography-button-font-weight: var(--title-font-weight)
+  mdc-typography-button-font-size: 14px
+  mdc-typography-button-font-weight: 500
+  mdc-typography-button-letter-spacing: 0.1px
+  mdc-typography-button-line-height: 20px
+  mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
@@ -1292,6 +1322,7 @@ Material You Transparent Card Light:
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
+  button-height: 40px
   card-background-color: var(--md-sys-color-surface-container-low)
   checkbox-checked-border-color: var(--md-sys-color-primary)
   checkbox-checked-icon-color: var(--md-sys-color-on-primary)
@@ -1428,6 +1459,7 @@ Material You Transparent Card Light:
   md-sys-typescale-label-medium-size: 12px
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
+  mdc-button-horizontal-padding: 12px
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -1454,7 +1486,11 @@ Material You Transparent Card Light:
   mdc-top-app-bar-fixed-box-shadow: none
   mdc-typography-body1-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
-  mdc-typography-button-font-weight: var(--title-font-weight)
+  mdc-typography-button-font-size: 14px
+  mdc-typography-button-font-weight: 500
+  mdc-typography-button-letter-spacing: 0.1px
+  mdc-typography-button-line-height: 20px
+  mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
