@@ -52,7 +52,16 @@ CustomElementRegistry.prototype.define = function (name, constructor, options) {
 				`;
 			};
 
-			// Add styles on connectedCallback if on render check is missed
+			// Add styles on firstUpdated
+			const firstUpdated = constructor.prototype.firstUpdated;
+			if (firstUpdated) {
+				constructor.prototype.firstUpdated = function () {
+					applyMaterialStyles(this);
+					firstUpdated.call(this);
+				};
+			}
+
+			// Add styles on connectedCallback
 			const connectedCallback = constructor.prototype.connectedCallback;
 			constructor.prototype.connectedCallback = function () {
 				applyMaterialStyles(this);
