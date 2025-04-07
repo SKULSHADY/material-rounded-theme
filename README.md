@@ -267,6 +267,11 @@ Desktop sidebar collapsed.
 - Button border radius made circular.
 - Ripple color changed to match text color.
 
+### [Outlined Buttons](https://m3.material.io/components/buttons/specs)
+
+- Same changes as text buttons.
+- Increase horizontal padding to 24px.
+
 ### [Extended FAB](https://m3.material.io/components/extended-fab/overview)
 
 - Increase height to 56px.

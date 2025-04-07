@@ -97,6 +97,7 @@ Material You:
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
+  mdc-button-outline-color: var(--md-sys-color-outline)
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -450,6 +451,7 @@ Material You Dark:
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
+  mdc-button-outline-color: var(--md-sys-color-outline)
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -691,6 +693,7 @@ Material You Light:
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
+  mdc-button-outline-color: var(--md-sys-color-outline)
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -878,6 +881,7 @@ Material You Transparent Card:
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
+  mdc-button-outline-color: var(--md-sys-color-outline)
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -1231,6 +1235,7 @@ Material You Transparent Card Dark:
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
+  mdc-button-outline-color: var(--md-sys-color-outline)
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
@@ -1472,6 +1477,7 @@ Material You Transparent Card Light:
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
+  mdc-button-outline-color: var(--md-sys-color-outline)
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
