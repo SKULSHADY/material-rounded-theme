@@ -10,12 +10,13 @@ env = 'production';
 module.exports = {
 	mode: env,
 	entry: {
-		builder: './src/material-you-theme-builder.ts',
-		patcher: './src/material-you-theme-patcher.ts',
+		'material-rounded-theme': './src/material-rounded-theme.ts',
+		'material-you-theme-patcher-poc':
+			'./src/material-you-theme-patcher-poc.ts',
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		filename: 'material-you-theme-[name].min.js',
+		filename: '[name].js',
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js'],
@@ -45,4 +46,3 @@ module.exports = {
 	},
 	devtool: env == 'production' ? false : 'eval',
 };
-

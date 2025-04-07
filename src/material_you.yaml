@@ -131,7 +131,7 @@ Material You:
 
       # Other mode specific colors
       disabled-text-color: "var(--disabled-text-color-light, #808080)"
-      disabled-color: "var(--disabled-color-light, a5a5a5)"
+      disabled-color: "var(--disabled-color-light, #a5a5a5)"
       state-inactive-color: "var(--state-inactive-color-light, #9e9e9e)"
 
   # Main colors
