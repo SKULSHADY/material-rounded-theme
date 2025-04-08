@@ -214,6 +214,7 @@ Redesigns the toolbar and sidebar buttons to follow Material You navigation comp
 - Height increased to 64px.
 - Disappears when user is not scrolled to the top of the view.
 - Use a variant color for trailing buttons and edit mode.
+- Current view name added as headline.
 
 #### [Navigation Bar](https://m3.material.io/components/navigation-bar/overview)
 
