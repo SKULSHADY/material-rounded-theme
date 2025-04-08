@@ -279,6 +279,12 @@ Desktop sidebar collapsed.
 - Use primary container colors.
 - Increase bottom position when used as an add card button on legacy views.
 
+### [Snackbars](https://m3.material.io/components/snackbar/overview)
+
+- Moved above the navigation bar.
+- Font size, weight, height, letter spacing, and capitalization adjusted to match specification.
+- Uses inverse primary colors instead of static colors.
+
 ### Views
 
 - Adds an 82px margin to the bottom of the view for the navigation bar when it is present.
