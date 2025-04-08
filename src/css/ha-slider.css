@@ -5,11 +5,6 @@
 	--md-slider-handle-shape: 4px;
 }
 
-/* Increase z-index of handle */
-.handle {
-	z-index: 8 !important;
-}
-
 /* Add border to each side of slider */
 .handleNub::after {
 	content: '';
