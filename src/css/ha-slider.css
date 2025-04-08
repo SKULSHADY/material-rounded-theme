@@ -1,15 +1,15 @@
 /* Set Material Design 3 slider variables that should only apply to redesigned sliders */
 :host {
-	--md-slider-handle-height: 44px !important;
-	--md-slider-handle-width: 16px !important;
+	--md-slider-handle-height: 44px;
+	--md-slider-handle-width: 16px;
 	--md-slider-handle-shape: 4px;
 }
 
 /* Explictly resize handle and reduce width on active or focus */
 .handleNub {
-	height: 44px !important;
-	width: 16px !important;
-	border-radius: 4px !important;
+	height: 44px;
+	width: 16px;
+	border-radius: 4px;
 	transition: scale 0.2s cubic-bezier(0.2, 0, 0, 1);
 }
 .hover .handleNub,
@@ -51,7 +51,7 @@ md-focus-ring {
 
 /* Remove teardrop from label */
 .label::before {
-	display: none !important;
+	display: none;
 }
 
 /* Do not show label on focus-within if hover class is not present */
@@ -61,5 +61,5 @@ md-focus-ring {
 	.handleContainerBlock
 	:not(.hover)
 	.label {
-	transform: scale(0) !important;
+	transform: scale(0);
 }

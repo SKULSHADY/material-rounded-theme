@@ -8,5 +8,5 @@
 	padding-bottom: calc(
 		var(--kiosk-header-height, var(--footer-height)) +
 			env(safe-area-inset-bottom)
-	) !important;
+	);
 }

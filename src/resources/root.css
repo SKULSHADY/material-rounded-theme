@@ -1,6 +1,6 @@
 /* Make header transparent and define scroll transition */
 .header {
-	background-color: transparent !important;
+	background-color: transparent;
 	pointer-events: none;
 	--scroll-transition: transform 50ms cubic-bezier(0.2, 0, 0, 1);
 }
@@ -53,25 +53,25 @@ ha-icon-button-arrow-prev {
 
 /* Remove toolbar padding */
 .toolbar {
-	padding: 0 !important;
+	padding: 0;
 }
 
 /* Force hide subview tab just in case */
 .hide-tab {
-	display: none !important;
+	display: none;
 }
 
 /* Turn view tabs into a separate footer */
 paper-tabs,
 ha-tabs {
 	position: fixed;
-	top: unset !important;
-	bottom: 0 !important;
-	background: var(--navbar-background) !important;
-	height: var(--footer-height) !important;
-	padding-bottom: env(safe-area-inset-bottom) !important;
-	margin: 0 !important;
-	margin-inline: 0 !important;
+	top: unset;
+	bottom: 0;
+	background: var(--navbar-background);
+	height: var(--footer-height);
+	padding-bottom: env(safe-area-inset-bottom);
+	margin: 0;
+	margin-inline: 0;
 	pointer-events: all;
 }
 
@@ -177,23 +177,23 @@ paper-tabs {
 
 /* Make edit mode current view tab fit all buttons */
 .edit-mode paper-tab {
-	min-width: fit-content !important;
+	min-width: fit-content;
 }
 
 /* Fix edit mode current view label position */
 .edit-mode paper-tab.iron-selected::after {
-	margin-top: -2px !important;
+	margin-top: -2px;
 }
 
 /* Move edit mode action items back to bottom toolbar */
 .edit-mode .action-items {
-	position: static !important;
+	position: static;
 }
 
 /* Style add view button to look like view buttons */
 #add-view {
 	top: 6px;
-	height: 100% !important;
+	height: 100%;
 	display: inline-flex;
 	flex-direction: column;
 }

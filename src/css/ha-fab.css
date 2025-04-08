@@ -1,19 +1,19 @@
 /* Fix add card button position  */
 button[aria-label='Add card'] {
-	bottom: calc(var(--footer-height) + env(safe-area-inset-bottom)) !important;
+	bottom: calc(var(--footer-height) + env(safe-area-inset-bottom));
 }
 
 /* Decrease border radius, increase height, use primary container colors */
 .mdc-fab {
-	height: 56px !important;
-	border-radius: 16px !important;
-	background-color: var(--md-sys-color-primary-container) !important;
+	height: 56px;
+	border-radius: 16px;
+	background-color: var(--md-sys-color-primary-container);
 }
 .mdc-fab__label,
 .mdc-fab__icon {
-	color: var(--md-sys-color-on-primary-container) !important;
+	color: var(--md-sys-color-on-primary-container);
 	font-size: 11pt;
 }
 .ripple {
-	border-radius: 16px !important;
+	border-radius: 16px;
 }

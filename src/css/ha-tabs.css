@@ -1,13 +1,13 @@
 /* Turn view tabs container into a full width flexbox*/
-:host([slot='title']) #tabsContent {
-	display: flex;
+#tabsContent {
+	display: var(--tabs-display, block);
 	width: 100%;
 	justify-content: space-evenly;
 }
 
 @media (width > 870px) {
 	/* When sidebar is visible, center view icons */
-	:host([slot='title']) #tabsContent {
+	#tabsContent {
 		justify-content: center;
 	}
 }

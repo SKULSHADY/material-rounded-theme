@@ -1,6 +1,6 @@
 /* Make header transparent and define scroll transition */
 .header {
-	background-color: transparent !important;
+	background-color: transparent;
 	pointer-events: none;
 	--scroll-transition: transform 50ms cubic-bezier(0.2, 0, 0, 1);
 }
@@ -53,27 +53,28 @@ ha-icon-button-arrow-prev {
 
 /* Remove toolbar padding */
 .toolbar {
-	padding: 0 !important;
+	padding: 0;
 }
 
 /* Force hide subview tab just in case */
 .hide-tab {
-	display: none !important;
+	display: none;
 }
 
 /* Turn view tabs into a separate footer */
 paper-tabs,
 ha-tabs {
 	position: fixed;
-	top: unset !important;
-	bottom: 0 !important;
-	background: var(--navbar-background) !important;
-	height: var(--footer-height) !important;
-	width: calc(100vw - var(--mdc-drawer-width, 0px)) !important;
-	padding-bottom: env(safe-area-inset-bottom) !important;
-	margin: 0 !important;
-	margin-inline: 0 !important;
+	top: unset;
+	bottom: 0;
+	background: var(--navbar-background);
+	height: var(--footer-height);
+	width: calc(100vw - var(--mdc-drawer-width, 0px));
+	padding-bottom: env(safe-area-inset-bottom);
+	margin: 0;
+	margin-inline: 0;
 	pointer-events: all;
+	--tabs-display: flex;
 }
 
 /*
@@ -176,33 +177,29 @@ paper-tab.iron-selected::after {
 	font-weight: 700;
 }
 
-/* Fix edit mode toolbar height and width */
-paper-tabs {
-	height: 50%;
-	width: calc(100% - var(--mdc-drawer-width, 0px));
-}
-
 /* Make edit mode current view tab fit all buttons */
-.edit-mode paper-tab {
-	min-width: fit-content !important;
+.edit-mode paper-tab.iron-selected {
+	min-width: fit-content;
 }
 
 /* Fix edit mode current view label position */
 .edit-mode paper-tab.iron-selected::after {
-	margin-top: -2px !important;
+	margin-top: -2px;
 }
 
-/* Move edit mode action items back to bottom toolbar */
+/* Move edit mode action items back to header */
 .edit-mode .action-items {
-	position: static !important;
+	position: static;
 }
 
 /* Style add view button to look like view buttons */
 #add-view {
-	top: 6px;
-	height: 100% !important;
+	position: static;
+	padding: 5px 0 0;
+	height: 100%;
 	display: inline-flex;
 	flex-direction: column;
+	align-items: center;
 }
 #add-view::after {
 	content: 'Add View';
@@ -211,12 +208,11 @@ paper-tabs {
 	text-align: center;
 	font-weight: 500;
 	font-size: min(3.6vw, 13px);
-	opacity: 0.8;
 	padding: 0px 1px;
 	overflow: hidden;
 	line-height: 12px;
 	height: 100%;
-	margin-top: -6px;
+	margin-top: -2px;
 }
 
 /* Fix edit mode menu link color */
@@ -234,5 +230,5 @@ paper-tabs {
 	padding-bottom: calc(
 		var(--kiosk-header-height, var(--footer-height)) +
 			env(safe-area-inset-bottom)
-	) !important;
+	);
 }

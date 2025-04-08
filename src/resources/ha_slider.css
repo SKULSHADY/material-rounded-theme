@@ -1,7 +1,7 @@
 /* Set Material Design 3 slider variables that should only apply to redesigned sliders */
 :host {
-	--md-slider-handle-height: 44px !important;
-	--md-slider-handle-width: 16px !important;
+	--md-slider-handle-height: 44px;
+	--md-slider-handle-width: 16px;
 	--md-slider-handle-shape: 4px;
 }
 
@@ -35,20 +35,20 @@ md-focus-ring {
 /* Set label width and position */
 .label {
 	width: var(--md-slider-label-container-width);
-	bottom: 38px !important;
+	bottom: 38px;
 }
 
 /* Remove teardrop from label */
 .label::before {
-	display: none !important;
+	display: none;
 }
 
 /* Change label to appear on active instead of on hover or focus */
 .hover .label,
 :host(:focus-within) .label {
-	transform: scale(0) !important;
+	transform: scale(0);
 }
 input:focus-visible ~ .handleContainerPadded .label,
 input:active ~ .handleContainerPadded .label {
-	transform: scale(1) !important;
+	transform: scale(1);
 }

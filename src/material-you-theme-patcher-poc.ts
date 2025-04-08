@@ -60,15 +60,33 @@ function checkTheme() {
 	}
 }
 
-async function applyMaterialStyles(element: HassElement) {
+function loadStyles(styles: string) {
+	return styles.toString().replace(/;/g, ' !important;');
+}
+
+async function applyStyles(element: HassElement) {
 	checkTheme();
 
-	const shadowRoot = await getAsync(element, 'shadowRoot');
-	if (!shadowRoot.querySelector('#material-you') && shouldSetStyles) {
+	// Add styles
+	const shadowRoot = (await getAsync(element, 'shadowRoot')) as ShadowRoot;
+	if (shouldSetStyles) {
 		const style = document.createElement('style');
 		style.id = 'material-you';
-		style.textContent = elements[element.nodeName.toLowerCase()];
+		style.textContent = loadStyles(
+			elements[element.nodeName.toLowerCase()],
+		);
 		shadowRoot.appendChild(style);
+	}
+
+	// Remove previously added style elements
+	// Styles sometimes partially apply or get overridden if added on render
+	// By adding them multiple times and removing the extra elements,
+	// we can help ensure that all styles apply
+	const styles = shadowRoot.querySelectorAll('#material-you');
+	if (styles.length > 1) {
+		for (let i = 0; i < styles.length - 2; i += 1) {
+			shadowRoot.removeChild(styles[i]);
+		}
 	}
 }
 
@@ -80,34 +98,37 @@ async function setStyles(target: typeof globalThis) {
 		options,
 	) {
 		if (elements[name]) {
-			// Add styles on render
 			checkTheme();
 
+			// Add styles on render
+			// Most efficient but doesn't always work
 			const render = constructor.prototype.render;
 			constructor.prototype.render = function () {
 				return html`
 					${render.call(this)}
 					${shouldSetStyles
 						? html`<style id="material-you">
-								${elements[name]}
+								${loadStyles(elements[name])}
 							</style>`
 						: ''}
 				`;
 			};
 
 			// Add styles on firstUpdated
+			// Second most efficient, doesn't always work
 			const firstUpdated = constructor.prototype.firstUpdated;
 			if (firstUpdated) {
 				constructor.prototype.firstUpdated = function () {
-					applyMaterialStyles(this);
+					applyStyles(this);
 					firstUpdated.call(this);
 				};
 			}
 
 			// Add styles on connectedCallback
+			// Not as efficient but always works
 			const connectedCallback = constructor.prototype.connectedCallback;
 			constructor.prototype.connectedCallback = function () {
-				applyMaterialStyles(this);
+				applyStyles(this);
 				connectedCallback.call(this);
 			};
 		}

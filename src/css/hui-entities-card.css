@@ -1,6 +1,6 @@
 /* Fix header ha-switch position */
 hui-entities-toggle {
-	position: relative !important;
-	left: -6px !important;
-	top: 8px !important;
+	position: relative;
+	left: -6px;
+	top: 8px;
 }

@@ -7,8 +7,8 @@ ha-sidebar {
 paper-icon-item {
 	transition: width 0.2s cubic-bezier(0.2, 0, 0, 1);
 	height: 48px;
-	margin: 0 4px !important;
-	padding: 0 12px !important;
+	margin: 0 4px;
+	padding: 0 12px;
 }
 
 /* Display current destination text above background and prevent jumpiness on opening*/
@@ -16,7 +16,7 @@ paper-icon-item {
 	z-index: 2;
 	overflow: hidden;
 	white-space: nowrap;
-	margin: 0 !important;
+	margin: 0;
 }
 ha-icon,
 ha-svg-icon {
@@ -27,14 +27,14 @@ ha-svg-icon {
 paper-icon-item::before {
 	content: '';
 	height: 48px;
-	width: 100% !important;
-	position: absolute !important;
-	transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1) !important;
-	left: 0 !important;
-	right: 0 !important;
-	border-radius: 128px !important;
-	background: var(--sidebar-selected-background) !important;
-	opacity: 1 !important;
+	width: 100%;
+	position: absolute;
+	transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+	left: 0;
+	right: 0;
+	border-radius: 128px;
+	background: var(--sidebar-selected-background);
+	opacity: 1;
 	transform: scaleX(0);
 }
 .iron-selected paper-icon-item::before {
@@ -76,25 +76,25 @@ paper-icon-item:active::after {
 /* Use error colors on rail badges */
 .configuration-badge,
 .notification-badge {
-	color: var(--on-error-color) !important;
-	background-color: var(--error-color) !important;
-	font-weight: 500 !important;
+	color: var(--on-error-color);
+	background-color: var(--error-color);
+	font-weight: 500;
 }
 
 /* Use sidebar text color with no background on drawer badges */
 :host([expanded]) .configuration-badge,
 :host([expanded]) .notification-badge {
-	color: var(--sidebar-text-color) !important;
-	background-color: rgb(0, 0, 0, 0) !important;
+	color: var(--sidebar-text-color);
+	background-color: rgb(0, 0, 0, 0);
 }
 :host([expanded]) .iron-selected .configuration-badge,
 :host([expanded]) .iron-selected .notification-badge {
-	color: var(--sidebar-selected-text-color) !important;
+	color: var(--sidebar-selected-text-color);
 }
 
 /* Fix rail sidebar badge position */
 :host(:not([expanded])) .configuration-badge,
 :host(:not([expanded])) .notification-badge {
-	bottom: 24px !important;
+	bottom: 24px;
 	z-index: 2;
 }
