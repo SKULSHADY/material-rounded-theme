@@ -149,8 +149,14 @@ paper-tab:active ha-icon::after {
 	opacity: 0.1;
 }
 
+/* View tabs without icons */
+paper-tab:not(:has(ha-icon)) {
+	text-transform: none;
+	padding: 0;
+}
+
 /* View label */
-paper-tab::after {
+paper-tab:has(ha-icon)::after {
 	content: attr(aria-label);
 	text-transform: none;
 	text-wrap: wrap;
