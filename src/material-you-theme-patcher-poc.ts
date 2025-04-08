@@ -14,9 +14,11 @@ import haSidebar from './css/ha-sidebar.css';
 import haSlider from './css/ha-slider.css';
 import haSwitch from './css/ha-switch.css';
 import haTabs from './css/ha-tabs.css';
+import haToast from './css/ha-toast.css';
 import haUserBadge from './css/ha-user-badge.css';
 import hassTabsSubpage from './css/hass-tabs-subpage.css';
 import huiEntitiesCard from './css/hui-entities-card.css';
+import huiGridSection from './css/hui-grid-section.css';
 import huiRoot from './css/hui-root.css';
 import huiViewVisibilityEditor from './css/hui-view-visibility-editor.css';
 
@@ -34,15 +36,17 @@ const elements: Record<string, string> = {
 	'ha-dialog': haDialog,
 	'ha-entity-toggle': haEntityToggle,
 	'ha-fab': haFab,
-	'ha-switch': haSwitch,
 	'ha-sidebar': haSidebar,
 	'ha-slider': haSlider,
 	'md-slider': haSlider,
+	'ha-switch': haSwitch,
 	'ha-tabs': haTabs,
 	'paper-tabs': haTabs,
+	'ha-toast': haToast,
 	'ha-user-badge': haUserBadge,
 	'hass-tabs-subpage': hassTabsSubpage,
 	'hui-entities-card': huiEntitiesCard,
+	'hui-grid-section': huiGridSection,
 	'hui-root': huiRoot,
 	'hui-view-visibility-editor': huiViewVisibilityEditor,
 };
