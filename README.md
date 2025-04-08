@@ -283,7 +283,7 @@ Desktop sidebar collapsed.
 
 - Moved above the navigation bar.
 - Font size, weight, height, letter spacing, and capitalization adjusted to match specification.
-- Uses inverse primary colors instead of static colors.
+- Use inverse primary colors instead of static colors.
 
 ### Views
 
