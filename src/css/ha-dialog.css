@@ -1,4 +1,4 @@
-/** Fix horizontal overflow */
+/* Fix horizontal overflow */
 #content {
 	overflow-x: hidden;
 }

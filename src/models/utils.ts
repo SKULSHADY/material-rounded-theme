@@ -2,7 +2,7 @@ import { schemes } from './constants';
 import { HassElement } from './interfaces';
 import { IScheme } from './interfaces/Scheme';
 
-/**
+/*
  * Get scheme class and name using user input name
  * @param {string} name user provided scheme name
  * @returns {IScheme} Scheme name and class
@@ -12,7 +12,7 @@ export function getSchemeInfo(name: string = 'Tonal Spot'): IScheme {
 	return schemes[name] ?? schemes['tonalspot'];
 }
 
-/**
+/*
  * Get theme color token
  * @param {string} color Material Dynamic Color key
  * @returns {string} Material Dynamic Color token
@@ -21,7 +21,7 @@ export function getToken(color: string): string {
 	return color.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 }
 
-/**
+/*
  * Wait for home-assistant-main shadow-root to load, then return home-assistant-main
  * @returns {ShadowRoot} home-assistant-main element
  */
@@ -37,7 +37,7 @@ export async function getHomeAssistantMainAsync(): Promise<HassElement> {
 	return ha;
 }
 
-/**
+/*
  * Get targets to apply or remove theme colors to/from
  * @returns {HTMLElement[]} HTML Elements to apply/remove theme to/from
  */
@@ -57,7 +57,7 @@ export async function getTargets(): Promise<HTMLElement[]> {
 	return targets;
 }
 
-/**
+/*
  * Asynchronous query selector
  * @param {ParentNode} parent Element to query
  * @param {string} selector Query selector string
@@ -95,7 +95,7 @@ export async function querySelectorAsync(
 	});
 }
 
-/**
+/*
  * Asynchronous getter which waits for value to not be either undefined or null
  * @param {Node} element node to get value from
  * @param {string} key key to get value of

@@ -6,7 +6,7 @@
 }
 
 @media (width > 870px) {
-	/** When sidebar is visible, center view icons */
+	/* When sidebar is visible, center view icons */
 	:host([slot='title']) #tabsContent {
 		justify-content: center;
 	}

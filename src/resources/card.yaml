@@ -1,0 +1,42 @@
+.: >-
+  {{ card.css }}
+
+# No parent shadow-root in card
+ha-switch$: >-
+  {{ ha_switch.css }}
+
+# Entities header toggle
+hui-entities-toggle$ ha-switch$: >-
+  {{ ha_switch.css }}
+
+# Profile toggles
+ha-advanced-mode-row$ ha-switch$: >-
+  {{ ha_switch.css }}
+ha-force-narrow-row$ ha-switch$: >-
+  {{ ha_switch.css }}
+ha-set-vibrate-row$ ha-switch$: >-
+  {{ ha_switch.css }}
+ha-push-notifications-row$ ha-push-notifications-toggle$ ha-switch$: >-
+  {{ ha_switch.css }}
+ha-set-suspend-row$ ha-switch$: >-
+  {{ ha_switch.css }}
+ha-enable-shortcuts-row$ ha-switch$: >-
+  {{ ha_switch.css }}
+
+# Analytics toggles
+ha-analytics$ ha-switch$: >-
+  {{ ha_switch.css }}
+
+# Devices and entities card rows
+hui-toggle-entity-row$:
+  ha-entity-toggle$ ha-switch$: >-
+    {{ ha_switch.css }}
+hui-number-entity-row$:
+  ha-slider$: >-
+    {{ ha_slider.css }}
+
+# Browser Mod
+.card-content:
+  ha-settings-row:
+    ha-switch$: >-
+      {{ ha_switch.css }}

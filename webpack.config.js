@@ -1,6 +1,9 @@
 const path = require('path');
 const { execSync } = require('child_process');
 
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 let env =
 	execSync('git branch --show-current').toString().trim() == 'main'
 		? 'production'
@@ -37,6 +40,28 @@ module.exports = {
 				test: /\.css$/i,
 				use: ['to-string-loader', 'css-loader'],
 			},
+		],
+	},
+	optimization: {
+		minimizer: [
+			new CssMinimizerPlugin({
+				minimizerOptions: {
+					preset: [
+						'default',
+						{
+							discardComments: { removeAll: true },
+						},
+					],
+				},
+			}),
+			new TerserPlugin({
+				terserOptions: {
+					format: {
+						comments: false,
+					},
+				},
+				extractComments: false,
+			}),
 		],
 	},
 	performance: {

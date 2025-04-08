@@ -1,0 +1,4 @@
+.: >-
+  {{ sidebar.css }}
+ha-user-badge$: >-
+  {{ ha_user_badge.css }}

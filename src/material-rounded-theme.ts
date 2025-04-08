@@ -24,7 +24,7 @@ console.info(
 	logStyles(),
 );
 
-/** Remove theme colors */
+/* Remove theme colors */
 export async function unsetTheme() {
 	const targets = await getTargets();
 	for (const color of colors) {
@@ -64,7 +64,7 @@ async function main() {
 	const contrastSensorUserName = `${contrastSensor}_${userName}`;
 	const contrastSensorUserId = `${contrastSensor}_${userId}`;
 
-	/** Generate and set theme colors based on user defined sensors */
+	/* Generate and set theme colors based on user defined sensors */
 	async function setTheme() {
 		const hass = (document.querySelector('home-assistant') as HassElement)
 			.hass;

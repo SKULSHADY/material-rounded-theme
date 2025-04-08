@@ -1,15 +1,15 @@
-/** Make borders circular and change ripple color */
+/* Make borders circular and change ripple color */
 #button {
 	border-radius: var(--button-height) !important;
 	--mdc-ripple-color: var(--mdc-theme-primary) !important;
 }
 
-/** Increase horizontal padding for outline buttons */
+/* Increase horizontal padding for outline buttons */
 :host([outlined]) {
 	--mdc-button-horizontal-padding: 24px;
 }
 
-/** Fix disabled button color */
+/* Fix disabled button color */
 :host([disabled]) {
 	background-color: transparent !important;
 }

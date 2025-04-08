@@ -26,6 +26,8 @@ Material You:
   error-color: var(--md-sys-color-error)
   font-family: '"Google Sans", Figtree, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
   footer-height: 82px
+  ha-assist-chip-container-shape: 8px
+  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border: none
   ha-card-border-color: "#00000000"
@@ -328,6 +330,8 @@ Material You Dark:
   error-color: var(--md-sys-color-error)
   font-family: '"Google Sans", Figtree, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
   footer-height: 82px
+  ha-assist-chip-container-shape: 8px
+  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border: none
   ha-card-border-color: "#00000000"
@@ -570,6 +574,8 @@ Material You Light:
   error-color: var(--md-sys-color-error)
   font-family: '"Google Sans", Figtree, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
   footer-height: 82px
+  ha-assist-chip-container-shape: 8px
+  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border: none
   ha-card-border-color: "#00000000"
@@ -810,6 +816,8 @@ Material You Transparent Card:
   error-color: var(--md-sys-color-error)
   font-family: '"Google Sans", Figtree, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
   footer-height: 82px
+  ha-assist-chip-container-shape: 8px
+  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
   ha-card-background: transparent
   ha-card-border: none
   ha-card-border-color: "#00000000"
@@ -1112,6 +1120,8 @@ Material You Transparent Card Dark:
   error-color: var(--md-sys-color-error)
   font-family: '"Google Sans", Figtree, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
   footer-height: 82px
+  ha-assist-chip-container-shape: 8px
+  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
   ha-card-background: transparent
   ha-card-border: none
   ha-card-border-color: "#00000000"
@@ -1354,6 +1364,8 @@ Material You Transparent Card Light:
   error-color: var(--md-sys-color-error)
   font-family: '"Google Sans", Figtree, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
   footer-height: 82px
+  ha-assist-chip-container-shape: 8px
+  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
   ha-card-background: transparent
   ha-card-border: none
   ha-card-border-color: "#00000000"

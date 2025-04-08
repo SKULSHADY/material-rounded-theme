@@ -33,7 +33,7 @@ paper-tab.iron-selected::before {
 }
 .action-items,
 ha-menu-button {
-	padding: 0 4px;
+	padding: 0 12px;
 }
 .action-items,
 .main-title,
@@ -69,7 +69,6 @@ ha-tabs {
 	bottom: 0 !important;
 	background: var(--navbar-background) !important;
 	height: var(--footer-height) !important;
-	width: calc(100vw - var(--mdc-drawer-width, 0px)) !important;
 	padding-bottom: env(safe-area-inset-bottom) !important;
 	margin: 0 !important;
 	margin-inline: 0 !important;
@@ -78,21 +77,21 @@ ha-tabs {
 
 /*
 Display view tab contents vertically and calculate width to fill entire toolbar.
+While this can be (and previously was) done by making the view tabs parent a flexbox,
+The parent of the view tabs is within a shadow-root which the view tabs are slotted into.
+Styling their parent element is much slower and inconsistent.
 */
 paper-tab {
 	padding: 8.5px 0 0; /* the md3 docs say to use 12 dp but this better matches md3 apps */
 	flex-direction: column;
 	flex: 1;
-	min-width: 72px;
-	max-width: var(--tab-width);
-	--tab-width: calc((100vw - var(--mdc-drawer-width, 0px)) / 5);
+	width: var(--tab-width);
+	--tab-width: clamp(
+		min(calc(((100vw - var(--mdc-drawer-width, 0px)) / 5) - 3px), 72px),
+		((100vw - var(--mdc-drawer-width, 0px)) / var(--view-tabs-count)) - 3px,
+		calc(((100vw - var(--mdc-drawer-width, 0px))) - 3px)
+	);
 	--icon-width: min(64px, var(--tab-width));
-}
-@media (width > 870px) {
-	/* When sidebar is visible, use a fixed max tab width */
-	paper-tab {
-		--tab-width: 174px;
-	}
 }
 
 /* Add background and color current view icon */
@@ -216,17 +215,4 @@ paper-tabs {
 /* Fix edit mode menu link color */
 .menu-link {
 	color: var(--app-header-edit-text-color);
-}
-
-/* Fix horizontal overflow */
-#view {
-	overflow-x: hidden;
-}
-
-/* Add bottom footer padding when present */
-.header:has(ha-tabs, paper-tabs) + #view {
-	padding-bottom: calc(
-		var(--kiosk-header-height, var(--footer-height)) +
-			env(safe-area-inset-bottom)
-	) !important;
 }

@@ -25,12 +25,13 @@
 	"homepage": "https://github.com/Nerwyn/material-rounded-theme#readme",
 	"dependencies": {
 		"@material/material-color-utilities": "latest",
-		"lit": "^3.2.1"
+		"lit": "latest"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "latest",
 		"@typescript-eslint/parser": "latest",
 		"css-loader": "latest",
+		"css-minimizer-webpack-plugin": "latest",
 		"eslint": "latest",
 		"eslint-config-prettier": "latest",
 		"eslint-plugin-prettier": "latest",

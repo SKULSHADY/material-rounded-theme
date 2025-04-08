@@ -1,10 +1,11 @@
-/**
+/*
  * Material Design 3 Style Patcher
  * Monkey patches the firstUpdated lifecycle method of certain Home Assistant components to inject custom styles.
  */
 
 import { html } from 'lit';
 
+import haAssistChip from './css/ha-assist-chip.css';
 import haButton from './css/ha-button.css';
 import haDialog from './css/ha-dialog.css';
 import haEntityToggle from './css/ha-entity-toggle.css';
@@ -27,6 +28,7 @@ let theme = '';
 let shouldSetStyles = true;
 
 const elements: Record<string, string> = {
+	'ha-assist-chip': haAssistChip,
 	'ha-button': haButton,
 	'mwc-button': haButton,
 	'ha-dialog': haDialog,

@@ -1,4 +1,4 @@
-/** Fix switch alignment */
+/* Fix switch alignment */
 :host {
 	display: flex;
 }

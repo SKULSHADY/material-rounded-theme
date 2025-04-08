@@ -1,0 +1,4 @@
+/* Add outline */
+#button {
+	outline: var(--md-sys-color-outline-variant) solid 1px !important;
+}

@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright 2021 Google LLC
  *
@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-/**
+/*
  * @license
  * Copyright 2022 Google LLC
  *
@@ -32,7 +32,7 @@
  * limitations under the License.
  */
 
-/**
+/*
  * @license
  * Copyright 2023 Google LLC
  *

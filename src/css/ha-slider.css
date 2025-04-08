@@ -1,16 +1,16 @@
-/** Set Material Design 3 slider variables that should only apply to redesigned sliders */
+/* Set Material Design 3 slider variables that should only apply to redesigned sliders */
 :host {
 	--md-slider-handle-height: 44px !important;
 	--md-slider-handle-width: 16px !important;
 	--md-slider-handle-shape: 4px;
 }
 
-/** Increase z-index of handle */
+/* Increase z-index of handle */
 .handle {
 	z-index: 8 !important;
 }
 
-/** Add border to each side of slider */
+/* Add border to each side of slider */
 .handleNub::after {
 	content: '';
 	position: absolute;
@@ -23,7 +23,7 @@
 	scale: 1 1;
 }
 
-/** Reduce handle width on active or focus */
+/* Reduce handle width on active or focus */
 .handleNub {
 	transition: scale 0.2s cubic-bezier(0.2, 0, 0, 1);
 }
@@ -32,25 +32,25 @@ input:active ~ .handleContainerPadded .handleNub {
 	scale: 0.5 1;
 }
 
-/** Hide focus ring */
+/* Hide focus ring */
 md-focus-ring {
 	display: none;
 }
 
-/** Set label width and position */
-/** TODO fix when in more-info popup */
+/* Set label width and position */
+/* TODO fix when in more-info popup */
 .label {
 	width: var(--md-slider-label-container-width);
 	translate: 0 -12px;
 	z-index: 9;
 }
 
-/** Remove teardrop from label */
+/* Remove teardrop from label */
 .label::before {
 	display: none !important;
 }
 
-/** Change label to appear on active instead of on hover or focus */
+/* Change label to appear on active instead of on hover or focus */
 .hover .label,
 :host(:focus-within) .label {
 	transform: scale(0) !important;
