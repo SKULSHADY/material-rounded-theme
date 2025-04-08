@@ -37,6 +37,7 @@ const elements: Record<string, string> = {
 	'ha-switch': haSwitch,
 	'ha-sidebar': haSidebar,
 	'ha-slider': haSlider,
+	'md-slider': haSlider,
 	'ha-tabs': haTabs,
 	'paper-tabs': haTabs,
 	'ha-user-badge': haUserBadge,
