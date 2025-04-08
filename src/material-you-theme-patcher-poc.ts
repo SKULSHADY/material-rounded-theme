@@ -73,43 +73,38 @@ async function setStyles(target: typeof globalThis) {
 		constructor,
 		options,
 	) {
-		const promise = new Promise((resolve) => {
-			if (elements[name]) {
-				// Add styles on render
-				checkTheme();
+		if (elements[name]) {
+			// Add styles on render
+			checkTheme();
 
-				const render = constructor.prototype.render;
-				constructor.prototype.render = function () {
-					return html`
-						${render.call(this)}
-						${shouldSetStyles
-							? html`<style id="material-you">
-									${elements[name]}
-								</style>`
-							: ''}
-					`;
-				};
+			const render = constructor.prototype.render;
+			constructor.prototype.render = function () {
+				return html`
+					${render.call(this)}
+					${shouldSetStyles
+						? html`<style id="material-you">
+								${elements[name]}
+							</style>`
+						: ''}
+				`;
+			};
 
-				// Add styles on firstUpdated
-				const firstUpdated = constructor.prototype.firstUpdated;
-				if (firstUpdated) {
-					constructor.prototype.firstUpdated = function () {
-						applyMaterialStyles(this);
-						firstUpdated.call(this);
-					};
-				}
-
-				// Add styles on connectedCallback
-				const connectedCallback =
-					constructor.prototype.connectedCallback;
-				constructor.prototype.connectedCallback = function () {
+			// Add styles on firstUpdated
+			const firstUpdated = constructor.prototype.firstUpdated;
+			if (firstUpdated) {
+				constructor.prototype.firstUpdated = function () {
 					applyMaterialStyles(this);
-					connectedCallback.call(this);
+					firstUpdated.call(this);
 				};
 			}
 
-			resolve(true);
-		});
+			// Add styles on connectedCallback
+			const connectedCallback = constructor.prototype.connectedCallback;
+			constructor.prototype.connectedCallback = function () {
+				applyMaterialStyles(this);
+				connectedCallback.call(this);
+			};
+		}
 
 		return define.call(this, name, constructor, options);
 	};
