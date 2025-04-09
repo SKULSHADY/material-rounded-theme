@@ -10,13 +10,11 @@ env = 'production';
 module.exports = {
 	mode: env,
 	entry: {
-		'material-rounded-theme': './src/material-rounded-theme.ts',
-		'material-you-theme-patcher-poc':
-			'./src/material-you-theme-patcher-poc.ts',
+		'material-you-utilities': './src/material-you-utilities.ts',
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		filename: '[name].js',
+		filename: '[name].min.js',
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js'],

@@ -10,7 +10,7 @@ import {
 	SchemeTonalSpot,
 	SchemeVibrant,
 } from '@material/material-color-utilities';
-import { IScheme } from './interfaces/Scheme';
+import { IScheme } from '../interfaces/Scheme';
 
 export const colors: (keyof typeof MaterialDynamicColors)[] = [
 	'primary',

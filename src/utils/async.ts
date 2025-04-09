@@ -1,63 +1,4 @@
-import { schemes } from './constants';
-import { HassElement } from './interfaces';
-import { IScheme } from './interfaces/Scheme';
-
-/*
- * Get scheme class and name using user input name
- * @param {string} name user provided scheme name
- * @returns {IScheme} Scheme name and class
- */
-export function getSchemeInfo(name: string = 'Tonal Spot'): IScheme {
-	name = name?.toLowerCase()?.replace(/ |-|_/g, '')?.trim();
-	return schemes[name] ?? schemes['tonalspot'];
-}
-
-/*
- * Get theme color token
- * @param {string} color Material Dynamic Color key
- * @returns {string} Material Dynamic Color token
- */
-export function getToken(color: string): string {
-	return color.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-}
-
-/*
- * Wait for home-assistant-main shadow-root to load, then return home-assistant-main
- * @returns {ShadowRoot} home-assistant-main element
- */
-export async function getHomeAssistantMainAsync(): Promise<HassElement> {
-	const ha = (await querySelectorAsync(
-		await getAsync(
-			await querySelectorAsync(document, 'home-assistant'),
-			'shadowRoot',
-		),
-		'home-assistant-main',
-	)) as HassElement;
-	await getAsync(ha, 'shadowRoot');
-	return ha;
-}
-
-/*
- * Get targets to apply or remove theme colors to/from
- * @returns {HTMLElement[]} HTML Elements to apply/remove theme to/from
- */
-export async function getTargets(): Promise<HTMLElement[]> {
-	const targets: HTMLElement[] = [
-		(await querySelectorAsync(document, 'html')) as HTMLElement,
-	];
-
-	// Add-ons and HACS iframe
-	const ha = await getHomeAssistantMainAsync();
-	const iframe = ha.shadowRoot
-		?.querySelector('iframe')
-		?.contentWindow?.document?.querySelector('body');
-	if (iframe) {
-		targets.push(iframe);
-	}
-	return targets;
-}
-
-/*
+/**
  * Asynchronous query selector
  * @param {ParentNode} parent Element to query
  * @param {string} selector Query selector string
@@ -95,17 +36,17 @@ export async function querySelectorAsync(
 	});
 }
 
-/*
+/**
  * Asynchronous getter which waits for value to not be either undefined or null
  * @param {Node} element node to get value from
  * @param {string} key key to get value of
  * @param {number} [timeout=60000] Timeout until promise rejection in milliseconds, defaults to 60000
- * @returns {any} The defined value
+ * @returns {Promise<any>} The defined value
  */
 export async function getAsync(
 	element: Node,
 	key: string,
-	timeout = 60000,
+	timeout: number = 60000,
 ): Promise<any> {
 	let sleep = 1;
 	setTimeout(() => (sleep = 10), 100);
