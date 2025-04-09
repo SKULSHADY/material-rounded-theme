@@ -1,4 +1,4 @@
-import { schemes } from '../models/constants/colors';
+import { DEFAULT_SCHEME_NAME, schemes } from '../models/constants/colors';
 import { HassElement } from '../models/interfaces';
 import { IScheme } from '../models/interfaces/Scheme';
 import { getAsync, querySelectorAsync } from './async';
@@ -8,9 +8,9 @@ import { getAsync, querySelectorAsync } from './async';
  * @param {string} name user provided scheme name
  * @returns {IScheme} Scheme name and class
  */
-export function getSchemeInfo(name: string = 'Tonal Spot'): IScheme {
+export function getSchemeInfo(name: string = DEFAULT_SCHEME_NAME): IScheme {
 	name = name?.toLowerCase()?.replace(/ |-|_/g, '')?.trim();
-	return schemes[name] ?? schemes['tonalspot'];
+	return schemes[name] ?? schemes[DEFAULT_SCHEME_NAME];
 }
 
 /**

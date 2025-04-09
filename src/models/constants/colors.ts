@@ -12,6 +12,10 @@ import {
 } from '@material/material-color-utilities';
 import { IScheme } from '../interfaces/Scheme';
 
+export const DEFAULT_BASE_COLOR = '#4C5C92';
+export const DEFAULT_SCHEME_NAME = 'tonalspot';
+export const DEFAULT_CONTRAST_LEVEL = 0;
+
 export const colors: (keyof typeof MaterialDynamicColors)[] = [
 	'primary',
 	'onPrimary',

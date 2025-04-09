@@ -6,7 +6,12 @@ import {
 	MaterialDynamicColors,
 } from '@material/material-color-utilities';
 
-import { colors, logStyles } from '../models/constants/colors';
+import {
+	colors,
+	DEFAULT_BASE_COLOR,
+	DEFAULT_CONTRAST_LEVEL,
+	logStyles,
+} from '../models/constants/colors';
 import { HassElement } from '../models/interfaces';
 import { querySelectorAsync } from './async';
 import { getSchemeInfo, getTargets, getToken } from './common';
@@ -58,7 +63,7 @@ export async function setTheme() {
 					''
 				).trim();
 
-				let contrastLevel: number = 0;
+				let contrastLevel: number = DEFAULT_CONTRAST_LEVEL;
 				for (const value of [
 					hass.states[contrastSensorUserId]?.state,
 					hass.states[contrastSensor]?.state,
@@ -72,7 +77,7 @@ export async function setTheme() {
 
 				// Only update if one of the sensors detects something
 				if (baseColor || schemeName || contrastLevel) {
-					baseColor ??= '#4C5C92';
+					baseColor ||= DEFAULT_BASE_COLOR;
 					const schemeInfo = getSchemeInfo(schemeName);
 					const targets = await getTargets();
 
