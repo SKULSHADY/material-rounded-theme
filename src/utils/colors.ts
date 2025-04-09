@@ -9,7 +9,10 @@ import {
 import {
 	colors,
 	DEFAULT_BASE_COLOR,
+	DEFAULT_BASE_COLOR_SENSOR,
 	DEFAULT_CONTRAST_LEVEL,
+	DEFAULT_CONTRAST_LEVEL_SENSOR,
+	DEFAULT_SCHEME_NAME_SENSOR,
 	logStyles,
 } from '../models/constants/colors';
 import { HassElement } from '../models/interfaces';
@@ -36,18 +39,9 @@ export async function setTheme() {
 		try {
 			// Setup sensors
 			const userId = hass.user?.id;
-
-			// Color sensors
-			const colorSensor = 'sensor.material_you_base_color';
-			const colorSensorUserId = `${colorSensor}_${userId}`;
-
-			// Scheme sensors
-			const schemeSensor = 'sensor.material_you_scheme';
-			const schemeSensorUserId = `${schemeSensor}_${userId}`;
-
-			// Contrast sensors
-			const contrastSensor = 'sensor.material_you_contrast';
-			const contrastSensorUserId = `${contrastSensor}_${userId}`;
+			const colorSensorUserId = `${DEFAULT_BASE_COLOR_SENSOR}_${userId}`;
+			const schemeSensorUserId = `${DEFAULT_SCHEME_NAME_SENSOR}_${userId}`;
+			const contrastSensorUserId = `${DEFAULT_CONTRAST_LEVEL_SENSOR}_${userId}`;
 
 			const html = await querySelectorAsync(document, 'html');
 
@@ -55,18 +49,18 @@ export async function setTheme() {
 			if (themeName.includes('Material You')) {
 				let baseColor =
 					hass.states[colorSensorUserId]?.state ||
-					hass.states[colorSensor]?.state;
+					hass.states[DEFAULT_BASE_COLOR_SENSOR]?.state;
 
 				const schemeName = (
 					hass.states[schemeSensorUserId]?.state ||
-					hass.states[schemeSensor]?.state ||
+					hass.states[DEFAULT_SCHEME_NAME_SENSOR]?.state ||
 					''
 				).trim();
 
 				let contrastLevel: number = DEFAULT_CONTRAST_LEVEL;
 				for (const value of [
 					hass.states[contrastSensorUserId]?.state,
-					hass.states[contrastSensor]?.state,
+					hass.states[DEFAULT_CONTRAST_LEVEL_SENSOR]?.state,
 				]) {
 					const parsed = parseFloat(value);
 					if (!isNaN(parsed)) {

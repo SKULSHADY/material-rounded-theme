@@ -16,6 +16,11 @@ export const DEFAULT_BASE_COLOR = '#4C5C92';
 export const DEFAULT_SCHEME_NAME = 'tonalspot';
 export const DEFAULT_CONTRAST_LEVEL = 0;
 
+const SENSOR_PREFIX = 'sensor.material_you';
+export const DEFAULT_BASE_COLOR_SENSOR = `${SENSOR_PREFIX}_base_color`;
+export const DEFAULT_SCHEME_NAME_SENSOR = `${SENSOR_PREFIX}_scheme`;
+export const DEFAULT_CONTRAST_LEVEL_SENSOR = `${SENSOR_PREFIX}_contrast`;
+
 export const colors: (keyof typeof MaterialDynamicColors)[] = [
 	'primary',
 	'onPrimary',
