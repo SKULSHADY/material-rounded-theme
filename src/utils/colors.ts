@@ -108,7 +108,7 @@ export async function setTheme() {
 						'--md-sys-color-on-primary-light',
 					);
 					console.info(
-						`%c Material design system colors updated using base color ${baseColor}, scheme ${schemeInfo.name}, and contrast level ${contrastLevel}. `,
+						`%c Material design system colors updated using base color ${baseColor}, scheme ${schemeInfo.label}, and contrast level ${contrastLevel}. `,
 						logStyles(color, background),
 					);
 				} else {

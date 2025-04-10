@@ -76,44 +76,53 @@ export const colors: (keyof typeof MaterialDynamicColors)[] = [
 	'scrim',
 ];
 
-export const schemes: Record<string, IScheme> = {
-	content: {
-		name: 'Content',
-		class: SchemeContent,
-	},
-	expressive: {
-		name: 'Expressive',
-		class: SchemeExpressive,
-	},
-	fidelity: {
-		name: 'Fidelity',
-		class: SchemeFidelity,
-	},
-	fruitsalad: {
-		name: 'Fruit Salad',
-		class: SchemeFruitSalad,
-	},
-	monochrome: {
-		name: 'Monochrome',
-		class: SchemeMonochrome,
-	},
-	neutral: {
-		name: 'Neutral',
-		class: SchemeNeutral,
-	},
-	rainbow: {
-		name: 'Rainbow',
-		class: SchemeRainbow,
-	},
-	tonalspot: {
-		name: 'Tonal Spot',
+export const schemes: IScheme[] = [
+	{
+		value: 'tonalspot',
+		label: 'Tonal Spot',
 		class: SchemeTonalSpot,
 	},
-	vibrant: {
-		name: 'Vibrant',
+	{
+		value: 'content',
+		label: 'Content',
+		class: SchemeContent,
+	},
+	{
+		value: 'fidelity',
+		label: 'Fidelity',
+		class: SchemeFidelity,
+	},
+	{
+		value: 'expressive',
+		label: 'Expressive',
+		class: SchemeExpressive,
+	},
+	{
+		value: 'fruitsalad',
+		label: 'Fruit Salad',
+		class: SchemeFruitSalad,
+	},
+	{
+		value: 'rainbow',
+		label: 'Rainbow',
+		class: SchemeRainbow,
+	},
+	{
+		value: 'vibrant',
+		label: 'Vibrant',
 		class: SchemeVibrant,
 	},
-};
+	{
+		value: 'neutral',
+		label: 'Neutral',
+		class: SchemeNeutral,
+	},
+	{
+		value: 'monochrome',
+		label: 'Monochrome',
+		class: SchemeMonochrome,
+	},
+];
 
 export const logStyles = (
 	color: string = '#ffffff',

@@ -10,7 +10,10 @@ import { getAsync, querySelectorAsync } from './async';
  */
 export function getSchemeInfo(name: string = DEFAULT_SCHEME_NAME): IScheme {
 	name = name?.toLowerCase()?.replace(/ |-|_/g, '')?.trim();
-	return schemes[name] ?? schemes[DEFAULT_SCHEME_NAME];
+	return (
+		schemes.filter((scheme) => scheme.value == name)[0] ??
+		schemes.filter((scheme) => scheme.value == DEFAULT_SCHEME_NAME)[0]
+	);
 }
 
 /**

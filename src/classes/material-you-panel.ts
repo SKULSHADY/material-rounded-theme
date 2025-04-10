@@ -8,9 +8,12 @@ import {
 	DEFAULT_CONTRAST_LEVEL_SENSOR,
 	DEFAULT_SCHEME_NAME,
 	DEFAULT_SCHEME_NAME_SENSOR,
+	schemes,
 } from '../models/constants/colors';
 import { HomeAssistant } from '../models/interfaces';
 import { IUserPanelSettings } from '../models/interfaces/Panel';
+
+import { argbFromRgb, hexFromArgb } from '@material/material-color-utilities';
 
 export class MaterialYouPanel extends LitElement {
 	@property() hass!: HomeAssistant;
@@ -21,6 +24,61 @@ export class MaterialYouPanel extends LitElement {
 	currentUserSettings!: IUserPanelSettings;
 	globalSettings!: IUserPanelSettings;
 	otherUserSettings: Record<string, IUserPanelSettings> = {};
+
+	getConfig(userId: string) {
+		let config: IUserPanelSettings;
+		if (userId) {
+			if (userId == this.hass.user?.id) {
+				config = this.currentUserSettings;
+			} else {
+				config = this.otherUserSettings[userId];
+			}
+		} else {
+			config = this.globalSettings;
+		}
+		return config;
+	}
+
+	handleSelectorChange(e: CustomEvent) {
+		const [userId, key] = (e.target as HTMLElement).id.split('|');
+		const config = this.getConfig(userId);
+		let value = e.detail.value;
+
+		if (key == 'baseColor') {
+			console.log(parseInt(`${255}${key[0]}${key[1]}${key[2]}`));
+			value = hexFromArgb(argbFromRgb(value[0], value[1], value[2]));
+		}
+
+		console.log(value);
+
+		// this.configChanged({
+		// 	...this.config,
+		// 	[key]: value,
+		// });
+	}
+
+	buildSelector(
+		label: string,
+		key: 'baseColor' | 'schemeName' | 'contrastLevel',
+		userId: string,
+		selector: object,
+		placeholder?: string | number | boolean | object,
+	) {
+		const config = this.getConfig(userId);
+		const value = config[key];
+
+		return html`<ha-selector
+			.hass=${this.hass}
+			.name="${label}"
+			.selector=${selector}
+			.value=${value ?? placeholder}
+			.label="${label}"
+			.placeholder=${placeholder}
+			.required=${false}
+			id="${`${userId}|${key}`}"
+			@value-changed=${this.handleSelectorChange}
+		></ha-selector>`;
+	}
 
 	buildSettingsDatum(userId?: string) {
 		return {
@@ -97,6 +155,7 @@ export class MaterialYouPanel extends LitElement {
 	}
 
 	buildSettingsCard(settings: IUserPanelSettings) {
+		const userId = settings.stateObj?.attributes.user_id;
 		let title = 'Global';
 		if (settings.stateObj) {
 			title = settings.stateObj.attributes.friendly_name ?? '';
@@ -104,16 +163,53 @@ export class MaterialYouPanel extends LitElement {
 
 		return html`
 			<ha-card .hass=${this.hass} .header=${title}>
+				${settings.stateObj
+					? html`<div class="secondary subtitle">ID: ${userId}</div>`
+					: ''}
 				<div class="card-content">
-					${settings.stateObj
-						? html`<div class="secondary">
-								User ID: ${settings.stateObj.attributes.user_id}
-							</div>`
-						: ''}
-					<div class="row">Base Color: ${settings.baseColor}</div>
-					<div class="row">Scheme Name: ${settings.schemeName}</div>
-					<div class="row">
-						Contrast Level: ${settings.contrastLevel}
+					<div class="base-color">
+						${this.buildSelector(
+							'Base Color',
+							'baseColor',
+							userId,
+							{
+								color_rgb: {},
+							},
+							settings.baseColor || DEFAULT_BASE_COLOR,
+						)}
+					</div>
+					<div class="scheme-name">
+						${this.buildSelector(
+							'Scheme Name',
+							'schemeName',
+							userId,
+							{
+								select: {
+									mode: 'dropdown',
+									options: schemes,
+								},
+							},
+							settings.schemeName || DEFAULT_SCHEME_NAME,
+						)}
+					</div>
+					<div class="contrast-level">
+						${this.buildSelector(
+							'Contrast Level',
+							'contrastLevel',
+							userId,
+							{
+								number: {
+									min: -1,
+									max: 1,
+									step: 0.1,
+									mode: 'slider',
+									slider_ticks: true,
+								},
+							},
+							isNaN(parseFloat(String(settings.contrastLevel)))
+								? DEFAULT_CONTRAST_LEVEL
+								: settings.contrastLevel,
+						)}
 					</div>
 				</div>
 			</ha-card>
@@ -185,8 +281,22 @@ export class MaterialYouPanel extends LitElement {
 				width: min(600px, 100%);
 			}
 			.card-content {
+				display: flex;
+				flex-direction: column;
+				gap: 24px;
 				padding: 0 16px 16px;
-				margin-top: -8px;
+			}
+			.subtitle {
+				margin-top: -24px;
+				padding: 0 16px 16px;
+			}
+			.base-color {
+			}
+			.scheme-name {
+				margin: 0 4px;
+			}
+			.contrast-level {
+				margin: 0 4px;
 			}
 		`;
 	}

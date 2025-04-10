@@ -22,6 +22,7 @@ export type Scheme =
 	| typeof SchemeVibrant;
 
 export interface IScheme {
-	name: string;
+	value: string;
+	label: string;
 	class: Scheme;
 }
