@@ -2,3 +2,9 @@
 .mdc-text-field__input {
 	border-radius: 4px;
 }
+
+/* Fix ha-textfield cursor when used for color */
+:host([type='color']) label,
+:host([type='color']) .mdc-text-field__input {
+	cursor: pointer;
+}

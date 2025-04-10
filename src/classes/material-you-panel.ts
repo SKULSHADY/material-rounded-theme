@@ -47,9 +47,9 @@ export class MaterialYouPanel extends LitElement {
 	}
 
 	handleSelectorChange(e: CustomEvent) {
-		const [userId, key] = (e.target as HTMLElement).id.split('|');
-		const config = this.getConfig(userId);
-		let value = e.detail.value;
+		const userId = (e.target as HTMLElement).getAttribute('user-id');
+		const key = (e.target as HTMLElement).getAttribute('key');
+		let value = e.detail.value ?? '';
 
 		switch (key) {
 			case 'base_color':
@@ -101,34 +101,64 @@ export class MaterialYouPanel extends LitElement {
 			.label="${label}"
 			.placeholder=${placeholder}
 			.required=${false}
-			id="${`${userId}|${key}`}"
+			user-id="${userId}"
+			key="${key}"
 			@value-changed=${this.handleSelectorChange}
 		></ha-selector>`;
 	}
 
+	handleClearButton(e: MouseEvent) {
+		const userId = (e.target as HTMLElement).getAttribute('user-id');
+		const key = (e.target as HTMLElement).getAttribute('key');
+
+		this.hass.callApi(
+			'POST',
+			`states/sensor.material_you_${key}${userId ? `_${userId}` : ''}`,
+			{ state: '' },
+		);
+	}
+
+	buildClearButton(key: string, userId?: string) {
+		return html`
+			<div class="clear-button">
+				<ha-icon
+					@click=${this.handleClearButton}
+					user-id="${userId}"
+					key="${key}"
+					.icon="${'mdi:close'}"
+				></ha-icon>
+			</div>
+		`;
+	}
+
 	buildSettingsDatum(userId?: string) {
+		let contrast: number = DEFAULT_CONTRAST_LEVEL;
+		for (const value of [
+			this.hass.states[
+				`${DEFAULT_CONTRAST_LEVEL_SENSOR}${userId ? `_${userId}` : ''}`
+			]?.state,
+			this.hass.states[DEFAULT_CONTRAST_LEVEL_SENSOR]?.state,
+		]) {
+			const parsed = parseFloat(value);
+			if (!isNaN(parsed)) {
+				contrast = Math.max(Math.min(parsed, 1), -1);
+				break;
+			}
+		}
 		return {
 			base_color:
 				this.hass.states[
 					`${DEFAULT_BASE_COLOR_SENSOR}${userId ? `_${userId}` : ''}`
-				]?.state || DEFAULT_BASE_COLOR,
+				]?.state ||
+				this.hass.states[DEFAULT_BASE_COLOR_SENSOR]?.state ||
+				DEFAULT_BASE_COLOR,
 			scheme:
 				this.hass.states[
 					`${DEFAULT_SCHEME_NAME_SENSOR}${userId ? `_${userId}` : ''}`
-				]?.state || DEFAULT_SCHEME_NAME,
-			contrast: isNaN(
-				parseFloat(
-					this.hass.states[
-						`${DEFAULT_CONTRAST_LEVEL_SENSOR}${userId ? `_${userId}` : ''}`
-					]?.state,
-				),
-			)
-				? DEFAULT_CONTRAST_LEVEL
-				: parseFloat(
-						this.hass.states[
-							`${DEFAULT_CONTRAST_LEVEL_SENSOR}${userId ? `_${userId}` : ''}`
-						]?.state,
-					),
+				]?.state ||
+				this.hass.states[DEFAULT_SCHEME_NAME_SENSOR]?.state ||
+				DEFAULT_SCHEME_NAME,
+			contrast,
 		};
 	}
 
@@ -203,8 +233,13 @@ export class MaterialYouPanel extends LitElement {
 							},
 							settings.settings.base_color || DEFAULT_BASE_COLOR,
 						)}
+						<div class="label">
+							${settings.settings.base_color ||
+							DEFAULT_BASE_COLOR}
+						</div>
+						${this.buildClearButton('base_color', userId)}
 					</div>
-					<div class="scheme-name">
+					<div class="scheme">
 						${this.buildSelector(
 							'Scheme Name',
 							'scheme',
@@ -218,7 +253,7 @@ export class MaterialYouPanel extends LitElement {
 							settings.settings.scheme || DEFAULT_SCHEME_NAME,
 						)}
 					</div>
-					<div class="contrast-level">
+					<div class="contrast">
 						${this.buildSelector(
 							'Contrast Level',
 							'contrast',
@@ -318,13 +353,55 @@ export class MaterialYouPanel extends LitElement {
 				margin-top: -24px;
 				padding: 0 16px 16px;
 			}
+
+			ha-selector {
+				width: 100%;
+			}
 			.base-color {
+				display: flex;
+				flex-direction: row;
+				align-center: center;
+				background-color: var(--mdc-select-fill-color);
+				border-top-left-radius: var(--mdc-shape-small, 4px);
+				border-top-right-radius: var(--mdc-shape-small, 4px);
 			}
-			.scheme-name {
+			.base-color,
+			.scheme,
+			.contrast {
 				margin: 0 4px;
 			}
-			.contrast-level {
-				margin: 0 4px;
+			.label {
+				padding: 20px;
+				margin: auto;
+			}
+			.clear-button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: var(--button-size);
+				width: var(--button-size);
+				padding: 10px;
+				cursor: pointer;
+				--button-size: 36px;
+				--mdc-icon-size: 20px;
+			}
+			.clear-button::after {
+				content: '';
+				position: absolute;
+				height: var(--button-size);
+				width: var(--button-size);
+				border-radius: var(--button-size);
+				background-color: var(--secondary-text-color);
+				pointer-events: none;
+				opacity: 0;
+			}
+			@media (hover: hover) {
+				.clear-button:hover::after {
+					opacity: var(--mdc-ripple-hover-opacity, 0.04);
+				}
+			}
+			.clear-button:active::after {
+				opacity: var(--mdc-ripple-focus-opacity, 0.12);
 			}
 		`;
 	}
