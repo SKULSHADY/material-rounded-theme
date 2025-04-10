@@ -4,13 +4,10 @@ import packageInfo from '../../package.json';
 import {
 	DEFAULT_BASE_COLOR,
 	DEFAULT_BASE_COLOR_INPUT,
-	DEFAULT_BASE_COLOR_SENSOR,
 	DEFAULT_CONTRAST_LEVEL,
 	DEFAULT_CONTRAST_LEVEL_INPUT,
-	DEFAULT_CONTRAST_LEVEL_SENSOR,
 	DEFAULT_SCHEME_NAME,
 	DEFAULT_SCHEME_NAME_INPUT,
-	DEFAULT_SCHEME_NAME_SENSOR,
 	schemes,
 } from '../models/constants/colors';
 import { HomeAssistant } from '../models/interfaces';
@@ -52,7 +49,7 @@ export class MaterialYouPanel extends LitElement {
 	async handleSelectorChange(e: CustomEvent) {
 		const userId = (e.target as HTMLElement).getAttribute('user-id');
 		const key = (e.target as HTMLElement).getAttribute('key');
-		let value = e.detail.value ?? '';
+		let value = e.detail.value;
 
 		let entityBase = '';
 		switch (key) {
@@ -62,9 +59,11 @@ export class MaterialYouPanel extends LitElement {
 				break;
 			case 'scheme':
 				entityBase = DEFAULT_SCHEME_NAME_INPUT;
+				value ||= '';
 				break;
 			case 'contrast':
 				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
+				value ||= 0;
 				break;
 			default:
 				break;
@@ -159,9 +158,9 @@ export class MaterialYouPanel extends LitElement {
 		let contrast: number = DEFAULT_CONTRAST_LEVEL;
 		for (const value of [
 			this.hass.states[
-				`${DEFAULT_CONTRAST_LEVEL_SENSOR}${userId ? `_${userId}` : ''}`
+				`${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`
 			]?.state,
-			this.hass.states[DEFAULT_CONTRAST_LEVEL_SENSOR]?.state,
+			this.hass.states[DEFAULT_CONTRAST_LEVEL_INPUT]?.state,
 		]) {
 			const parsed = parseFloat(value);
 			if (!isNaN(parsed)) {
@@ -172,15 +171,15 @@ export class MaterialYouPanel extends LitElement {
 		return {
 			base_color:
 				this.hass.states[
-					`${DEFAULT_BASE_COLOR_SENSOR}${userId ? `_${userId}` : ''}`
+					`${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`
 				]?.state ||
-				this.hass.states[DEFAULT_BASE_COLOR_SENSOR]?.state ||
+				this.hass.states[DEFAULT_BASE_COLOR_INPUT]?.state ||
 				DEFAULT_BASE_COLOR,
 			scheme:
 				this.hass.states[
-					`${DEFAULT_SCHEME_NAME_SENSOR}${userId ? `_${userId}` : ''}`
+					`${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`
 				]?.state ||
-				this.hass.states[DEFAULT_SCHEME_NAME_SENSOR]?.state ||
+				this.hass.states[DEFAULT_SCHEME_NAME_INPUT]?.state ||
 				DEFAULT_SCHEME_NAME,
 			contrast,
 		};
