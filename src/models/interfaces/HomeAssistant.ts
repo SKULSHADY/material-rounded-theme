@@ -14,7 +14,7 @@ export interface HomeAssistant {
 	connection: Connection;
 	connected: boolean;
 	states: HassEntities;
-	// entities: { [id: string]: EntityRegistryDisplayEntry };
+	entities: { [id: string]: EntityRegistryDisplayEntry };
 	// devices: { [id: string]: DeviceRegistryEntry };
 	// areas: { [id: string]: AreaRegistryEntry };
 	// floors: { [id: string]: FloorRegistryEntry };
@@ -79,6 +79,22 @@ export interface HomeAssistant {
 		value?: any,
 	): string;
 	formatEntityAttributeName(stateObj: HassEntity, attribute: string): string;
+}
+
+type EntityCategory = 'config' | 'diagnostic';
+
+export interface EntityRegistryDisplayEntry {
+	entity_id: string;
+	name?: string;
+	icon?: string;
+	device_id?: string;
+	area_id?: string;
+	labels: string[];
+	hidden?: boolean;
+	entity_category?: EntityCategory;
+	translation_key?: string;
+	platform?: string;
+	display_precision?: number;
 }
 
 export interface Context {

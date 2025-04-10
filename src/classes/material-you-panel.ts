@@ -12,7 +12,6 @@ import {
 	DEFAULT_SCHEME_NAME_INPUT,
 	DEFAULT_SCHEME_NAME_SENSOR,
 	schemes,
-	THEME_NAME,
 } from '../models/constants/colors';
 import { HomeAssistant } from '../models/interfaces';
 import { IUserPanelSettings } from '../models/interfaces/Panel';
@@ -25,7 +24,6 @@ import {
 	hexFromArgb,
 	redFromArgb,
 } from '@material/material-color-utilities';
-import { showToast } from '../utils/common';
 
 export class MaterialYouPanel extends LitElement {
 	@property() hass!: HomeAssistant;
@@ -36,130 +34,6 @@ export class MaterialYouPanel extends LitElement {
 	currentUserSettings!: IUserPanelSettings;
 	globalSettings!: IUserPanelSettings;
 	otherUserSettings: Record<string, IUserPanelSettings> = {};
-
-	handleDeleteEntities(e: MouseEvent) {
-		const userId = (e.target as HTMLElement).getAttribute('user-id');
-
-		const entities = [
-			`${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`,
-			`${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`,
-			`${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`,
-		];
-
-		for (const entityId of entities) {
-			this.hass.callApi('POST', `states/${entityId}`, { state: '' });
-		}
-
-		let message = 'Global input entities cleared';
-		if (userId) {
-			let userName = '';
-			if (userId == this.hass.user?.id) {
-				userName = this.hass.user?.name ?? '';
-			} else {
-				userName =
-					this.otherUserSettings[userId].stateObj?.attributes
-						.user_id ?? '';
-			}
-			message = `Input entities cleared for ${userName}`;
-		}
-		message += ', restart Home Assistant to completely remove them';
-		showToast(this, message);
-	}
-
-	buildDeleteEntitiesButton(userId?: string) {
-		return html`
-			<div
-				class="delete button"
-				user-id="${userId}"
-				@click=${this.handleDeleteEntities}
-			>
-				Delete Entities
-			</div>
-		`;
-	}
-
-	handleCreateEntities(e: MouseEvent) {
-		const userId = (e.target as HTMLElement).getAttribute('user-id');
-
-		const entities = [
-			`${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`,
-			`${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`,
-			`${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`,
-		];
-
-		for (const entityId of entities) {
-			const data: Record<string, any> = {};
-			let userName = '';
-			if (userId) {
-				if (userId == this.hass.user?.id) {
-					userName = this.hass.user?.name ?? '';
-				} else {
-					userName =
-						this.otherUserSettings[userId].stateObj?.attributes
-							.user_id ?? '';
-				}
-			}
-
-			if (entityId.includes('contrast')) {
-				data.state = 0;
-				data.attributes = {
-					friendly_name: `${THEME_NAME} Contrast Level${userId ? ` ${userName}` : ''}`,
-					editable: true,
-					min: -1,
-					max: 1,
-					step: 0.1,
-					mode: 'slider',
-					icon: 'mdi:contrast-circle',
-				};
-			} else if (entityId.includes('base_color')) {
-				data.state = ' ';
-				data.attributes = {
-					friendly_name: `${THEME_NAME} Base Color${userId ? ` ${userName}` : ''}`,
-					editable: true,
-					max: 7,
-					min: 0,
-					mode: 'text',
-					icon: 'mdi:palette',
-				};
-			} else if (entityId.includes('scheme')) {
-				data.state = ' ';
-				data.attributes = {
-					friendly_name: `${THEME_NAME} Scheme Name${userId ? ` ${userName}` : ''}`,
-					editable: true,
-					options: [...schemes.map((scheme) => scheme.label), ' '],
-					icon: 'mdi:palette-advanced',
-				};
-			}
-
-			this.hass.callApi('POST', `states/${entityId}`, data);
-		}
-
-		let message = 'Global input entities created';
-		if (userId) {
-			let userName = '';
-			if (userId == this.hass.user?.id) {
-				userName = this.hass.user?.name ?? '';
-			} else {
-				userName =
-					this.otherUserSettings[userId].stateObj?.attributes
-						.user_id ?? '';
-			}
-			message = `Input entities created for ${userName}`;
-		}
-		showToast(this, message);
-	}
-
-	buildCreateEntitiesButton(userId?: string) {
-		return html`
-			<div
-				class="create button"
-				user-id="${userId}"
-				@click=${this.handleCreateEntities}
-			>
-				Create Entities
-			</div>
-		`;
-	}
 
 	getConfig(userId: string) {
 		let config: IUserPanelSettings;
@@ -175,13 +49,11 @@ export class MaterialYouPanel extends LitElement {
 		return config;
 	}
 
-	handleSelectorChange(e: CustomEvent) {
+	async handleSelectorChange(e: CustomEvent) {
 		const userId = (e.target as HTMLElement).getAttribute('user-id');
 		const key = (e.target as HTMLElement).getAttribute('key');
 		let value = e.detail.value ?? '';
 
-		let service = 'set_value';
-		let dataKey = 'value';
 		let entityBase = '';
 		switch (key) {
 			case 'base_color':
@@ -190,8 +62,7 @@ export class MaterialYouPanel extends LitElement {
 				break;
 			case 'scheme':
 				entityBase = DEFAULT_SCHEME_NAME_INPUT;
-				service = 'select_option';
-				dataKey = 'option';
+				break;
 			case 'contrast':
 				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
 				break;
@@ -199,16 +70,11 @@ export class MaterialYouPanel extends LitElement {
 				break;
 		}
 
-		const target = {
+		await this.hass.callService('input_text', 'set_value', {
+			value,
 			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
-		};
-
-		this.hass.callService(
-			entityBase.split('.')[0],
-			service,
-			{ [dataKey]: value },
-			target,
-		);
+		});
+		this.requestUpdate();
 	}
 
 	buildSelector(
@@ -250,13 +116,10 @@ export class MaterialYouPanel extends LitElement {
 		></ha-selector>`;
 	}
 
-	handleClearButton(e: MouseEvent) {
+	async handleClearButton(e: MouseEvent) {
 		const userId = (e.target as HTMLElement).getAttribute('user-id');
 		const key = (e.target as HTMLElement).getAttribute('key');
 
-		let service = 'set_value';
-		let dataKey = 'value';
-		let value: string | number = ' ';
 		let entityBase = '';
 		switch (key) {
 			case 'base_color':
@@ -264,30 +127,19 @@ export class MaterialYouPanel extends LitElement {
 				break;
 			case 'scheme':
 				entityBase = DEFAULT_SCHEME_NAME_INPUT;
-				service = 'select_option';
-				dataKey = 'option';
+				break;
 			case 'contrast':
 				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
-				value = 0;
 				break;
 			default:
 				break;
 		}
 
-		const target = {
+		await this.hass.callService('input_text', 'set_value', {
+			value: '',
 			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
-		};
-
-		if (userId) {
-			service = `${service}_${userId}`;
-		}
-
-		this.hass.callService(
-			entityBase.split('.')[0],
-			service,
-			{ [dataKey]: value },
-			target,
-		);
+		});
+		this.requestUpdate();
 	}
 
 	buildClearButton(key: string, userId?: string) {
@@ -384,6 +236,14 @@ export class MaterialYouPanel extends LitElement {
 
 	buildSettingsCard(settings: IUserPanelSettings) {
 		const userId = settings.stateObj?.attributes.user_id;
+
+		const colorInput = `${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`;
+		const schemeInput = `${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`;
+		const contrastInput = `${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`;
+		const errorMessageStart =
+			'This helper has not been setup! Navigate to Settings, Devices & services, Helpers, click Create Helper, click Text, name it "Material You ';
+		const errorMessageEnd = '" and then navigate back to this page.';
+
 		let title = 'Global';
 		if (settings.stateObj) {
 			title = settings.stateObj.attributes.friendly_name ?? '';
@@ -396,69 +256,95 @@ export class MaterialYouPanel extends LitElement {
 					: ''}
 				<div class="card-content">
 					<div class="base-color">
-						${this.buildSelector(
-							'Base Color',
-							'base_color',
-							userId,
-							{
-								color_rgb: {},
-							},
-							settings.settings.base_color || DEFAULT_BASE_COLOR,
-						)}
-						<div class="label">
-							${settings.settings.base_color ||
-							DEFAULT_BASE_COLOR}
-						</div>
-						${this.buildClearButton('base_color', userId)}
+						${this.hass.states[colorInput]
+							? html`${this.buildSelector(
+										'Base Color',
+										'base_color',
+										userId,
+										{
+											color_rgb: {},
+										},
+										settings.settings.base_color ||
+											DEFAULT_BASE_COLOR,
+									)}
+									<div class="label">
+										${settings.settings.base_color ||
+										DEFAULT_BASE_COLOR}
+									</div>
+									${this.buildClearButton(
+										'base_color',
+										userId,
+									)}`
+							: this.buildAlertBox(
+									`${errorMessageStart}Base Color${userId ? ` ${userId}` : ''}${errorMessageEnd}`,
+									'warning',
+								)}
 					</div>
 					<div class="scheme">
-						${this.buildSelector(
-							'Scheme Name',
-							'scheme',
-							userId,
-							{
-								select: {
-									mode: 'dropdown',
-									options: schemes,
-								},
-							},
-							settings.settings.scheme || DEFAULT_SCHEME_NAME,
-						)}
+						${this.hass.states[schemeInput]
+							? this.buildSelector(
+									'Scheme Name',
+									'scheme',
+									userId,
+									{
+										select: {
+											mode: 'dropdown',
+											options: schemes,
+										},
+									},
+									settings.settings.scheme ||
+										DEFAULT_SCHEME_NAME,
+								)
+							: this.buildAlertBox(
+									`${errorMessageStart}Scheme${userId ? ` ${userId}` : ''}${errorMessageEnd}`,
+									'warning',
+								)}
 					</div>
 					<div class="contrast">
-						${this.buildSelector(
-							'Contrast Level',
-							'contrast',
-							userId,
-							{
-								number: {
-									min: -1,
-									max: 1,
-									step: 0.1,
-									mode: 'slider',
-									slider_ticks: true,
-								},
-							},
-							isNaN(
-								parseFloat(String(settings.settings.contrast)),
-							)
-								? DEFAULT_CONTRAST_LEVEL
-								: settings.settings.contrast,
-						)}
+						${this.hass.states[contrastInput]
+							? this.buildSelector(
+									'Contrast Level',
+									'contrast',
+									userId,
+									{
+										number: {
+											min: -1,
+											max: 1,
+											step: 0.1,
+											mode: 'slider',
+											slider_ticks: true,
+										},
+									},
+									isNaN(
+										parseFloat(
+											String(settings.settings.contrast),
+										),
+									)
+										? DEFAULT_CONTRAST_LEVEL
+										: settings.settings.contrast,
+								)
+							: this.buildAlertBox(
+									`${errorMessageStart}Contrast${userId ? ` ${userId}` : ''}${errorMessageEnd}`,
+									'warning',
+								)}
 					</div>
 				</div>
-				${this.hass.user?.is_admin
-					? html`<div class="card-actions">
-							${this.buildCreateEntitiesButton(
-								userId,
-							)}${this.buildDeleteEntitiesButton(userId)}
-						</div>`
-					: ''}
 			</ha-card>
 		`;
 	}
 
+	buildAlertBox(
+		title: string,
+		type: 'info' | 'warning' | 'error' | 'success' = 'info',
+	) {
+		return html`<ha-alert
+			.title="${title}"
+			.alertType="${type}"
+		></ha-alert>`;
+	}
+
 	render() {
+		this.buildSettingsData();
 		return html`
 			${this.buildHeader()}
 			<div class="content">
@@ -476,11 +362,6 @@ export class MaterialYouPanel extends LitElement {
 					: ''}
 			</div>
 		`;
-	}
-
-	connectedCallback() {
-		super.connectedCallback();
-		this.buildSettingsData();
 	}
 
 	static get styles() {
@@ -544,9 +425,11 @@ export class MaterialYouPanel extends LitElement {
 				display: flex;
 				flex-direction: row;
 				align-center: center;
-				background-color: var(--mdc-select-fill-color);
 				border-top-left-radius: var(--mdc-shape-small, 4px);
 				border-top-right-radius: var(--mdc-shape-small, 4px);
+			}
+			.base-color:not(:has(ha-alert)) {
+				background-color: var(--mdc-select-fill-color);
 			}
 			.base-color,
 			.scheme,
@@ -561,7 +444,7 @@ export class MaterialYouPanel extends LitElement {
 			.card-actions {
 				display: flex;
 				flex-direction: row;
-				justify-content: space-between;
+				justify-content: flex-end;
 			}
 			.button {
 				display: flex;
@@ -598,22 +481,15 @@ export class MaterialYouPanel extends LitElement {
 			.clear::after {
 				width: var(--button-size);
 			}
-			.create,
-			.delete {
+			.setup {
 				margin: 0 8px;
 				height: var(--button-size);
 				width: 100px;
 				border-radius: var(--button-size);
 				--button-size: 36px;
-			}
-			.create {
 				--color: var(--primary-color);
 			}
-			.delete {
-				--color: var(--error-color);
-			}
-			.create::after,
-			.delete::after {
+			.setup::after {
 				width: 120px;
 			}
 		`;
