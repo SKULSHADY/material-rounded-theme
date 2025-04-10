@@ -14,7 +14,8 @@
 	background-color: transparent;
 }
 
-/* Fix success button border radius */
-:host(.success) {
+/* Fix success/error overflow button border radius */
+:host {
 	border-radius: var(--button-height);
+	overflow: hidden;
 }
