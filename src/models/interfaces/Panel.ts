@@ -1,8 +1,10 @@
 import { HassEntity } from 'home-assistant-js-websocket';
 
 export interface IUserPanelSettings {
-	baseColor: string;
-	schemeName: string;
-	contrastLevel: number;
+	settings: {
+		base_color: string;
+		scheme: string;
+		contrast: number;
+	};
 	stateObj?: HassEntity;
 }

@@ -6,6 +6,7 @@ import haSidebar from '../.././css/ha-sidebar.css';
 import haSlider from '../.././css/ha-slider.css';
 import haSwitch from '../.././css/ha-switch.css';
 import haTabs from '../.././css/ha-tabs.css';
+import haTextfield from '../.././css/ha-textfield.css';
 import haToast from '../.././css/ha-toast.css';
 import haUserBadge from '../.././css/ha-user-badge.css';
 import hassSubpage from '../.././css/hass-subpage.css';
@@ -31,6 +32,7 @@ export const elements: Record<string, string> = {
 	'ha-switch': haSwitch,
 	'ha-tabs': haTabs,
 	'paper-tabs': haTabs,
+	'ha-textfield': haTextfield,
 	'ha-toast': haToast,
 	'ha-user-badge': haUserBadge,
 	'hass-subpage': hassSubpage,

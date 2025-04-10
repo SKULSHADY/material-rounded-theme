@@ -13,7 +13,14 @@ import {
 import { HomeAssistant } from '../models/interfaces';
 import { IUserPanelSettings } from '../models/interfaces/Panel';
 
-import { argbFromRgb, hexFromArgb } from '@material/material-color-utilities';
+import {
+	argbFromHex,
+	argbFromRgb,
+	blueFromArgb,
+	greenFromArgb,
+	hexFromArgb,
+	redFromArgb,
+} from '@material/material-color-utilities';
 
 export class MaterialYouPanel extends LitElement {
 	@property() hass!: HomeAssistant;
@@ -44,28 +51,47 @@ export class MaterialYouPanel extends LitElement {
 		const config = this.getConfig(userId);
 		let value = e.detail.value;
 
-		if (key == 'baseColor') {
-			console.log(parseInt(`${255}${key[0]}${key[1]}${key[2]}`));
-			value = hexFromArgb(argbFromRgb(value[0], value[1], value[2]));
+		switch (key) {
+			case 'base_color':
+				value = hexFromArgb(argbFromRgb(value[0], value[1], value[2]));
+				break;
+			case 'scheme':
+			case 'contrast':
+			default:
+				break;
 		}
 
-		console.log(value);
-
-		// this.configChanged({
-		// 	...this.config,
-		// 	[key]: value,
-		// });
+		this.hass.callApi(
+			'POST',
+			`states/sensor.material_you_${key}${userId ? `_${userId}` : ''}`,
+			{ state: value },
+		);
 	}
 
 	buildSelector(
 		label: string,
-		key: 'baseColor' | 'schemeName' | 'contrastLevel',
+		key: 'base_color' | 'scheme' | 'contrast',
 		userId: string,
 		selector: object,
 		placeholder?: string | number | boolean | object,
 	) {
 		const config = this.getConfig(userId);
-		const value = config[key];
+		let value: string | number | number[];
+		switch (key) {
+			case 'base_color':
+				const argb = argbFromHex(config.settings[key] as string);
+				value = [
+					redFromArgb(argb),
+					greenFromArgb(argb),
+					blueFromArgb(argb),
+				];
+				break;
+			case 'scheme':
+			case 'contrast':
+			default:
+				value = config.settings[key];
+				break;
+		}
 
 		return html`<ha-selector
 			.hass=${this.hass}
@@ -82,15 +108,15 @@ export class MaterialYouPanel extends LitElement {
 
 	buildSettingsDatum(userId?: string) {
 		return {
-			baseColor:
+			base_color:
 				this.hass.states[
 					`${DEFAULT_BASE_COLOR_SENSOR}${userId ? `_${userId}` : ''}`
 				]?.state || DEFAULT_BASE_COLOR,
-			schemeName:
+			scheme:
 				this.hass.states[
 					`${DEFAULT_SCHEME_NAME_SENSOR}${userId ? `_${userId}` : ''}`
 				]?.state || DEFAULT_SCHEME_NAME,
-			contrastLevel: isNaN(
+			contrast: isNaN(
 				parseFloat(
 					this.hass.states[
 						`${DEFAULT_CONTRAST_LEVEL_SENSOR}${userId ? `_${userId}` : ''}`
@@ -123,19 +149,19 @@ export class MaterialYouPanel extends LitElement {
 							currentUserId,
 					)[0]
 				],
-			...this.buildSettingsDatum(currentUserId),
+			settings: this.buildSettingsDatum(currentUserId),
 		};
 
 		// If admin, add global and all user settings
 		if (this.hass.user?.is_admin) {
-			this.globalSettings = this.buildSettingsDatum();
+			this.globalSettings = { settings: this.buildSettingsDatum() };
 
 			for (const person of people) {
 				const userId = this.hass.states[person].attributes.user_id;
 				if (userId != currentUserId) {
 					this.otherUserSettings[userId] = {
 						stateObj: this.hass.states[person],
-						...this.buildSettingsDatum(userId),
+						settings: this.buildSettingsDatum(userId),
 					};
 				}
 			}
@@ -170,18 +196,18 @@ export class MaterialYouPanel extends LitElement {
 					<div class="base-color">
 						${this.buildSelector(
 							'Base Color',
-							'baseColor',
+							'base_color',
 							userId,
 							{
 								color_rgb: {},
 							},
-							settings.baseColor || DEFAULT_BASE_COLOR,
+							settings.settings.base_color || DEFAULT_BASE_COLOR,
 						)}
 					</div>
 					<div class="scheme-name">
 						${this.buildSelector(
 							'Scheme Name',
-							'schemeName',
+							'scheme',
 							userId,
 							{
 								select: {
@@ -189,13 +215,13 @@ export class MaterialYouPanel extends LitElement {
 									options: schemes,
 								},
 							},
-							settings.schemeName || DEFAULT_SCHEME_NAME,
+							settings.settings.scheme || DEFAULT_SCHEME_NAME,
 						)}
 					</div>
 					<div class="contrast-level">
 						${this.buildSelector(
 							'Contrast Level',
-							'contrastLevel',
+							'contrast',
 							userId,
 							{
 								number: {
@@ -206,9 +232,11 @@ export class MaterialYouPanel extends LitElement {
 									slider_ticks: true,
 								},
 							},
-							isNaN(parseFloat(String(settings.contrastLevel)))
+							isNaN(
+								parseFloat(String(settings.settings.contrast)),
+							)
 								? DEFAULT_CONTRAST_LEVEL
-								: settings.contrastLevel,
+								: settings.settings.contrast,
 						)}
 					</div>
 				</div>

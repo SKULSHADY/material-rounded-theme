@@ -13,3 +13,8 @@
 :host([disabled]) {
 	background-color: transparent;
 }
+
+/* Fix success button border radius */
+:host(.success) {
+	border-radius: var(--button-height);
+}
