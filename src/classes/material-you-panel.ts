@@ -115,9 +115,21 @@ export class MaterialYouPanel extends LitElement {
 		></ha-selector>`;
 	}
 
-	async handleClearButton(e: MouseEvent) {
-		const userId = (e.target as HTMLElement).getAttribute('user-id');
-		const key = (e.target as HTMLElement).getAttribute('key');
+	async handleClearKeyDown(e: KeyboardEvent) {
+		if (!e.repeat && ['Enter', ' '].includes(e.key)) {
+			e.preventDefault();
+			this.handleClearButton(
+				new window.MouseEvent('click', e),
+				e.target as HTMLElement,
+			);
+		}
+	}
+
+	async handleClearButton(e: MouseEvent, target?: HTMLElement) {
+		const userId = ((e.target as HTMLElement) ?? target).getAttribute(
+			'user-id',
+		);
+		const key = ((e.target as HTMLElement) ?? target).getAttribute('key');
 
 		let entityBase = '';
 		switch (key) {
@@ -146,6 +158,8 @@ export class MaterialYouPanel extends LitElement {
 			<div class="clear button">
 				<ha-icon
 					@click=${this.handleClearButton}
+					@keydown=${this.handleClearKeyDown}
+					tabindex="0"
 					user-id="${userId}"
 					key="${key}"
 					.icon="${'mdi:close'}"
@@ -301,7 +315,7 @@ export class MaterialYouPanel extends LitElement {
 					</div>
 					<div class="contrast">
 						${this.hass.states[contrastInput]
-							? this.buildSelector(
+							? html`${this.buildSelector(
 									'Contrast Level',
 									'contrast',
 									userId,
@@ -321,7 +335,8 @@ export class MaterialYouPanel extends LitElement {
 									)
 										? DEFAULT_CONTRAST_LEVEL
 										: settings.settings.contrast,
-								)
+								)}
+								${this.buildClearButton('contrast', userId)}`
 							: this.buildAlertBox(
 									`${errorMessageStart}Contrast${userId ? ` ${userId}` : ''}${errorMessageEnd}`,
 									'warning',
@@ -427,10 +442,12 @@ export class MaterialYouPanel extends LitElement {
 				border-top-left-radius: var(--mdc-shape-small, 4px);
 				border-top-right-radius: var(--mdc-shape-small, 4px);
 			}
-			.base-color:not(:has(ha-alert)) {
-				background-color: var(--mdc-select-fill-color);
-			}
 			.base-color,
+			.scheme,
+			.contrast {
+				display: flex;
+				align-items: flex-end;
+			}
 			.scheme,
 			.contrast {
 				margin: 0 4px;
@@ -460,6 +477,7 @@ export class MaterialYouPanel extends LitElement {
 				background-color: var(--color);
 				pointer-events: none;
 				opacity: 0;
+				transition: opacity 15ms linear;
 			}
 			@media (hover: hover) {
 				.button:hover::after {
@@ -468,6 +486,12 @@ export class MaterialYouPanel extends LitElement {
 			}
 			.button:active::after {
 				opacity: var(--mdc-ripple-focus-opacity, 0.12);
+			}
+			ha-icon:focus-visible {
+				outline: none;
+			}
+			.button:has(ha-icon:focus-visible)::after {
+				opacity: var(--mdc-ripple-hover-opacity, 0.04);
 			}
 			.clear {
 				height: var(--button-size);
