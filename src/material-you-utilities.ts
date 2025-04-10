@@ -2,8 +2,11 @@ import packageInfo from '../package.json';
 import { MaterialYouPanel } from './classes/material-you-panel';
 
 import {
+	DEFAULT_BASE_COLOR_INPUT,
 	DEFAULT_BASE_COLOR_SENSOR,
+	DEFAULT_CONTRAST_LEVEL_INPUT,
 	DEFAULT_CONTRAST_LEVEL_SENSOR,
+	DEFAULT_SCHEME_NAME_INPUT,
 	DEFAULT_SCHEME_NAME_SENSOR,
 	logStyles,
 } from './models/constants/colors';
@@ -53,44 +56,55 @@ async function main() {
 	// Set user theme colors
 	setTheme();
 
-	// Sensors for user theme color triggers
-	const userId = haMain.hass.user?.id;
-	const colorSensorUserId = `${DEFAULT_BASE_COLOR_SENSOR}_${userId}`;
-	const schemeSensorUserId = `${DEFAULT_SCHEME_NAME_SENSOR}_${userId}`;
-	const contrastSensorUserId = `${DEFAULT_CONTRAST_LEVEL_SENSOR}_${userId}`;
+	if (haMain.hass.user?.is_admin) {
+		// Sensors and inputs for user theme color triggers
+		const userId = haMain.hass.user?.id;
+		const colorSensorUserId = `${DEFAULT_BASE_COLOR_SENSOR}_${userId}`;
+		const schemeSensorUserId = `${DEFAULT_SCHEME_NAME_SENSOR}_${userId}`;
+		const contrastSensorUserId = `${DEFAULT_CONTRAST_LEVEL_SENSOR}_${userId}`;
+		const colorInputUserId = `${DEFAULT_BASE_COLOR_INPUT}_${userId}`;
+		const schemeInputUserId = `${DEFAULT_SCHEME_NAME_INPUT}_${userId}`;
+		const contrastInputUserId = `${DEFAULT_CONTRAST_LEVEL_INPUT}_${userId}`;
 
-	// Trigger user theme color on sensor change
-	haMain.hass.connection.subscribeMessage(
-		async () => await setTheme(),
-		{
-			type: 'subscribe_trigger',
-			trigger: {
-				platform: 'state',
-				entity_id: [
-					DEFAULT_BASE_COLOR_SENSOR,
-					DEFAULT_SCHEME_NAME_SENSOR,
-					DEFAULT_CONTRAST_LEVEL_SENSOR,
-					colorSensorUserId,
-					schemeSensorUserId,
-					contrastSensorUserId,
-				].filter((entityId) => haMain.hass.states[entityId]),
+		// Trigger user theme color on sensor change
+		haMain.hass.connection.subscribeMessage(
+			async () => await setTheme(),
+			{
+				type: 'subscribe_trigger',
+				trigger: {
+					platform: 'state',
+					entity_id: [
+						DEFAULT_BASE_COLOR_SENSOR,
+						DEFAULT_SCHEME_NAME_SENSOR,
+						DEFAULT_CONTRAST_LEVEL_SENSOR,
+						colorSensorUserId,
+						schemeSensorUserId,
+						contrastSensorUserId,
+						DEFAULT_BASE_COLOR_INPUT,
+						DEFAULT_SCHEME_NAME_INPUT,
+						DEFAULT_CONTRAST_LEVEL_INPUT,
+						colorInputUserId,
+						schemeInputUserId,
+						contrastInputUserId,
+					].filter((entityId) => haMain.hass.states[entityId]),
+				},
 			},
-		},
-		{ resubscribe: true },
-	);
+			{ resubscribe: true },
+		);
 
-	// Trigger user theme color on theme changed event
-	haMain.hass.connection.subscribeEvents(
-		async () => await setTheme(),
-		'themes_updated',
-	);
+		// Trigger user theme color on theme changed event
+		haMain.hass.connection.subscribeEvents(
+			async () => await setTheme(),
+			'themes_updated',
+		);
 
-	// Trigger user theme color on set theme service call
-	haMain.hass.connection.subscribeEvents((e: Record<string, any>) => {
-		if (e?.data?.service == 'set_theme') {
-			setTimeout(async () => await setTheme(), 1000);
-		}
-	}, 'call_service');
+		// Trigger user theme color on set theme service call
+		haMain.hass.connection.subscribeEvents((e: Record<string, any>) => {
+			if (e?.data?.service == 'set_theme') {
+				setTimeout(async () => await setTheme(), 1000);
+			}
+		}, 'call_service');
+	}
 }
 
 main();

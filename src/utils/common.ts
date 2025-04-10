@@ -60,3 +60,14 @@ export async function getHomeAssistantMainAsync(): Promise<HassElement> {
 	await getAsync(ha, 'shadowRoot');
 	return ha;
 }
+
+export function showToast(node: Node, message: string) {
+	const event = new Event('hass-notification', {
+		bubbles: true,
+		composed: true,
+	});
+	event.detail = {
+		message,
+	};
+	node.dispatchEvent(event);
+}

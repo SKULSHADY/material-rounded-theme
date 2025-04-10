@@ -1,14 +1,18 @@
-import { LitElement, css, html } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import packageInfo from '../../package.json';
 import {
 	DEFAULT_BASE_COLOR,
+	DEFAULT_BASE_COLOR_INPUT,
 	DEFAULT_BASE_COLOR_SENSOR,
 	DEFAULT_CONTRAST_LEVEL,
+	DEFAULT_CONTRAST_LEVEL_INPUT,
 	DEFAULT_CONTRAST_LEVEL_SENSOR,
 	DEFAULT_SCHEME_NAME,
+	DEFAULT_SCHEME_NAME_INPUT,
 	DEFAULT_SCHEME_NAME_SENSOR,
 	schemes,
+	THEME_NAME,
 } from '../models/constants/colors';
 import { HomeAssistant } from '../models/interfaces';
 import { IUserPanelSettings } from '../models/interfaces/Panel';
@@ -21,6 +25,7 @@ import {
 	hexFromArgb,
 	redFromArgb,
 } from '@material/material-color-utilities';
+import { showToast } from '../utils/common';
 
 export class MaterialYouPanel extends LitElement {
 	@property() hass!: HomeAssistant;
@@ -31,6 +36,130 @@ export class MaterialYouPanel extends LitElement {
 	currentUserSettings!: IUserPanelSettings;
 	globalSettings!: IUserPanelSettings;
 	otherUserSettings: Record<string, IUserPanelSettings> = {};
+
+	handleDeleteEntities(e: MouseEvent) {
+		const userId = (e.target as HTMLElement).getAttribute('user-id');
+
+		const entities = [
+			`${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`,
+			`${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`,
+			`${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`,
+		];
+
+		for (const entityId of entities) {
+			this.hass.callApi('POST', `states/${entityId}`, { state: '' });
+		}
+
+		let message = 'Global input entities cleared';
+		if (userId) {
+			let userName = '';
+			if (userId == this.hass.user?.id) {
+				userName = this.hass.user?.name ?? '';
+			} else {
+				userName =
+					this.otherUserSettings[userId].stateObj?.attributes
+						.user_id ?? '';
+			}
+			message = `Input entities cleared for ${userName}`;
+		}
+		message += ', restart Home Assistant to completely remove them';
+		showToast(this, message);
+	}
+
+	buildDeleteEntitiesButton(userId?: string) {
+		return html`
+			<div
+				class="delete button"
+				user-id="${userId}"
+				@click=${this.handleDeleteEntities}
+			>
+				Delete Entities
+			</div>
+		`;
+	}
+
+	handleCreateEntities(e: MouseEvent) {
+		const userId = (e.target as HTMLElement).getAttribute('user-id');
+
+		const entities = [
+			`${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`,
+			`${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`,
+			`${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`,
+		];
+
+		for (const entityId of entities) {
+			const data: Record<string, any> = {};
+			let userName = '';
+			if (userId) {
+				if (userId == this.hass.user?.id) {
+					userName = this.hass.user?.name ?? '';
+				} else {
+					userName =
+						this.otherUserSettings[userId].stateObj?.attributes
+							.user_id ?? '';
+				}
+			}
+
+			if (entityId.includes('contrast')) {
+				data.state = 0;
+				data.attributes = {
+					friendly_name: `${THEME_NAME} Contrast Level${userId ? ` ${userName}` : ''}`,
+					editable: true,
+					min: -1,
+					max: 1,
+					step: 0.1,
+					mode: 'slider',
+					icon: 'mdi:contrast-circle',
+				};
+			} else if (entityId.includes('base_color')) {
+				data.state = ' ';
+				data.attributes = {
+					friendly_name: `${THEME_NAME} Base Color${userId ? ` ${userName}` : ''}`,
+					editable: true,
+					max: 7,
+					min: 0,
+					mode: 'text',
+					icon: 'mdi:palette',
+				};
+			} else if (entityId.includes('scheme')) {
+				data.state = ' ';
+				data.attributes = {
+					friendly_name: `${THEME_NAME} Scheme Name${userId ? ` ${userName}` : ''}`,
+					editable: true,
+					options: [...schemes.map((scheme) => scheme.label), ' '],
+					icon: 'mdi:palette-advanced',
+				};
+			}
+
+			this.hass.callApi('POST', `states/${entityId}`, data);
+		}
+
+		let message = 'Global input entities created';
+		if (userId) {
+			let userName = '';
+			if (userId == this.hass.user?.id) {
+				userName = this.hass.user?.name ?? '';
+			} else {
+				userName =
+					this.otherUserSettings[userId].stateObj?.attributes
+						.user_id ?? '';
+			}
+			message = `Input entities created for ${userName}`;
+		}
+		showToast(this, message);
+	}
+
+	buildCreateEntitiesButton(userId?: string) {
+		return html`
+			<div
+				class="create button"
+				user-id="${userId}"
+				@click=${this.handleCreateEntities}
+			>
+				Create Entities
+			</div>
+		`;
+	}
 
 	getConfig(userId: string) {
 		let config: IUserPanelSettings;
@@ -51,20 +180,34 @@ export class MaterialYouPanel extends LitElement {
 		const key = (e.target as HTMLElement).getAttribute('key');
 		let value = e.detail.value ?? '';
 
+		let service = 'set_value';
+		let dataKey = 'value';
+		let entityBase = '';
 		switch (key) {
 			case 'base_color':
+				entityBase = DEFAULT_BASE_COLOR_INPUT;
 				value = hexFromArgb(argbFromRgb(value[0], value[1], value[2]));
 				break;
 			case 'scheme':
+				entityBase = DEFAULT_SCHEME_NAME_INPUT;
+				service = 'select_option';
+				dataKey = 'option';
 			case 'contrast':
+				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
+				break;
 			default:
 				break;
 		}
 
-		this.hass.callApi(
-			'POST',
-			`states/sensor.material_you_${key}${userId ? `_${userId}` : ''}`,
-			{ state: value },
+		const target = {
+			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
+		};
+
+		this.hass.callService(
+			entityBase.split('.')[0],
+			service,
+			{ [dataKey]: value },
+			target,
 		);
 	}
 
@@ -111,16 +254,45 @@ export class MaterialYouPanel extends LitElement {
 		const userId = (e.target as HTMLElement).getAttribute('user-id');
 		const key = (e.target as HTMLElement).getAttribute('key');
 
-		this.hass.callApi(
-			'POST',
-			`states/sensor.material_you_${key}${userId ? `_${userId}` : ''}`,
-			{ state: '' },
+		let service = 'set_value';
+		let dataKey = 'value';
+		let value: string | number = ' ';
+		let entityBase = '';
+		switch (key) {
+			case 'base_color':
+				entityBase = DEFAULT_BASE_COLOR_INPUT;
+				break;
+			case 'scheme':
+				entityBase = DEFAULT_SCHEME_NAME_INPUT;
+				service = 'select_option';
+				dataKey = 'option';
+			case 'contrast':
+				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
+				value = 0;
+				break;
+			default:
+				break;
+		}
+
+		const target = {
+			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
+		};
+
+		if (userId) {
+			service = `${service}_${userId}`;
+		}
+
+		this.hass.callService(
+			entityBase.split('.')[0],
+			service,
+			{ [dataKey]: value },
+			target,
 		);
 	}
 
 	buildClearButton(key: string, userId?: string) {
 		return html`
-			<div class="clear-button">
+			<div class="clear button">
 				<ha-icon
 					@click=${this.handleClearButton}
 					user-id="${userId}"
@@ -275,12 +447,18 @@ export class MaterialYouPanel extends LitElement {
 						)}
 					</div>
 				</div>
+				${this.hass.user?.is_admin
+					? html`<div class="card-actions">
+							${this.buildCreateEntitiesButton(
+								userId,
+							)}${this.buildDeleteEntitiesButton(userId)}
+						</div>`
+					: ''}
 			</ha-card>
 		`;
 	}
 
 	render() {
-		this.buildSettingsData();
 		return html`
 			${this.buildHeader()}
 			<div class="content">
@@ -298,6 +476,11 @@ export class MaterialYouPanel extends LitElement {
 					: ''}
 			</div>
 		`;
+	}
+
+	connectedCallback() {
+		super.connectedCallback();
+		this.buildSettingsData();
 	}
 
 	static get styles() {
@@ -374,34 +557,64 @@ export class MaterialYouPanel extends LitElement {
 				padding: 20px;
 				margin: auto;
 			}
-			.clear-button {
+
+			.card-actions {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			.button {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				height: var(--button-size);
-				width: var(--button-size);
-				padding: 10px;
+				color: var(--color);
 				cursor: pointer;
-				--button-size: 36px;
-				--mdc-icon-size: 20px;
 			}
-			.clear-button::after {
+			.button::after {
 				content: '';
 				position: absolute;
 				height: var(--button-size);
-				width: var(--button-size);
 				border-radius: var(--button-size);
-				background-color: var(--secondary-text-color);
+				background-color: var(--color);
 				pointer-events: none;
 				opacity: 0;
 			}
 			@media (hover: hover) {
-				.clear-button:hover::after {
+				.button:hover::after {
 					opacity: var(--mdc-ripple-hover-opacity, 0.04);
 				}
 			}
-			.clear-button:active::after {
+			.button:active::after {
 				opacity: var(--mdc-ripple-focus-opacity, 0.12);
+			}
+			.clear {
+				height: var(--button-size);
+				width: var(--button-size);
+				padding: 10px;
+				--color: var(--secondary-text-color);
+				--button-size: 36px;
+				--mdc-icon-size: 20px;
+			}
+			.clear::after {
+				width: var(--button-size);
+			}
+			.create,
+			.delete {
+				margin: 0 8px;
+				height: var(--button-size);
+				width: 100px;
+				border-radius: var(--button-size);
+				--button-size: 36px;
+			}
+			.create {
+				--color: var(--primary-color);
+			}
+			.delete {
+				--color: var(--error-color);
+			}
+			.create::after,
+			.delete::after {
+				width: 120px;
 			}
 		`;
 	}

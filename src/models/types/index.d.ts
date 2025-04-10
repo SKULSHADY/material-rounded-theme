@@ -14,6 +14,11 @@ declare global {
 		};
 	}
 
+	interface Event {
+		// eslint-disable-next-line
+		detail?: any;
+	}
+
 	declare module '*.css' {
 		const classes: string;
 		export default classes;

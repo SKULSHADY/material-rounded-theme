@@ -8,7 +8,7 @@
 export async function querySelectorAsync(
 	parent: ParentNode,
 	selector: string,
-	timeout = 60000,
+	timeout: number = 60000,
 ): Promise<HTMLElement> {
 	return new Promise((resolve, reject) => {
 		const element = parent.querySelector(selector) as HTMLElement;
