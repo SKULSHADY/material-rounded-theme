@@ -474,8 +474,8 @@ export class MaterialYouPanel extends LitElement {
 					!this.hass.states[contrastInput]
 						? this.buildAlertBox(
 								this.hass.user?.is_admin
-									? `Press Create Helpers to create and initialize ${userId ? 'helpers for this user' : 'global helpers'}.`
-									: 'Some or all input helpers not setup! Contact your administrator.',
+									? `Press Create Helpers to create and initialize ${userId ? 'helpers for this user' : 'global default helpers'}.`
+									: 'Some or all input helpers not setup! Ask an Home Assistant administrator to do so.',
 								this.hass.user?.is_admin ? 'info' : 'error',
 							)
 						: ''}
@@ -579,10 +579,32 @@ export class MaterialYouPanel extends LitElement {
 							'warning',
 						)
 					: ''}
+				<div class="section-header">
+					<div class="title">You!</div>
+					<div class="description">
+						Your personal Material You settings.
+					</div>
+				</div>
 				${this.buildSettingsCard(this.currentUserSettings)}
 				${this.hass.user?.is_admin
 					? html`
+							<div class="section-header">
+								<div class="title">Global Defaults</div>
+								<div class="description">
+									Default settings for all user which are used
+									if no user specific settings are set.
+								</div>
+							</div>
 							${this.buildSettingsCard(this.globalSettings)}
+							${Object.keys(this.otherUserSettings).length
+								? html`<div class="section-header">
+										<div class="title">Other Users</div>
+										<div class="description">
+											Other user accounts on this Home
+											Assistant instance.
+										</div>
+									</div>`
+								: ''}
 							${Object.keys(this.otherUserSettings).map(
 								(userId) =>
 									this.buildSettingsCard(
@@ -637,6 +659,20 @@ export class MaterialYouPanel extends LitElement {
 			}
 			ha-card {
 				width: min(600px, 100%);
+			}
+			.section-header {
+				width: min(564px, 85%);
+				margin-bottom: -12px;
+			}
+			.section-header .title {
+				line-height: 48px;
+				font-size: 32px;
+				font-weight: 700;
+			}
+			.section-header .description {
+				line-height: 24px;
+				font-size: 16px;
+				font-weight: 400;
 			}
 			.card-content {
 				display: flex;
