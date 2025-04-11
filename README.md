@@ -49,15 +49,20 @@ Everything in Home Assistant has been updated to use colors generated using [Mat
 
 **If you set the theme at the view level, it will not style the anything outside of the view. The view tabs and sidebar are outside of the view. You MUST set the theme in [profile settings](http://homeassistant.local:8123/profile/general) under browser settings for component design upgrades to work.**
 
+## (Optional) Figtree Font Installation
+
+I highly recommend using the [Figtree font](https://fonts.google.com/specimen/Figtree) with this theme, as it is very similar to the proprietary Google Sans font but is free to use. If not installed the theme will use Roboto, which is still used by many Material You apps.
+
+1. Navigate to a dashboard and then click `🖉 Edit dashboard` > `⋮ Open dashboard menu` > `Manage resources`.
+2. Click `+ Add Resource`.
+3. In the `URL` field enter the url https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap.
+4. Select `Resource Type` `Stylesheet`.
+5. Click `Create`.
+6. Hard refresh (`CTRL` + `F5`) your browser or clear app/browser cache to ensure the new resource loads correctly.
+
 ## JavaScript Module Installation
 
 This theme includes a companion module which turns this theme from a basic Home Assitant theme into a complete Material Design 3 overhaul of Home Assistant. You'll be able to use different colors, schemes, and contrast levels in your theme colors, and will be able to change the entirety of the Home Assistant user interface to look like a modern Material You app. This can all be configured from a settings page included with this
-
-<!-- ## Material You Color Theme Generation
-
-This theme supports Material You color theming! This requires either an additional JavaScript module resource or use of [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/). The JavaScript module resource can either be downloaded from this repository or used using a CDN URL.
-
-If you do not want to install the JavaScript module but do want your own color theme, skip ahead to [Build Your Own Theme](#build-your-own-theme) -->
 
 ### (Optional) Download The JavaScript Module Resource Locally in Home Assistant
 
@@ -102,7 +107,7 @@ Once Home Assistant has finished restarting, you should see the upgrade Material
 
 ## The Configuration Page
 
-This theme comes with it's own configuration page! If you are the server administrator, you can use this page to create and set input helper entities for all users and global defaults. If you are not the server administrator, then you can set the input helper entities for yourself, but an administrator must create them first.
+This theme comes with it's own configuration page! If you are the Home Assistant server administrator, you can use this page to create and set input helper entities for all users and global defaults. If you are not the administrator, then you can set the input helper entities for yourself, but an administrator must create them first.
 
 TODO screenshot of finalized configuration page
 
