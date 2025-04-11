@@ -1,4 +1,163 @@
 Material You:
+  # Elevation - box-shadow
+  md-sys-elevation-level0:
+    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 0px 0px 0px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 0px 0px 0px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 0px 0px 0px
+  md-sys-elevation-level1:
+    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 2px 1px -1px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 1px 1px 0px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 1px 3px 0px
+  md-sys-elevation-level2:
+    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 3px 3px -2px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 3px 4px 0px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 1px 8px 0px
+  md-sys-elevation-level3:
+    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 3px 5px -1px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 6px 10px 0px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 1px 18px 0px
+  md-sys-elevation-level4:
+    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 5px 5px -3px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 8px 10px 1px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 3px 14px 2px
+  md-sys-elevation-level5:
+    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 7px 8px -4px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 12px 17px 2px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 5px 22px 4px
+
+  # Easing - transition-timing-function
+  md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15)
+  md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1)
+
+  md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1)
+  md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1)
+  md-sys-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1)
+
+  md-sys-motion-easing-legacy: cubic-bezier(0.4, 0, 0.2, 1)
+  md-sys-motion-easing-legacy-accelerate: cubic-bezier(0.4, 0, 1, 1)
+  md-sys-motion-easing-legacy-decelerate: cubic-bezier(0, 0, 0.2, 1)
+
+  md-sys-motion-easing-linear: cubic-bezier(0, 0, 1, 1)
+
+  # Duration - transition-duration
+  md-sys-motion-duration-short1: 50ms
+  md-sys-motion-duration-short2: 100ms
+  md-sys-motion-duration-short3: 150ms
+  md-sys-motion-duration-short4: 200ms
+
+  md-sys-motion-duration-medium1: 250ms
+  md-sys-motion-duration-medium2: 300ms
+  md-sys-motion-duration-medium3: 350ms
+  md-sys-motion-duration-medium4: 400ms
+
+  md-sys-motion-duration-long1: 450ms
+  md-sys-motion-duration-long2: 500ms
+  md-sys-motion-duration-long3: 550ms
+  md-sys-motion-duration-long4: 600ms
+
+  md-sys-motion-duration-extra-long1: 700ms
+  md-sys-motion-duration-extra-long2: 800ms
+  md-sys-motion-duration-extra-long3: 900ms
+  md-sys-motion-duration-extra-long4: 1000ms
+
+  # Shapes - border-radius
+  md-sys-shape-corner-full: 9999px
+
+  md-sys-shape-corner-extra-large-top: 28px 28px 0 0
+  md-sys-shape-corner-extra-large: 28px
+
+  md-sys-shape-corner-large-top: 16px 16px 0 0
+  md-sys-shape-corner-large-end: 0 16px 16px 0
+  md-sys-shape-corner-large-start: 16px 0 0 16px
+  md-sys-shape-corner-large: 16px
+
+  md-sys-shape-corner-medium: 12px
+  md-sys-shape-corner-small: 8px
+
+  md-sys-shape-corner-extra-small-top: 4px 4px 0 0
+  md-sys-shape-corner-extra-small: 4px
+
+  md-sys-shape-corner-none: 0
+
+  # Typography - font-weight, font-size, letter-spacing, line-height
+  md-ref-typeface-weight-regular: 400
+  md-ref-typeface-weight-medium: 500
+
+  md-sys-typescale-display-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-large-size: 57px
+  md-sys-typescale-display-large-tracking: -0-25px
+  md-sys-typescale-display-large-line-height: 64px
+
+  md-sys-typescale-display-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-medium-size: 45px
+  md-sys-typescale-display-medium-line-height: 52px
+  md-sys-typescale-display-medium-tracking: 0
+
+  md-sys-typescale-display-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-small-size: 36px
+  md-sys-typescale-display-small-line-height: 44px
+  md-sys-typescale-display-small-tracking: 0
+
+  md-sys-typescale-headline-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-large-size: 32px
+  md-sys-typescale-headline-large-line-height: 40px
+  md-sys-typescale-headline-large-tracking: 0
+
+  md-sys-typescale-headline-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-medium-size: 28px
+  md-sys-typescale-headline-medium-line-height: 36px
+  md-sys-typescale-headline-medium-tracking: 0
+
+  md-sys-typescale-headline-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-small-size: 24px
+  md-sys-typescale-headline-small-line-height: 32px
+  md-sys-typescale-headline-small-tracking: 0
+
+  md-sys-typescale-title-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-title-large-size: 22px
+  md-sys-typescale-title-large-line-height: 28px
+  md-sys-typescale-title-large-tracking: 0
+
+  md-sys-typescale-title-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-medium-size: 16px
+  md-sys-typescale-title-medium-line-height: 24px
+  md-sys-typescale-title-medium-tracking: 0-15px
+
+  md-sys-typescale-title-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-small-size: 14px
+  md-sys-typescale-title-small-line-height: 20px
+  md-sys-typescale-title-small-tracking: 0-1px
+
+  md-sys-typescale-body-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-large-size: 16px
+  md-sys-typescale-body-large-line-height: 24px
+  md-sys-typescale-body-large-tracking: 0-5px
+
+  md-sys-typescale-body-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-medium-size: 14px
+  md-sys-typescale-body-medium-line-height: 20px
+  md-sys-typescale-body-medium-tracking: 0-25px
+
+  md-sys-typescale-body-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-small-size: 12px
+  md-sys-typescale-body-small-line-height: 16px
+  md-sys-typescale-body-small-tracking: 0-4px
+
+  md-sys-typescale-label-large-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-size: 14px
+  md-sys-typescale-label-large-line-height: 20px
+  md-sys-typescale-label-large-tracking: 0-1px
+
+  md-sys-typescale-label-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-size: 12px
+  md-sys-typescale-label-medium-line-height: 16px
+  md-sys-typescale-label-medium-tracking: 0-5px
+
+  md-sys-typescale-label-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-small-size: 11px
+  md-sys-typescale-label-small-line-height: 16px
+  md-sys-typescale-label-small-tracking: 0-5px
+
   modes:
     dark:
       # Material Design System Colors
@@ -133,165 +292,6 @@ Material You:
       disabled-text-color: "var(--disabled-text-color-light, #808080)"
       disabled-color: "var(--disabled-color-light, #a5a5a5)"
       state-inactive-color: "var(--state-inactive-color-light, #9e9e9e)"
-
-  # Elevation - box-shadow
-  md-sys-elevation-level0:
-    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 0px 0px 0px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 0px 0px 0px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 0px 0px 0px
-  md-sys-elevation-level1:
-    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 2px 1px -1px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 1px 1px 0px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 1px 3px 0px
-  md-sys-elevation-level2:
-    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 3px 3px -2px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 3px 4px 0px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 1px 8px 0px
-  md-sys-elevation-level3:
-    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 3px 5px -1px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 6px 10px 0px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 1px 18px 0px
-  md-sys-elevation-level4:
-    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 5px 5px -3px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 8px 10px 1px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 3px 14px 2px
-  md-sys-elevation-level5:
-    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 7px 8px -4px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 12px 17px 2px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 5px 22px 4px
-
-  # Easing - transition-timing-function
-  md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15)
-  md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1)
-
-  md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1)
-  md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1)
-  md-sys-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1)
-
-  md-sys-motion-easing-legacy: cubic-bezier(0.4, 0, 0.2, 1)
-  md-sys-motion-easing-legacy-accelerate: cubic-bezier(0.4, 0, 1, 1)
-  md-sys-motion-easing-legacy-decelerate: cubic-bezier(0, 0, 0.2, 1)
-
-  md-sys-motion-easing-linear: cubic-bezier(0, 0, 1, 1)
-
-  # Duration - transition-duration
-  md-sys-motion-duration-short1: 50ms
-  md-sys-motion-duration-short2: 100ms
-  md-sys-motion-duration-short3: 150ms
-  md-sys-motion-duration-short4: 200ms
-
-  md-sys-motion-duration-medium1: 250ms
-  md-sys-motion-duration-medium2: 300ms
-  md-sys-motion-duration-medium3: 350ms
-  md-sys-motion-duration-medium4: 400ms
-
-  md-sys-motion-duration-long1: 450ms
-  md-sys-motion-duration-long2: 500ms
-  md-sys-motion-duration-long3: 550ms
-  md-sys-motion-duration-long4: 600ms
-
-  md-sys-motion-duration-extra-long1: 700ms
-  md-sys-motion-duration-extra-long2: 800ms
-  md-sys-motion-duration-extra-long3: 900ms
-  md-sys-motion-duration-extra-long4: 1000ms
-
-  # Shapes - border-radius
-  md-sys-shape-corner-full: 9999px
-
-  md-sys-shape-corner-extra-large-top: 28px 28px 0 0
-  md-sys-shape-corner-extra-large: 28px
-
-  md-sys-shape-corner-large-top: 16px 16px 0 0
-  md-sys-shape-corner-large-end: 0 16px 16px 0
-  md-sys-shape-corner-large-start: 16px 0 0 16px
-  md-sys-shape-corner-large: 16px
-
-  md-sys-shape-corner-medium: 12px
-  md-sys-shape-corner-small: 8px
-
-  md-sys-shape-corner-extra-small-top: 4px 4px 0 0
-  md-sys-shape-corner-extra-small: 4px
-
-  md-sys-shape-corner-none: 0
-
-  # Typography - fonts
-  md-ref-typeface-weight-regular: 400
-  md-ref-typeface-weight-medium: 500
-
-  md-sys-typescale-display-large-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-display-large-size: 57px
-  md-sys-typescale-display-large-tracking: -0-25px
-  md-sys-typescale-display-large-line-height: 64px
-
-  md-sys-typescale-display-medium-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-display-medium-size: 45px
-  md-sys-typescale-display-medium-line-height: 52px
-  md-sys-typescale-display-medium-tracking: 0
-
-  md-sys-typescale-display-small-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-display-small-size: 36px
-  md-sys-typescale-display-small-line-height: 44px
-  md-sys-typescale-display-small-tracking: 0
-
-  md-sys-typescale-headline-large-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-headline-large-size: 32px
-  md-sys-typescale-headline-large-line-height: 40px
-  md-sys-typescale-headline-large-tracking: 0
-
-  md-sys-typescale-headline-medium-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-headline-medium-size: 28px
-  md-sys-typescale-headline-medium-line-height: 36px
-  md-sys-typescale-headline-medium-tracking: 0
-
-  md-sys-typescale-headline-small-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-headline-small-size: 24px
-  md-sys-typescale-headline-small-line-height: 32px
-  md-sys-typescale-headline-small-tracking: 0
-
-  md-sys-typescale-title-large-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-title-large-size: 22px
-  md-sys-typescale-title-large-line-height: 28px
-  md-sys-typescale-title-large-tracking: 0
-
-  md-sys-typescale-title-medium-weight: var(md-ref-typeface-weight-medium)
-  md-sys-typescale-title-medium-size: 16px
-  md-sys-typescale-title-medium-line-height: 24px
-  md-sys-typescale-title-medium-tracking: 0-15px
-
-  md-sys-typescale-title-small-weight: var(md-ref-typeface-weight-medium)
-  md-sys-typescale-title-small-size: 14px
-  md-sys-typescale-title-small-line-height: 20px
-  md-sys-typescale-title-small-tracking: 0-1px
-
-  md-sys-typescale-body-large-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-body-large-size: 16px
-  md-sys-typescale-body-large-line-height: 24px
-  md-sys-typescale-body-large-tracking: 0-5px
-
-  md-sys-typescale-body-medium-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-body-medium-size: 14px
-  md-sys-typescale-body-medium-line-height: 20px
-  md-sys-typescale-body-medium-tracking: 0-25px
-
-  md-sys-typescale-body-small-weight: var(md-ref-typeface-weight-regular)
-  md-sys-typescale-body-small-size: 12px
-  md-sys-typescale-body-small-line-height: 16px
-  md-sys-typescale-body-small-tracking: 0-4px
-
-  md-sys-typescale-label-large-weight: var(md-ref-typeface-weight-medium)
-  md-sys-typescale-label-large-size: 14px
-  md-sys-typescale-label-large-line-height: 20px
-  md-sys-typescale-label-large-tracking: 0-1px
-
-  md-sys-typescale-label-medium-weight: var(md-ref-typeface-weight-medium)
-  md-sys-typescale-label-medium-size: 12px
-  md-sys-typescale-label-medium-line-height: 16px
-  md-sys-typescale-label-medium-tracking: 0-5px
-
-  md-sys-typescale-label-small-weight: var(md-ref-typeface-weight-medium)
-  md-sys-typescale-label-small-size: 11px
-  md-sys-typescale-label-small-line-height: 16px
-  md-sys-typescale-label-small-tracking: 0-5px
 
   # Main colors
   primary-color: var(--md-sys-color-primary)
