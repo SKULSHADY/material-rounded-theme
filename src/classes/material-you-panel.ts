@@ -41,7 +41,7 @@ export class MaterialYouPanel extends LitElement {
 	globalSettings!: IUserPanelSettings;
 	otherUserSettings: Record<string, IUserPanelSettings> = {};
 
-	async handleDeleteEntities(e: MouseEvent) {
+	async handleDeleteHelpers(e: MouseEvent) {
 		const userId = (e.target as HTMLElement).getAttribute('user-id');
 		const idSuffix = userId ? `_${userId}` : '';
 
@@ -75,19 +75,19 @@ export class MaterialYouPanel extends LitElement {
 		showToast(this, message);
 	}
 
-	buildDeleteEntitiesButton(userId?: string) {
+	buildDeleteHelpersButton(userId?: string) {
 		return html`
 			<div
 				class="delete button"
 				user-id="${userId}"
-				@click=${this.handleDeleteEntities}
+				@click=${this.handleDeleteHelpers}
 			>
-				Delete Entities
+				Delete Helpers
 			</div>
 		`;
 	}
 
-	async handleCreateEntities(e: MouseEvent) {
+	async handleCreateHelpers(e: MouseEvent) {
 		// User ID and name checks
 		const userId = (e.target as HTMLElement).getAttribute('user-id');
 		const idSuffix = userId ? `_${userId}` : '';
@@ -177,14 +177,14 @@ export class MaterialYouPanel extends LitElement {
 		showToast(this, message);
 	}
 
-	buildCreateEntitiesButton(userId?: string) {
+	buildCreateHelpersButton(userId?: string) {
 		return html`
 			<div
 				class="create button"
 				user-id="${userId}"
-				@click=${this.handleCreateEntities}
+				@click=${this.handleCreateHelpers}
 			>
-				Create Entities
+				Create Helpers
 			</div>
 		`;
 	}
@@ -431,9 +431,6 @@ export class MaterialYouPanel extends LitElement {
 		const colorInput = `${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`;
 		const schemeInput = `${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`;
 		const contrastInput = `${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`;
-		const errorMessageStart =
-			'This helper has not been setup! Navigate to Settings, Devices & services, Helpers, click Create Helper, click Text, name it "Material You ';
-		const errorMessageEnd = '" and then navigate back to this page.';
 
 		let title = 'Global';
 		if (settings.stateObj) {
@@ -446,6 +443,16 @@ export class MaterialYouPanel extends LitElement {
 					? html`<div class="secondary subtitle">ID: ${userId}</div>`
 					: ''}
 				<div class="card-content">
+					${!this.hass.states[colorInput] ||
+					!this.hass.states[schemeInput] ||
+					!this.hass.states[contrastInput]
+						? this.buildAlertBox(
+								this.hass.user?.is_admin
+									? `Press Create Helpers to create and initialize ${userId ? 'helpers for this user' : 'global helpers'}.`
+									: 'Some or all input helpers not setup! Contact your administrator.',
+								this.hass.user?.is_admin ? 'info' : 'error',
+							)
+						: ''}
 					<div class="base-color">
 						${this.hass.states[colorInput]
 							? html`${this.buildSelector(
@@ -466,10 +473,7 @@ export class MaterialYouPanel extends LitElement {
 										'base_color',
 										userId,
 									)}`
-							: this.buildAlertBox(
-									`${errorMessageStart}Base Color${userId ? ` ${userId}` : ''}${errorMessageEnd}`,
-									'warning',
-								)}
+							: ''}
 					</div>
 					<div class="scheme">
 						${this.hass.states[schemeInput]
@@ -486,10 +490,7 @@ export class MaterialYouPanel extends LitElement {
 									settings.settings.scheme ||
 										DEFAULT_SCHEME_NAME,
 								)
-							: this.buildAlertBox(
-									`${errorMessageStart}Scheme${userId ? ` ${userId}` : ''}${errorMessageEnd}`,
-									'warning',
-								)}
+							: ''}
 					</div>
 					<div class="contrast">
 						${this.hass.states[contrastInput]
@@ -515,17 +516,14 @@ export class MaterialYouPanel extends LitElement {
 										: settings.settings.contrast,
 								)}
 								${this.buildClearButton('contrast', userId)}`
-							: this.buildAlertBox(
-									`${errorMessageStart}Contrast${userId ? ` ${userId}` : ''}${errorMessageEnd}`,
-									'warning',
-								)}
+							: ''}
 					</div>
 				</div>
 				${this.hass.user?.is_admin
 					? html`<div class="card-actions">
-							${this.buildCreateEntitiesButton(
+							${this.buildCreateHelpersButton(
 								userId,
-							)}${this.buildDeleteEntitiesButton(userId)}
+							)}${this.buildDeleteHelpersButton(userId)}
 						</div>`
 					: ''}
 			</ha-card>
@@ -636,6 +634,11 @@ export class MaterialYouPanel extends LitElement {
 			.scheme,
 			.contrast {
 				margin: 0 4px;
+			}
+			.base-color:empty,
+			.scheme:empty,
+			.contrast:empty {
+				display: none;
 			}
 			.label {
 				padding: 20px;
