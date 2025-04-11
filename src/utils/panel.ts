@@ -39,7 +39,7 @@ export async function createInput(
  * @param {HomeAssistant} hass Home Assistant HASS object
  * @param {"text" | "select" | "number"} type Input element type to create
  * @param {string} id Element ID, not including domain
- * @returns {Promise<Record<string, any>>}  Input helper update config, replace current config
+ * @returns {Promise<Record<string, any>>}  Input helper update config, replaces current config
  * @returns
  */
 export async function updateInput(

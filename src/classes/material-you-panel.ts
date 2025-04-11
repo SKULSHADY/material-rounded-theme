@@ -3,13 +3,16 @@ import { property } from 'lit/decorators.js';
 import packageInfo from '../../package.json';
 import {
 	DEFAULT_BASE_COLOR_HEX,
+	DEFAULT_BASE_COLOR_ICON,
 	DEFAULT_BASE_COLOR_INPUT,
 	DEFAULT_BASE_COLOR_NAME,
 	DEFAULT_BASE_COLOR_RGB,
 	DEFAULT_CONTRAST_LEVEL,
+	DEFAULT_CONTRAST_LEVEL_ICON,
 	DEFAULT_CONTRAST_LEVEL_INPUT,
 	DEFAULT_CONTRAST_LEVEL_NAME,
 	DEFAULT_SCHEME_NAME,
+	DEFAULT_SCHEME_NAME_ICON,
 	DEFAULT_SCHEME_NAME_INPUT,
 	DEFAULT_SCHEME_NAME_NAME,
 	schemes,
@@ -126,7 +129,7 @@ export class MaterialYouPanel extends LitElement {
 		if (!this.hass.states[entityId]) {
 			const id = entityId.split('.')[1];
 			const config = {
-				icon: 'mdi:palette',
+				icon: DEFAULT_BASE_COLOR_ICON,
 				min: 0,
 				max: 9,
 			};
@@ -149,7 +152,7 @@ export class MaterialYouPanel extends LitElement {
 		if (!this.hass.states[entityId]) {
 			const id = entityId.split('.')[1];
 			const config = {
-				icon: 'mdi:palette-advanced',
+				icon: DEFAULT_SCHEME_NAME_ICON,
 				options: [...schemes.map((scheme) => scheme.value), ' '],
 			};
 			await createInput(this.hass, 'select', {
@@ -171,7 +174,7 @@ export class MaterialYouPanel extends LitElement {
 		if (!this.hass.states[entityId]) {
 			const id = entityId.split('.')[1];
 			const config = {
-				icon: 'mdi:contrast-circle',
+				icon: DEFAULT_CONTRAST_LEVEL_ICON,
 				min: -1,
 				max: 1,
 				step: 0.1,
@@ -306,13 +309,25 @@ export class MaterialYouPanel extends LitElement {
 		></ha-selector>`;
 	}
 
-	async handleClearKeyDown(e: KeyboardEvent) {
+	async handleKeyDown(e: KeyboardEvent) {
 		if (!e.repeat && ['Enter', ' '].includes(e.key)) {
 			e.preventDefault();
-			this.handleClearClick(
-				new window.MouseEvent('click', e),
-				e.target as HTMLElement,
-			);
+
+			let handler: Function;
+			const className = (e.target as HTMLElement).className
+				.replace('button', '')
+				.trim();
+			switch (className) {
+				case 'clear':
+					handler = this.handleClearClick;
+					break;
+				case 'more-info':
+				default:
+					handler = this.handleMoreInfoClick;
+					break;
+			}
+
+			handler(new window.MouseEvent('click', e), e.target as HTMLElement);
 		}
 	}
 
@@ -363,11 +378,81 @@ export class MaterialYouPanel extends LitElement {
 			<div class="clear button">
 				<ha-icon
 					@click=${this.handleClearClick}
-					@keydown=${this.handleClearKeyDown}
+					@keydown=${this.handleKeyDown}
 					tabindex="0"
 					user-id="${userId}"
 					field="${field}"
 					.icon="${'mdi:close'}"
+				></ha-icon>
+			</div>
+		`;
+	}
+
+	handleMoreInfoClick(e: MouseEvent, target: HTMLElement) {
+		const userId = ((e.target as HTMLElement) ?? target).getAttribute(
+			'user-id',
+		);
+		const field = ((e.target as HTMLElement) ?? target).getAttribute(
+			'field',
+		);
+
+		let entityBase = '';
+		switch (field) {
+			case 'base_color':
+				entityBase = DEFAULT_BASE_COLOR_INPUT;
+				break;
+			case 'scheme':
+				entityBase = DEFAULT_SCHEME_NAME_INPUT;
+				break;
+			case 'contrast':
+				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
+				break;
+			default:
+				break;
+		}
+
+		const entityId = `${entityBase}${userId ? `_${userId}` : ''}`;
+		const event = new Event('hass-more-info', {
+			bubbles: true,
+			cancelable: true,
+			composed: true,
+		});
+		event.detail = { entityId };
+		this.dispatchEvent(event);
+	}
+
+	buildMoreInfoButton(field: string, userId?: string) {
+		let entityBase = '';
+		let icon = '';
+		switch (field) {
+			case 'base_color':
+				entityBase = DEFAULT_BASE_COLOR_INPUT;
+				icon = DEFAULT_BASE_COLOR_ICON;
+				break;
+			case 'scheme':
+				entityBase = DEFAULT_SCHEME_NAME_INPUT;
+				icon = DEFAULT_SCHEME_NAME_ICON;
+				break;
+			case 'contrast':
+				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
+				icon = DEFAULT_CONTRAST_LEVEL_ICON;
+				break;
+			default:
+				break;
+		}
+
+		const entityId = `${entityBase}${userId ? `_${userId}` : ''}`;
+		icon = this.hass.states[entityId].attributes.icon || icon;
+
+		return html`
+			<div class="more-info button">
+				<ha-icon
+					@click=${this.handleMoreInfoClick}
+					@keydown=${this.handleKeyDown}
+					tabindex="0"
+					user-id="${userId}"
+					field="${field}"
+					.icon="${icon}"
 				></ha-icon>
 			</div>
 		`;
@@ -482,7 +567,11 @@ export class MaterialYouPanel extends LitElement {
 						: ''}
 					<div class="base-color">
 						${this.hass.states[colorInput]
-							? html`${this.buildSelector(
+							? html`${this.buildMoreInfoButton(
+										'base_color',
+										userId,
+									)}
+									${this.buildSelector(
 										'Base Color',
 										'base_color',
 										userId,
@@ -504,7 +593,10 @@ export class MaterialYouPanel extends LitElement {
 					</div>
 					<div class="scheme">
 						${this.hass.states[schemeInput]
-							? this.buildSelector(
+							? html`${this.buildMoreInfoButton(
+									'scheme',
+									userId,
+								)}${this.buildSelector(
 									'Scheme Name',
 									'scheme',
 									userId,
@@ -516,12 +608,15 @@ export class MaterialYouPanel extends LitElement {
 									},
 									settings.settings.scheme ||
 										DEFAULT_SCHEME_NAME,
-								)
+								)}`
 							: ''}
 					</div>
 					<div class="contrast">
 						${this.hass.states[contrastInput]
-							? html`${this.buildSelector(
+							? html`${this.buildMoreInfoButton(
+									'contrast',
+									userId,
+								)}${this.buildSelector(
 									'Contrast Level',
 									'contrast',
 									userId,
@@ -702,10 +797,6 @@ export class MaterialYouPanel extends LitElement {
 				display: flex;
 				align-items: flex-end;
 			}
-			.scheme,
-			.contrast {
-				margin: 0 4px;
-			}
 			.base-color:empty,
 			.scheme:empty,
 			.contrast:empty {
@@ -714,6 +805,10 @@ export class MaterialYouPanel extends LitElement {
 			.label {
 				padding: 20px;
 				margin: auto;
+			}
+			ha-selector[field='scheme'],
+			ha-selector[field='contrast'] {
+				margin: 0 4px;
 			}
 
 			.card-actions {
@@ -761,6 +856,16 @@ export class MaterialYouPanel extends LitElement {
 				--button-size: 36px;
 				--mdc-icon-size: 20px;
 			}
+			.more-info {
+				flex: 1;
+				height: var(--button-size);
+				width: var(--button-size);
+				margin: 8px;
+				--color: var(--paper-item-icon-color);
+				--button-size: 40px;
+				--mdc-icon-size: 24px;
+			}
+			.more-info::after,
 			.clear::after {
 				width: var(--button-size);
 			}

@@ -32,6 +32,10 @@ export const DEFAULT_SCHEME_NAME_INPUT = `${INPUT_SELECT_PREFIX}_scheme`;
 export const INPUT_NUMBER_PREFIX = `input_number.${THEME}`;
 export const DEFAULT_CONTRAST_LEVEL_INPUT = `${INPUT_NUMBER_PREFIX}_contrast`;
 
+export const DEFAULT_BASE_COLOR_ICON = 'mdi:palette';
+export const DEFAULT_SCHEME_NAME_ICON = 'mdi:palette-advanced';
+export const DEFAULT_CONTRAST_LEVEL_ICON = 'mdi:contrast-circle';
+
 export const colors: (keyof typeof MaterialDynamicColors)[] = [
 	'primary',
 	'onPrimary',
