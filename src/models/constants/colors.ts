@@ -12,7 +12,8 @@ import {
 } from '@material/material-color-utilities';
 import { IScheme } from '../interfaces/Scheme';
 
-export const DEFAULT_BASE_COLOR = '#4C5C92';
+export const DEFAULT_BASE_COLOR_HEX = '#4C5C92';
+export const DEFAULT_BASE_COLOR_RGB = [76, 92, 146];
 export const DEFAULT_SCHEME_NAME = 'tonalspot';
 export const DEFAULT_CONTRAST_LEVEL = 0;
 

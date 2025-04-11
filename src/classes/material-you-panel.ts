@@ -2,9 +2,10 @@ import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import packageInfo from '../../package.json';
 import {
-	DEFAULT_BASE_COLOR,
+	DEFAULT_BASE_COLOR_HEX,
 	DEFAULT_BASE_COLOR_INPUT,
 	DEFAULT_BASE_COLOR_NAME,
+	DEFAULT_BASE_COLOR_RGB,
 	DEFAULT_CONTRAST_LEVEL,
 	DEFAULT_CONTRAST_LEVEL_INPUT,
 	DEFAULT_CONTRAST_LEVEL_NAME,
@@ -281,7 +282,7 @@ export class MaterialYouPanel extends LitElement {
 					];
 				} catch (e) {
 					console.error(e);
-					value = [0, 0, 0];
+					value = DEFAULT_BASE_COLOR_RGB;
 				}
 				break;
 			case 'scheme':
@@ -392,7 +393,7 @@ export class MaterialYouPanel extends LitElement {
 					`${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`
 				]?.state ||
 				this.hass.states[DEFAULT_BASE_COLOR_INPUT]?.state ||
-				DEFAULT_BASE_COLOR,
+				DEFAULT_BASE_COLOR_HEX,
 			scheme:
 				this.hass.states[
 					`${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`
@@ -489,11 +490,11 @@ export class MaterialYouPanel extends LitElement {
 											color_rgb: {},
 										},
 										settings.settings.base_color ||
-											DEFAULT_BASE_COLOR,
+											DEFAULT_BASE_COLOR_HEX,
 									)}
 									<div class="label">
 										${settings.settings.base_color ||
-										DEFAULT_BASE_COLOR}
+										DEFAULT_BASE_COLOR_HEX}
 									</div>
 									${this.buildClearButton(
 										'base_color',

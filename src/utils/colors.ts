@@ -8,7 +8,7 @@ import {
 
 import {
 	colors,
-	DEFAULT_BASE_COLOR,
+	DEFAULT_BASE_COLOR_HEX,
 	DEFAULT_BASE_COLOR_INPUT,
 	DEFAULT_CONTRAST_LEVEL,
 	DEFAULT_CONTRAST_LEVEL_INPUT,
@@ -73,7 +73,7 @@ export async function setTheme() {
 
 				// Only update if one of the inputs is set
 				if (baseColor || schemeName || contrastLevel) {
-					baseColor ||= DEFAULT_BASE_COLOR;
+					baseColor ||= DEFAULT_BASE_COLOR_HEX;
 					const schemeInfo = getSchemeInfo(schemeName);
 					const targets = await getTargets();
 
