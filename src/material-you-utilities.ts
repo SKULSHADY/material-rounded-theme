@@ -104,6 +104,12 @@ async function main() {
 				setTimeout(async () => await setTheme(), 1000);
 			}
 		}, 'call_service');
+	} else {
+		// Trigger on configuration UI fired event
+		window.addEventListener(
+			'material-you-update',
+			async () => await setTheme(),
+		);
 	}
 }
 

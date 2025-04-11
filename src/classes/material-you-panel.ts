@@ -41,6 +41,17 @@ export class MaterialYouPanel extends LitElement {
 	globalSettings!: IUserPanelSettings;
 	otherUserSettings: Record<string, IUserPanelSettings> = {};
 
+	fireUpdateEvent() {
+		if (!this.hass.user?.is_admin) {
+			this.dispatchEvent(
+				new Event('material-you-update', {
+					bubbles: true,
+					composed: true,
+				}),
+			);
+		}
+	}
+
 	async handleDeleteHelpers(e: MouseEvent) {
 		const userId = (e.target as HTMLElement).getAttribute('user-id');
 		const idSuffix = userId ? `_${userId}` : '';
@@ -73,6 +84,7 @@ export class MaterialYouPanel extends LitElement {
 			message = `Input entities cleared for ${userName}`;
 		}
 		showToast(this, message);
+		this.fireUpdateEvent();
 	}
 
 	buildDeleteHelpersButton(userId?: string) {
@@ -245,6 +257,7 @@ export class MaterialYouPanel extends LitElement {
 			[key]: value,
 			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
 		});
+		this.fireUpdateEvent();
 		this.requestUpdate();
 	}
 
@@ -335,6 +348,7 @@ export class MaterialYouPanel extends LitElement {
 			[key]: value,
 			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
 		});
+		this.fireUpdateEvent();
 		this.requestUpdate();
 	}
 
