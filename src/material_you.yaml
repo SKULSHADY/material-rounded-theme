@@ -1,9 +1,6 @@
 Material You:
   # Elevation - box-shadow
-  md-sys-elevation-level0:
-    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 0px 0px 0px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 0px 0px 0px,
-    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 0px 0px 0px
+  md-sys-elevation-level0: none
   md-sys-elevation-level1:
     rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 2px 1px -1px,
     rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 1px 1px 0px,
@@ -317,7 +314,7 @@ Material You:
   card-background-color: var(--md-sys-color-surface-container-low)
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border-radius: var(--border-radius)
-  ha-card-box-shadow: var(--md-sys-elevation-level-1)
+  ha-card-box-shadow: var(--md-sys-elevation-level1)
   ha-card-border-color: "#00000000"
   ha-card-border-width: 0px
   ha-card-border-style: none
