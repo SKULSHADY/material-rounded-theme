@@ -3,8 +3,9 @@
 	outline: var(--md-sys-color-outline-variant) solid 1px;
 }
 
-/* Fix label font family and letter spacing */
+/* Fix label font family, weight, and letter spacing */
 .label {
 	font-family: var(--font-family);
+	font-weight: var(--md-sys-typescale-label-large-weight);
 	letter-spacing: var(--md-sys-typescale-label-large-tracking);
 }

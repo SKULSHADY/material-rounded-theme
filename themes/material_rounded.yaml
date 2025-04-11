@@ -61,7 +61,6 @@ Material You:
   lovelace-background: var(--md-sys-color-surface)
   margin-title-ltr: 0
   margin-title-rtl: 0
-  md-assist-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -470,7 +469,6 @@ Material You Dark:
   lovelace-background: var(--md-sys-color-surface)
   margin-title-ltr: 0
   margin-title-rtl: 0
-  md-assist-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -819,7 +817,6 @@ Material You Light:
   lovelace-background: var(--md-sys-color-surface)
   margin-title-ltr: 0
   margin-title-rtl: 0
-  md-assist-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -1166,7 +1163,6 @@ Material You Transparent Card:
   lovelace-background: var(--md-sys-color-surface)
   margin-title-ltr: 0
   margin-title-rtl: 0
-  md-assist-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -1575,7 +1571,6 @@ Material You Transparent Card Dark:
   lovelace-background: var(--md-sys-color-surface)
   margin-title-ltr: 0
   margin-title-rtl: 0
-  md-assist-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
@@ -1924,7 +1919,6 @@ Material You Transparent Card Light:
   lovelace-background: var(--md-sys-color-surface)
   margin-title-ltr: 0
   margin-title-rtl: 0
-  md-assist-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
   md-current-tab-icon-background: var(--md-sys-color-secondary-container)
   md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
   md-current-tab-text-color: var(--md-sys-color-on-surface)
