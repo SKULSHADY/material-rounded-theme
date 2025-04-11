@@ -84,6 +84,7 @@ The component design upgrades performed by this module are very time sensitive, 
 
 ```yaml
 frontend:
+  themes: !include_dir_merge_named themes
   extra_module_url:
     - /local/material-you-utilities.min.js # Or the CDN URL
 ```
