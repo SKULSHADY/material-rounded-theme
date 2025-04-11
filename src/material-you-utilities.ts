@@ -1,12 +1,12 @@
 import packageInfo from '../package.json';
 import { MaterialYouPanel } from './classes/material-you-panel';
 
+import { logStyles } from './models/constants/colors';
 import {
 	DEFAULT_BASE_COLOR_INPUT,
 	DEFAULT_CONTRAST_LEVEL_INPUT,
 	DEFAULT_SCHEME_NAME_INPUT,
-	logStyles,
-} from './models/constants/colors';
+} from './models/constants/inputs';
 import { getAsync, querySelectorAsync } from './utils/async';
 import { setTheme } from './utils/colors';
 import { getHomeAssistantMainAsync } from './utils/common';

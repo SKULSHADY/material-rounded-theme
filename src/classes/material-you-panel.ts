@@ -1,6 +1,7 @@
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import packageInfo from '../../package.json';
+import { schemes } from '../models/constants/colors';
 import {
 	DEFAULT_BASE_COLOR_HEX,
 	DEFAULT_BASE_COLOR_ICON,
@@ -15,10 +16,13 @@ import {
 	DEFAULT_SCHEME_NAME_ICON,
 	DEFAULT_SCHEME_NAME_INPUT,
 	DEFAULT_SCHEME_NAME_NAME,
-	schemes,
-} from '../models/constants/colors';
+	DEFAULT_STYLES,
+	DEFAULT_STYLES_ICON,
+	DEFAULT_STYLES_INPUT,
+	DEFAULT_STYLES_NAME,
+} from '../models/constants/inputs';
 import { HomeAssistant } from '../models/interfaces';
-import { IUserPanelSettings } from '../models/interfaces/Panel';
+import { InputField, IUserPanelSettings } from '../models/interfaces/Panel';
 
 import {
 	argbFromHex,
@@ -73,6 +77,11 @@ export class MaterialYouPanel extends LitElement {
 		entityId = `${DEFAULT_CONTRAST_LEVEL_INPUT}${idSuffix}`;
 		if (this.hass.states[entityId]) {
 			await deleteInput(this.hass, 'number', entityId.split('.')[1]);
+		}
+
+		entityId = `${DEFAULT_STYLES_INPUT}${idSuffix}`;
+		if (this.hass.states[entityId]) {
+			await deleteInput(this.hass, 'boolean', entityId.split('.')[1]);
 		}
 
 		let message = 'Global input entities cleared';
@@ -193,6 +202,26 @@ export class MaterialYouPanel extends LitElement {
 			});
 		}
 
+		// Styles
+		entityId = `${DEFAULT_STYLES_INPUT}${idSuffix}`;
+		if (!this.hass.states[entityId]) {
+			const id = entityId.split('.')[1];
+			const config = {
+				icon: DEFAULT_STYLES_ICON,
+			};
+			await createInput(this.hass, 'boolean', {
+				name: id,
+				...config,
+			});
+			await updateInput(this.hass, 'boolean', id, {
+				name: `${DEFAULT_STYLES_NAME}${userName}`,
+				...config,
+			});
+			await this.hass.callService('input_boolean', 'turn_on', {
+				entity_id: entityId,
+			});
+		}
+
 		let message = 'Global input entities created';
 		if (userName) {
 			message = `Input entities created for ${userName}`;
@@ -228,52 +257,67 @@ export class MaterialYouPanel extends LitElement {
 
 	async handleSelectorChange(e: CustomEvent) {
 		const userId = (e.target as HTMLElement).getAttribute('user-id');
-		const field = (e.target as HTMLElement).getAttribute('field');
+		const field = (e.target as HTMLElement).getAttribute(
+			'field',
+		) as InputField;
 		let value = e.detail.value;
 
-		let entityBase = '';
 		let domain = '';
 		let service = 'set_value';
-		let key = 'value';
+		let data: Record<string, any> = {};
 		switch (field) {
 			case 'base_color':
 				domain = 'input_text';
-				entityBase = DEFAULT_BASE_COLOR_INPUT;
-				value = hexFromArgb(argbFromRgb(value[0], value[1], value[2]));
+				data = {
+					value: hexFromArgb(
+						argbFromRgb(value[0], value[1], value[2]),
+					),
+					entity_id: DEFAULT_BASE_COLOR_INPUT,
+				};
 				break;
 			case 'scheme':
 				domain = 'input_select';
 				service = 'select_option';
-				key = 'option';
-				entityBase = DEFAULT_SCHEME_NAME_INPUT;
 				value ||= ' ';
+				data = {
+					option: value || ' ',
+					entity_id: DEFAULT_SCHEME_NAME_INPUT,
+				};
 				break;
 			case 'contrast':
 				domain = 'input_number';
-				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
-				value ||= 0;
+				data = {
+					value: value || 0,
+					entity_id: DEFAULT_CONTRAST_LEVEL_INPUT,
+				};
+				break;
+			case 'styles':
+				domain = 'input_boolean';
+				value ??= true;
+				service = `turn_${value ? 'on' : 'off'}`;
+				data = {
+					entity_id: DEFAULT_STYLES_INPUT,
+				};
 				break;
 			default:
 				break;
 		}
+		data.entity_id = `${data.entity_id}${userId ? `_${userId}` : ''}`;
 
-		await this.hass.callService(domain, service, {
-			[key]: value,
-			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
-		});
+		await this.hass.callService(domain, service, data);
 		this.fireUpdateEvent();
 		this.requestUpdate();
 	}
 
 	buildSelector(
 		label: string,
-		field: 'base_color' | 'scheme' | 'contrast',
+		field: InputField,
 		userId: string,
 		selector: object,
 		placeholder?: string | number | boolean | object,
 	) {
 		const config = this.getConfig(userId);
-		let value: string | number | number[];
+		let value: string | number | number[] | boolean;
 		switch (field) {
 			case 'base_color':
 				try {
@@ -287,6 +331,9 @@ export class MaterialYouPanel extends LitElement {
 					console.error(e);
 					value = DEFAULT_BASE_COLOR_RGB;
 				}
+				break;
+			case 'styles':
+				value = config.settings[field] == 'on';
 				break;
 			case 'scheme':
 			case 'contrast':
@@ -314,7 +361,7 @@ export class MaterialYouPanel extends LitElement {
 			e.preventDefault();
 
 			let handler: Function;
-			const className = (e.target as HTMLElement).className
+			const className = (e.target as HTMLElement).parentElement?.className
 				.replace('button', '')
 				.trim();
 			switch (className) {
@@ -327,7 +374,11 @@ export class MaterialYouPanel extends LitElement {
 					break;
 			}
 
-			handler(new window.MouseEvent('click', e), e.target as HTMLElement);
+			handler.call(
+				this,
+				new window.MouseEvent('click', e),
+				e.target as HTMLElement,
+			);
 		}
 	}
 
@@ -337,43 +388,52 @@ export class MaterialYouPanel extends LitElement {
 		);
 		const field = ((e.target as HTMLElement) ?? target).getAttribute(
 			'field',
-		);
+		) as InputField;
 
-		let entityBase = '';
 		let domain = '';
 		let service = 'set_value';
-		let key = 'value';
-		let value: string | number = '';
+		let data: Record<string, any> = {};
 		switch (field) {
 			case 'base_color':
 				domain = 'input_text';
-				entityBase = DEFAULT_BASE_COLOR_INPUT;
+				data = {
+					value: '',
+					entity_id: DEFAULT_BASE_COLOR_INPUT,
+				};
 				break;
 			case 'scheme':
 				domain = 'input_select';
 				service = 'select_option';
-				key = 'option';
-				value = ' ';
-				entityBase = DEFAULT_SCHEME_NAME_INPUT;
+				data = {
+					option: ' ',
+					entity_id: DEFAULT_SCHEME_NAME_INPUT,
+				};
 				break;
 			case 'contrast':
 				domain = 'input_number';
-				value = 0;
-				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
+				data = {
+					value: 0,
+					entity_id: DEFAULT_CONTRAST_LEVEL_INPUT,
+				};
+				break;
+			case 'styles':
+				domain = 'input_boolean';
+				service = 'turn_on';
+				data = {
+					entity_id: DEFAULT_STYLES_INPUT,
+				};
 				break;
 			default:
 				break;
 		}
+		data.entity_id = `${data.entity_id}${userId ? `_${userId}` : ''}`;
 
-		await this.hass.callService(domain, service, {
-			[key]: value,
-			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
-		});
+		await this.hass.callService(domain, service, data);
 		this.fireUpdateEvent();
 		this.requestUpdate();
 	}
 
-	buildClearButton(field: string, userId?: string) {
+	buildClearButton(field: InputField, userId?: string) {
 		return html`
 			<div class="clear button">
 				<ha-icon
@@ -389,12 +449,12 @@ export class MaterialYouPanel extends LitElement {
 	}
 
 	handleMoreInfoClick(e: MouseEvent, target: HTMLElement) {
-		const userId = ((e.target as HTMLElement) ?? target).getAttribute(
+		const userId = ((e.target as HTMLElement) || target).getAttribute(
 			'user-id',
 		);
-		const field = ((e.target as HTMLElement) ?? target).getAttribute(
+		const field = ((e.target as HTMLElement) || target).getAttribute(
 			'field',
-		);
+		) as InputField;
 
 		let entityBase = '';
 		switch (field) {
@@ -406,6 +466,9 @@ export class MaterialYouPanel extends LitElement {
 				break;
 			case 'contrast':
 				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
+				break;
+			case 'styles':
+				entityBase = DEFAULT_STYLES_INPUT;
 				break;
 			default:
 				break;
@@ -421,7 +484,7 @@ export class MaterialYouPanel extends LitElement {
 		this.dispatchEvent(event);
 	}
 
-	buildMoreInfoButton(field: string, userId?: string) {
+	buildMoreInfoButton(field: InputField, userId?: string) {
 		let entityBase = '';
 		let icon = '';
 		switch (field) {
@@ -436,6 +499,10 @@ export class MaterialYouPanel extends LitElement {
 			case 'contrast':
 				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
 				icon = DEFAULT_CONTRAST_LEVEL_ICON;
+				break;
+			case 'styles':
+				entityBase = DEFAULT_STYLES_INPUT;
+				icon = DEFAULT_STYLES_ICON;
 				break;
 			default:
 				break;
@@ -459,11 +526,11 @@ export class MaterialYouPanel extends LitElement {
 	}
 
 	buildSettingsDatum(userId?: string) {
+		const idSuffix = userId ? `_${userId}` : '';
 		let contrast: number = DEFAULT_CONTRAST_LEVEL;
 		for (const value of [
-			this.hass.states[
-				`${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`
-			]?.state,
+			this.hass.states[`${DEFAULT_CONTRAST_LEVEL_INPUT}${idSuffix}`]
+				?.state,
 			this.hass.states[DEFAULT_CONTRAST_LEVEL_INPUT]?.state,
 		]) {
 			const parsed = parseFloat(value);
@@ -474,18 +541,20 @@ export class MaterialYouPanel extends LitElement {
 		}
 		return {
 			base_color:
-				this.hass.states[
-					`${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`
-				]?.state ||
+				this.hass.states[`${DEFAULT_BASE_COLOR_INPUT}${idSuffix}`]
+					?.state ||
 				this.hass.states[DEFAULT_BASE_COLOR_INPUT]?.state ||
 				DEFAULT_BASE_COLOR_HEX,
 			scheme:
-				this.hass.states[
-					`${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`
-				]?.state ||
+				this.hass.states[`${DEFAULT_SCHEME_NAME_INPUT}${idSuffix}`]
+					?.state ||
 				this.hass.states[DEFAULT_SCHEME_NAME_INPUT]?.state ||
 				DEFAULT_SCHEME_NAME,
 			contrast,
+			styles:
+				this.hass.states[`${DEFAULT_STYLES_INPUT}${idSuffix}`]?.state ??
+				this.hass.states[DEFAULT_STYLES_INPUT]?.state ??
+				DEFAULT_STYLES,
 		};
 	}
 
@@ -537,17 +606,119 @@ export class MaterialYouPanel extends LitElement {
 		</div>`;
 	}
 
+	buildBaseColorRow(settings: IUserPanelSettings) {
+		const userId = settings.stateObj?.attributes.user_id;
+		const input = `${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`;
+
+		return this.hass.states[input]
+			? html`${this.buildMoreInfoButton('base_color', userId)}
+					${this.buildSelector(
+						'Base Color',
+						'base_color',
+						userId,
+						{
+							color_rgb: {},
+						},
+						settings.settings.base_color || DEFAULT_BASE_COLOR_HEX,
+					)}
+					<div class="label">
+						${settings.settings.base_color ||
+						DEFAULT_BASE_COLOR_HEX}
+					</div>
+					${this.buildClearButton('base_color', userId)}`
+			: '';
+	}
+
+	buildSchemeRow(settings: IUserPanelSettings) {
+		const userId = settings.stateObj?.attributes.user_id;
+		const input = `${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`;
+
+		return this.hass.states[input]
+			? html`${this.buildMoreInfoButton(
+					'scheme',
+					userId,
+				)}${this.buildSelector(
+					'Scheme Name',
+					'scheme',
+					userId,
+					{
+						select: {
+							mode: 'dropdown',
+							options: schemes,
+						},
+					},
+					settings.settings.scheme || DEFAULT_SCHEME_NAME,
+				)}`
+			: '';
+	}
+
+	buildContrastRow(settings: IUserPanelSettings) {
+		const userId = settings.stateObj?.attributes.user_id;
+		const input = `${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`;
+
+		return this.hass.states[input]
+			? html`${this.buildMoreInfoButton(
+					'contrast',
+					userId,
+				)}${this.buildSelector(
+					'Contrast Level',
+					'contrast',
+					userId,
+					{
+						number: {
+							min: -1,
+							max: 1,
+							step:
+								this.hass.states[input].attributes.step ?? 0.1,
+							mode: 'slider',
+							slider_ticks: true,
+						},
+					},
+					isNaN(parseFloat(String(settings.settings.contrast)))
+						? DEFAULT_CONTRAST_LEVEL
+						: settings.settings.contrast,
+				)}
+				${this.buildClearButton('contrast', userId)}`
+			: '';
+	}
+
+	buildStylesRow(settings: IUserPanelSettings) {
+		const userId = settings.stateObj?.attributes.user_id;
+		const input = `${DEFAULT_STYLES_INPUT}${userId ? `_${userId}` : ''}`;
+
+		return this.hass.states[input]
+			? html`
+					${this.buildMoreInfoButton('styles', userId)}
+					${this.buildSelector(
+						'Style Upgrades',
+						'styles',
+						userId,
+						{
+							boolean: {},
+						},
+						(settings.settings.styles ?? DEFAULT_STYLES) == 'on',
+					)}
+					${this.buildClearButton('styles', userId)}
+				`
+			: '';
+	}
+
 	buildSettingsCard(settings: IUserPanelSettings) {
 		const userId = settings.stateObj?.attributes.user_id;
-
-		const colorInput = `${DEFAULT_BASE_COLOR_INPUT}${userId ? `_${userId}` : ''}`;
-		const schemeInput = `${DEFAULT_SCHEME_NAME_INPUT}${userId ? `_${userId}` : ''}`;
-		const contrastInput = `${DEFAULT_CONTRAST_LEVEL_INPUT}${userId ? `_${userId}` : ''}`;
 
 		let title = 'Global';
 		if (settings.stateObj) {
 			title = settings.stateObj.attributes.friendly_name ?? '';
 		}
+
+		let rows = [
+			this.buildBaseColorRow(settings),
+			this.buildSchemeRow(settings),
+			this.buildContrastRow(settings),
+			this.buildStylesRow(settings),
+		];
+		const n = rows.length;
+		rows = rows.filter((row) => row != '');
 
 		return html`
 			<ha-card .hass=${this.hass} .header=${title}>
@@ -555,9 +726,7 @@ export class MaterialYouPanel extends LitElement {
 					? html`<div class="secondary subtitle">ID: ${userId}</div>`
 					: ''}
 				<div class="card-content">
-					${!this.hass.states[colorInput] ||
-					!this.hass.states[schemeInput] ||
-					!this.hass.states[contrastInput]
+					${rows.length < n
 						? this.buildAlertBox(
 								this.hass.user?.is_admin
 									? `Press Create Helpers to create and initialize ${userId ? 'helpers for this user' : 'global default helpers'}.`
@@ -565,83 +734,7 @@ export class MaterialYouPanel extends LitElement {
 								this.hass.user?.is_admin ? 'info' : 'error',
 							)
 						: ''}
-					<div class="base-color">
-						${this.hass.states[colorInput]
-							? html`${this.buildMoreInfoButton(
-										'base_color',
-										userId,
-									)}
-									${this.buildSelector(
-										'Base Color',
-										'base_color',
-										userId,
-										{
-											color_rgb: {},
-										},
-										settings.settings.base_color ||
-											DEFAULT_BASE_COLOR_HEX,
-									)}
-									<div class="label">
-										${settings.settings.base_color ||
-										DEFAULT_BASE_COLOR_HEX}
-									</div>
-									${this.buildClearButton(
-										'base_color',
-										userId,
-									)}`
-							: ''}
-					</div>
-					<div class="scheme">
-						${this.hass.states[schemeInput]
-							? html`${this.buildMoreInfoButton(
-									'scheme',
-									userId,
-								)}${this.buildSelector(
-									'Scheme Name',
-									'scheme',
-									userId,
-									{
-										select: {
-											mode: 'dropdown',
-											options: schemes,
-										},
-									},
-									settings.settings.scheme ||
-										DEFAULT_SCHEME_NAME,
-								)}`
-							: ''}
-					</div>
-					<div class="contrast">
-						${this.hass.states[contrastInput]
-							? html`${this.buildMoreInfoButton(
-									'contrast',
-									userId,
-								)}${this.buildSelector(
-									'Contrast Level',
-									'contrast',
-									userId,
-									{
-										number: {
-											min: -1,
-											max: 1,
-											step:
-												this.hass.states[contrastInput]
-													.attributes.step ?? 0.1,
-											mode: 'slider',
-											slider_ticks: true,
-										},
-									},
-									isNaN(
-										parseFloat(
-											String(settings.settings.contrast),
-										),
-									)
-										? DEFAULT_CONTRAST_LEVEL
-										: settings.settings.contrast,
-								)}
-								${this.buildClearButton('contrast', userId)}`
-							: ''}
-					</div>
+					${rows.map((row) => html`<div class="row">${row}</div>`)}
 				</div>
 				${this.hass.user?.is_admin
 					? html`<div class="card-actions">
@@ -784,31 +877,19 @@ export class MaterialYouPanel extends LitElement {
 			ha-selector {
 				width: 100%;
 			}
-			.base-color {
-				display: flex;
-				flex-direction: row;
-				align-center: center;
-				border-top-left-radius: var(--mdc-shape-small, 4px);
-				border-top-right-radius: var(--mdc-shape-small, 4px);
-			}
-			.base-color,
-			.scheme,
-			.contrast {
+			.row {
 				display: flex;
 				align-items: flex-end;
 			}
-			.base-color:empty,
-			.scheme:empty,
-			.contrast:empty {
+			.row:empty {
 				display: none;
 			}
 			.label {
 				padding: 20px;
 				margin: auto;
 			}
-			ha-selector[field='scheme'],
-			ha-selector[field='contrast'] {
-				margin: 0 4px;
+			ha-selector[field='base_color'] {
+				margin: 0 -4px;
 			}
 
 			.card-actions {
@@ -857,10 +938,10 @@ export class MaterialYouPanel extends LitElement {
 				--mdc-icon-size: 20px;
 			}
 			.more-info {
-				flex: 1;
 				height: var(--button-size);
 				width: var(--button-size);
-				margin: 8px;
+				margin: 8px 12px;
+				flex: 1;
 				--color: var(--paper-item-icon-color);
 				--button-size: 40px;
 				--mdc-icon-size: 24px;

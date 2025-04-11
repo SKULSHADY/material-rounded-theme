@@ -1,4 +1,5 @@
 import { HomeAssistant } from '../models/interfaces';
+import { InputType } from '../models/interfaces/Panel';
 
 /**
  * Show a toast
@@ -19,13 +20,13 @@ export function showToast(node: Node, message: string) {
 /**
  * Create an input entity
  * @param {HomeAssistant} hass Home Assistant HASS object
- * @param {"text" | "select" | "number"} type Input element type to create
+ * @param {"text" | "select" | "number" | "boolean"} type Input element type to create
  * @param {Record<string, any>} config Input helper init config
  * @returns {Promise<Record<string, any>>}  Input helper init config, with default values for fields not provided
  */
 export async function createInput(
 	hass: HomeAssistant,
-	type: 'text' | 'select' | 'number',
+	type: InputType,
 	config: Record<string, any>,
 ): Promise<Record<string, any>> {
 	return hass.callWS({
@@ -37,14 +38,14 @@ export async function createInput(
 /**
  * Update an input entity
  * @param {HomeAssistant} hass Home Assistant HASS object
- * @param {"text" | "select" | "number"} type Input element type to create
+ * @param {InputType} type Input element type to create
  * @param {string} id Element ID, not including domain
  * @returns {Promise<Record<string, any>>}  Input helper update config, replaces current config
  * @returns
  */
 export async function updateInput(
 	hass: HomeAssistant,
-	type: 'text' | 'select' | 'number',
+	type: InputType,
 	id: string,
 	config: Record<string, any>,
 ): Promise<Record<string, any>> {
@@ -58,12 +59,12 @@ export async function updateInput(
 /**
  * Delete an input entity
  * @param {HomeAssistant} hass Home Assistant HASS object
- * @param {"text" | "select" | "number"} type Input element type to create
+ * @param {InputType} type Input element type to create
  * @param {string} id Element ID, not including domain
  */
 export async function deleteInput(
 	hass: HomeAssistant,
-	type: 'text' | 'select' | 'number',
+	type: InputType,
 	id: string,
 ) {
 	hass.callWS({

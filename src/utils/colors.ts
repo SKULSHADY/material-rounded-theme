@@ -6,15 +6,14 @@ import {
 	MaterialDynamicColors,
 } from '@material/material-color-utilities';
 
+import { colors, logStyles } from '../models/constants/colors';
 import {
-	colors,
 	DEFAULT_BASE_COLOR_HEX,
 	DEFAULT_BASE_COLOR_INPUT,
 	DEFAULT_CONTRAST_LEVEL,
 	DEFAULT_CONTRAST_LEVEL_INPUT,
 	DEFAULT_SCHEME_NAME_INPUT,
-	logStyles,
-} from '../models/constants/colors';
+} from '../models/constants/inputs';
 import { HassElement } from '../models/interfaces';
 import { querySelectorAsync } from './async';
 import { getSchemeInfo, getTargets, getToken } from './common';

@@ -1,4 +1,5 @@
-import { DEFAULT_SCHEME_NAME, schemes } from '../models/constants/colors';
+import { schemes } from '../models/constants/colors';
+import { DEFAULT_SCHEME_NAME } from '../models/constants/inputs';
 import { HassElement } from '../models/interfaces';
 import { IScheme } from '../models/interfaces/Scheme';
 import { getAsync, querySelectorAsync } from './async';
