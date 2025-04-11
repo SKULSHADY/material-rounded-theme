@@ -143,63 +143,63 @@ Material You:
   md-sys-typescale-body-large-line-height: 24px
   md-sys-typescale-body-large-size: 16px
   md-sys-typescale-body-large-tracking: 0-5px
-  md-sys-typescale-body-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-medium-line-height: 20px
   md-sys-typescale-body-medium-size: 14px
   md-sys-typescale-body-medium-tracking: 0-25px
-  md-sys-typescale-body-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-small-line-height: 16px
   md-sys-typescale-body-small-size: 12px
   md-sys-typescale-body-small-tracking: 0-4px
-  md-sys-typescale-body-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-large-line-height: 64px
   md-sys-typescale-display-large-size: 57px
   md-sys-typescale-display-large-tracking: -0-25px
-  md-sys-typescale-display-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-medium-line-height: 52px
   md-sys-typescale-display-medium-size: 45px
   md-sys-typescale-display-medium-tracking: 0
-  md-sys-typescale-display-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-small-line-height: 44px
   md-sys-typescale-display-small-size: 36px
   md-sys-typescale-display-small-tracking: 0
-  md-sys-typescale-display-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-large-line-height: 40px
   md-sys-typescale-headline-large-size: 32px
   md-sys-typescale-headline-large-tracking: 0
-  md-sys-typescale-headline-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-medium-line-height: 36px
   md-sys-typescale-headline-medium-size: 28px
   md-sys-typescale-headline-medium-tracking: 0
-  md-sys-typescale-headline-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-small-line-height: 32px
   md-sys-typescale-headline-small-size: 24px
   md-sys-typescale-headline-small-tracking: 0
-  md-sys-typescale-headline-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-label-large-line-height: 20px
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0-1px
-  md-sys-typescale-label-large-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0-5px
-  md-sys-typescale-label-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0-5px
-  md-sys-typescale-label-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-small-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-large-line-height: 28px
   md-sys-typescale-title-large-size: 22px
   md-sys-typescale-title-large-tracking: 0
-  md-sys-typescale-title-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-title-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-title-medium-line-height: 24px
   md-sys-typescale-title-medium-size: 16px
   md-sys-typescale-title-medium-tracking: 0-15px
-  md-sys-typescale-title-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-small-line-height: 20px
   md-sys-typescale-title-small-size: 14px
   md-sys-typescale-title-small-tracking: 0-1px
-  md-sys-typescale-title-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-small-weight: var(--md-ref-typeface-weight-medium)
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
@@ -603,63 +603,63 @@ Material You Dark:
   md-sys-typescale-body-large-line-height: 24px
   md-sys-typescale-body-large-size: 16px
   md-sys-typescale-body-large-tracking: 0-5px
-  md-sys-typescale-body-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-medium-line-height: 20px
   md-sys-typescale-body-medium-size: 14px
   md-sys-typescale-body-medium-tracking: 0-25px
-  md-sys-typescale-body-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-small-line-height: 16px
   md-sys-typescale-body-small-size: 12px
   md-sys-typescale-body-small-tracking: 0-4px
-  md-sys-typescale-body-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-large-line-height: 64px
   md-sys-typescale-display-large-size: 57px
   md-sys-typescale-display-large-tracking: -0-25px
-  md-sys-typescale-display-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-medium-line-height: 52px
   md-sys-typescale-display-medium-size: 45px
   md-sys-typescale-display-medium-tracking: 0
-  md-sys-typescale-display-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-small-line-height: 44px
   md-sys-typescale-display-small-size: 36px
   md-sys-typescale-display-small-tracking: 0
-  md-sys-typescale-display-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-large-line-height: 40px
   md-sys-typescale-headline-large-size: 32px
   md-sys-typescale-headline-large-tracking: 0
-  md-sys-typescale-headline-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-medium-line-height: 36px
   md-sys-typescale-headline-medium-size: 28px
   md-sys-typescale-headline-medium-tracking: 0
-  md-sys-typescale-headline-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-small-line-height: 32px
   md-sys-typescale-headline-small-size: 24px
   md-sys-typescale-headline-small-tracking: 0
-  md-sys-typescale-headline-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-label-large-line-height: 20px
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0-1px
-  md-sys-typescale-label-large-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0-5px
-  md-sys-typescale-label-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0-5px
-  md-sys-typescale-label-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-small-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-large-line-height: 28px
   md-sys-typescale-title-large-size: 22px
   md-sys-typescale-title-large-tracking: 0
-  md-sys-typescale-title-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-title-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-title-medium-line-height: 24px
   md-sys-typescale-title-medium-size: 16px
   md-sys-typescale-title-medium-tracking: 0-15px
-  md-sys-typescale-title-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-small-line-height: 20px
   md-sys-typescale-title-small-size: 14px
   md-sys-typescale-title-small-tracking: 0-1px
-  md-sys-typescale-title-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-small-weight: var(--md-ref-typeface-weight-medium)
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
@@ -951,63 +951,63 @@ Material You Light:
   md-sys-typescale-body-large-line-height: 24px
   md-sys-typescale-body-large-size: 16px
   md-sys-typescale-body-large-tracking: 0-5px
-  md-sys-typescale-body-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-medium-line-height: 20px
   md-sys-typescale-body-medium-size: 14px
   md-sys-typescale-body-medium-tracking: 0-25px
-  md-sys-typescale-body-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-small-line-height: 16px
   md-sys-typescale-body-small-size: 12px
   md-sys-typescale-body-small-tracking: 0-4px
-  md-sys-typescale-body-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-large-line-height: 64px
   md-sys-typescale-display-large-size: 57px
   md-sys-typescale-display-large-tracking: -0-25px
-  md-sys-typescale-display-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-medium-line-height: 52px
   md-sys-typescale-display-medium-size: 45px
   md-sys-typescale-display-medium-tracking: 0
-  md-sys-typescale-display-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-small-line-height: 44px
   md-sys-typescale-display-small-size: 36px
   md-sys-typescale-display-small-tracking: 0
-  md-sys-typescale-display-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-large-line-height: 40px
   md-sys-typescale-headline-large-size: 32px
   md-sys-typescale-headline-large-tracking: 0
-  md-sys-typescale-headline-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-medium-line-height: 36px
   md-sys-typescale-headline-medium-size: 28px
   md-sys-typescale-headline-medium-tracking: 0
-  md-sys-typescale-headline-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-small-line-height: 32px
   md-sys-typescale-headline-small-size: 24px
   md-sys-typescale-headline-small-tracking: 0
-  md-sys-typescale-headline-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-label-large-line-height: 20px
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0-1px
-  md-sys-typescale-label-large-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0-5px
-  md-sys-typescale-label-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0-5px
-  md-sys-typescale-label-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-small-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-large-line-height: 28px
   md-sys-typescale-title-large-size: 22px
   md-sys-typescale-title-large-tracking: 0
-  md-sys-typescale-title-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-title-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-title-medium-line-height: 24px
   md-sys-typescale-title-medium-size: 16px
   md-sys-typescale-title-medium-tracking: 0-15px
-  md-sys-typescale-title-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-small-line-height: 20px
   md-sys-typescale-title-small-size: 14px
   md-sys-typescale-title-small-tracking: 0-1px
-  md-sys-typescale-title-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-small-weight: var(--md-ref-typeface-weight-medium)
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
@@ -1245,63 +1245,63 @@ Material You Transparent Card:
   md-sys-typescale-body-large-line-height: 24px
   md-sys-typescale-body-large-size: 16px
   md-sys-typescale-body-large-tracking: 0-5px
-  md-sys-typescale-body-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-medium-line-height: 20px
   md-sys-typescale-body-medium-size: 14px
   md-sys-typescale-body-medium-tracking: 0-25px
-  md-sys-typescale-body-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-small-line-height: 16px
   md-sys-typescale-body-small-size: 12px
   md-sys-typescale-body-small-tracking: 0-4px
-  md-sys-typescale-body-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-large-line-height: 64px
   md-sys-typescale-display-large-size: 57px
   md-sys-typescale-display-large-tracking: -0-25px
-  md-sys-typescale-display-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-medium-line-height: 52px
   md-sys-typescale-display-medium-size: 45px
   md-sys-typescale-display-medium-tracking: 0
-  md-sys-typescale-display-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-small-line-height: 44px
   md-sys-typescale-display-small-size: 36px
   md-sys-typescale-display-small-tracking: 0
-  md-sys-typescale-display-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-large-line-height: 40px
   md-sys-typescale-headline-large-size: 32px
   md-sys-typescale-headline-large-tracking: 0
-  md-sys-typescale-headline-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-medium-line-height: 36px
   md-sys-typescale-headline-medium-size: 28px
   md-sys-typescale-headline-medium-tracking: 0
-  md-sys-typescale-headline-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-small-line-height: 32px
   md-sys-typescale-headline-small-size: 24px
   md-sys-typescale-headline-small-tracking: 0
-  md-sys-typescale-headline-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-label-large-line-height: 20px
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0-1px
-  md-sys-typescale-label-large-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0-5px
-  md-sys-typescale-label-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0-5px
-  md-sys-typescale-label-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-small-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-large-line-height: 28px
   md-sys-typescale-title-large-size: 22px
   md-sys-typescale-title-large-tracking: 0
-  md-sys-typescale-title-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-title-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-title-medium-line-height: 24px
   md-sys-typescale-title-medium-size: 16px
   md-sys-typescale-title-medium-tracking: 0-15px
-  md-sys-typescale-title-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-small-line-height: 20px
   md-sys-typescale-title-small-size: 14px
   md-sys-typescale-title-small-tracking: 0-1px
-  md-sys-typescale-title-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-small-weight: var(--md-ref-typeface-weight-medium)
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
@@ -1705,63 +1705,63 @@ Material You Transparent Card Dark:
   md-sys-typescale-body-large-line-height: 24px
   md-sys-typescale-body-large-size: 16px
   md-sys-typescale-body-large-tracking: 0-5px
-  md-sys-typescale-body-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-medium-line-height: 20px
   md-sys-typescale-body-medium-size: 14px
   md-sys-typescale-body-medium-tracking: 0-25px
-  md-sys-typescale-body-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-small-line-height: 16px
   md-sys-typescale-body-small-size: 12px
   md-sys-typescale-body-small-tracking: 0-4px
-  md-sys-typescale-body-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-large-line-height: 64px
   md-sys-typescale-display-large-size: 57px
   md-sys-typescale-display-large-tracking: -0-25px
-  md-sys-typescale-display-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-medium-line-height: 52px
   md-sys-typescale-display-medium-size: 45px
   md-sys-typescale-display-medium-tracking: 0
-  md-sys-typescale-display-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-small-line-height: 44px
   md-sys-typescale-display-small-size: 36px
   md-sys-typescale-display-small-tracking: 0
-  md-sys-typescale-display-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-large-line-height: 40px
   md-sys-typescale-headline-large-size: 32px
   md-sys-typescale-headline-large-tracking: 0
-  md-sys-typescale-headline-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-medium-line-height: 36px
   md-sys-typescale-headline-medium-size: 28px
   md-sys-typescale-headline-medium-tracking: 0
-  md-sys-typescale-headline-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-small-line-height: 32px
   md-sys-typescale-headline-small-size: 24px
   md-sys-typescale-headline-small-tracking: 0
-  md-sys-typescale-headline-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-label-large-line-height: 20px
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0-1px
-  md-sys-typescale-label-large-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0-5px
-  md-sys-typescale-label-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0-5px
-  md-sys-typescale-label-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-small-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-large-line-height: 28px
   md-sys-typescale-title-large-size: 22px
   md-sys-typescale-title-large-tracking: 0
-  md-sys-typescale-title-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-title-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-title-medium-line-height: 24px
   md-sys-typescale-title-medium-size: 16px
   md-sys-typescale-title-medium-tracking: 0-15px
-  md-sys-typescale-title-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-small-line-height: 20px
   md-sys-typescale-title-small-size: 14px
   md-sys-typescale-title-small-tracking: 0-1px
-  md-sys-typescale-title-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-small-weight: var(--md-ref-typeface-weight-medium)
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
@@ -2053,63 +2053,63 @@ Material You Transparent Card Light:
   md-sys-typescale-body-large-line-height: 24px
   md-sys-typescale-body-large-size: 16px
   md-sys-typescale-body-large-tracking: 0-5px
-  md-sys-typescale-body-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-medium-line-height: 20px
   md-sys-typescale-body-medium-size: 14px
   md-sys-typescale-body-medium-tracking: 0-25px
-  md-sys-typescale-body-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-small-line-height: 16px
   md-sys-typescale-body-small-size: 12px
   md-sys-typescale-body-small-tracking: 0-4px
-  md-sys-typescale-body-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-body-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-large-line-height: 64px
   md-sys-typescale-display-large-size: 57px
   md-sys-typescale-display-large-tracking: -0-25px
-  md-sys-typescale-display-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-medium-line-height: 52px
   md-sys-typescale-display-medium-size: 45px
   md-sys-typescale-display-medium-tracking: 0
-  md-sys-typescale-display-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-small-line-height: 44px
   md-sys-typescale-display-small-size: 36px
   md-sys-typescale-display-small-tracking: 0
-  md-sys-typescale-display-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-display-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-large-line-height: 40px
   md-sys-typescale-headline-large-size: 32px
   md-sys-typescale-headline-large-tracking: 0
-  md-sys-typescale-headline-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-medium-line-height: 36px
   md-sys-typescale-headline-medium-size: 28px
   md-sys-typescale-headline-medium-tracking: 0
-  md-sys-typescale-headline-medium-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-headline-small-line-height: 32px
   md-sys-typescale-headline-small-size: 24px
   md-sys-typescale-headline-small-tracking: 0
-  md-sys-typescale-headline-small-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-headline-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-label-large-line-height: 20px
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0-1px
-  md-sys-typescale-label-large-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0-5px
-  md-sys-typescale-label-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0-5px
-  md-sys-typescale-label-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-label-small-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-large-line-height: 28px
   md-sys-typescale-title-large-size: 22px
   md-sys-typescale-title-large-tracking: 0
-  md-sys-typescale-title-large-weight: var(md-ref-typeface-weight-regular)
+  md-sys-typescale-title-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-title-medium-line-height: 24px
   md-sys-typescale-title-medium-size: 16px
   md-sys-typescale-title-medium-tracking: 0-15px
-  md-sys-typescale-title-medium-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-small-line-height: 20px
   md-sys-typescale-title-small-size: 14px
   md-sys-typescale-title-small-tracking: 0-1px
-  md-sys-typescale-title-small-weight: var(md-ref-typeface-weight-medium)
+  md-sys-typescale-title-small-weight: var(--md-ref-typeface-weight-medium)
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
   mdc-button-horizontal-padding: 12px
