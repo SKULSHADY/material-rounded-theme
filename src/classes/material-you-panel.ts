@@ -112,14 +112,18 @@ export class MaterialYouPanel extends LitElement {
 		let entityId = `${DEFAULT_BASE_COLOR_INPUT}${idSuffix}`;
 		if (!this.hass.states[entityId]) {
 			const id = entityId.split('.')[1];
-			await createInput(this.hass, 'text', {
-				name: id,
+			const config = {
 				icon: 'mdi:palette',
 				min: 0,
 				max: 9,
+			};
+			await createInput(this.hass, 'text', {
+				name: id,
+				...config,
 			});
 			await updateInput(this.hass, 'text', id, {
 				name: `${DEFAULT_BASE_COLOR_NAME}${userName}`,
+				...config,
 			});
 			await this.hass.callService('input_text', 'set_value', {
 				value: '',
@@ -131,15 +135,17 @@ export class MaterialYouPanel extends LitElement {
 		entityId = `${DEFAULT_SCHEME_NAME_INPUT}${idSuffix}`;
 		if (!this.hass.states[entityId]) {
 			const id = entityId.split('.')[1];
-			const options = [...schemes.map((scheme) => scheme.value), ' '];
+			const config = {
+				icon: 'mdi:palette-advanced',
+				options: [...schemes.map((scheme) => scheme.value), ' '],
+			};
 			await createInput(this.hass, 'select', {
 				name: id,
-				icon: 'mdi:palette-advanced',
-				options,
+				...config,
 			});
 			await updateInput(this.hass, 'select', id, {
 				name: `${DEFAULT_SCHEME_NAME_NAME}${userName}`,
-				options,
+				...config,
 			});
 			await this.hass.callService('input_select', 'select_option', {
 				option: ' ',
@@ -151,18 +157,19 @@ export class MaterialYouPanel extends LitElement {
 		entityId = `${DEFAULT_CONTRAST_LEVEL_INPUT}${idSuffix}`;
 		if (!this.hass.states[entityId]) {
 			const id = entityId.split('.')[1];
-			await createInput(this.hass, 'number', {
-				name: id,
+			const config = {
 				icon: 'mdi:contrast-circle',
 				min: -1,
 				max: 1,
 				step: 0.1,
+			};
+			await createInput(this.hass, 'number', {
+				name: id,
+				...config,
 			});
 			await updateInput(this.hass, 'number', id, {
 				name: `${DEFAULT_CONTRAST_LEVEL_NAME}${userName}`,
-				min: -1,
-				max: 1,
-				step: 0.1,
+				...config,
 			});
 			await this.hass.callService('input_number', 'set_value', {
 				value: 0,
