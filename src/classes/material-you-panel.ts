@@ -658,7 +658,7 @@ export class MaterialYouPanel extends LitElement {
 				gap: 24px;
 			}
 			ha-card {
-				width: min(600px, 100%);
+				width: min(600px, calc(100% - 36px));
 			}
 			.section-header {
 				width: min(564px, 85%);
