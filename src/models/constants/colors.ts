@@ -24,10 +24,17 @@ export const DEFAULT_CONTRAST_LEVEL_SENSOR = `${SENSOR_PREFIX}_contrast`;
 
 export const INPUT_TEXT_PREFIX = `input_text.${THEME}`;
 export const DEFAULT_BASE_COLOR_INPUT = `${INPUT_TEXT_PREFIX}_base_color`;
-export const DEFAULT_SCHEME_NAME_INPUT = `${INPUT_TEXT_PREFIX}_scheme`;
-export const DEFAULT_CONTRAST_LEVEL_INPUT = `${INPUT_TEXT_PREFIX}_contrast`;
 
-export const THEME_NAME = 'Material You';
+export const INPUT_SELECT_PREFIX = `input_select.${THEME}`;
+export const DEFAULT_SCHEME_NAME_INPUT = `${INPUT_SELECT_PREFIX}_scheme`;
+
+export const INPUT_NUMBER_PREFIX = `input_number.${THEME}`;
+export const DEFAULT_CONTRAST_LEVEL_INPUT = `${INPUT_NUMBER_PREFIX}_contrast`;
+
+const THEME_NAME = 'Material You';
+export const DEFAULT_BASE_COLOR_NAME = `${THEME_NAME} Base Color`;
+export const DEFAULT_SCHEME_NAME_NAME = `${THEME_NAME} Scheme Name`;
+export const DEFAULT_CONTRAST_LEVEL_NAME = `${THEME_NAME} Contrast Level`;
 
 export const colors: (keyof typeof MaterialDynamicColors)[] = [
 	'primary',

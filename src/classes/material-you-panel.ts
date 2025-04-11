@@ -4,10 +4,13 @@ import packageInfo from '../../package.json';
 import {
 	DEFAULT_BASE_COLOR,
 	DEFAULT_BASE_COLOR_INPUT,
+	DEFAULT_BASE_COLOR_NAME,
 	DEFAULT_CONTRAST_LEVEL,
 	DEFAULT_CONTRAST_LEVEL_INPUT,
+	DEFAULT_CONTRAST_LEVEL_NAME,
 	DEFAULT_SCHEME_NAME,
 	DEFAULT_SCHEME_NAME_INPUT,
+	DEFAULT_SCHEME_NAME_NAME,
 	schemes,
 } from '../models/constants/colors';
 import { HomeAssistant } from '../models/interfaces';
@@ -21,6 +24,12 @@ import {
 	hexFromArgb,
 	redFromArgb,
 } from '@material/material-color-utilities';
+import {
+	createInput,
+	deleteInput,
+	showToast,
+	updateInput,
+} from '../utils/panel';
 
 export class MaterialYouPanel extends LitElement {
 	@property() hass!: HomeAssistant;
@@ -31,6 +40,154 @@ export class MaterialYouPanel extends LitElement {
 	currentUserSettings!: IUserPanelSettings;
 	globalSettings!: IUserPanelSettings;
 	otherUserSettings: Record<string, IUserPanelSettings> = {};
+
+	async handleDeleteEntities(e: MouseEvent) {
+		const userId = (e.target as HTMLElement).getAttribute('user-id');
+		const idSuffix = userId ? `_${userId}` : '';
+
+		let entityId = `${DEFAULT_BASE_COLOR_INPUT}${idSuffix}`;
+		if (this.hass.states[entityId]) {
+			await deleteInput(this.hass, 'text', entityId.split('.')[1]);
+		}
+
+		entityId = `${DEFAULT_SCHEME_NAME_INPUT}${idSuffix}`;
+		if (this.hass.states[entityId]) {
+			await deleteInput(this.hass, 'select', entityId.split('.')[1]);
+		}
+
+		entityId = `${DEFAULT_CONTRAST_LEVEL_INPUT}${idSuffix}`;
+		if (this.hass.states[entityId]) {
+			await deleteInput(this.hass, 'number', entityId.split('.')[1]);
+		}
+
+		let message = 'Global input entities cleared';
+		if (userId) {
+			let userName = '';
+			if (userId == this.hass.user?.id) {
+				userName = this.hass.user?.name ?? '';
+			} else {
+				userName =
+					this.otherUserSettings[userId].stateObj?.attributes
+						.friendly_name ?? '';
+			}
+			message = `Input entities cleared for ${userName}`;
+		}
+		showToast(this, message);
+	}
+
+	buildDeleteEntitiesButton(userId?: string) {
+		return html`
+			<div
+				class="delete button"
+				user-id="${userId}"
+				@click=${this.handleDeleteEntities}
+			>
+				Delete Entities
+			</div>
+		`;
+	}
+
+	async handleCreateEntities(e: MouseEvent) {
+		// User ID and name checks
+		const userId = (e.target as HTMLElement).getAttribute('user-id');
+		const idSuffix = userId ? `_${userId}` : '';
+		let userName = '';
+		if (userId) {
+			if (this.hass.user?.id == userId) {
+				userName =
+					this.currentUserSettings.stateObj?.attributes
+						.friendly_name ?? '';
+			} else {
+				userName =
+					this.otherUserSettings[
+						Object.keys(this.otherUserSettings).filter(
+							(id) => userId == id,
+						)[0]
+					].stateObj?.attributes.friendly_name ?? '';
+			}
+			userName = ` ${userName}`;
+		}
+
+		// Base Color
+		let entityId = `${DEFAULT_BASE_COLOR_INPUT}${idSuffix}`;
+		if (!this.hass.states[entityId]) {
+			const id = entityId.split('.')[1];
+			await createInput(this.hass, 'text', {
+				name: id,
+				icon: 'mdi:palette',
+				min: 0,
+				max: 9,
+			});
+			await updateInput(this.hass, 'text', id, {
+				name: `${DEFAULT_BASE_COLOR_NAME}${userName}`,
+			});
+			await this.hass.callService('input_text', 'set_value', {
+				value: '',
+				entity_id: entityId,
+			});
+		}
+
+		// Scheme Name
+		entityId = `${DEFAULT_SCHEME_NAME_INPUT}${idSuffix}`;
+		if (!this.hass.states[entityId]) {
+			const id = entityId.split('.')[1];
+			const options = [...schemes.map((scheme) => scheme.value), ' '];
+			await createInput(this.hass, 'select', {
+				name: id,
+				icon: 'mdi:palette-advanced',
+				options,
+			});
+			await updateInput(this.hass, 'select', id, {
+				name: `${DEFAULT_SCHEME_NAME_NAME}${userName}`,
+				options,
+			});
+			await this.hass.callService('input_select', 'select_option', {
+				option: ' ',
+				entity_id: entityId,
+			});
+		}
+
+		// Contrast Level
+		entityId = `${DEFAULT_CONTRAST_LEVEL_INPUT}${idSuffix}`;
+		if (!this.hass.states[entityId]) {
+			const id = entityId.split('.')[1];
+			await createInput(this.hass, 'number', {
+				name: id,
+				icon: 'mdi:contrast-circle',
+				min: -1,
+				max: 1,
+				step: 0.1,
+			});
+			await updateInput(this.hass, 'number', id, {
+				name: `${DEFAULT_CONTRAST_LEVEL_NAME}${userName}`,
+				min: -1,
+				max: 1,
+				step: 0.1,
+			});
+			await this.hass.callService('input_number', 'set_value', {
+				value: 0,
+				entity_id: entityId,
+			});
+		}
+
+		let message = 'Global input entities created';
+		if (userName) {
+			message = `Input entities created for ${userName}`;
+		}
+		showToast(this, message);
+	}
+
+	buildCreateEntitiesButton(userId?: string) {
+		return html`
+			<div
+				class="create button"
+				user-id="${userId}"
+				@click=${this.handleCreateEntities}
+			>
+				Create Entities
+			</div>
+		`;
+	}
 
 	getConfig(userId: string) {
 		let config: IUserPanelSettings;
@@ -48,20 +205,28 @@ export class MaterialYouPanel extends LitElement {
 
 	async handleSelectorChange(e: CustomEvent) {
 		const userId = (e.target as HTMLElement).getAttribute('user-id');
-		const key = (e.target as HTMLElement).getAttribute('key');
+		const field = (e.target as HTMLElement).getAttribute('field');
 		let value = e.detail.value;
 
 		let entityBase = '';
-		switch (key) {
+		let domain = '';
+		let service = 'set_value';
+		let key = 'value';
+		switch (field) {
 			case 'base_color':
+				domain = 'input_text';
 				entityBase = DEFAULT_BASE_COLOR_INPUT;
 				value = hexFromArgb(argbFromRgb(value[0], value[1], value[2]));
 				break;
 			case 'scheme':
+				domain = 'input_select';
+				service = 'select_option';
+				key = 'option';
 				entityBase = DEFAULT_SCHEME_NAME_INPUT;
-				value ||= '';
+				value ||= ' ';
 				break;
 			case 'contrast':
+				domain = 'input_number';
 				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
 				value ||= 0;
 				break;
@@ -69,8 +234,8 @@ export class MaterialYouPanel extends LitElement {
 				break;
 		}
 
-		await this.hass.callService('input_text', 'set_value', {
-			value,
+		await this.hass.callService(domain, service, {
+			[key]: value,
 			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
 		});
 		this.requestUpdate();
@@ -78,16 +243,16 @@ export class MaterialYouPanel extends LitElement {
 
 	buildSelector(
 		label: string,
-		key: 'base_color' | 'scheme' | 'contrast',
+		field: 'base_color' | 'scheme' | 'contrast',
 		userId: string,
 		selector: object,
 		placeholder?: string | number | boolean | object,
 	) {
 		const config = this.getConfig(userId);
 		let value: string | number | number[];
-		switch (key) {
+		switch (field) {
 			case 'base_color':
-				const argb = argbFromHex(config.settings[key] as string);
+				const argb = argbFromHex(config.settings[field] as string);
 				value = [
 					redFromArgb(argb),
 					greenFromArgb(argb),
@@ -97,7 +262,7 @@ export class MaterialYouPanel extends LitElement {
 			case 'scheme':
 			case 'contrast':
 			default:
-				value = config.settings[key];
+				value = config.settings[field];
 				break;
 		}
 
@@ -110,7 +275,7 @@ export class MaterialYouPanel extends LitElement {
 			.placeholder=${placeholder}
 			.required=${false}
 			user-id="${userId}"
-			key="${key}"
+			field="${field}"
 			@value-changed=${this.handleSelectorChange}
 		></ha-selector>`;
 	}
@@ -118,50 +283,63 @@ export class MaterialYouPanel extends LitElement {
 	async handleClearKeyDown(e: KeyboardEvent) {
 		if (!e.repeat && ['Enter', ' '].includes(e.key)) {
 			e.preventDefault();
-			this.handleClearButton(
+			this.handleClearClick(
 				new window.MouseEvent('click', e),
 				e.target as HTMLElement,
 			);
 		}
 	}
 
-	async handleClearButton(e: MouseEvent, target?: HTMLElement) {
+	async handleClearClick(e: MouseEvent, target?: HTMLElement) {
 		const userId = ((e.target as HTMLElement) ?? target).getAttribute(
 			'user-id',
 		);
-		const key = ((e.target as HTMLElement) ?? target).getAttribute('key');
+		const field = ((e.target as HTMLElement) ?? target).getAttribute(
+			'field',
+		);
 
 		let entityBase = '';
-		switch (key) {
+		let domain = '';
+		let service = 'set_value';
+		let key = 'value';
+		let value: string | number = '';
+		switch (field) {
 			case 'base_color':
+				domain = 'input_text';
 				entityBase = DEFAULT_BASE_COLOR_INPUT;
 				break;
 			case 'scheme':
+				domain = 'input_select';
+				service = 'select_option';
+				key = 'option';
+				value = ' ';
 				entityBase = DEFAULT_SCHEME_NAME_INPUT;
 				break;
 			case 'contrast':
+				domain = 'input_number';
+				value = 0;
 				entityBase = DEFAULT_CONTRAST_LEVEL_INPUT;
 				break;
 			default:
 				break;
 		}
 
-		await this.hass.callService('input_text', 'set_value', {
-			value: '',
+		await this.hass.callService(domain, service, {
+			[key]: value,
 			entity_id: `${entityBase}${userId ? `_${userId}` : ''}`,
 		});
 		this.requestUpdate();
 	}
 
-	buildClearButton(key: string, userId?: string) {
+	buildClearButton(field: string, userId?: string) {
 		return html`
 			<div class="clear button">
 				<ha-icon
-					@click=${this.handleClearButton}
+					@click=${this.handleClearClick}
 					@keydown=${this.handleClearKeyDown}
 					tabindex="0"
 					user-id="${userId}"
-					key="${key}"
+					field="${field}"
 					.icon="${'mdi:close'}"
 				></ha-icon>
 			</div>
@@ -343,6 +521,13 @@ export class MaterialYouPanel extends LitElement {
 								)}
 					</div>
 				</div>
+				${this.hass.user?.is_admin
+					? html`<div class="card-actions">
+							${this.buildCreateEntitiesButton(
+								userId,
+							)}${this.buildDeleteEntitiesButton(userId)}
+						</div>`
+					: ''}
 			</ha-card>
 		`;
 	}
@@ -460,7 +645,8 @@ export class MaterialYouPanel extends LitElement {
 			.card-actions {
 				display: flex;
 				flex-direction: row;
-				justify-content: flex-end;
+				justify-content: space-between;
+				height: 36px;
 			}
 			.button {
 				display: flex;
@@ -504,16 +690,23 @@ export class MaterialYouPanel extends LitElement {
 			.clear::after {
 				width: var(--button-size);
 			}
-			.setup {
+			.create,
+			.delete {
 				margin: 0 8px;
 				height: var(--button-size);
 				width: 100px;
 				border-radius: var(--button-size);
 				--button-size: 36px;
+			}
+			.create::after,
+			.delete::after {
+				width: 120px;
+			}
+			.create {
 				--color: var(--primary-color);
 			}
-			.setup::after {
-				width: 120px;
+			.delete {
+				--color: var(--error-color);
 			}
 		`;
 	}
