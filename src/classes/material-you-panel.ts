@@ -932,7 +932,7 @@ export class MaterialYouPanel extends LitElement {
 			.clear {
 				height: var(--button-size);
 				width: var(--button-size);
-				padding: 10px;
+				margin: 10px;
 				--color: var(--secondary-text-color);
 				--button-size: 36px;
 				--mdc-icon-size: 20px;
