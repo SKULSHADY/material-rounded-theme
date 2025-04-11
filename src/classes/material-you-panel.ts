@@ -272,12 +272,17 @@ export class MaterialYouPanel extends LitElement {
 		let value: string | number | number[];
 		switch (field) {
 			case 'base_color':
-				const argb = argbFromHex(config.settings[field] as string);
-				value = [
-					redFromArgb(argb),
-					greenFromArgb(argb),
-					blueFromArgb(argb),
-				];
+				try {
+					const argb = argbFromHex(config.settings[field] as string);
+					value = [
+						redFromArgb(argb),
+						greenFromArgb(argb),
+						blueFromArgb(argb),
+					];
+				} catch (e) {
+					console.error(e);
+					value = [0, 0, 0];
+				}
 				break;
 			case 'scheme':
 			case 'contrast':

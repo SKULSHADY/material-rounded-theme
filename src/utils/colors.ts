@@ -10,12 +10,9 @@ import {
 	colors,
 	DEFAULT_BASE_COLOR,
 	DEFAULT_BASE_COLOR_INPUT,
-	DEFAULT_BASE_COLOR_SENSOR,
 	DEFAULT_CONTRAST_LEVEL,
 	DEFAULT_CONTRAST_LEVEL_INPUT,
-	DEFAULT_CONTRAST_LEVEL_SENSOR,
 	DEFAULT_SCHEME_NAME_INPUT,
-	DEFAULT_SCHEME_NAME_SENSOR,
 	logStyles,
 } from '../models/constants/colors';
 import { HassElement } from '../models/interfaces';
@@ -35,18 +32,15 @@ export async function unsetTheme() {
 	console.info('%c Material design system colors removed. ', logStyles());
 }
 
-/* Generate and set theme colors based on user defined sensors */
+/* Generate and set theme colors based on user defined inputs */
 export async function setTheme() {
 	const hass = (document.querySelector('home-assistant') as HassElement).hass;
 	{
 		try {
-			// Setup sensors and inputs
+			// Setup inputs
 			const userId = hass.user?.id;
-			const colorSensorUserId = `${DEFAULT_BASE_COLOR_SENSOR}_${userId}`;
 			const colorInputUserId = `${DEFAULT_BASE_COLOR_INPUT}_${userId}`;
-			const schemeSensorUserId = `${DEFAULT_SCHEME_NAME_SENSOR}_${userId}`;
 			const schemeInputUserId = `${DEFAULT_SCHEME_NAME_INPUT}_${userId}`;
-			const contrastSensorUserId = `${DEFAULT_CONTRAST_LEVEL_SENSOR}_${userId}`;
 			const contrastInputUserId = `${DEFAULT_CONTRAST_LEVEL_INPUT}_${userId}`;
 
 			const html = await querySelectorAsync(document, 'html');
@@ -54,26 +48,20 @@ export async function setTheme() {
 			const themeName = hass?.themes?.theme ?? '';
 			if (themeName.includes('Material You')) {
 				let baseColor = (
-					hass.states[colorSensorUserId]?.state ||
 					hass.states[colorInputUserId]?.state ||
-					hass.states[DEFAULT_BASE_COLOR_SENSOR]?.state ||
 					hass.states[DEFAULT_BASE_COLOR_INPUT]?.state ||
 					''
 				).trim();
 
 				const schemeName = (
-					hass.states[schemeSensorUserId]?.state ||
 					hass.states[schemeInputUserId]?.state ||
-					hass.states[DEFAULT_SCHEME_NAME_SENSOR]?.state ||
 					hass.states[DEFAULT_SCHEME_NAME_INPUT]?.state ||
 					''
 				).trim();
 
 				let contrastLevel: number = DEFAULT_CONTRAST_LEVEL;
 				for (const value of [
-					hass.states[contrastSensorUserId]?.state,
 					hass.states[contrastInputUserId]?.state,
-					hass.states[DEFAULT_CONTRAST_LEVEL_SENSOR]?.state,
 					hass.states[DEFAULT_CONTRAST_LEVEL_INPUT]?.state,
 				]) {
 					const parsed = parseFloat(value);
@@ -83,7 +71,7 @@ export async function setTheme() {
 					}
 				}
 
-				// Only update if one of the sensors detects something
+				// Only update if one of the inputs is set
 				if (baseColor || schemeName || contrastLevel) {
 					baseColor ||= DEFAULT_BASE_COLOR;
 					const schemeInfo = getSchemeInfo(schemeName);

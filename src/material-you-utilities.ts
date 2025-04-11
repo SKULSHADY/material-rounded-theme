@@ -3,11 +3,8 @@ import { MaterialYouPanel } from './classes/material-you-panel';
 
 import {
 	DEFAULT_BASE_COLOR_INPUT,
-	DEFAULT_BASE_COLOR_SENSOR,
 	DEFAULT_CONTRAST_LEVEL_INPUT,
-	DEFAULT_CONTRAST_LEVEL_SENSOR,
 	DEFAULT_SCHEME_NAME_INPUT,
-	DEFAULT_SCHEME_NAME_SENSOR,
 	logStyles,
 } from './models/constants/colors';
 import { getAsync, querySelectorAsync } from './utils/async';
@@ -57,16 +54,13 @@ async function main() {
 	setTheme();
 
 	if (haMain.hass.user?.is_admin) {
-		// Sensors and inputs for user theme color triggers
+		// Inputs for user theme color triggers
 		const userId = haMain.hass.user?.id;
-		const colorSensorUserId = `${DEFAULT_BASE_COLOR_SENSOR}_${userId}`;
-		const schemeSensorUserId = `${DEFAULT_SCHEME_NAME_SENSOR}_${userId}`;
-		const contrastSensorUserId = `${DEFAULT_CONTRAST_LEVEL_SENSOR}_${userId}`;
 		const colorInputUserId = `${DEFAULT_BASE_COLOR_INPUT}_${userId}`;
 		const schemeInputUserId = `${DEFAULT_SCHEME_NAME_INPUT}_${userId}`;
 		const contrastInputUserId = `${DEFAULT_CONTRAST_LEVEL_INPUT}_${userId}`;
 
-		// Trigger user theme color on sensor change
+		// Trigger user theme color on input change
 		haMain.hass.connection.subscribeMessage(
 			async () => await setTheme(),
 			{
@@ -74,12 +68,6 @@ async function main() {
 				trigger: {
 					platform: 'state',
 					entity_id: [
-						DEFAULT_BASE_COLOR_SENSOR,
-						DEFAULT_SCHEME_NAME_SENSOR,
-						DEFAULT_CONTRAST_LEVEL_SENSOR,
-						colorSensorUserId,
-						schemeSensorUserId,
-						contrastSensorUserId,
 						DEFAULT_BASE_COLOR_INPUT,
 						DEFAULT_SCHEME_NAME_INPUT,
 						DEFAULT_CONTRAST_LEVEL_INPUT,
