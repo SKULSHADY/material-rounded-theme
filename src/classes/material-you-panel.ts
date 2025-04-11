@@ -509,7 +509,9 @@ export class MaterialYouPanel extends LitElement {
 										number: {
 											min: -1,
 											max: 1,
-											step: 0.1,
+											step:
+												this.hass.states[contrastInput]
+													.attributes.step ?? 0.1,
 											mode: 'slider',
 											slider_ticks: true,
 										},
@@ -552,6 +554,12 @@ export class MaterialYouPanel extends LitElement {
 		return html`
 			${this.buildHeader()}
 			<div class="content">
+				${!this.hass.themes.theme.includes('Material You')
+					? this.buildAlertBox(
+							"You aren't using the theme Material You! Switch to it in your profile settings.",
+							'warning',
+						)
+					: ''}
 				${this.buildSettingsCard(this.currentUserSettings)}
 				${this.hass.user?.is_admin
 					? html`
