@@ -174,6 +174,10 @@ If an invalid or no scheme is provided, it will default to `Tonal Spot` or the g
 
 Each scheme can also be provided with a custom contrast from -1 to 1. Value outside of this range are clamped to it. If an invalid or no value is provided it will default to `0`.
 
+### Style Upgrades
+
+If you want to disable the Material Design 3 component upgrades, toggle Style Upgrades off. Doing so will still allow you to set custom color themes.
+
 ## Build Your Own Theme
 
 If you do not want to use the JavaScript module resource or create helper sensors, you can instead create your own Material Theme using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
