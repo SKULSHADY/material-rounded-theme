@@ -3,6 +3,20 @@ ha-sidebar {
 	width: 56px;
 }
 
+/* Menu title font */
+.menu {
+	height: 56px;
+	font-size: var(--md-sys-typescale-title-small-size);
+	font-weight: var(--md-sys-typescale-title-small-weight);
+	line-height: var(--md-sys-typescale-title-small-line-height);
+	letter-spacing: var(--md-sys-typescale-title-small-tracking);
+}
+
+/* Remove padding from list */
+.ha-scrollbar {
+	padding: 0;
+}
+
 /* Animate background when expanding/retracting sidebar */
 paper-icon-item {
 	transition: width 0.2s cubic-bezier(0.2, 0, 0, 1);
@@ -17,6 +31,8 @@ paper-icon-item {
 	overflow: hidden;
 	white-space: nowrap;
 	margin: 0;
+	line-height: var(--md-sys-typescale-label-large-line-height);
+	letter-spacing: var(--md-sys-typescale-label-large-tracking);
 }
 ha-icon,
 ha-svg-icon {
@@ -26,7 +42,7 @@ ha-svg-icon {
 /* Change background of current destination icon with transition */
 paper-icon-item::before {
 	content: '';
-	height: 48px;
+	height: 100%;
 	width: 100%;
 	position: absolute;
 	transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
@@ -45,7 +61,7 @@ paper-icon-item::before {
 paper-icon-item::after {
 	content: '';
 	position: absolute;
-	height: 48px;
+	height: 100%;
 	width: 100%;
 	border-radius: 128px;
 	left: 0;
@@ -70,7 +86,7 @@ paper-icon-item:active::after {
 
 /* Current destination font weight */
 .iron-selected .item-text {
-	font-weight: 700;
+	font-weight: var(--md-sys-typescale-label-large-weight-prominent);
 }
 
 /* Use error colors on rail badges */
@@ -78,14 +94,14 @@ paper-icon-item:active::after {
 .notification-badge {
 	color: var(--on-error-color);
 	background-color: var(--error-color);
-	font-weight: 500;
+	font-weight: var(--md-sys-typescale-label-large-weight);
 }
 
 /* Use sidebar text color with no background on drawer badges */
 :host([expanded]) .configuration-badge,
 :host([expanded]) .notification-badge {
 	color: var(--sidebar-text-color);
-	background-color: rgb(0, 0, 0, 0);
+	background-color: transparent;
 }
 :host([expanded]) .iron-selected .configuration-badge,
 :host([expanded]) .iron-selected .notification-badge {

@@ -79,6 +79,7 @@ Material You:
   # Typography - font-weight, font-size, letter-spacing, line-height
   md-ref-typeface-weight-regular: 400
   md-ref-typeface-weight-medium: 500
+  md-sys-typescale-label-large-weight-prominent: 700
 
   md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-large-size: 57px

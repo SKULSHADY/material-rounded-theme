@@ -21,6 +21,7 @@ def main():
 			theme_title = f'{theme_name} Transparent Card'
 			output[theme_title] = deepcopy(base_theme)
 			output[theme_title]['ha-card-background'] = 'transparent'
+			output[theme_title]['ha-card-box-shadow'] = 'none'
 							
 		yaml.dump(output, dist)
 

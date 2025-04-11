@@ -181,6 +181,7 @@ Material You:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight-prominent: 700
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
@@ -640,6 +641,7 @@ Material You Dark:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight-prominent: 700
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
@@ -987,6 +989,7 @@ Material You Light:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight-prominent: 700
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
@@ -1133,7 +1136,7 @@ Material You Transparent Card:
   ha-card-border-radius: var(--border-radius)
   ha-card-border-style: none
   ha-card-border-width: 0px
-  ha-card-box-shadow: var(--md-sys-elevation-level1)
+  ha-card-box-shadow: none
   ha-card-header-font-family: var(--font-family)
   ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
@@ -1280,6 +1283,7 @@ Material You Transparent Card:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight-prominent: 700
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
@@ -1540,7 +1544,7 @@ Material You Transparent Card Dark:
   ha-card-border-radius: var(--border-radius)
   ha-card-border-style: none
   ha-card-border-width: 0px
-  ha-card-box-shadow: var(--md-sys-elevation-level1)
+  ha-card-box-shadow: none
   ha-card-header-font-family: var(--font-family)
   ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
@@ -1739,6 +1743,7 @@ Material You Transparent Card Dark:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight-prominent: 700
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
@@ -1887,7 +1892,7 @@ Material You Transparent Card Light:
   ha-card-border-radius: var(--border-radius)
   ha-card-border-style: none
   ha-card-border-width: 0px
-  ha-card-box-shadow: var(--md-sys-elevation-level1)
+  ha-card-box-shadow: none
   ha-card-header-font-family: var(--font-family)
   ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
@@ -2086,6 +2091,7 @@ Material You Transparent Card Light:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-large-weight-prominent: 700
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px

@@ -174,7 +174,7 @@ paper-tab:has(ha-icon)::after {
 /* Current view label color */
 paper-tab.iron-selected::after {
 	color: var(--md-current-tab-text-color);
-	font-weight: 700;
+	font-weight: var(--md-sys-typescale-label-large-weight-prominent);
 }
 
 /* Make edit mode current view tab fit all buttons */
