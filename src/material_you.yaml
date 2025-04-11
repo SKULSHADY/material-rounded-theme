@@ -153,16 +153,19 @@ Material You:
   on-error-color: var(--md-sys-color-on-error)
 
   # Cards and footer
-  card-background-color: var(--md-sys-color-surface-container-low)
   primary-background-color: var(--md-sys-color-surface-container)
   border-radius: 28px
+  card-background-color: var(--md-sys-color-surface-container-low)
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border-radius: var(--border-radius)
+  ha-card-box-shadow:
+    rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 2px 1px -1px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 1px 1px 0px,
+    rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 1px 3px 0px
   ha-card-border-color: "#00000000"
   ha-card-border-width: 0px
   ha-card-border-style: none
   ha-card-border: none
-  ha-card-box-shadow: none
   ha-config-card-border-radius: 16px
   paper-item-icon-color: var(--md-sys-color-on-surface-variant)
 
