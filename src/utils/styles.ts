@@ -1,4 +1,8 @@
 import { html } from 'lit';
+import {
+	DEFAULT_STYLES,
+	DEFAULT_STYLES_INPUT,
+} from '../models/constants/inputs';
 import { elements } from '../models/constants/styles';
 import { HassElement } from '../models/interfaces';
 import { getAsync } from './async';
@@ -14,7 +18,12 @@ export function checkTheme() {
 	if (!theme) {
 		const ha = document.querySelector('home-assistant') as HassElement;
 		theme = ha.hass?.themes?.theme;
-		shouldSetStyles = theme?.includes('Material You');
+		shouldSetStyles =
+			theme?.includes('Material You') &&
+			(ha.hass.states[`${DEFAULT_STYLES_INPUT}_${ha.hass.user?.id}`]
+				?.state ??
+				ha.hass.states[DEFAULT_STYLES_INPUT]?.state ??
+				DEFAULT_STYLES) == 'on';
 	}
 }
 
