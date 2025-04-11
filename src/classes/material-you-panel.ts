@@ -556,7 +556,7 @@ export class MaterialYouPanel extends LitElement {
 			<div class="content">
 				${!this.hass.themes.theme.includes('Material You')
 					? this.buildAlertBox(
-							"You aren't using the theme Material You! Switch to it in your profile settings.",
+							'You are not using Material You Theme! Switch to it in your profile settings.',
 							'warning',
 						)
 					: ''}
