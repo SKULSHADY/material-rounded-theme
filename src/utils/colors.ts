@@ -47,17 +47,15 @@ export async function setTheme() {
 
 			const themeName = hass?.themes?.theme ?? '';
 			if (themeName.includes('Material You')) {
-				let baseColor = (
-					hass.states[colorInputUserId]?.state ||
-					hass.states[DEFAULT_BASE_COLOR_INPUT]?.state ||
-					''
-				).trim();
+				let baseColor =
+					hass.states[colorInputUserId]?.state?.trim() ||
+					hass.states[DEFAULT_BASE_COLOR_INPUT]?.state?.trim() ||
+					'';
 
-				const schemeName = (
-					hass.states[schemeInputUserId]?.state ||
-					hass.states[DEFAULT_SCHEME_NAME_INPUT]?.state ||
-					''
-				).trim();
+				const schemeName =
+					hass.states[schemeInputUserId]?.state?.trim() ||
+					hass.states[DEFAULT_SCHEME_NAME_INPUT]?.state?.trim() ||
+					'';
 
 				let contrastLevel: number = DEFAULT_CONTRAST_LEVEL;
 				for (const value of [
