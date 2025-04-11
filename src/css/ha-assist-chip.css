@@ -2,3 +2,9 @@
 #button {
 	outline: var(--md-sys-color-outline-variant) solid 1px;
 }
+
+/* Fix label font family and letter spacing */
+.label {
+	font-family: var(--font-family);
+	letter-spacing: var(--md-sys-typescale-label-large-tracking);
+}
