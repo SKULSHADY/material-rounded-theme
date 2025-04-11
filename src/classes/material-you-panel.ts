@@ -677,8 +677,7 @@ export class MaterialYouPanel extends LitElement {
 					isNaN(parseFloat(String(settings.settings.contrast)))
 						? DEFAULT_CONTRAST_LEVEL
 						: settings.settings.contrast,
-				)}
-				${this.buildClearButton('contrast', userId)}`
+				)}`
 			: '';
 	}
 
@@ -698,7 +697,6 @@ export class MaterialYouPanel extends LitElement {
 						},
 						(settings.settings.styles ?? DEFAULT_STYLES) == 'on',
 					)}
-					${this.buildClearButton('styles', userId)}
 				`
 			: '';
 	}
@@ -845,6 +843,7 @@ export class MaterialYouPanel extends LitElement {
 				flex-direction: column;
 				align-items: center;
 				gap: 24px;
+				overflow-x: hidden;
 			}
 			ha-card {
 				width: min(600px, calc(100% - 36px));
