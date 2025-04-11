@@ -82,7 +82,7 @@ Material You:
 
   md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-display-large-size: 57px
-  md-sys-typescale-display-large-tracking: -0-25px
+  md-sys-typescale-display-large-tracking: -0.25px
   md-sys-typescale-display-large-line-height: 64px
 
   md-sys-typescale-display-medium-weight: var(--md-ref-typeface-weight-regular)
@@ -118,42 +118,42 @@ Material You:
   md-sys-typescale-title-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-medium-size: 16px
   md-sys-typescale-title-medium-line-height: 24px
-  md-sys-typescale-title-medium-tracking: 0-15px
+  md-sys-typescale-title-medium-tracking: 0.15px
 
   md-sys-typescale-title-small-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-title-small-size: 14px
   md-sys-typescale-title-small-line-height: 20px
-  md-sys-typescale-title-small-tracking: 0-1px
+  md-sys-typescale-title-small-tracking: 0.1px
 
   md-sys-typescale-body-large-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-large-size: 16px
   md-sys-typescale-body-large-line-height: 24px
-  md-sys-typescale-body-large-tracking: 0-5px
+  md-sys-typescale-body-large-tracking: 0.5px
 
   md-sys-typescale-body-medium-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-medium-size: 14px
   md-sys-typescale-body-medium-line-height: 20px
-  md-sys-typescale-body-medium-tracking: 0-25px
+  md-sys-typescale-body-medium-tracking: 0.25px
 
   md-sys-typescale-body-small-weight: var(--md-ref-typeface-weight-regular)
   md-sys-typescale-body-small-size: 12px
   md-sys-typescale-body-small-line-height: 16px
-  md-sys-typescale-body-small-tracking: 0-4px
+  md-sys-typescale-body-small-tracking: 0.4px
 
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-line-height: 20px
-  md-sys-typescale-label-large-tracking: 0-1px
+  md-sys-typescale-label-large-tracking: 0.1px
 
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-line-height: 16px
-  md-sys-typescale-label-medium-tracking: 0-5px
+  md-sys-typescale-label-medium-tracking: 0.5px
 
   md-sys-typescale-label-small-weight: var(--md-ref-typeface-weight-medium)
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-line-height: 16px
-  md-sys-typescale-label-small-tracking: 0-5px
+  md-sys-typescale-label-small-tracking: 0.5px
 
   modes:
     dark:
@@ -310,7 +310,7 @@ Material You:
 
   # Cards and footer
   primary-background-color: var(--md-sys-color-surface-container)
-  border-radius: 28px
+  border-radius: var(--md-sys-shape-corner-extra-large)
   card-background-color: var(--md-sys-color-surface-container-low)
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border-radius: var(--border-radius)
@@ -319,7 +319,7 @@ Material You:
   ha-card-border-width: 0px
   ha-card-border-style: none
   ha-card-border: none
-  ha-config-card-border-radius: 16px
+  ha-config-card-border-radius: var(--md-sys-shape-corner-large)
   paper-item-icon-color: var(--md-sys-color-on-surface-variant)
 
   # Background and header
@@ -430,10 +430,10 @@ Material You:
   button-height: 40px
   mdc-button-disabled-fill-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.12)
   mdc-button-disabled-ink-color: rgba(from var(--md-sys-color-on-surface) r g b / 0.38)
-  mdc-typography-button-font-size: 14px
-  mdc-typography-button-line-height: 20px
-  mdc-typography-button-letter-spacing: 0.1px
-  mdc-typography-button-font-weight: 500
+  mdc-typography-button-font-size: var(--md-sys-typescale-label-large-size)
+  mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
+  mdc-typography-button-letter-spacing: var(--md-sys-typescale-label-large-tracking)
+  mdc-typography-button-font-weight: var(--md-sys-typescale-label-large-weight)
   mdc-typography-button-text-transform: capitalize
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
