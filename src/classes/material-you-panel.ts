@@ -685,19 +685,19 @@ export class MaterialYouPanel extends LitElement {
 				${this.hass.user?.is_admin
 					? html`
 							<div class="section-header">
-								<div class="title">Global Defaults</div>
+								<div class="title">Everyone!</div>
 								<div class="description">
-									Default settings for all user which are used
-									if no user specific settings are set.
+									Default settings for all users. Used if a
+									user hasn't set their own settings.
 								</div>
 							</div>
 							${this.buildSettingsCard(this.globalSettings)}
 							${Object.keys(this.otherUserSettings).length
 								? html`<div class="section-header">
-										<div class="title">Other Users</div>
+										<div class="title">Everyone Else</div>
 										<div class="description">
-											Other user accounts on this Home
-											Assistant instance.
+											Other users on this Home Assistant
+											instance.
 										</div>
 									</div>`
 								: ''}
