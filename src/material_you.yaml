@@ -474,15 +474,13 @@ Material You:
   mdc-typography-body1-font-family: var(--font-family)
   md-ref-typeface-plain: var(--font-family)
 
-  title-font-weight: 600
-  title-font-size: 28px
-
-  ha-heading-card-title-font-size: 16px
-  ha-heading-card-title-font-weight: 600
-  ha-heading-card-title-line-height: 24px
-  ha-heading-card-subtitle-font-size: 14px
-  ha-heading-card-subtitle-font-weight: 500
-  ha-heading-card-subtitle-line-height: 20px
+  ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
+  ha-heading-card-title-font-size: var(--md-sys-typescale-title-medium-size)
+  ha-heading-card-title-font-weight: var(--md-sys-typescale-title-medium-weight)
+  ha-heading-card-title-line-height: var(--md-sys-typescale-title-medium-line-height)
+  ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
+  ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
+  ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
 
   # Text
   text-primary-color: var(--md-sys-color-surface)

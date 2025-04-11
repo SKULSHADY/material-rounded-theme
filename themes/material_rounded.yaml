@@ -36,13 +36,14 @@ Material You:
   ha-card-border-width: 0px
   ha-card-box-shadow: var(--md-sys-elevation-level1)
   ha-card-header-font-family: var(--font-family)
+  ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
-  ha-heading-card-subtitle-font-size: 14px
-  ha-heading-card-subtitle-font-weight: 500
-  ha-heading-card-subtitle-line-height: 20px
-  ha-heading-card-title-font-size: 16px
-  ha-heading-card-title-font-weight: 600
-  ha-heading-card-title-line-height: 24px
+  ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
+  ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
+  ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
+  ha-heading-card-title-font-size: var(--md-sys-typescale-title-medium-size)
+  ha-heading-card-title-font-weight: var(--md-sys-typescale-title-medium-weight)
+  ha-heading-card-title-line-height: var(--md-sys-typescale-title-medium-line-height)
   ha-view-sections-row-gap: 18px
   header-height: 64px
   horizontal-stack-card-margin: 0px 4px
@@ -400,8 +401,6 @@ Material You:
   text-accent-color: var(--md-sys-color-on-secondary)
   text-light-primary-color: hsl(from var(--md-sys-color-surface) h s calc(l + 20))
   text-primary-color: var(--md-sys-color-surface)
-  title-font-size: 28px
-  title-font-weight: 600
   vertical-stack-card-margin: 4px 0px
   view-background: var(--md-sys-color-surface)
 Material You Dark:
@@ -444,13 +443,14 @@ Material You Dark:
   ha-card-border-width: 0px
   ha-card-box-shadow: var(--md-sys-elevation-level1)
   ha-card-header-font-family: var(--font-family)
+  ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
-  ha-heading-card-subtitle-font-size: 14px
-  ha-heading-card-subtitle-font-weight: 500
-  ha-heading-card-subtitle-line-height: 20px
-  ha-heading-card-title-font-size: 16px
-  ha-heading-card-title-font-weight: 600
-  ha-heading-card-title-line-height: 24px
+  ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
+  ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
+  ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
+  ha-heading-card-title-font-size: var(--md-sys-typescale-title-medium-size)
+  ha-heading-card-title-font-weight: var(--md-sys-typescale-title-medium-weight)
+  ha-heading-card-title-line-height: var(--md-sys-typescale-title-medium-line-height)
   ha-view-sections-row-gap: 18px
   header-height: 64px
   horizontal-stack-card-margin: 0px 4px
@@ -748,8 +748,6 @@ Material You Dark:
   text-accent-color: var(--md-sys-color-on-secondary)
   text-light-primary-color: hsl(from var(--md-sys-color-surface) h s calc(l + 20))
   text-primary-color: var(--md-sys-color-surface)
-  title-font-size: 28px
-  title-font-weight: 600
   vertical-stack-card-margin: 4px 0px
   view-background: var(--md-sys-color-surface)
 Material You Light:
@@ -792,13 +790,14 @@ Material You Light:
   ha-card-border-width: 0px
   ha-card-box-shadow: var(--md-sys-elevation-level1)
   ha-card-header-font-family: var(--font-family)
+  ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
-  ha-heading-card-subtitle-font-size: 14px
-  ha-heading-card-subtitle-font-weight: 500
-  ha-heading-card-subtitle-line-height: 20px
-  ha-heading-card-title-font-size: 16px
-  ha-heading-card-title-font-weight: 600
-  ha-heading-card-title-line-height: 24px
+  ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
+  ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
+  ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
+  ha-heading-card-title-font-size: var(--md-sys-typescale-title-medium-size)
+  ha-heading-card-title-font-weight: var(--md-sys-typescale-title-medium-weight)
+  ha-heading-card-title-line-height: var(--md-sys-typescale-title-medium-line-height)
   ha-view-sections-row-gap: 18px
   header-height: 64px
   horizontal-stack-card-margin: 0px 4px
@@ -1096,8 +1095,6 @@ Material You Light:
   text-accent-color: var(--md-sys-color-on-secondary)
   text-light-primary-color: hsl(from var(--md-sys-color-surface) h s calc(l + 20))
   text-primary-color: var(--md-sys-color-surface)
-  title-font-size: 28px
-  title-font-weight: 600
   vertical-stack-card-margin: 4px 0px
   view-background: var(--md-sys-color-surface)
 Material You Transparent Card:
@@ -1138,13 +1135,14 @@ Material You Transparent Card:
   ha-card-border-width: 0px
   ha-card-box-shadow: var(--md-sys-elevation-level1)
   ha-card-header-font-family: var(--font-family)
+  ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
-  ha-heading-card-subtitle-font-size: 14px
-  ha-heading-card-subtitle-font-weight: 500
-  ha-heading-card-subtitle-line-height: 20px
-  ha-heading-card-title-font-size: 16px
-  ha-heading-card-title-font-weight: 600
-  ha-heading-card-title-line-height: 24px
+  ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
+  ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
+  ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
+  ha-heading-card-title-font-size: var(--md-sys-typescale-title-medium-size)
+  ha-heading-card-title-font-weight: var(--md-sys-typescale-title-medium-weight)
+  ha-heading-card-title-line-height: var(--md-sys-typescale-title-medium-line-height)
   ha-view-sections-row-gap: 18px
   header-height: 64px
   horizontal-stack-card-margin: 0px 4px
@@ -1502,8 +1500,6 @@ Material You Transparent Card:
   text-accent-color: var(--md-sys-color-on-secondary)
   text-light-primary-color: hsl(from var(--md-sys-color-surface) h s calc(l + 20))
   text-primary-color: var(--md-sys-color-surface)
-  title-font-size: 28px
-  title-font-weight: 600
   vertical-stack-card-margin: 4px 0px
   view-background: var(--md-sys-color-surface)
 Material You Transparent Card Dark:
@@ -1546,13 +1542,14 @@ Material You Transparent Card Dark:
   ha-card-border-width: 0px
   ha-card-box-shadow: var(--md-sys-elevation-level1)
   ha-card-header-font-family: var(--font-family)
+  ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
-  ha-heading-card-subtitle-font-size: 14px
-  ha-heading-card-subtitle-font-weight: 500
-  ha-heading-card-subtitle-line-height: 20px
-  ha-heading-card-title-font-size: 16px
-  ha-heading-card-title-font-weight: 600
-  ha-heading-card-title-line-height: 24px
+  ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
+  ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
+  ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
+  ha-heading-card-title-font-size: var(--md-sys-typescale-title-medium-size)
+  ha-heading-card-title-font-weight: var(--md-sys-typescale-title-medium-weight)
+  ha-heading-card-title-line-height: var(--md-sys-typescale-title-medium-line-height)
   ha-view-sections-row-gap: 18px
   header-height: 64px
   horizontal-stack-card-margin: 0px 4px
@@ -1850,8 +1847,6 @@ Material You Transparent Card Dark:
   text-accent-color: var(--md-sys-color-on-secondary)
   text-light-primary-color: hsl(from var(--md-sys-color-surface) h s calc(l + 20))
   text-primary-color: var(--md-sys-color-surface)
-  title-font-size: 28px
-  title-font-weight: 600
   vertical-stack-card-margin: 4px 0px
   view-background: var(--md-sys-color-surface)
 Material You Transparent Card Light:
@@ -1894,13 +1889,14 @@ Material You Transparent Card Light:
   ha-card-border-width: 0px
   ha-card-box-shadow: var(--md-sys-elevation-level1)
   ha-card-header-font-family: var(--font-family)
+  ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
-  ha-heading-card-subtitle-font-size: 14px
-  ha-heading-card-subtitle-font-weight: 500
-  ha-heading-card-subtitle-line-height: 20px
-  ha-heading-card-title-font-size: 16px
-  ha-heading-card-title-font-weight: 600
-  ha-heading-card-title-line-height: 24px
+  ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
+  ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
+  ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
+  ha-heading-card-title-font-size: var(--md-sys-typescale-title-medium-size)
+  ha-heading-card-title-font-weight: var(--md-sys-typescale-title-medium-weight)
+  ha-heading-card-title-line-height: var(--md-sys-typescale-title-medium-line-height)
   ha-view-sections-row-gap: 18px
   header-height: 64px
   horizontal-stack-card-margin: 0px 4px
@@ -2198,7 +2194,5 @@ Material You Transparent Card Light:
   text-accent-color: var(--md-sys-color-on-secondary)
   text-light-primary-color: hsl(from var(--md-sys-color-surface) h s calc(l + 20))
   text-primary-color: var(--md-sys-color-surface)
-  title-font-size: 28px
-  title-font-weight: 600
   vertical-stack-card-margin: 4px 0px
   view-background: var(--md-sys-color-surface)
