@@ -844,6 +844,7 @@ export class MaterialYouPanel extends LitElement {
 				flex-direction: column;
 				align-items: center;
 				gap: 24px;
+				padding-bottom: 24px;
 				overflow-x: hidden;
 			}
 			ha-card {
@@ -866,6 +867,7 @@ export class MaterialYouPanel extends LitElement {
 				);
 			}
 			.section-header .description {
+				color: var(--secondary-text-color);
 				line-height: var(
 					--md-sys-typescale-body-large-line-height,
 					24px
