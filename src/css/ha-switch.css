@@ -12,7 +12,7 @@
 .mdc-switch__track {
 	height: 32px;
 	width: 52px;
-	border-radius: 32px;
+	border-radius: var(--md-sys-shape-corner-full);
 	opacity: 1;
 	border: 2px solid var(--switch-unchecked-button-color);
 }
@@ -38,7 +38,8 @@
 	background: var(--switch-unchecked-button-color);
 	border: none;
 	box-shadow: unset;
-	transition: scale 0.2s cubic-bezier(0.2, 0, 0, 1);
+	transition: scale var(--md-sys-motion-duration-short4)
+		var(--md-sys-motion-easing-standard);
 }
 /* Switch on thumb color and size */
 .mdc-switch--checked .mdc-switch__thumb {
@@ -68,14 +69,15 @@ mwc-ripple {
 	position: absolute;
 	height: 32px;
 	width: 52px;
-	border-radius: 32px;
+	border-radius: var(--md-sys-shape-corner-full);
 	pointer-events: none;
 	top: 0;
 	left: 0;
 	z-index: 1;
 	background: var(--switch-unchecked-track-state-layer);
 	opacity: 0;
-	transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1) 0s;
+	transition: opacity var(--md-sys-motion-duration-short2)
+		var(--md-sys-motion-easing-legacy-accelerate) 0s;
 }
 .mdc-switch--checked .mdc-switch__track::after {
 	background: var(--switch-checked-track-color);
@@ -116,7 +118,8 @@ mwc-ripple {
 	right: unset;
 	bottom: unset;
 	scale: 1;
-	transition: scale 0.2s cubic-bezier(0.2, 0, 0, 1);
+	transition: scale var(--md-sys-motion-duration-short4)
+		var(--md-sys-motion-easing-standard);
 }
 .mdc-switch--checked .mdc-switch__native-control {
 	transform: translateX(-20px);

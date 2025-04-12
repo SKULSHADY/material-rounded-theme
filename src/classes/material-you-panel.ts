@@ -954,7 +954,7 @@ export class MaterialYouPanel extends LitElement {
 				margin: 0 8px;
 				height: var(--button-size);
 				width: 100px;
-				border-radius: var(--button-size);
+				border-radius: var(--md-sys-shape-corner-full);
 				--button-size: 36px;
 			}
 			.create::after,

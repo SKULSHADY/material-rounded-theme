@@ -341,10 +341,6 @@ Material You:
   sidebar-background-color: var(--md-sys-color-surface-container)
 
   # Toolbar
-  md-current-tab-icon-color: var(--md-sys-color-on-secondary-container)
-  md-current-tab-icon-background: var(--md-sys-color-secondary-container)
-  md-current-tab-text-color: var(--md-sys-color-on-surface)
-  md-inactive-tab-text-color: var(--md-sys-color-on-surface-variant)
   app-header-text-color: var(--md-sys-color-on-surface)
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
 

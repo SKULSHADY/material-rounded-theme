@@ -2,7 +2,8 @@
 .header {
 	background-color: transparent;
 	pointer-events: none;
-	--scroll-transition: transform 50ms cubic-bezier(0.2, 0, 0, 1);
+	--scroll-transition: transform var(--md-sys-motion-duration-short1)
+		var(--md-sys-motion-easing-standard);
 }
 
 /* Put current view label in header title */
@@ -13,8 +14,10 @@ paper-tab.iron-selected::before {
 	top: calc(var(--header-height) / 2);
 	left: calc(50% + (var(--mdc-drawer-width, 0px) / 2));
 	transform: translate(-50%, -50%);
-	font-size: 22px;
-	font-weight: 400;
+	font-size: var(--md-sys-typescale-title-large-size);
+	font-weight: var(--md-sys-typescale-title-large-weight);
+	line-height: var(--md-sys-typescale-title-large-line-height);
+	letter-spacing: var(--md-sys-typescale-title-large-tracking);
 	transition: var(--scroll-transition);
 }
 :host([scrolled]) paper-tab.iron-selected::before {
@@ -70,6 +73,7 @@ ha-tabs {
 	background: var(--navbar-background);
 	height: var(--footer-height);
 	width: calc(100vw - var(--mdc-drawer-width, 0px));
+	box-shadow: var(--md-sys-elevation-level2);
 	padding-bottom: env(safe-area-inset-bottom);
 	margin: 0;
 	margin-inline: 0;
@@ -102,16 +106,17 @@ paper-tab ha-icon::before {
 	position: absolute;
 	height: 32px;
 	width: var(--icon-width);
-	border-radius: 16px;
-	background: var(--md-current-tab-icon-background);
-	transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+	border-radius: var(--md-sys-shape-corner-full);
+	background: var(--md-sys-color-secondary-container);
+	transition: transform var(--md-sys-motion-duration-short4)
+		var(--md-sys-motion-easing-standard);
 	transform: scaleX(0);
 }
 paper-tab.iron-selected ha-icon::before {
 	transform: scaleX(1);
 }
 paper-tab.iron-selected ha-icon {
-	color: var(--md-current-tab-icon-color);
+	color: var(--md-sys-color-on-secondary-container);
 }
 
 /* Prevent edit mode icon from shrinking on small width displays */
@@ -134,11 +139,12 @@ ha-icon::after {
 	position: absolute;
 	height: 32px;
 	width: var(--icon-width);
-	border-radius: 16px;
+	border-radius: var(--md-sys-shape-corner-full);
 	z-index: 0;
-	background: var(--md-current-tab-text-color);
+	background: var(--md-sys-color-on-surface);
 	opacity: 0;
-	transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1) 0s;
+	transition: opacity var(--md-sys-motion-duration-short2)
+		var(--md-sys-motion-easing-legacy-accelerate) 0s;
 }
 @media (hover: hover) {
 	paper-tab:hover ha-icon::after {
@@ -162,18 +168,19 @@ paper-tab:has(ha-icon)::after {
 	text-transform: none;
 	text-wrap: wrap;
 	text-align: center;
-	font-weight: 500;
-	font-size: min(3.6vw, 13px);
+	font-weight: var(--md-ref-typeface-weight-medium);
+	font-size: var(--md-sys-typescale-label-medium-size);
+	line-height: var(--md-sys-typescale-label-medium-line-height);
+	letter-spacing: var(--md-sys-typescale-label-small-tracking);
 	padding: 0px 1px;
 	overflow: hidden;
-	line-height: 14px;
 	height: 100%;
-	color: var(--md-inactive-tab-text-color);
+	color: var(--md-sys-color-on-surface-variant);
 }
 
 /* Current view label color */
 paper-tab.iron-selected::after {
-	color: var(--md-current-tab-text-color);
+	color: var(--md-sys-color-on-surface);
 	font-weight: var(--md-sys-typescale-label-large-weight-prominent);
 }
 
@@ -206,11 +213,12 @@ paper-tab.iron-selected::after {
 	text-transform: none;
 	text-wrap: wrap;
 	text-align: center;
-	font-weight: 500;
-	font-size: min(3.6vw, 13px);
+	font-weight: var(--md-ref-typeface-weight-medium);
+	font-size: var(--md-sys-typescale-label-medium-size);
+	line-height: var(--md-sys-typescale-label-medium-line-height);
+	letter-spacing: var(--md-sys-typescale-label-small-tracking);
 	padding: 0px 1px;
 	overflow: hidden;
-	line-height: 12px;
 	height: 100%;
 	margin-top: -2px;
 }

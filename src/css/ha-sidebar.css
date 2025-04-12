@@ -19,7 +19,8 @@ ha-sidebar {
 
 /* Animate background when expanding/retracting sidebar */
 paper-icon-item {
-	transition: width 0.2s cubic-bezier(0.2, 0, 0, 1);
+	transition: width var(--md-sys-motion-duration-short4)
+		var(--md-sys-motion-easing-standard);
 	height: 48px;
 	margin: 0 4px;
 	padding: 0 12px;
@@ -45,10 +46,11 @@ paper-icon-item::before {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+	transition: transform var(--md-sys-motion-duration-short4)
+		var(--md-sys-motion-easing-standard);
 	left: 0;
 	right: 0;
-	border-radius: 128px;
+	border-radius: var(--md-sys-shape-corner-full);
 	background: var(--sidebar-selected-background);
 	opacity: 1;
 	transform: scaleX(0);
@@ -63,13 +65,14 @@ paper-icon-item::after {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	border-radius: 128px;
+	border-radius: var(--md-sys-shape-corner-full);
 	left: 0;
 	right: 0;
 	z-index: 0;
 	opacity: 0;
-	background: var(--md-current-tab-text-color);
-	transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1) 0s;
+	background: var(--md-sys-color-on-surface);
+	transition: opacity var(--md-sys-motion-duration-short2)
+		var(--md-sys-motion-easing-legacy-accelerate) 0s;
 }
 @media (hover: hover) {
 	paper-icon-item:hover::after {

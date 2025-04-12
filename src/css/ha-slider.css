@@ -9,8 +9,9 @@
 .handleNub {
 	height: 44px;
 	width: 16px;
-	border-radius: 4px;
-	transition: scale 0.2s cubic-bezier(0.2, 0, 0, 1);
+	border-radius: var(--md-sys-shape-corner-full);
+	transition: scale var(--md-sys-motion-duration-short4)
+		var(--md-sys-motion-easing-standard);
 }
 .hover .handleNub,
 input:focus-visible ~ .handleContainerPadded .handleNub,
@@ -34,7 +35,7 @@ input:active ~ .handleContainerPadded .handleNub {
 	height: 44px;
 	margin: auto;
 	background: var(--md-sys-color-primary);
-	border-radius: 2px;
+	border-radius: var(--md-sys-shape-corner-full);
 }
 
 /* Hide focus ring */
