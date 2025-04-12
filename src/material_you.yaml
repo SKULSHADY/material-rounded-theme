@@ -311,10 +311,9 @@ Material You:
 
   # Cards and footer
   primary-background-color: var(--md-sys-color-surface-container)
-  border-radius: var(--md-sys-shape-corner-extra-large)
   card-background-color: var(--md-sys-color-surface-container-low)
   ha-card-background: var(--md-sys-color-surface-container-low)
-  ha-card-border-radius: var(--border-radius)
+  ha-card-border-radius: var(--md-sys-shape-corner-extra-large)
   ha-card-box-shadow: var(--md-sys-elevation-level1)
   ha-card-border-color: "#00000000"
   ha-card-border-width: 0px

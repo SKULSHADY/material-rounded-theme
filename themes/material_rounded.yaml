@@ -5,7 +5,6 @@ Material You:
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
   app-header-selection-bar-color: none
   app-header-text-color: var(--md-sys-color-on-surface)
-  border-radius: var(--md-sys-shape-corner-extra-large)
   bubble-accent-color: var(--md-sys-color-inverse-primary)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
@@ -31,7 +30,7 @@ Material You:
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border: none
   ha-card-border-color: "#00000000"
-  ha-card-border-radius: var(--border-radius)
+  ha-card-border-radius: var(--md-sys-shape-corner-extra-large)
   ha-card-border-style: none
   ha-card-border-width: 0px
   ha-card-box-shadow: var(--md-sys-elevation-level1)
@@ -416,7 +415,6 @@ Material You Dark:
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
   app-header-selection-bar-color: none
   app-header-text-color: var(--md-sys-color-on-surface)
-  border-radius: var(--md-sys-shape-corner-extra-large)
   bubble-accent-color: var(--md-sys-color-inverse-primary)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
@@ -444,7 +442,7 @@ Material You Dark:
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border: none
   ha-card-border-color: "#00000000"
-  ha-card-border-radius: var(--border-radius)
+  ha-card-border-radius: var(--md-sys-shape-corner-extra-large)
   ha-card-border-style: none
   ha-card-border-width: 0px
   ha-card-box-shadow: var(--md-sys-elevation-level1)
@@ -769,7 +767,6 @@ Material You Light:
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
   app-header-selection-bar-color: none
   app-header-text-color: var(--md-sys-color-on-surface)
-  border-radius: var(--md-sys-shape-corner-extra-large)
   bubble-accent-color: var(--md-sys-color-inverse-primary)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
@@ -797,7 +794,7 @@ Material You Light:
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border: none
   ha-card-border-color: "#00000000"
-  ha-card-border-radius: var(--border-radius)
+  ha-card-border-radius: var(--md-sys-shape-corner-extra-large)
   ha-card-border-style: none
   ha-card-border-width: 0px
   ha-card-box-shadow: var(--md-sys-elevation-level1)
@@ -1122,7 +1119,6 @@ Material You Transparent Card:
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
   app-header-selection-bar-color: none
   app-header-text-color: var(--md-sys-color-on-surface)
-  border-radius: var(--md-sys-shape-corner-extra-large)
   bubble-accent-color: var(--md-sys-color-inverse-primary)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
@@ -1148,7 +1144,7 @@ Material You Transparent Card:
   ha-card-background: transparent
   ha-card-border: none
   ha-card-border-color: "#00000000"
-  ha-card-border-radius: var(--border-radius)
+  ha-card-border-radius: var(--md-sys-shape-corner-extra-large)
   ha-card-border-style: none
   ha-card-border-width: 0px
   ha-card-box-shadow: none
@@ -1533,7 +1529,6 @@ Material You Transparent Card Dark:
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
   app-header-selection-bar-color: none
   app-header-text-color: var(--md-sys-color-on-surface)
-  border-radius: var(--md-sys-shape-corner-extra-large)
   bubble-accent-color: var(--md-sys-color-inverse-primary)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
@@ -1561,7 +1556,7 @@ Material You Transparent Card Dark:
   ha-card-background: transparent
   ha-card-border: none
   ha-card-border-color: "#00000000"
-  ha-card-border-radius: var(--border-radius)
+  ha-card-border-radius: var(--md-sys-shape-corner-extra-large)
   ha-card-border-style: none
   ha-card-border-width: 0px
   ha-card-box-shadow: none
@@ -1886,7 +1881,6 @@ Material You Transparent Card Light:
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
   app-header-selection-bar-color: none
   app-header-text-color: var(--md-sys-color-on-surface)
-  border-radius: var(--md-sys-shape-corner-extra-large)
   bubble-accent-color: var(--md-sys-color-inverse-primary)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-select-arrow-background-color: var(--md-sys-color-inverse-primary)
@@ -1914,7 +1908,7 @@ Material You Transparent Card Light:
   ha-card-background: transparent
   ha-card-border: none
   ha-card-border-color: "#00000000"
-  ha-card-border-radius: var(--border-radius)
+  ha-card-border-radius: var(--md-sys-shape-corner-extra-large)
   ha-card-border-style: none
   ha-card-border-width: 0px
   ha-card-box-shadow: none
