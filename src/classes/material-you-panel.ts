@@ -819,23 +819,24 @@ export class MaterialYouPanel extends LitElement {
 				height: 64px;
 			}
 			.title {
-				font-size: 20px;
-				lint-height: var(--mdc-typography-headline6-line-height, 2rem);
-				font-weight: var(--mdc-typography-headline6-font-weight, 500);
-				letter-spacing: var(
-					--mdc-typography-headline6-letter-spacing,
-					0.0125em
+				font-size: var(--md-sys-typescale-title-large-size, 20px);
+				line-height: var(
+					--md-sys-typescale-title-large-line-height,
+					2rem
 				);
-				text-transform: var(
-					--mdc-typography-headline6-text-transform,
-					inherit
+				font-weight: var(--md-sys-typescale-title-large-weight, 500);
+				letter-spacing: var(
+					--md-sys-typescale-title-large-tracking,
+					0.0125em
 				);
 				white-space: nowrap;
 			}
 			.secondary {
 				color: var(--secondary-text-color);
-				font-size: 14px;
-				font-weight: 400;
+				font-size: var(--md-sys-typescale-label-large-size, 14px);
+				font-weight: var(--md-sys-typescale-label-large-weight, 400);
+				line-height: var(--md-sys-typescale-label-large-line-height);
+				letter-spacing: var(--md-sys-typescale-label-large-tracking);
 			}
 
 			.content {
@@ -853,14 +854,28 @@ export class MaterialYouPanel extends LitElement {
 				margin-bottom: -12px;
 			}
 			.section-header .title {
-				line-height: 48px;
-				font-size: 32px;
-				font-weight: 700;
+				line-height: var(
+					--md-sys-typescale-headline-large-line-height,
+					40px
+				);
+				font-size: var(--md-sys-typescale-headline-large-size, 32px);
+				font-weight: var(--md-sys-typescale-headline-large-weight, 400);
+				letter-spacing: var(
+					--md-sys-typescale-headline-large-tracking,
+					0
+				);
 			}
 			.section-header .description {
-				line-height: 24px;
-				font-size: 16px;
-				font-weight: 400;
+				line-height: var(
+					--md-sys-typescale-body-large-line-height,
+					24px
+				);
+				font-size: var(--md-sys-typescale-body-large-size, 16px);
+				font-weight: var(--md-sys-typescale-body-large-weight, 400);
+				letter-spacing: var(
+					--md-sys-typescale-body-large-tracking,
+					0.5px
+				);
 			}
 			.card-content {
 				display: flex;
@@ -908,7 +923,7 @@ export class MaterialYouPanel extends LitElement {
 				content: '';
 				position: absolute;
 				height: var(--button-size);
-				border-radius: var(--button-size);
+				border-radius: var(--md-sys-shape-corner-full, 9999px);
 				background-color: var(--color);
 				pointer-events: none;
 				opacity: 0;
@@ -954,7 +969,7 @@ export class MaterialYouPanel extends LitElement {
 				margin: 0 8px;
 				height: var(--button-size);
 				width: 100px;
-				border-radius: var(--md-sys-shape-corner-full);
+				border-radius: var(--md-sys-shape-corner-full, 9999px);
 				--button-size: 36px;
 			}
 			.create::after,
