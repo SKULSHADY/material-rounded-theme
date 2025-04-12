@@ -180,7 +180,7 @@ If you want to disable the Material Design 3 component upgrades, toggle Style Up
 
 ## Build Your Own Theme
 
-If you do not want to use the JavaScript module resource or create helper sensors, you can instead create your own Material Theme using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
+If you do not want to use the JavaScript module resource, you can instead create your own Material Theme using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
 
 **NOTE**: themes created this way will not apply to iframes such as the HACS and Add-ons pages. It will also not apply to some page backgrounds like the settings and developer tools pages, which are hardcoded to a default color. It will also be superceded by any themes set using the configuration page.
 
