@@ -63,6 +63,10 @@ Material You:
   margin-title-ltr: 0
   margin-title-rtl: 0
   md-divider-color: var(--md-sys-color-outline-variant)
+  md-menu-container-color: var(--md-sys-color-surface-container)
+  md-menu-item-label-text-line-height: var(--md-sys-typescale-body-large-line-height)
+  md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
+  md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
@@ -205,6 +209,8 @@ Material You:
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
+  mdc-list-item-graphic-margin: 16px
+  mdc-menu-item-height: 56px
   mdc-radio-unchecked-color: var(--md-sys-color-on-surface-variant)
   mdc-select-fill-color: var(--md-sys-color-surface-container-highest)
   mdc-select-hover-line-color: var(--md-sys-color-primary)
@@ -219,7 +225,7 @@ Material You:
   mdc-theme-on-surface: var(--md-sys-color-on-surface)
   mdc-theme-primary: var(--md-sys-color-primary)
   mdc-theme-secondary: var(--md-sys-color-secondary)
-  mdc-theme-surface: var(--md-sys-color-surface-container-high)
+  mdc-theme-surface: var(--md-sys-color-surface-container)
   mdc-theme-text-disabled-on-light: var(--disabled-text-color)
   mdc-theme-text-hint-on-background: var(--md-sys-color-on-surface-variant)
   mdc-theme-text-icon-on-background: var(--md-sys-color-on-surface-variant)
@@ -234,6 +240,7 @@ Material You:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-subtitle1-font-family: var(--font-family)
   modes:
     dark:
       disabled-color: "var(--disabled-color-dark, #000000)"
@@ -467,6 +474,10 @@ Material You Dark:
   margin-title-ltr: 0
   margin-title-rtl: 0
   md-divider-color: var(--md-sys-color-outline-variant)
+  md-menu-container-color: var(--md-sys-color-surface-container)
+  md-menu-item-label-text-line-height: var(--md-sys-typescale-body-large-line-height)
+  md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
+  md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
@@ -661,6 +672,8 @@ Material You Dark:
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
+  mdc-list-item-graphic-margin: 16px
+  mdc-menu-item-height: 56px
   mdc-radio-unchecked-color: var(--md-sys-color-on-surface-variant)
   mdc-select-fill-color: var(--md-sys-color-surface-container-highest)
   mdc-select-hover-line-color: var(--md-sys-color-primary)
@@ -675,7 +688,7 @@ Material You Dark:
   mdc-theme-on-surface: var(--md-sys-color-on-surface)
   mdc-theme-primary: var(--md-sys-color-primary)
   mdc-theme-secondary: var(--md-sys-color-secondary)
-  mdc-theme-surface: var(--md-sys-color-surface-container-high)
+  mdc-theme-surface: var(--md-sys-color-surface-container)
   mdc-theme-text-disabled-on-light: var(--disabled-text-color)
   mdc-theme-text-hint-on-background: var(--md-sys-color-on-surface-variant)
   mdc-theme-text-icon-on-background: var(--md-sys-color-on-surface-variant)
@@ -690,6 +703,7 @@ Material You Dark:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-subtitle1-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
   paper-font-body1_-_font-family: var(--font-family)
@@ -811,6 +825,10 @@ Material You Light:
   margin-title-ltr: 0
   margin-title-rtl: 0
   md-divider-color: var(--md-sys-color-outline-variant)
+  md-menu-container-color: var(--md-sys-color-surface-container)
+  md-menu-item-label-text-line-height: var(--md-sys-typescale-body-large-line-height)
+  md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
+  md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
@@ -1005,6 +1023,8 @@ Material You Light:
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
+  mdc-list-item-graphic-margin: 16px
+  mdc-menu-item-height: 56px
   mdc-radio-unchecked-color: var(--md-sys-color-on-surface-variant)
   mdc-select-fill-color: var(--md-sys-color-surface-container-highest)
   mdc-select-hover-line-color: var(--md-sys-color-primary)
@@ -1019,7 +1039,7 @@ Material You Light:
   mdc-theme-on-surface: var(--md-sys-color-on-surface)
   mdc-theme-primary: var(--md-sys-color-primary)
   mdc-theme-secondary: var(--md-sys-color-secondary)
-  mdc-theme-surface: var(--md-sys-color-surface-container-high)
+  mdc-theme-surface: var(--md-sys-color-surface-container)
   mdc-theme-text-disabled-on-light: var(--disabled-text-color)
   mdc-theme-text-hint-on-background: var(--md-sys-color-on-surface-variant)
   mdc-theme-text-icon-on-background: var(--md-sys-color-on-surface-variant)
@@ -1034,6 +1054,7 @@ Material You Light:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-subtitle1-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
   paper-font-body1_-_font-family: var(--font-family)
@@ -1153,6 +1174,10 @@ Material You Transparent Card:
   margin-title-ltr: 0
   margin-title-rtl: 0
   md-divider-color: var(--md-sys-color-outline-variant)
+  md-menu-container-color: var(--md-sys-color-surface-container)
+  md-menu-item-label-text-line-height: var(--md-sys-typescale-body-large-line-height)
+  md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
+  md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
@@ -1295,6 +1320,8 @@ Material You Transparent Card:
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
+  mdc-list-item-graphic-margin: 16px
+  mdc-menu-item-height: 56px
   mdc-radio-unchecked-color: var(--md-sys-color-on-surface-variant)
   mdc-select-fill-color: var(--md-sys-color-surface-container-highest)
   mdc-select-hover-line-color: var(--md-sys-color-primary)
@@ -1309,7 +1336,7 @@ Material You Transparent Card:
   mdc-theme-on-surface: var(--md-sys-color-on-surface)
   mdc-theme-primary: var(--md-sys-color-primary)
   mdc-theme-secondary: var(--md-sys-color-secondary)
-  mdc-theme-surface: var(--md-sys-color-surface-container-high)
+  mdc-theme-surface: var(--md-sys-color-surface-container)
   mdc-theme-text-disabled-on-light: var(--disabled-text-color)
   mdc-theme-text-hint-on-background: var(--md-sys-color-on-surface-variant)
   mdc-theme-text-icon-on-background: var(--md-sys-color-on-surface-variant)
@@ -1324,6 +1351,7 @@ Material You Transparent Card:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-subtitle1-font-family: var(--font-family)
   modes:
     dark:
       disabled-color: "var(--disabled-color-dark, #000000)"
@@ -1557,6 +1585,10 @@ Material You Transparent Card Dark:
   margin-title-ltr: 0
   margin-title-rtl: 0
   md-divider-color: var(--md-sys-color-outline-variant)
+  md-menu-container-color: var(--md-sys-color-surface-container)
+  md-menu-item-label-text-line-height: var(--md-sys-typescale-body-large-line-height)
+  md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
+  md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
@@ -1751,6 +1783,8 @@ Material You Transparent Card Dark:
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
+  mdc-list-item-graphic-margin: 16px
+  mdc-menu-item-height: 56px
   mdc-radio-unchecked-color: var(--md-sys-color-on-surface-variant)
   mdc-select-fill-color: var(--md-sys-color-surface-container-highest)
   mdc-select-hover-line-color: var(--md-sys-color-primary)
@@ -1765,7 +1799,7 @@ Material You Transparent Card Dark:
   mdc-theme-on-surface: var(--md-sys-color-on-surface)
   mdc-theme-primary: var(--md-sys-color-primary)
   mdc-theme-secondary: var(--md-sys-color-secondary)
-  mdc-theme-surface: var(--md-sys-color-surface-container-high)
+  mdc-theme-surface: var(--md-sys-color-surface-container)
   mdc-theme-text-disabled-on-light: var(--disabled-text-color)
   mdc-theme-text-hint-on-background: var(--md-sys-color-on-surface-variant)
   mdc-theme-text-icon-on-background: var(--md-sys-color-on-surface-variant)
@@ -1780,6 +1814,7 @@ Material You Transparent Card Dark:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-subtitle1-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
   paper-font-body1_-_font-family: var(--font-family)
@@ -1901,6 +1936,10 @@ Material You Transparent Card Light:
   margin-title-ltr: 0
   margin-title-rtl: 0
   md-divider-color: var(--md-sys-color-outline-variant)
+  md-menu-container-color: var(--md-sys-color-surface-container)
+  md-menu-item-label-text-line-height: var(--md-sys-typescale-body-large-line-height)
+  md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
+  md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
@@ -2095,6 +2134,8 @@ Material You Transparent Card Light:
   mdc-checkbox-checked-color: var(--checkbox-checked-border-color)
   mdc-checkbox-ink-color: var(--checkbox-checked-icon-color)
   mdc-checkbox-unchecked-color: var(--checkbox-unchecked-border-color)
+  mdc-list-item-graphic-margin: 16px
+  mdc-menu-item-height: 56px
   mdc-radio-unchecked-color: var(--md-sys-color-on-surface-variant)
   mdc-select-fill-color: var(--md-sys-color-surface-container-highest)
   mdc-select-hover-line-color: var(--md-sys-color-primary)
@@ -2109,7 +2150,7 @@ Material You Transparent Card Light:
   mdc-theme-on-surface: var(--md-sys-color-on-surface)
   mdc-theme-primary: var(--md-sys-color-primary)
   mdc-theme-secondary: var(--md-sys-color-secondary)
-  mdc-theme-surface: var(--md-sys-color-surface-container-high)
+  mdc-theme-surface: var(--md-sys-color-surface-container)
   mdc-theme-text-disabled-on-light: var(--disabled-text-color)
   mdc-theme-text-hint-on-background: var(--md-sys-color-on-surface-variant)
   mdc-theme-text-icon-on-background: var(--md-sys-color-on-surface-variant)
@@ -2124,6 +2165,7 @@ Material You Transparent Card Light:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-subtitle1-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
   paper-font-body1_-_font-family: var(--font-family)

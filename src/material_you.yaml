@@ -347,7 +347,7 @@ Material You:
   # Legacy mdc colors
   mdc-theme-primary: var(--md-sys-color-primary)
   mdc-theme-secondary: var(--md-sys-color-secondary)
-  mdc-theme-surface: var(--md-sys-color-surface-container-high)
+  mdc-theme-surface: var(--md-sys-color-surface-container)
   mdc-theme-on-primary: var(--md-sys-color-on-primary)
   mdc-theme-on-secondary: var(--md-sys-color-on-secondary)
   mdc-theme-on-surface: var(--md-sys-color-on-surface)
@@ -469,6 +469,7 @@ Material You:
   mdc-typography-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
   mdc-typography-body1-font-family: var(--font-family)
+  mdc-typography-subtitle1-font-family: var(--font-family)
   md-ref-typeface-plain: var(--font-family)
 
   ha-card-header-font-size: var(--md-sys-typescale-headline-small-size)
@@ -502,12 +503,20 @@ Material You:
   input-idle-line-color: var(--md-sys-color-on-surface-variant)
   input-hover-line-color: var(--md-sys-color-primary)
   input-dropdown-icon-color: var(--md-sys-color-on-surface-variant)
+
   mdc-select-fill-color: var(--md-sys-color-surface-container-highest)
   mdc-select-idle-line-color: var(--md-sys-color-on-surface-variant)
   mdc-select-hover-line-color: var(--md-sys-color-primary)
   mdc-text-field-fill-color: var(--md-sys-color-surface-container-highest)
   mdc-text-field-idle-line-color: var(--md-sys-color-on-surface-variant)
   mdc-text-field-hover-line-color: var(--md-sys-color-primary)
+
+  md-menu-container-color: var(--md-sys-color-surface-container)
+  md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
+  md-menu-item-label-text-line-height: var(--md-sys-typescale-body-large-line-height)
+  md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
+  mdc-list-item-graphic-margin: 16px
+  mdc-menu-item-height: 56px
 
   # Editors
   code-editor-background-color: var(--md-sys-color-surface-container)
