@@ -1,5 +1,4 @@
-/* Fix icon size and font family */
+/* Fix icon size */
 :host {
-	--mdc-icon-size: 24px;
-	--md-menu-item-label-text-font: var(--font-family);
+	--mdc-icon-size: 20px;
 }

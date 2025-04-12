@@ -3,6 +3,7 @@ import haButton from '../../css/ha-button.css';
 import haDialog from '../../css/ha-dialog.css';
 import haEntityToggle from '../../css/ha-entity-toggle.css';
 import haFab from '../../css/ha-fab.css';
+import haGridSizePicker from '../../css/ha-grid-size-picker.css';
 import haListItem from '../../css/ha-list-item.css';
 import haMdMenuItem from '../../css/ha-md-menu-item.css';
 import haSidebar from '../../css/ha-sidebar.css';
@@ -28,6 +29,7 @@ export const elements: Record<string, string> = {
 	'ha-dialog': haDialog,
 	'ha-entity-toggle': haEntityToggle,
 	'ha-fab': haFab,
+	'ha-grid-size-picker': haGridSizePicker,
 	'ha-list-item': haListItem,
 	'mwc-list-item': haListItem,
 	'ha-md-menu-item': haMdMenuItem,
