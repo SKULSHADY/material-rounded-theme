@@ -422,6 +422,7 @@ Material You:
   md-slider-with-tick-marks-container-size: 4px
   md-slider-with-tick-marks-active-container-color: var(--md-sys-color-on-primary)
   md-slider-with-tick-marks-inactive-container-color: var(--md-sys-color-on-secondary-container)
+  md-slider-disabled-handle-color: var(--md-sys-color-surface-container-low)
 
   # Buttons
   button-height: 40px

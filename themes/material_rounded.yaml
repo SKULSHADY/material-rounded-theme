@@ -71,6 +71,7 @@ Material You:
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
+  md-slider-disabled-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-focus-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-shadow-color: transparent
@@ -482,6 +483,7 @@ Material You Dark:
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
+  md-slider-disabled-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-focus-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-shadow-color: transparent
@@ -833,6 +835,7 @@ Material You Light:
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
+  md-slider-disabled-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-focus-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-shadow-color: transparent
@@ -1182,6 +1185,7 @@ Material You Transparent Card:
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
+  md-slider-disabled-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-focus-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-shadow-color: transparent
@@ -1593,6 +1597,7 @@ Material You Transparent Card Dark:
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
+  md-slider-disabled-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-focus-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-shadow-color: transparent
@@ -1944,6 +1949,7 @@ Material You Transparent Card Light:
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
+  md-slider-disabled-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-focus-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-shadow-color: transparent

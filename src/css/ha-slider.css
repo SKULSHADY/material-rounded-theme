@@ -1,5 +1,6 @@
 /* Set Material Design 3 slider variables that should only apply to redesigned sliders */
 :host {
+	align-items: center;
 	--md-slider-handle-height: 44px;
 	--md-slider-handle-width: 16px;
 	--md-slider-handle-shape: 4px;
@@ -36,6 +37,9 @@ input:active ~ .handleContainerPadded .handleNub {
 	margin: auto;
 	background: var(--md-sys-color-primary);
 	border-radius: var(--md-sys-shape-corner-full);
+}
+:host([disabled]) .handleNub::after {
+	background: var(--md-sys-color-on-surface);
 }
 
 /* Hide focus ring */
