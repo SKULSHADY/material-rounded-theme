@@ -469,6 +469,7 @@ Material You:
   ha-card-header-font-family: var(--font-family)
   mdc-typography-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
+  mdc-typography-headline6-font-family: var(--font-family)
   mdc-typography-body1-font-family: var(--font-family)
   mdc-typography-subtitle1-font-family: var(--font-family)
   md-ref-typeface-plain: var(--font-family)

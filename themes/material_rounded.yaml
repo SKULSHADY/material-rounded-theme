@@ -241,6 +241,7 @@ Material You:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-headline6-font-family: var(--font-family)
   mdc-typography-subtitle1-font-family: var(--font-family)
   modes:
     dark:
@@ -705,6 +706,7 @@ Material You Dark:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-headline6-font-family: var(--font-family)
   mdc-typography-subtitle1-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
@@ -1057,6 +1059,7 @@ Material You Light:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-headline6-font-family: var(--font-family)
   mdc-typography-subtitle1-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
@@ -1355,6 +1358,7 @@ Material You Transparent Card:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-headline6-font-family: var(--font-family)
   mdc-typography-subtitle1-font-family: var(--font-family)
   modes:
     dark:
@@ -1819,6 +1823,7 @@ Material You Transparent Card Dark:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-headline6-font-family: var(--font-family)
   mdc-typography-subtitle1-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)
@@ -2171,6 +2176,7 @@ Material You Transparent Card Light:
   mdc-typography-button-line-height: var(--md-sys-typescale-label-large-line-height)
   mdc-typography-button-text-transform: capitalize
   mdc-typography-font-family: var(--font-family)
+  mdc-typography-headline6-font-family: var(--font-family)
   mdc-typography-subtitle1-font-family: var(--font-family)
   navbar-background: var(--md-sys-color-surface-container)
   on-error-color: var(--md-sys-color-on-error)

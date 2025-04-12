@@ -48,10 +48,9 @@ md-focus-ring {
 }
 
 /* Set label width and position */
-/* TODO fix when in more-info popup */
 .label {
 	width: var(--md-slider-label-container-width);
-	translate: 0 -12px;
+	translate: 0 -14px;
 }
 
 /* Remove teardrop from label */

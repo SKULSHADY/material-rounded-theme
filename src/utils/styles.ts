@@ -1,9 +1,9 @@
 import { html } from 'lit';
+import { elements } from '../css';
 import {
 	DEFAULT_STYLES,
 	DEFAULT_STYLES_INPUT,
 } from '../models/constants/inputs';
-import { elements } from '../models/constants/styles';
 import { HassElement } from '../models/interfaces';
 import { getAsync } from './async';
 
@@ -43,7 +43,7 @@ export function loadStyles(styles: string): string {
 export async function applyStyles(element: HassElement) {
 	checkTheme();
 
-	// Add styles
+	// Add styles, removing previously added Material You styles
 	const shadowRoot = (await getAsync(element, 'shadowRoot')) as ShadowRoot;
 	if (shouldSetStyles) {
 		const style = document.createElement('style');
@@ -51,18 +51,10 @@ export async function applyStyles(element: HassElement) {
 		style.textContent = loadStyles(
 			elements[element.nodeName.toLowerCase()],
 		);
-		shadowRoot.appendChild(style);
-	}
-
-	// Remove previously added style elements
-	// Styles sometimes partially apply or get overridden if added on render
-	// By adding them multiple times and removing the extra elements,
-	// we can help ensure that all styles apply
-	const styles = shadowRoot.querySelectorAll('#material-you');
-	if (styles.length > 1) {
-		for (let i = 0; i < styles.length - 2; i += 1) {
-			shadowRoot.removeChild(styles[i]);
+		for (const node of shadowRoot.querySelectorAll('#material-you')) {
+			shadowRoot.removeChild(node);
 		}
+		shadowRoot.appendChild(style);
 	}
 }
 
