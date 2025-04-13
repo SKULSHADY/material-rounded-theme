@@ -67,6 +67,7 @@ Material You:
   md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
   md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
+  md-ref-typeface-weight-bold: 700
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
@@ -181,11 +182,12 @@ Material You:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
-  md-sys-typescale-label-large-weight-prominent: 700
+  md-sys-typescale-label-large-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0.5px
@@ -479,6 +481,7 @@ Material You Dark:
   md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
   md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
+  md-ref-typeface-weight-bold: 700
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
@@ -645,11 +648,12 @@ Material You Dark:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
-  md-sys-typescale-label-large-weight-prominent: 700
+  md-sys-typescale-label-large-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0.5px
@@ -831,6 +835,7 @@ Material You Light:
   md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
   md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
+  md-ref-typeface-weight-bold: 700
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
@@ -997,11 +1002,12 @@ Material You Light:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
-  md-sys-typescale-label-large-weight-prominent: 700
+  md-sys-typescale-label-large-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0.5px
@@ -1181,6 +1187,7 @@ Material You Transparent Card:
   md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
   md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
+  md-ref-typeface-weight-bold: 700
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
@@ -1295,11 +1302,12 @@ Material You Transparent Card:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
-  md-sys-typescale-label-large-weight-prominent: 700
+  md-sys-typescale-label-large-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0.5px
@@ -1593,6 +1601,7 @@ Material You Transparent Card Dark:
   md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
   md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
+  md-ref-typeface-weight-bold: 700
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
@@ -1759,11 +1768,12 @@ Material You Transparent Card Dark:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
-  md-sys-typescale-label-large-weight-prominent: 700
+  md-sys-typescale-label-large-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0.5px
@@ -1945,6 +1955,7 @@ Material You Transparent Card Light:
   md-menu-item-label-text-size: var(--md-sys-typescale-body-large-size)
   md-menu-item-label-text-weight: var(--md-sys-typescale-body-large-weight)
   md-ref-typeface-plain: var(--font-family)
+  md-ref-typeface-weight-bold: 700
   md-ref-typeface-weight-medium: 500
   md-ref-typeface-weight-regular: 400
   md-slider-active-track-height: 16px
@@ -2111,11 +2122,12 @@ Material You Transparent Card Light:
   md-sys-typescale-label-large-size: 14px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium)
-  md-sys-typescale-label-large-weight-prominent: 700
+  md-sys-typescale-label-large-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-tracking: 0.5px
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-small-line-height: 16px
   md-sys-typescale-label-small-size: 11px
   md-sys-typescale-label-small-tracking: 0.5px

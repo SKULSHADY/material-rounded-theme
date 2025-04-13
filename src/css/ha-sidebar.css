@@ -89,7 +89,7 @@ paper-icon-item:active::after {
 
 /* Current destination font weight */
 .iron-selected .item-text {
-	font-weight: var(--md-sys-typescale-label-large-weight-prominent);
+	font-weight: var(--md-sys-typescale-label-medium-weight-prominent);
 }
 
 /* Use error colors on rail badges */
