@@ -428,6 +428,7 @@ Material You:
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
+  version: 4.0.0
 Material You Transparent Card:
   md-sys-elevation-level0: none
   md-sys-elevation-level1: >-
@@ -858,6 +859,7 @@ Material You Transparent Card:
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
+  version: 4.0.0
 Material You Light:
   md-sys-elevation-level0: none
   md-sys-elevation-level1: >-
@@ -1175,6 +1177,7 @@ Material You Light:
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
+  version: 4.0.0
   md-sys-color-primary: "var(--md-sys-color-primary-light, #4c5c92)"
   md-sys-color-on-primary: "var(--md-sys-color-on-primary-light, #ffffff)"
   md-sys-color-primary-container: "var(--md-sys-color-primary-container-light, #dce1ff)"
@@ -1547,6 +1550,7 @@ Material You Dark:
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
+  version: 4.0.0
   md-sys-color-primary: "var(--md-sys-color-primary-dark, #b5c4ff)"
   md-sys-color-on-primary: "var(--md-sys-color-on-primary-dark, #1c2d61)"
   md-sys-color-primary-container: "var(--md-sys-color-primary-container-dark, #344479)"
@@ -1919,6 +1923,7 @@ Material You Transparent Card Light:
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
+  version: 4.0.0
   md-sys-color-primary: "var(--md-sys-color-primary-light, #4c5c92)"
   md-sys-color-on-primary: "var(--md-sys-color-on-primary-light, #ffffff)"
   md-sys-color-primary-container: "var(--md-sys-color-primary-container-light, #dce1ff)"
@@ -2291,6 +2296,7 @@ Material You Transparent Card Dark:
   bubble-select-list-item-accent-color: var(--md-sys-color-secondary-container)
   bubble-sub-button-light-background-color: var(--md-sys-color-secondary-container)
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
+  version: 4.0.0
   md-sys-color-primary: "var(--md-sys-color-primary-dark, #b5c4ff)"
   md-sys-color-on-primary: "var(--md-sys-color-on-primary-dark, #1c2d61)"
   md-sys-color-primary-container: "var(--md-sys-color-primary-container-dark, #344479)"

@@ -756,6 +756,11 @@ export class MaterialYouPanel extends LitElement {
 	}
 
 	render() {
+		const moduleVersion = packageInfo.version;
+		const themeVersion = document
+			.querySelector('html')
+			?.style?.getPropertyValue('--version');
+
 		this.buildSettingsData();
 		return html`
 			${this.buildHeader()}
@@ -765,7 +770,12 @@ export class MaterialYouPanel extends LitElement {
 							'You are not using Material You Theme! Switch to it in your profile settings.',
 							'warning',
 						)
-					: ''}
+					: moduleVersion != themeVersion
+						? this.buildAlertBox(
+								`Module version ${moduleVersion} does not match theme version ${themeVersion}! Make sure that both your theme YAML and module are up to date.`,
+								'warning',
+							)
+						: ''}
 				<div class="section-header">
 					<div class="title">You!</div>
 					<div class="description">

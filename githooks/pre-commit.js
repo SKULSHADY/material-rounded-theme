@@ -6,6 +6,7 @@ const THEME_NAME = 'Material You'
 const THEME = THEME_NAME.toLowerCase().replace(/ /g, '_')
 
 function main() {
+	const packageInfo = JSON.parse(readFileSync('./package.json'))
 	const src = load(readFileSync(`./src/${THEME}.yaml`))
 	const dist = './themes/material_rounded.yaml'
 	const output = {}
@@ -13,10 +14,11 @@ function main() {
 
 	// Create base theme
 	output[THEME_NAME] =  structuredClone(src[THEME_NAME])
+	output[THEME_NAME]['version'] = packageInfo.version
 
 	// Create transparent card version of theme
 	const transparentCardThemeName = `${THEME_NAME} Transparent Card`
-	output[transparentCardThemeName] = structuredClone(src[THEME_NAME])
+	output[transparentCardThemeName] = structuredClone(output[THEME_NAME])
 	output[transparentCardThemeName]['ha-card-background'] = 'transparent'
 	output[transparentCardThemeName]['ha-card-box-shadow'] = 'none'
 
