@@ -62,7 +62,7 @@ I highly recommend using the [Figtree font](https://fonts.google.com/specimen/Fi
 
 ## JavaScript Module Installation
 
-This theme includes a companion module which turns this theme from a basic Home Assitant theme into a complete Material Design 3 overhaul of Home Assistant. You'll be able to use different colors, schemes, and contrast levels in your theme colors, and will be able to change the entirety of the Home Assistant user interface to look like a modern Material You app. This can all be configured from a settings page included with this
+This theme includes a companion module which turns this theme from a basic Home Assitant theme into a complete Material Design 3 overhaul of Home Assistant. You'll be able to use different colors, schemes, and contrast levels in your theme colors, and will be able to change the entirety of the Home Assistant user interface to look like a modern Material You app. This can all be configured from a settings panel included with this
 
 ### (Optional) Download The JavaScript Module Resource Locally in Home Assistant
 
@@ -91,7 +91,7 @@ frontend:
 
 CDN URL: https://cdn.jsdelivr.net/gh/nerwyn/material-rounded-theme@main/dist/material-you-utilities.min.js
 
-3. Add the following to `panel_custom`, creating it if it does not exist. This will allow you to access the Material You Theme configuration page.
+3. Add the following to `panel_custom`, creating it if it does not exist. This will allow you to access the Material You Theme configuration panel.
 
 ```yaml
 panel_custom:
@@ -104,13 +104,13 @@ panel_custom:
 
 4. Restart Home Assistant.
 
-Once Home Assistant has finished restarting, you should see the upgrade Material Design 3 components and the Material You Theme settings page in the sidebar. You may need to clear app/browser cache.
+Once Home Assistant has finished restarting, you should see the upgrade Material Design 3 components and the Material You Theme settings panel in the sidebar. You may need to clear app/browser cache.
 
-## The Configuration Page
+## The Configuration Panel
 
-This theme comes with it's own configuration page! If you are the Home Assistant server administrator, you can use this page to create and set input helper entities for all users and global defaults. If you are not the administrator, then you can set the input helper entities for yourself, but an administrator must create them first.
+This theme comes with it's own configuration panel! If you are the Home Assistant server administrator, you can use this panel to create and set input helper entities for all users and global defaults. If you are not the administrator, then you can set the input helper entities for yourself, but an administrator must create them first.
 
-TODO screenshot of finalized configuration page
+TODO screenshot of finalized configuration panel
 
 The settings for every user and the global settings are all the same. If a user does not have a setting set, then the global setting is used.
 
@@ -182,7 +182,7 @@ If you want to disable the Material Design 3 component upgrades, toggle Style Up
 
 If you do not want to use the JavaScript module resource, you can instead create your own Material Theme using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
 
-**NOTE**: themes created this way will not apply to iframes such as the HACS and Add-ons pages. It will also not apply to some page backgrounds like the settings and developer tools pages, which are hardcoded to a default color. It will also be superceded by any themes set using the configuration page.
+**NOTE**: themes created this way will not apply to iframes such as the HACS and Add-ons pages. It will also not apply to some page backgrounds like the settings and developer tools pages, which are hardcoded to a default color. It will also be superceded by any themes set using the configuration panel.
 
 1. Navigate to [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
 2. Choose your theme colors. You can skip picking fonts, they are not saved to the exported files.
@@ -393,7 +393,7 @@ The JavaScript module is a minified file compiled using webpack. The source file
 
 There are four main files:
 
-- `src/classes/material-you-panel.ts` - the configuration page.
+- `src/classes/material-you-panel.ts` - the configuration panel.
 - `src/utils/colors.ts` - the color theming set and unset functions.
 - `src/utils/styles.ts` - the component style upgrade application functions.
 - `src/material-you-utilities.ts` - the entrypoint file which calls these functions, sets up triggers, and defines the configuration panel custom element.
