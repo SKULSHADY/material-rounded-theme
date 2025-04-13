@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo Building theme YAML...
-python ./githooks/pre-commit.py
+NODE_NO_WARNINGS=1 node ./githooks/pre-commit.js
 echo Adding compiled theme to commit...
 git add ./themes
 echo Done!

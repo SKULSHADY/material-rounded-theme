@@ -381,11 +381,11 @@ During development of this theme, I experimented with various fonts to find one 
 
 ## Developing, Modifying, and Building The Theme
 
-This theme has a build pipeline which runs on pre-commit. It requires both npm/Node.js and Python (I should really port the Python part to Node). To setup the pre-commit hook, run the command `npm run setup`.
+The JavaScript module is written in TypeScript and requires npm and Node.js to develop. This theme has a build pipeline which runs on pre-commit. To setup the pre-commit hook, run the command `npm run setup`.
 
 ### YAML Theme
 
-The `material_you.yaml` file found in the `src` folder is the base version of the theme. It has defaults set for all Material Design System colors in light and dark mode, which are then used for all other theme variables. The pre-commit build pipeline will run a Python file name `pre-commit.py`, which creates six versions of this theme for transparent card backgrounds, and explicit dark and light modes.
+The `material_you.yaml` file found in the `src` folder is the base version of the theme. It has defaults set for all Material Design System colors in light and dark mode, which are then used for all other theme variables. The pre-commit build pipeline will run a JavaScript file name `pre-commit.js`, which creates six versions of this theme for transparent card backgrounds, and explicit dark and light modes.
 
 ### JavaScript module
 
