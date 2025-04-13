@@ -24,7 +24,7 @@ function main() {
 	for (const themeName of Object.keys(output)) {
 		for (const mode of ['Light', 'Dark']) {
 			const subThemeName = `${themeName} ${mode}`
-			output[subThemeName] = structuredClone(output[themeName])	
+			output[subThemeName] = structuredClone(output[themeName])
 			delete output[subThemeName]['modes']
 
 			const modeKey = mode.toLowerCase()
@@ -34,7 +34,7 @@ function main() {
 		}
 	}
 
-	writeFileSync(dist, dump(output))	
+	writeFileSync(dist, dump(output))
 }
 
 main()

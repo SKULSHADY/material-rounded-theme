@@ -2,8 +2,17 @@
 
 echo Building theme YAML...
 NODE_NO_WARNINGS=1 node ./githooks/pre-commit.js
+if [ $? -ne 0 ]
+then
+  exit 1
+fi
+
 echo Adding compiled theme to commit...
 git add ./themes
+if [ $? -ne 0 ]
+then
+  exit 1
+fi
 echo Done!
 
 echo Building Material You Utilities JavaScript module...
