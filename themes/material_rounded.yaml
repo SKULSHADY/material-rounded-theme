@@ -352,7 +352,11 @@ Material You:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
-  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
+  ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
+  md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
+  md-assist-chip-label-text-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
@@ -783,7 +787,11 @@ Material You Transparent Card:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
-  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
+  ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
+  md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
+  md-assist-chip-label-text-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
@@ -1101,7 +1109,11 @@ Material You Light:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
-  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
+  ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
+  md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
+  md-assist-chip-label-text-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
@@ -1474,7 +1486,11 @@ Material You Dark:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
-  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
+  ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
+  md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
+  md-assist-chip-label-text-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
@@ -1847,7 +1863,11 @@ Material You Transparent Card Light:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
-  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
+  ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
+  md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
+  md-assist-chip-label-text-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
@@ -2220,7 +2240,11 @@ Material You Transparent Card Dark:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
-  ha-assist-chip-filled-container-color: var(--md-sys-color-surface-container-low)
+  ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
+  md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
+  md-assist-chip-label-text-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
+  md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px

@@ -1,11 +1,22 @@
-/* Add outline */
-#button {
-	outline: var(--md-sys-color-outline-variant) solid 1px;
-}
-
 /* Fix label font family, weight, and letter spacing */
 .label {
 	font-family: var(--font-family);
 	font-weight: var(--md-sys-typescale-label-large-weight);
 	letter-spacing: var(--md-sys-typescale-label-large-tracking);
+}
+
+/* Modify outline if it exists */
+.outline {
+	border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+/* Change label color for outline chips */
+.outline ~ #button .label {
+	color: var(--md-sys-color-on-surface);
+}
+
+/* State layer colors for outline chips */
+.outline ~ md-ripple {
+	--md-ripple-hover-color: var(--md-sys-color-on-surface);
+	--md-ripple-pressed-color: var(--md-sys-color-on-surface);
 }
