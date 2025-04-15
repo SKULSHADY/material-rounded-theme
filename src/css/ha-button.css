@@ -9,6 +9,13 @@
 	--mdc-button-horizontal-padding: 24px;
 }
 
+/* Use box-shadow hack to make outlined buttons look better on desktop */
+:host([outlined]:not([disabled])) #button {
+	box-shadow:
+		0 0 1px 0 var(--mdc-button-outline-color) inset,
+		0 0 1px 0 var(--mdc-button-outline-color);
+}
+
 /* Fix disabled button color */
 :host([disabled]) {
 	background-color: transparent;
