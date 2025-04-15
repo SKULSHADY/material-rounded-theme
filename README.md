@@ -296,13 +296,25 @@ Numerical inputs optimized for human interaction.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/slider.png" width="500"/>
 
-### Informational
+### Pop-ups
 
 #### [Snackbars](https://m3.material.io/components/snackbar/overview)
 
 Floating messages that appear on the bottom of the screen, also known as toasts.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/snackbar.png" width="500"/>
+
+#### [Dialogs](https://m3.material.io/components/dialogs/overview)
+
+Windows that appear to display information or ask for user input, like more-info and confirmation dialogs.
+
+##### [Basic Dialogs](https://m3.material.io/components/dialogs/specs#23e479cf-c5a6-4a8b-87b3-1202d51855ac)
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/basic-dialog.png" width="500"/>
+
+##### [Full-screen Dialogs](https://m3.material.io/components/dialogs/specs#bbf1acde-f8d2-4ae1-9d51-343e96c4ac20)
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/full-screen-dialog.png" width="500"/>
 
 ## Similar Projects and Credits
 

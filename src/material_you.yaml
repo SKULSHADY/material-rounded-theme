@@ -345,6 +345,11 @@ Material You:
   app-header-text-color: var(--md-sys-color-on-surface)
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
 
+  # Dialogs
+  ha-dialog-surface-background: var(--md-sys-color-surface-container-high)
+  ha-dialog-border-radius: var(--md-sys-shape-corner-extra-large)
+  mdc-dialog-scrim-color: rgba(from var(--md-sys-color-scrim) r g b / 0.32)
+
   # Legacy mdc colors
   mdc-theme-primary: var(--md-sys-color-primary)
   mdc-theme-secondary: var(--md-sys-color-secondary)

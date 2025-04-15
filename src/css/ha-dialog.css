@@ -1,4 +1,25 @@
-/* Fix horizontal overflow */
+/* Fix horizontal overflow and divider color */
 #content {
 	overflow-x: hidden;
+	--divider-color: var(--md-sys-color-outline-variant);
+}
+
+/* Add elevation and color transition */
+.mdc-dialog__surface {
+	box-shadow: var(--md-sys-elevation-level3);
+	transition: background var(--md-sys-motion-duration-medium3)
+		var(--md-sys-motion-easing-standard);
+}
+
+/* Apply full-screen dialog styles */
+@media (max-width: 450px), (max-height: 500px) {
+	:host {
+		--ha-dialog-surface-background: var(--md-sys-color-surface);
+	}
+	:host([scrolled]) {
+		--ha-dialog-surface-background: var(--md-sys-color-surface-container);
+	}
+	:host ::slotted(ha-dialog-header) {
+		background: var(--md-sys-color-surface);
+	}
 }
