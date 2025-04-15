@@ -92,6 +92,11 @@ paper-icon-item:active::after {
 	font-weight: var(--md-sys-typescale-label-medium-weight-prominent);
 }
 
+/* Fix bottom divider color */
+.divider {
+	--divider-color: var(--md-sys-color-outline-variant);
+}
+
 /* Use error colors on rail badges */
 .configuration-badge,
 .notification-badge {

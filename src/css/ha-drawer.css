@@ -1,0 +1,9 @@
+/* Add border radius to navigation drawer */
+.mdc-drawer--modal {
+	border-radius: var(--md-sys-shape-corner-large-end);
+}
+
+/* Remove outlines from drawer */
+.mdc-drawer {
+	--divider-color: transparent;
+}
