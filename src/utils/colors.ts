@@ -16,23 +16,10 @@ import {
 } from '../models/constants/inputs';
 import { HassElement } from '../models/interfaces';
 import { querySelectorAsync } from './async';
-import { getSchemeInfo, getTargets, getToken } from './common';
-
-/* Remove theme colors */
-export async function unsetTheme() {
-	const targets = await getTargets();
-	for (const color of colors) {
-		for (const target of targets) {
-			const token = getToken(color);
-			target?.style.removeProperty(`--md-sys-color-${token}-light`);
-			target?.style.removeProperty(`--md-sys-color-${token}-dark`);
-		}
-	}
-	console.info('%c Material design system colors removed. ', logStyles());
-}
+import { getHomeAssistantMainAsync, getSchemeInfo, getToken } from './common';
 
 /* Generate and set theme colors based on user defined inputs */
-export async function setTheme() {
+export async function setTheme(target: HTMLElement) {
 	const hass = (document.querySelector('home-assistant') as HassElement).hass;
 	{
 		try {
@@ -72,7 +59,6 @@ export async function setTheme() {
 				if (baseColor || schemeName || contrastLevel) {
 					baseColor ||= DEFAULT_BASE_COLOR_HEX;
 					const schemeInfo = getSchemeInfo(schemeName);
-					const targets = await getTargets();
 
 					for (const mode of ['light', 'dark']) {
 						const scheme = new schemeInfo.class(
@@ -88,12 +74,10 @@ export async function setTheme() {
 								).getArgb(scheme),
 							);
 							const token = getToken(color);
-							for (const target of targets) {
-								target.style.setProperty(
-									`--md-sys-color-${token}-${mode}`,
-									hex,
-								);
-							}
+							target.style.setProperty(
+								`--md-sys-color-${token}-${mode}`,
+								hex,
+							);
 						}
 					}
 
@@ -126,5 +110,46 @@ export async function setTheme() {
 		} else if (window.webkit) {
 			window.webkit.messageHandlers.externalBus.postMessage(msg);
 		}
+	}
+}
+
+/**
+ * Get targets to apply or remove theme colors to/from
+ * @returns {HTMLElement[]} HTML Elements to apply/remove theme to/from
+ */
+async function getTargets(): Promise<HTMLElement[]> {
+	const targets: HTMLElement[] = [
+		(await querySelectorAsync(document, 'html')) as HTMLElement,
+	];
+
+	// Add-ons and HACS iframe
+	const ha = await getHomeAssistantMainAsync();
+	const iframe = ha.shadowRoot
+		?.querySelector('iframe')
+		?.contentWindow?.document?.querySelector('body');
+	if (iframe) {
+		targets.push(iframe);
+	}
+	return targets;
+}
+
+/* Remove theme colors */
+export async function unsetTheme() {
+	const targets = await getTargets();
+	for (const color of colors) {
+		for (const target of targets) {
+			const token = getToken(color);
+			target?.style.removeProperty(`--md-sys-color-${token}-light`);
+			target?.style.removeProperty(`--md-sys-color-${token}-dark`);
+		}
+	}
+	console.info('%c Material design system colors removed. ', logStyles());
+}
+
+/** Call setTheme on all valid available targets */
+export async function setThemeAll() {
+	const targets = await getTargets();
+	for (const target of targets) {
+		setTheme(target);
 	}
 }

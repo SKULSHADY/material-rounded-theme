@@ -27,26 +27,6 @@ export function getToken(color: string): string {
 }
 
 /**
- * Get targets to apply or remove theme colors to/from
- * @returns {HTMLElement[]} HTML Elements to apply/remove theme to/from
- */
-export async function getTargets(): Promise<HTMLElement[]> {
-	const targets: HTMLElement[] = [
-		(await querySelectorAsync(document, 'html')) as HTMLElement,
-	];
-
-	// Add-ons and HACS iframe
-	const ha = await getHomeAssistantMainAsync();
-	const iframe = ha.shadowRoot
-		?.querySelector('iframe')
-		?.contentWindow?.document?.querySelector('body');
-	if (iframe) {
-		targets.push(iframe);
-	}
-	return targets;
-}
-
-/**
  * Wait for home-assistant-main shadow-root to load, then return home-assistant-main
  * @returns {ShadowRoot} home-assistant-main element
  */

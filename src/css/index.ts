@@ -1,7 +1,7 @@
 import haAssistChip from './ha-assist-chip.css';
 import haButton from './ha-button.css';
+import haCard from './ha-card.css';
 import haDialog from './ha-dialog.css';
-import haDrawer from './ha-drawer.css';
 import haEntityToggle from './ha-entity-toggle.css';
 import haFab from './ha-fab.css';
 import haGridLayoutSlider from './ha-grid-layout-slider.css';
@@ -28,8 +28,8 @@ export const elements: Record<string, string> = {
 	'ha-assist-chip': haAssistChip,
 	'ha-button': haButton,
 	'mwc-button': haButton,
+	'ha-card': haCard,
 	'ha-dialog': haDialog,
-	'ha-drawer': haDrawer,
 	'ha-entity-toggle': haEntityToggle,
 	'ha-fab': haFab,
 	'ha-grid-layout-slider': haGridLayoutSlider,

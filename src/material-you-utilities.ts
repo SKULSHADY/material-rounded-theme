@@ -8,7 +8,7 @@ import {
 	DEFAULT_SCHEME_NAME_INPUT,
 } from './models/constants/inputs';
 import { getAsync, querySelectorAsync } from './utils/async';
-import { setTheme } from './utils/colors';
+import { setTheme, setThemeAll } from './utils/colors';
 import { getHomeAssistantMainAsync } from './utils/common';
 import { setStyles } from './utils/styles';
 
@@ -22,7 +22,7 @@ async function main() {
 		logStyles(),
 	);
 
-	// Apply colors and styles on iframe node added
+	// Apply colors and styles on iframe when it's added
 	const haMain = await getHomeAssistantMainAsync();
 	const observer = new MutationObserver(async (mutations) => {
 		for (const mutation of mutations) {
@@ -39,8 +39,8 @@ async function main() {
 					setStyles(contentWindow);
 
 					const document = await getAsync(contentWindow, 'document');
-					await querySelectorAsync(document, 'body');
-					setTheme();
+					const body = await querySelectorAsync(document, 'body');
+					setTheme(body);
 				}
 			}
 		}
@@ -51,7 +51,8 @@ async function main() {
 	});
 
 	// Set user theme colors
-	setTheme();
+	const html = await querySelectorAsync(document, 'html');
+	setTheme(html);
 
 	if (haMain.hass.user?.is_admin) {
 		// Inputs for user theme color triggers
@@ -62,7 +63,7 @@ async function main() {
 
 		// Trigger user theme color on input change
 		haMain.hass.connection.subscribeMessage(
-			async () => await setTheme(),
+			() => setThemeAll(),
 			{
 				type: 'subscribe_trigger',
 				trigger: {
@@ -82,22 +83,19 @@ async function main() {
 
 		// Trigger user theme color on theme changed event
 		haMain.hass.connection.subscribeEvents(
-			async () => await setTheme(),
+			() => setThemeAll(),
 			'themes_updated',
 		);
 
 		// Trigger user theme color on set theme service call
 		haMain.hass.connection.subscribeEvents((e: Record<string, any>) => {
 			if (e?.data?.service == 'set_theme') {
-				setTimeout(async () => await setTheme(), 1000);
+				setTimeout(() => setThemeAll(), 1000);
 			}
 		}, 'call_service');
 	} else {
 		// Trigger on configuration UI fired event
-		window.addEventListener(
-			'material-you-update',
-			async () => await setTheme(),
-		);
+		window.addEventListener('material-you-update', () => setThemeAll());
 	}
 }
 
