@@ -441,9 +441,11 @@ Material You:
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
   ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
   md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
+  md-assist-chip-leading-icon-color: var(--md-sys-color-on-secondary-container)
   md-assist-chip-label-text-color: var(--md-sys-color-on-secondary-container)
   md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
   md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
+  hacs-default-icon-color: var(--md-sys-color-primary)
 
   # Spacings
   horizontal-stack-card-margin: 0px 4px
