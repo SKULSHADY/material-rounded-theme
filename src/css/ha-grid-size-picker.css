@@ -1,4 +1,0 @@
-/* Fix grid line color */
-:host {
-	--divider-color: var(--md-sys-color-outline-variant);
-}
