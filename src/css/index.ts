@@ -6,6 +6,7 @@ import haEntityToggle from './ha-entity-toggle.css';
 import haFab from './ha-fab.css';
 import haGridLayoutSlider from './ha-grid-layout-slider.css';
 import haListItem from './ha-list-item.css';
+import haMdDialog from './ha-md-dialog.css';
 import haMdMenuItem from './ha-md-menu-item.css';
 import haMoreInfoInfo from './ha-more-info-info.css';
 import haSidebar from './ha-sidebar.css';
@@ -30,6 +31,7 @@ export const elements: Record<string, string> = {
 	'mwc-button': haButton,
 	'ha-card': haCard,
 	'ha-dialog': haDialog,
+	'ha-md-dialog': haMdDialog,
 	'ha-entity-toggle': haEntityToggle,
 	'ha-fab': haFab,
 	'ha-grid-layout-slider': haGridLayoutSlider,
