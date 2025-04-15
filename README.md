@@ -302,7 +302,7 @@ Numerical inputs optimized for human interaction.
 
 Floating messages that appear on the bottom of the screen, also known as toasts.
 
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/snackbar.png"width="500"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/snackbar.png" width="500"/>
 
 ## Similar Projects and Credits
 
