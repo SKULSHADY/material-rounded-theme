@@ -24,18 +24,18 @@ This theme also includes "Transparent Card" versions with transparent card backg
 
 Everything in Home Assistant has been updated to use colors generated using [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) following the [Material Design 3 guidelines](https://m3.material.io/). It supports custom user colors for virtually all of Home Assistant. If no user base color is provided the themes defaults to a shade of blue, `#4C5C92`.
 
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/main/assets/material-you-rainbow.png" alt="material-you-rainbow" width="750"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-rainbow.png" width="750"/>
 
 ## Compared to Google Home
 
 <p>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/main/assets/material-you-comparison-blue-dark.png" alt="material-you-comparison-blue-dark" width="375"/>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/main/assets/material-you-comparison-blue-light.png" alt="material-you-comparison-blue-light" width="375"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-comparison-blue-dark.png" width="375"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-comparison-blue-light.png" width="375"/>
 </p>
 
 <p>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/main/assets/material-you-comparison-red-dark.png" alt="material-you-comparison-red-dark" width="375"/>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/main/assets/material-you-comparison-red-light.png" alt="material-you-comparison-red-light" width="375"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-comparison-red-dark.png" width="375"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-comparison-red-light.png" width="375"/>
 </p>
 
 ## Basic Theme Installation
@@ -68,7 +68,7 @@ This theme includes a companion module which turns this theme from a basic Home 
 
 While the module should be cached in browser after first use, you can download it locally to ensure that the module works offline and consistently.
 
-1. Download the module from this repository [here](https://github.com/Nerwyn/material-rounded-theme/blob/main/dist/material-you-utilities.min.js).
+1. Download the module from this repository [here](https://github.com/Nerwyn/material-rounded-theme/blob/dev/dist/material-you-utilities.min.js).
 2. Upload this module to your Home Assistant instance, preferable in the `config/www` folder or a subfolder.
    - Your `configuration.yaml` file is found in the `config` folder. If the `www` folder does not exist create it. More information about the configuration folder can be found [here](https://www.home-assistant.io/docs/configuration/#to-find-the-configuration-directory).
 
@@ -110,7 +110,7 @@ Once Home Assistant has finished restarting, you should see the upgrade Material
 
 This theme comes with it's own configuration panel! If you are the Home Assistant server administrator, you can use this panel to create and set input helper entities for all users and global defaults. If you are not the administrator, then you can set the input helper entities for yourself, but an administrator must create them first.
 
-TODO screenshot of finalized configuration panel
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/configuration-panel.png" width="750"/>
 
 The settings for every user and the global settings are all the same. If a user does not have a setting set, then the global setting is used.
 
@@ -120,7 +120,7 @@ To create input helper entities for a user, click on `Create Helpers` in their s
 
 Material color themes are built around a base color, from which all other theme colors are derived depending on the scheme rules. This color defaults to `#4C5C92`, but can be set to any other color using the color picker.
 
-TODO screenshot of color picker in use
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/base-color-picker.png" width="750"/>
 
 #### Home Assistant Android App Color Sensor
 
@@ -222,54 +222,29 @@ html {
 
 ## Material You Components
 
-This themes companion module modifies the lifecycle methods styles of many Home Assistant component constructors to inject additional CSS styles to make the components follow the Material Design 3 specification.
-
-TODO screenshots of all of these, be creative with theme settings
+In addition to the CSS custom properties in the theme YAML, this themes companion module modifies the lifecycle methods styles of many Home Assistant component constructors to inject additional CSS styles to make the components follow the Material Design 3 specification.
 
 ### Navigation
 
 #### [Top App Bar](https://m3.material.io/components/top-app-bar/overview)
 
-- Retains the sidebar toggle and dashboard menu (small width screens) or action items (large width screens) from the navigation toolbar header in a top app bar.
-- Non-view buttons appear at top of screen near their original locations.
-- Adds the current view title to the center.
-- Height increased to 64px.
-- Disappears when user is not scrolled to the top of the view.
-  - This is imperfect, and the top app bar does not reappear until you are scrolled all the way back to the top of the screen.
-- Use a variant color for trailing buttons and edit mode.
-- Current view name added as headline.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/top-app-bar.png" width="500"/>
 
 #### [Navigation Bar](https://m3.material.io/components/navigation-bar/overview)
 
-- Converts the toolbar header view tabs bar into a navigation bar footer.
-- Removes the default selection bar and ripple.
-- Spaces destinations evenly along the entire toolbar on smaller displays.
-- Evenly displays destinations in the center of the screen on larger displays.
-- Adds view names below the view icons.
-- Increase font weight of current view tab name.
-- Highlights the current view with a colored icon and background behind the icon.
-- Transition animation on view icon background when selected.
-- [State layers](https://m3.material.io/foundations/interaction/states/state-layers) on hover, focus, and press.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-bar.png" width="500"/>
 
 #### [Navigation Drawer](https://m3.material.io/components/navigation-drawer/overview)
 
 Desktop sidebar expanded and mobile.
 
-- Icon and background of current page now uses material design secondary container colors.
-- Transition animation on view icon background when selected.
-- Badge background color removed and color set to same as icon and text.
-- Increase font weight of current page name.
-- [State layers](https://m3.material.io/foundations/interaction/states/state-layers) on hover, focus, and press.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-drawer.png" width="400"/>
 
 #### [Navigation Rail](https://m3.material.io/components/navigation-rail/overview)
 
 Desktop sidebar collapsed.
 
-- Background of current page now uses material design secondary container colors.
-- Current view icon background is a circle to match Material You example of a navigation rail menu without labels.
-  - While this style has been deprecated in the MD3 guidelines, it still appears in screenshots and apps and makes sense here.
-- Badge colors changed to material design error colors (red).
-- [State layers](https://m3.material.io/foundations/interaction/states/state-layers) on hover, focus, and press.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-rail.png" width="200"/>
 
 ### Buttons
 
@@ -277,26 +252,35 @@ Desktop sidebar collapsed.
 
 Buttons that are just text with no background.
 
-- Font size, weight, height, letter spacing, and capitalization adjusted to match specification.
-- Button height increased.
-- Button border radius made circular.
-- Ripple color changed to match text color.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/text-button.png" width="500"/>
 
-#### [Outlined Buttons](https://m3.material.io/components/buttons/specs)
+#### [Outlined Buttons](https://m3.material.io/components/buttons/specs#de72d8b1-ba16-4cd7-989e-e2ad3293cf63)
 
 Like text buttons, but with an outline.
 
-- Same changes as text buttons.
-- Increase horizontal padding to 24px.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-button.png" width="300"/>
 
 #### [Extended FAB](https://m3.material.io/components/extended-fab/overview)
 
 Floating action buttons which appear in legacy views, and the integrations, devices, and helpers pages.
 
-- Increase height to 56px.
-- Decrease border radius to 16px.
-- Use primary container colors.
-- Increase bottom position when used as an add card button on legacy views.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/extended-fab.png" width="500"/>
+
+### [Chips](https://m3.material.io/components/chips/overview)
+
+Small button-like elements that can be used to display information or fire actions.
+
+#### [Outlined Chips](https://m3.material.io/components/chips/specs#a144389c-9478-4fe4-9bd8-ca9f7dd830eb)
+
+Follows the Assist Chip specification. Used in configuration menus and HACS.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-chip.png"width="500"/>
+
+#### [Filled Chips](https://m3.material.io/components/chips/specs#e900592f-75a4-4298-853c-bedd8f462f83)
+
+Follows the Filter Chip (selected) specification. Can be added to the header or footer of some cards to fire actions and used in add-ons pages.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/filled-chip.png"width="500"/>
 
 ### Inputs
 
@@ -304,45 +288,21 @@ Floating action buttons which appear in legacy views, and the integrations, devi
 
 Toggle switches for setting boolean values.
 
-- Track now encompasses thumb.
-- Removes the default ripple in favor of a thumb that changes size when used.
-- Uses material design colors for the switch thumb, track, and outline.
-- [State layers](https://m3.material.io/foundations/interaction/states/state-layers) on hover, focus, and press.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/switch.png" width="500"/>
 
 #### [Sliders](https://m3.material.io/components/sliders/overview)
 
 Numerical inputs optimized for human interaction.
 
-- Thumb is now tall and narrow with a border the same color as card backgrounds.
-- Track is taller.
-- Tooltip uses inverse surface colors and is positioned above the slider.
-- Remove ripples, narrow thumb on focus, and only show label on active.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/slider.png" width="500"/>
 
 ### Informational
-
-#### [Chips](https://m3.material.io/components/chips/overview)
-
-Small elements sometimes found in configuration pages and can be added to the bottom of some cards in their footers as buttons.
-
-- Follows the assist chip specification, as that is what its most similar to and what the component is named.
-- Background set to match the card (when card is not transparent).
-- Border radius decreased to 8px.
-- Outline added that differentiates the chip from its background.
 
 #### [Snackbars](https://m3.material.io/components/snackbar/overview)
 
 Floating messages that appear on the bottom of the screen, also known as toasts.
 
-- Moved above the navigation bar.
-- Font size, weight, height, letter spacing, and capitalization adjusted to match specification.
-- Use inverse primary colors instead of static colors.
-
-### Views
-
-- Adds an 82px margin to the bottom of the view for the navigation bar when it is present.
-  - The navigation bar padding is not present on subviews and single view dashboards.
-  - This padding is also removed in kiosk mode.
-- Increase `--ha-sections-view-row-gap` to 18px, which is also used for the column gap on mobile displays to match Google Home app.
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/snackbar.png"width="500"/>
 
 ## Similar Projects and Credits
 
