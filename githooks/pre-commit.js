@@ -8,9 +8,8 @@ const THEME = THEME_NAME.toLowerCase().replace(/ /g, '_')
 function main() {
 	const packageInfo = JSON.parse(readFileSync('./package.json'))
 	const src = load(readFileSync(`./src/${THEME}.yaml`))
-	const dist = './themes/material_rounded.yaml'
+	const dist = `./themes/${THEME}.yaml`
 	const output = {}
-
 
 	// Create base theme
 	output[THEME_NAME] =  structuredClone(src[THEME_NAME])
