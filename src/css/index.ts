@@ -4,6 +4,7 @@ import haDialog from './ha-dialog.css';
 import haDrawer from './ha-drawer.css';
 import haEntityToggle from './ha-entity-toggle.css';
 import haFab from './ha-fab.css';
+import haGridLayoutSlider from './ha-grid-layout-slider.css';
 import haListItem from './ha-list-item.css';
 import haMdMenuItem from './ha-md-menu-item.css';
 import haMoreInfoInfo from './ha-more-info-info.css';
@@ -31,6 +32,7 @@ export const elements: Record<string, string> = {
 	'ha-drawer': haDrawer,
 	'ha-entity-toggle': haEntityToggle,
 	'ha-fab': haFab,
+	'ha-grid-layout-slider': haGridLayoutSlider,
 	'ha-list-item': haListItem,
 	'mwc-list-item': haListItem,
 	'ha-md-menu-item': haMdMenuItem,
