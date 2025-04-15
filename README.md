@@ -62,7 +62,7 @@ I highly recommend using the [Figtree font](https://fonts.google.com/specimen/Fi
 
 ## JavaScript Module Installation
 
-This theme includes a companion module which turns this theme from a basic Home Assitant theme into a complete Material Design 3 overhaul of Home Assistant. You'll be able to use different colors, schemes, and contrast levels in your theme colors, and will be able to change the entirety of the Home Assistant user interface to look like a modern Material You app. This can all be configured from a settings panel included with this
+This theme includes a companion module which turns this theme from a basic Home Assitant theme into a complete Material Design 3 overhaul of Home Assistant. You'll be able to use different colors, schemes, and contrast levels in your theme colors, and will be able to change the entirety of the Home Assistant user interface to look like a modern Material You app. This can all be configured from a settings panel included with this module.
 
 ### (Optional) Download The JavaScript Module Resource Locally in Home Assistant
 
