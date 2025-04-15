@@ -238,7 +238,7 @@ In addition to the CSS custom properties in the theme YAML, this themes companio
 
 Desktop sidebar expanded and mobile.
 
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-drawer.png" width="400"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-drawer.png" width="500"/>
 
 #### [Navigation Rail](https://m3.material.io/components/navigation-rail/overview)
 
@@ -258,7 +258,7 @@ Buttons that are just text with no background.
 
 Like text buttons, but with an outline.
 
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-button.png" width="300"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-button.png" width="200"/>
 
 #### [Extended FAB](https://m3.material.io/components/extended-fab/overview)
 
