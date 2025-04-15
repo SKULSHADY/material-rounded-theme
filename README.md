@@ -274,13 +274,13 @@ Small button-like elements that can be used to display information or fire actio
 
 Follows the Assist Chip specification. Used in configuration menus and HACS.
 
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-chip.png"width="500"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-chip.png" width="500"/>
 
 #### [Filled Chips](https://m3.material.io/components/chips/specs#e900592f-75a4-4298-853c-bedd8f462f83)
 
 Follows the Filter Chip (selected) specification. Can be added to the header or footer of some cards to fire actions and used in add-ons pages.
 
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/filled-chip.png"width="500"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/filled-chip.png" width="500"/>
 
 ### Inputs
 
