@@ -2,22 +2,6 @@ import { HomeAssistant } from '../models/interfaces';
 import { InputType } from '../models/interfaces/Panel';
 
 /**
- * Show a toast
- * @param {Node} node node to fire the event on
- * @param {string} message message to display
- */
-export function showToast(node: Node, message: string) {
-	const event = new Event('hass-notification', {
-		bubbles: true,
-		composed: true,
-	});
-	event.detail = {
-		message,
-	};
-	node.dispatchEvent(event);
-}
-
-/**
  * Create an input entity
  * @param {HomeAssistant} hass Home Assistant HASS object
  * @param {"text" | "select" | "number" | "boolean"} type Input element type to create

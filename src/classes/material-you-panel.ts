@@ -32,12 +32,8 @@ import {
 	hexFromArgb,
 	redFromArgb,
 } from '@material/material-color-utilities';
-import {
-	createInput,
-	deleteInput,
-	showToast,
-	updateInput,
-} from '../utils/panel';
+import { showToast } from '../utils/common';
+import { createInput, deleteInput, updateInput } from '../utils/panel';
 
 export class MaterialYouPanel extends LitElement {
 	@property() hass!: HomeAssistant;

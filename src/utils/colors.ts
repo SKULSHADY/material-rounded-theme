@@ -16,7 +16,12 @@ import {
 } from '../models/constants/inputs';
 import { HassElement } from '../models/interfaces';
 import { querySelectorAsync } from './async';
-import { getHomeAssistantMainAsync, getSchemeInfo, getToken } from './common';
+import {
+	debugToast,
+	getHomeAssistantMainAsync,
+	getSchemeInfo,
+	getToken,
+} from './common';
 
 /* Generate and set theme colors based on user defined inputs */
 export async function setTheme(target: HTMLElement) {
@@ -90,16 +95,19 @@ export async function setTheme(target: HTMLElement) {
 					const color = html.style.getPropertyValue(
 						'--md-sys-color-on-primary-light',
 					);
+					const message = `Material design system colors updated using base color ${baseColor}, scheme ${schemeInfo.label}, and contrast level ${contrastLevel}.`;
 					console.info(
-						`%c Material design system colors updated using base color ${baseColor}, scheme ${schemeInfo.label}, and contrast level ${contrastLevel}. `,
+						`%c ${message} `,
 						logStyles(color, background),
 					);
+					debugToast(message);
 				} else {
 					await unsetTheme();
 				}
 			}
 		} catch (e) {
 			console.error(e);
+			debugToast(String(e));
 			await unsetTheme();
 		}
 
@@ -143,7 +151,9 @@ export async function unsetTheme() {
 			target?.style.removeProperty(`--md-sys-color-${token}-dark`);
 		}
 	}
-	console.info('%c Material design system colors removed. ', logStyles());
+	const message = 'Material design system colors removed.';
+	console.info(`%c ${message} `, logStyles());
+	debugToast(message);
 }
 
 /** Call setTheme on all valid available targets */

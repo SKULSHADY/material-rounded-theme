@@ -1,5 +1,8 @@
 import { schemes } from '../models/constants/colors';
-import { DEFAULT_SCHEME_NAME } from '../models/constants/inputs';
+import {
+	DEFAULT_SCHEME_NAME,
+	INPUT_BOOLEAN_PREFIX,
+} from '../models/constants/inputs';
 import { HassElement } from '../models/interfaces';
 import { IScheme } from '../models/interfaces/Scheme';
 import { getAsync, querySelectorAsync } from './async';
@@ -40,4 +43,28 @@ export async function getHomeAssistantMainAsync(): Promise<HassElement> {
 	)) as HassElement;
 	await getAsync(ha, 'shadowRoot');
 	return ha;
+}
+
+/**
+ * Show a toast
+ * @param {Node} node node to fire the event on
+ * @param {string} message message to display
+ */
+export function showToast(node: Node, message: string) {
+	const event = new Event('hass-notification', {
+		bubbles: true,
+		composed: true,
+	});
+	event.detail = {
+		message,
+	};
+	node.dispatchEvent(event);
+}
+
+export async function debugToast(message: string) {
+	const ha = document.querySelector('home-assistant') as HassElement;
+	const hass = ha.hass;
+	if (hass.states[`${INPUT_BOOLEAN_PREFIX}_debug_toast`]?.state == 'on') {
+		showToast(ha, message);
+	}
 }
