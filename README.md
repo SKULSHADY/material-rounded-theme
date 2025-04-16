@@ -252,12 +252,18 @@ Desktop sidebar collapsed.
 
 The ubiquitous container which most Home Assistant lovelace elements are built around.
 
-**Note**: In order to use card styles other than elevated, you have to modify the class of the card using card-mod.
+**Note 1**: In order to use card styles other than elevated, you have to modify the class of the card using card-mod.
 
 ```yaml
 card_mod:
   class: 'filled'
 ```
+
+**Note 2**: The specification says to use border-radius shape `--md-sys-shape-corner-medium` (12px), but I opted to instead use `--md-sys-shape-corner-extra-large` (28px). I had a few reasons for this.
+
+1. Material Design 3 cards are containers for interactable elements and information, but cards in Home Assistant are mostly interactable elements themselves. Interactable elements in Material Design 3 tend to have much rounder corners.
+2. Material Design 3 specification website itself uses larger more rounded border radii for card elements.
+3. Material Design 3 apps like Google Home use larger border radii for card-like interactable elements.
 
 #### [Elevated Card](https://m3.material.io/components/cards/specs#a012d40d-7a5c-4b07-8740-491dec79d58b)
 
