@@ -248,6 +248,35 @@ Desktop sidebar collapsed.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-rail.png" width="200"/>
 
+### [Cards](https://m3.material.io/components/cards/overview)
+
+The ubiquitous container which most Home Assistant lovelace elements are built around.
+
+**Note**: In order to use card styles other than elevated, you have to modify the class of the card using card-mod.
+
+```yaml
+card_mod:
+  class: 'filled'
+```
+
+#### [Elevated Card](https://m3.material.io/components/cards/specs#a012d40d-7a5c-4b07-8740-491dec79d58b)
+
+A background color similar to the view background with elevation. The default card style.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/elevated-card.png" width="500"/>
+
+#### [Filled Card](https://m3.material.io/components/cards/specs#0f55bf62-edf2-4619-b00d-b9ed462f2c5a)
+
+A contrasting background color with no elevation.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/filled-card.png" width="500"/>
+
+#### [Outlined Card](https://m3.material.io/components/cards/specs#9ad208b3-3d37-475c-a0eb-68cf845718f8)
+
+An outlined card with the same background color as the view and no elevation.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-card.png" width="500"/>
+
 ### Buttons
 
 #### [Text Buttons](https://m3.material.io/components/buttons/specs#899b9107-0127-4a01-8f4c-87f19323a1b4)
