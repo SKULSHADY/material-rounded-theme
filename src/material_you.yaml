@@ -471,7 +471,7 @@ Material You:
 
   # Toolbar
   header-height: 64px
-  footer-height: 82px
+  footer-height: 80px
   mdc-top-app-bar-fixed-box-shadow: none
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none

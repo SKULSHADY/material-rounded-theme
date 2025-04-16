@@ -7,13 +7,15 @@
 }
 
 /* Put current view label in header title */
-paper-tab.iron-selected::before {
+ha-tabs paper-tab.iron-selected::before {
 	content: attr(aria-label);
 	text-transform: none;
 	position: fixed;
 	top: calc(var(--header-height) / 2);
 	left: calc(50% + (var(--mdc-drawer-width, 0px) / 2));
 	transform: translate(-50%, -50%);
+	max-width: calc(100vw - 112px);
+	overflow: hidden;
 	font-size: var(--md-sys-typescale-title-large-size);
 	font-weight: var(--md-sys-typescale-title-large-weight);
 	line-height: var(--md-sys-typescale-title-large-line-height);
@@ -85,19 +87,14 @@ ha-tabs {
 Display view tab contents vertically and calculate width to fill entire toolbar.
 */
 paper-tab {
-	padding: 8.5px 0 0; /* the md3 docs say to use 12 dp but this better matches md3 apps */
+	padding: 12px 0 16px;
 	flex-direction: column;
 	flex: 1;
-	min-width: 72px;
-	max-width: var(--tab-width);
-	--tab-width: calc((100vw - var(--mdc-drawer-width, 0px)) / 5);
-	--icon-width: min(64px, var(--tab-width));
-}
-@media (width > 870px) {
-	/* When sidebar is visible, use a fixed max tab width */
-	paper-tab {
-		--tab-width: 174px;
-	}
+	gap: 4px;
+	height: 100%;
+	box-sizing: border-box;
+	min-width: 64px;
+	max-width: 156px;
 }
 
 /* Add background and color current view icon */
@@ -105,7 +102,7 @@ paper-tab ha-icon::before {
 	content: '';
 	position: absolute;
 	height: 32px;
-	width: var(--icon-width);
+	width: 64px;
 	border-radius: var(--md-sys-shape-corner-full);
 	background: var(--md-sys-color-secondary-container);
 	transition: transform var(--md-sys-motion-duration-short4)
@@ -124,9 +121,16 @@ ha-svg-icon {
 	min-width: 24px;
 }
 
+/* Reduce height of edit mode view icons */
+paper-tab.iron-selected .edit-icon.view {
+	align-items: center;
+	height: 32px;
+}
+
 /* View icon display centering */
 ha-icon {
-	width: var(--icon-width);
+	height: 32px;
+	width: 64px;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -138,7 +142,7 @@ ha-icon::after {
 	content: '';
 	position: absolute;
 	height: 32px;
-	width: var(--icon-width);
+	width: 64px;
 	border-radius: var(--md-sys-shape-corner-full);
 	z-index: 0;
 	background: var(--md-sys-color-on-surface);
@@ -169,10 +173,9 @@ paper-tab:has(ha-icon)::after {
 	text-wrap: wrap;
 	text-align: center;
 	font-weight: var(--md-ref-typeface-weight-medium);
-	font-size: var(--md-sys-typescale-label-medium-size);
+	font-size: clamp(11px, 2.6vw, var(--md-sys-typescale-label-medium-size));
 	line-height: var(--md-sys-typescale-label-medium-line-height);
 	letter-spacing: var(--md-sys-typescale-label-small-tracking);
-	padding: 0px 1px;
 	overflow: hidden;
 	height: 100%;
 	color: var(--md-sys-color-on-surface-variant);
@@ -217,10 +220,9 @@ paper-tab.iron-selected::after {
 	font-size: var(--md-sys-typescale-label-medium-size);
 	line-height: var(--md-sys-typescale-label-medium-line-height);
 	letter-spacing: var(--md-sys-typescale-label-small-tracking);
-	padding: 0px 1px;
 	overflow: hidden;
 	height: 100%;
-	margin-top: -2px;
+	margin-top: -5px;
 }
 
 /* Fix edit mode menu link color */

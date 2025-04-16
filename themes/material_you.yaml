@@ -375,7 +375,7 @@ Material You:
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
   header-height: 64px
-  footer-height: 82px
+  footer-height: 80px
   mdc-top-app-bar-fixed-box-shadow: none
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none
@@ -824,7 +824,7 @@ Material You Transparent Card:
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
   header-height: 64px
-  footer-height: 82px
+  footer-height: 80px
   mdc-top-app-bar-fixed-box-shadow: none
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none
@@ -1160,7 +1160,7 @@ Material You Light:
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
   header-height: 64px
-  footer-height: 82px
+  footer-height: 80px
   mdc-top-app-bar-fixed-box-shadow: none
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none
@@ -1551,7 +1551,7 @@ Material You Dark:
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
   header-height: 64px
-  footer-height: 82px
+  footer-height: 80px
   mdc-top-app-bar-fixed-box-shadow: none
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none
@@ -1942,7 +1942,7 @@ Material You Transparent Card Light:
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
   header-height: 64px
-  footer-height: 82px
+  footer-height: 80px
   mdc-top-app-bar-fixed-box-shadow: none
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none
@@ -2333,7 +2333,7 @@ Material You Transparent Card Dark:
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
   header-height: 64px
-  footer-height: 82px
+  footer-height: 80px
   mdc-top-app-bar-fixed-box-shadow: none
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none
