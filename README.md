@@ -48,7 +48,7 @@ This theme also includes "Transparent Card" versions with transparent card backg
 
 ## (Optional) Figtree Font Installation
 
-I highly recommend using [`Figtree`](https://fonts.google.com/specimen/Figtree) font with this theme, as it is very similar to the proprietary Google Sans font found in may Google apps but is free to use. If not installed the theme will use `Roboto`, which is still used by many Material You apps.
+I recommend using [`Figtree`](https://fonts.google.com/specimen/Figtree) font with this theme, as it is very similar to the proprietary Google Sans font found in may Google apps but is free to use. If not installed the theme will use `Roboto`, which is still used by many Material You apps.
 
 1. Navigate to a dashboard and then click `🖉 Edit dashboard` > `⋮ Open dashboard menu` > `Manage resources`.
 2. Click `+ Add Resource`.
@@ -112,7 +112,7 @@ This theme comes with it's own configuration panel! If you are the Home Assistan
 
 The settings for every user and the global settings are all the same. If a user does not have a setting set, then the global setting is used.
 
-To create input helper entities for a user, click on `Create Helpers` in their settings card. Similarly, you can delete input helper entities for a user by clicking `Delete Helpers`.
+To create input helper entities for a user, click on `Create Helpers` in their settings card. Similarly, you can delete input helper entities for a user by clicking `Delete Helpers`. After creating helpers, you or their non-admin user can modify them from the configuration panel or open their more info dialog using the buttons to their left.
 
 ### Base Color
 
@@ -176,6 +176,183 @@ Each scheme can also be provided with a custom contrast from -1 to 1. Value outs
 
 If you want to disable the Material Design 3 component upgrades, toggle Style Upgrades off. Doing so will still allow you to set custom color themes.
 
+## Material You Components
+
+In addition to the CSS custom properties in the theme YAML, this themes companion module modifies the lifecycle methods styles of many Home Assistant component constructors to inject additional CSS styles to make the components follow the Material Design 3 specification.
+
+### Navigation
+
+#### [Top App Bar](https://m3.material.io/components/top-app-bar/overview)
+
+Menu buttons and view name displayed at the top of the screen.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/top-app-bar.png" width="500"/>
+
+#### [Navigation Bar](https://m3.material.io/components/navigation-bar/overview)
+
+View tabs displayed at the bottom of the screen, dynamically scaling with page width.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-bar.png" width="500"/>
+
+##### Notes
+
+- The view tabs are more akin to [Material Design 3 tabs](https://m3.material.io/components/tabs/overview), but I chose to restyle them as a navigation bar as doing so was one of the original purposes of this theme. View tabs as a navigation bar makes more sense within the context of how Home Assistant dashboards are used, and are much easier to use on tall phone displays.
+- Displaying navigation bars alongside drawers/rails is not considered good practice, but is done so in this theme due to the increased accessability the bottom aligned navigation bar offers over top aligned tabs.
+- Home Assistant itself uses bottom aligned tabs for mobile settings pages, which is similar to the navigation bar.
+
+#### [Navigation Drawer](https://m3.material.io/components/navigation-drawer/overview)
+
+Desktop sidebar expanded and mobile modal navigation menu.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-drawer.png" width="500"/>
+
+##### Notes
+
+- The navigation drawer (and rail below) is smaller in width and destination size than the specification calls for. This is to prevent it from taking up too much horizontal space, and due to difficulty restyling it without modifying the `ha-drawer` element, which is rendered too early to consitently modify the styles of.
+- The navigation drawer is supposed to have a top and bottom left border radius, but adding this requires modifying `ha-drawer`, which is rendered too early to be consistently modified.
+
+#### [Navigation Rail](https://m3.material.io/components/navigation-rail/overview)
+
+Desktop sidebar collapsed.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-rail.png" width="200"/>
+
+##### Notes
+
+- The navigation rail style used by Home Assistant / this theme is [no longer considered best practice due to it not having visible labels](https://m3.material.io/components/navigation-rail/guidelines#0e078309-035a-42fa-b951-52ab63e4b0c0), despite it appearing in navigation rail screenshots in other parts of the specification and it still being used by Material You apps. I opted to not implemented navigation bar like labels as the sidebar expands into a drawer with labels, and because it would be difficult to modify the style of the navigation rail destinations to match the with label specification and still gracefully expand into a drawer.
+
+### [Cards](https://m3.material.io/components/cards/overview)
+
+The ubiquitous container which most Home Assistant lovelace elements are built around.
+
+#### [Elevated Card](https://m3.material.io/components/cards/specs#a012d40d-7a5c-4b07-8740-491dec79d58b)
+
+A background color similar to the view background with elevation. The default card style.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/elevated-card.png" width="500"/>
+
+#### [Filled Card](https://m3.material.io/components/cards/specs#0f55bf62-edf2-4619-b00d-b9ed462f2c5a)
+
+A contrasting background color with no elevation.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/filled-card.png" width="500"/>
+
+#### [Outlined Card](https://m3.material.io/components/cards/specs#9ad208b3-3d37-475c-a0eb-68cf845718f8)
+
+An outlined card with the same background color as the view and no elevation.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-card.png" width="500"/>
+
+#### Notes
+
+- In order to use card styles other than elevated, you have to modify the class of the card using card-mod.
+
+```yaml
+card_mod:
+  class: 'filled' # or 'outlined'
+```
+
+- The specification says to use border-radius shape `--md-sys-shape-corner-medium` (12px), but I opted to instead use `--md-sys-shape-corner-extra-large` (28px). I had a few reasons for this.
+  1. Material Design 3 cards are containers for interactable elements and information, but cards in Home Assistant are mostly interactable elements themselves. Interactable elements in Material Design 3 tend to have much rounder corners.
+  2. Material Design 3 specification website itself uses larger more rounded border radii for card elements.
+  3. Material Design 3 apps like Google Home use larger border radii for card-like interactable elements.
+
+### Buttons
+
+#### [Text Buttons](https://m3.material.io/components/buttons/specs#899b9107-0127-4a01-8f4c-87f19323a1b4)
+
+Buttons that are just text with no background.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/text-button.png" width="500"/>
+
+#### [Outlined Buttons](https://m3.material.io/components/buttons/specs#de72d8b1-ba16-4cd7-989e-e2ad3293cf63)
+
+Like text buttons, but with an outline.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-button.png" width="200"/>
+
+#### [Extended FAB](https://m3.material.io/components/extended-fab/overview)
+
+Floating action buttons which appear in legacy views, and the integrations, devices, and helpers pages.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/extended-fab.png" width="500"/>
+
+### [Chips](https://m3.material.io/components/chips/overview)
+
+Small button-like elements that can be used to display information or fire actions.
+
+#### [Outlined Chips](https://m3.material.io/components/chips/specs#a144389c-9478-4fe4-9bd8-ca9f7dd830eb)
+
+Follows the Assist Chip specification. Used in configuration menus and HACS.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-chip.png" width="500"/>
+
+#### [Filled Chips](https://m3.material.io/components/chips/specs#e900592f-75a4-4298-853c-bedd8f462f83)
+
+Follows the Filter Chip (selected) specification. Can be added to the header or footer of some cards to fire actions and used in add-ons pages.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/filled-chip.png" width="500"/>
+
+#### Notes
+
+- Chips in Home Assistant do not function like chips in Material Design 3. Instead of being informational or for less important actions, they are generally equivalent to buttons.
+- Badges in Home Assistant are not equivalent to [Material Design 3 badges](https://m3.material.io/components/badges/overview), they are instead like a hybrid between cards and chips. It doesn't make sense to style them as chips as it tends to make them look worse, especially when used with entity pictures.
+
+### Inputs
+
+#### [Switches](https://m3.material.io/components/switch/overview)
+
+Toggle switches for setting boolean values.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/switch.png" width="500"/>
+
+##### Notes
+
+- The re-styling of switches causes a horizontal overflow issue if its too close to the trailing end of the page. While I think I've added `overflow-x: hidden` to most pages where this can occur, I may have missed some. Let me know if you find any!
+
+#### [Sliders](https://m3.material.io/components/sliders/overview)
+
+Numerical inputs optimized for human interaction.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/slider.png" width="500"/>
+
+##### Notes
+
+- The specification calls for the tooltip to appear and the handle to narrow when the slider is focused or pressed, but not hovered. The Home Assistant slider shows the tooltip on hover, and it is difficutl to disable this behavior without breaking the tooltip and slider narrowing altogether. So instead the tooltip appears and handle narrows on hover.
+- Home Assistant actually has its own implementation of a Material Design 3 slider, but it is only used for the card configuration layout grid size picker. The styles of this slider have been slightly modified to use theme colors, to modify the tooltip size, and to narrow the handle when pressed or focused.
+
+### Pop-ups
+
+#### [Snackbars](https://m3.material.io/components/snackbar/overview)
+
+Floating messages that appear on the bottom of the screen, also known as toasts.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/snackbar.png" width="500"/>
+
+##### Notes
+
+- The bottom offset of snackbars has been increased to appear above the navigation bar, fixing it from preventing you from navigating your dashboard if a snackbar was in the way. I was not able to figure out a way to make this bottom offset change depending on whether the navigation bar was visible or not, as the navigation bar and snackbar are deep within different shadow roots.
+
+#### [Dialogs](https://m3.material.io/components/dialogs/overview)
+
+Windows that appear to display information or ask for user input, like more-info and confirmation dialogs.
+
+##### [Basic Dialogs](https://m3.material.io/components/dialogs/specs#23e479cf-c5a6-4a8b-87b3-1202d51855ac)
+
+Lighter color and updated font.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/basic-dialog.png" width="500"/>
+
+##### [Full-screen Dialogs](https://m3.material.io/components/dialogs/specs#bbf1acde-f8d2-4ae1-9d51-343e96c4ac20)
+
+Background color changes on scroll and updated font.
+
+<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/full-screen-dialog.png" width="500"/>
+
+##### Notes
+
+- Home Assistant has a more modern dialog used for confirmations and similar messages. This dialog mostly follows the Material Design 3 specification, but does not turn into a full-screen dialog on smaller displays.
+
 ## (Alternative/Optional) Build Your Own Theme
 
 If you do not want to use the JavaScript module resource, you can instead create your own Material Theme using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
@@ -217,147 +394,6 @@ html {
 13. Select `Resource Type` `Stylesheet`.
 14. Click `CREATE`.
 15. Hard refresh (`CTRL` + `F5`) your browser or clear app/browser cache to ensure the new resource loads correctly.
-
-## Material You Components
-
-In addition to the CSS custom properties in the theme YAML, this themes companion module modifies the lifecycle methods styles of many Home Assistant component constructors to inject additional CSS styles to make the components follow the Material Design 3 specification.
-
-### Navigation
-
-#### [Top App Bar](https://m3.material.io/components/top-app-bar/overview)
-
-Menu buttons and view name displayed at the top of the screen.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/top-app-bar.png" width="500"/>
-
-#### [Navigation Bar](https://m3.material.io/components/navigation-bar/overview)
-
-View tabs displayed at the bottom of the screen, dynamically scaling with page width.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-bar.png" width="500"/>
-
-#### [Navigation Drawer](https://m3.material.io/components/navigation-drawer/overview)
-
-Desktop sidebar expanded and mobile modal navigation menu.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-drawer.png" width="500"/>
-
-#### [Navigation Rail](https://m3.material.io/components/navigation-rail/overview)
-
-Desktop sidebar collapsed.
-
-**Note**: The navigation rail style used by Home Assistant / this theme is [no longer considered best practice due to it not having visible labels](https://m3.material.io/components/navigation-rail/guidelines#0e078309-035a-42fa-b951-52ab63e4b0c0), despite it appearing in navigation rail screenshots in other parts of the specification and it still being used by Material You apps. I opted to not implemented navigation bar like labels as the sidebar expands into a drawer with labels, and because it would be difficult to modify the style of the navigation rail destinations to match the with label specification and still gracefully expand into a drawer. The navigation rail is also smaller in width and destination size than the specification calls for. This is to prevent it from taking up too much horizontal space on medium-small displays, and due to difficulty restyling it without modifying the `ha-drawer` element, which is rendered too early to consitently modify the styles of.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-rail.png" width="200"/>
-
-### [Cards](https://m3.material.io/components/cards/overview)
-
-The ubiquitous container which most Home Assistant lovelace elements are built around.
-
-**Note 1**: In order to use card styles other than elevated, you have to modify the class of the card using card-mod.
-
-```yaml
-card_mod:
-  class: 'filled'
-```
-
-**Note 2**: The specification says to use border-radius shape `--md-sys-shape-corner-medium` (12px), but I opted to instead use `--md-sys-shape-corner-extra-large` (28px). I had a few reasons for this.
-
-1. Material Design 3 cards are containers for interactable elements and information, but cards in Home Assistant are mostly interactable elements themselves. Interactable elements in Material Design 3 tend to have much rounder corners.
-2. Material Design 3 specification website itself uses larger more rounded border radii for card elements.
-3. Material Design 3 apps like Google Home use larger border radii for card-like interactable elements.
-
-#### [Elevated Card](https://m3.material.io/components/cards/specs#a012d40d-7a5c-4b07-8740-491dec79d58b)
-
-A background color similar to the view background with elevation. The default card style.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/elevated-card.png" width="500"/>
-
-#### [Filled Card](https://m3.material.io/components/cards/specs#0f55bf62-edf2-4619-b00d-b9ed462f2c5a)
-
-A contrasting background color with no elevation.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/filled-card.png" width="500"/>
-
-#### [Outlined Card](https://m3.material.io/components/cards/specs#9ad208b3-3d37-475c-a0eb-68cf845718f8)
-
-An outlined card with the same background color as the view and no elevation.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-card.png" width="500"/>
-
-### Buttons
-
-#### [Text Buttons](https://m3.material.io/components/buttons/specs#899b9107-0127-4a01-8f4c-87f19323a1b4)
-
-Buttons that are just text with no background.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/text-button.png" width="500"/>
-
-#### [Outlined Buttons](https://m3.material.io/components/buttons/specs#de72d8b1-ba16-4cd7-989e-e2ad3293cf63)
-
-Like text buttons, but with an outline.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-button.png" width="200"/>
-
-#### [Extended FAB](https://m3.material.io/components/extended-fab/overview)
-
-Floating action buttons which appear in legacy views, and the integrations, devices, and helpers pages.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/extended-fab.png" width="500"/>
-
-### [Chips](https://m3.material.io/components/chips/overview)
-
-Small button-like elements that can be used to display information or fire actions.
-
-#### [Outlined Chips](https://m3.material.io/components/chips/specs#a144389c-9478-4fe4-9bd8-ca9f7dd830eb)
-
-Follows the Assist Chip specification. Used in configuration menus and HACS.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/outlined-chip.png" width="500"/>
-
-#### [Filled Chips](https://m3.material.io/components/chips/specs#e900592f-75a4-4298-853c-bedd8f462f83)
-
-Follows the Filter Chip (selected) specification. Can be added to the header or footer of some cards to fire actions and used in add-ons pages.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/filled-chip.png" width="500"/>
-
-### Inputs
-
-#### [Switches](https://m3.material.io/components/switch/overview)
-
-Toggle switches for setting boolean values.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/switch.png" width="500"/>
-
-#### [Sliders](https://m3.material.io/components/sliders/overview)
-
-Numerical inputs optimized for human interaction.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/slider.png" width="500"/>
-
-### Pop-ups
-
-#### [Snackbars](https://m3.material.io/components/snackbar/overview)
-
-Floating messages that appear on the bottom of the screen, also known as toasts.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/snackbar.png" width="500"/>
-
-#### [Dialogs](https://m3.material.io/components/dialogs/overview)
-
-Windows that appear to display information or ask for user input, like more-info and confirmation dialogs.
-
-##### [Basic Dialogs](https://m3.material.io/components/dialogs/specs#23e479cf-c5a6-4a8b-87b3-1202d51855ac)
-
-Lighter color and updated font.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/basic-dialog.png" width="500"/>
-
-##### [Full-screen Dialogs](https://m3.material.io/components/dialogs/specs#bbf1acde-f8d2-4ae1-9d51-343e96c4ac20)
-
-Background color changes on scroll and updated font.
-
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/full-screen-dialog.png" width="500"/>
 
 ## Similar Projects and Credits
 
