@@ -3,7 +3,6 @@
 	display: var(--tabs-display, block);
 	width: 100%;
 	justify-content: space-evenly;
-	gap: 8px;
 }
 
 @media (width > 870px) {

@@ -93,7 +93,7 @@ paper-tab {
 	gap: 4px;
 	height: 100%;
 	box-sizing: border-box;
-	min-width: 64px;
+	min-width: 72px;
 	max-width: 156px;
 }
 
@@ -172,8 +172,9 @@ paper-tab:has(ha-icon)::after {
 	text-transform: none;
 	text-wrap: wrap;
 	text-align: center;
+	margin: 0 auto;
 	font-weight: var(--md-ref-typeface-weight-medium);
-	font-size: clamp(11px, 2.6vw, var(--md-sys-typescale-label-medium-size));
+	font-size: var(--md-sys-typescale-label-medium-size);
 	line-height: var(--md-sys-typescale-label-medium-line-height);
 	letter-spacing: var(--md-sys-typescale-label-small-tracking);
 	overflow: hidden;
