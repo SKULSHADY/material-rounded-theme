@@ -345,6 +345,10 @@ height: 88
 max: 0
 ```
 
+### Bubble Card
+
+Use [Bubble Card](https://github.com/Clooos/Bubble-Card) to create [bottom sheets](https://m3.material.io/components/bottom-sheets/overview). This theme includes variables to style Bubble Card elements using Material You colors and shapes.
+
 ### Material Symbols
 
 Check out [Material Symbols](https://github.com/beecho01/material-symbols) to use updated material icons as shown in the screenshots!
