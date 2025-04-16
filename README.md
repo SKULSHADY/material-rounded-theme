@@ -246,6 +246,8 @@ Desktop sidebar expanded and mobile modal navigation menu.
 
 Desktop sidebar collapsed.
 
+**Note**: The navigation rail style used by Home Assistant / this theme is [no longer considered best practice due to it not having visible labels](https://m3.material.io/components/navigation-rail/guidelines#0e078309-035a-42fa-b951-52ab63e4b0c0), despite it appearing in navigation rail screenshots in other parts of the specification and it still being used by Material You apps. I opted to not implemented navigation bar like labels as the sidebar expands into a drawer with labels, and because it would be difficult to modify the style of the navigation rail destinations to match the with label specification and still gracefully expand into a drawer.
+
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-rail.png" width="200"/>
 
 ### [Cards](https://m3.material.io/components/cards/overview)
