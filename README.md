@@ -86,7 +86,9 @@ frontend:
     - /local/material-you-utilities.min.js # Or the CDN URL
 ```
 
-CDN URL: https://cdn.jsdelivr.net/gh/nerwyn/material-rounded-theme@main/dist/material-you-utilities.min.js
+Release CDN URL: https://cdn.jsdelivr.net/gh/nerwyn/material-rounded-theme@main/dist/material-you-utilities.min.js
+
+Pre-release/Development CDN URL: https://cdn.jsdelivr.net/gh/nerwyn/material-rounded-theme@dev/dist/material-you-utilities.min.js
 
 3. Add the following to `panel_custom`, creating it if it does not exist. This will allow you to access the Material You Theme configuration panel.
    - More information about custom panels can be found [here](https://www.home-assistant.io/integrations/panel_custom/).
