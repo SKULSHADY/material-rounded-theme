@@ -13,16 +13,13 @@
 
 A theme for Home Assistant influenced by Google apps and Material Design 3 by Google on Android.
 
-This theme is made up of two components:
+In addition to the standard Home Assistant theme YAML file, this repository also includes a JavaScript module which generates color themes based on user defined inputs and injects custom styles into many Home Assistant custom components to follow the [Material Design 3 specifications](https://m3.material.io/). The custom style injection only occurs when an element is first added to a page, and should have little to no performance impact.
 
-1. A standard Home Assistant theme yaml file.
-2. A JavaScript module that generates user defined material color themes and modifies the styles of many Home Assistant components to follow the [Material Design 3 specifications](https://m3.material.io/).
+Everything in Home Assistant has been updated to use colors generated using [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) following the [Material Design 3 guidelines](https://m3.material.io/). It supports custom user colors for virtually all of Home Assistant. If no user input is provided for base color, scheme name, or contrast level, the themes defaults to base color `#4C5C92` (a shade of blue), scheme name `Tonal Spot`, and contrast level `0`.
 
 This theme implements Material Design 3 redesigns of elements when possible using a mix of Home Assistant theme variables and CSS styles applied to Home Assistant custom element constructor lifecycle methods.
 
 This theme also includes "Transparent Card" versions with transparent card backgrounds. It also includes separate light and dark versions of all themes for niche use cases. These variations are combined into several different versions of the theme.
-
-Everything in Home Assistant has been updated to use colors generated using [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) following the [Material Design 3 guidelines](https://m3.material.io/). It supports custom user colors for virtually all of Home Assistant. If no user base color is provided the themes defaults to a shade of blue, `#4C5C92`.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-rainbow.png" width="750"/>
 
@@ -47,11 +44,11 @@ Everything in Home Assistant has been updated to use colors generated using [Mat
 5. Refresh your browser or close and open your app.
 6. Navigate to your Profile, and select `Material You` or one of its variants.
 
-**If you set the theme at the view level, it will not style the anything outside of the view. The view tabs and sidebar are outside of the view. You MUST set the theme in [profile settings](http://homeassistant.local:8123/profile/general) under browser settings for component design upgrades to work.**
+**If you set the theme at the view level, it will not style the anything outside of the view. The view tabs and sidebar are outside of the view. You MUST set the theme in [profile settings](http://homeassistant.local:8123/profile/general) under browser settings for colors and component design upgrades to work.**
 
 ## (Optional) Figtree Font Installation
 
-I highly recommend using the [Figtree font](https://fonts.google.com/specimen/Figtree) with this theme, as it is very similar to the proprietary Google Sans font but is free to use. If not installed the theme will use Roboto, which is still used by many Material You apps.
+I highly recommend using [`Figtree`](https://fonts.google.com/specimen/Figtree) font with this theme, as it is very similar to the proprietary Google Sans font found in may Google apps but is free to use. If not installed the theme will use `Roboto`, which is still used by many Material You apps.
 
 1. Navigate to a dashboard and then click `🖉 Edit dashboard` > `⋮ Open dashboard menu` > `Manage resources`.
 2. Click `+ Add Resource`.
@@ -62,7 +59,7 @@ I highly recommend using the [Figtree font](https://fonts.google.com/specimen/Fi
 
 ## JavaScript Module Installation
 
-This theme includes a companion module which turns this theme from a basic Home Assitant theme into a complete Material Design 3 overhaul of Home Assistant. You'll be able to use different colors, schemes, and contrast levels in your theme colors, and will be able to change the entirety of the Home Assistant user interface to look like a modern Material You app. This can all be configured from a settings panel included with this module.
+This theme includes a companion JavaScript module which turns this theme from a basic Home Assistant theme into a complete Material Design 3 overhaul of Home Assistant. You'll be able to use different colors, schemes, and contrast levels in your theme colors, and will be able to change the entirety of the Home Assistant user interface to look like a modern Material You app. This can all be configured from a settings panel included with this module.
 
 ### (Optional) Download The JavaScript Module Resource Locally in Home Assistant
 
@@ -76,7 +73,7 @@ While the module should be cached in browser after first use, you can download i
 
 ### Add the Module as a Frontend Module and Custom Panel
 
-The component design upgrades performed by this module are very time sensitive, and must be run as soon as possible. Because of this you should install it as the first frontend module in your `configuration.yaml` file.
+The component design upgrades performed by this module are very time sensitive, and must be run as soon as possible. Because of this you should install it as a frontend module in your `configuration.yaml` file.
 
 1. Open your `configuration.yaml` (see above for information about the configuration folder).
 2. Add the file URL to `frontend` `extra_module_url`, adding the `frontend` and `extra_module_url` keys if they do not exist, and adding to them if they do.
@@ -92,6 +89,7 @@ frontend:
 CDN URL: https://cdn.jsdelivr.net/gh/nerwyn/material-rounded-theme@main/dist/material-you-utilities.min.js
 
 3. Add the following to `panel_custom`, creating it if it does not exist. This will allow you to access the Material You Theme configuration panel.
+   - More information about custom panels can be found [here](https://www.home-assistant.io/integrations/panel_custom/).
 
 ```yaml
 panel_custom:
@@ -108,7 +106,7 @@ Once Home Assistant has finished restarting, you should see the upgrade Material
 
 ## The Configuration Panel
 
-This theme comes with it's own configuration panel! If you are the Home Assistant server administrator, you can use this panel to create and set input helper entities for all users and global defaults. If you are not the administrator, then you can set the input helper entities for yourself, but an administrator must create them first.
+This theme comes with it's own configuration panel! If you are the Home Assistant server administrator, you can use this panel to create and set input helper entities for all users and global defaults. If you are not the administrator you can set the input helper entities for yourself, but an administrator must create them first.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/configuration-panel.png" width="750"/>
 
@@ -118,7 +116,7 @@ To create input helper entities for a user, click on `Create Helpers` in their s
 
 ### Base Color
 
-Material color themes are built around a base color, from which all other theme colors are derived depending on the scheme rules. This color defaults to `#4C5C92`, but can be set to any other color using the color picker.
+Material color themes are built around a base color, from which all other theme colors are derived depending on the scheme rules. This color defaults to `#4C5C92` (a shade of blue), but can be set to any other color using the color picker.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/base-color-picker.png" width="750"/>
 
@@ -178,7 +176,7 @@ Each scheme can also be provided with a custom contrast from -1 to 1. Value outs
 
 If you want to disable the Material Design 3 component upgrades, toggle Style Upgrades off. Doing so will still allow you to set custom color themes.
 
-## Build Your Own Theme
+## (Alternative/Optional) Build Your Own Theme
 
 If you do not want to use the JavaScript module resource, you can instead create your own Material Theme using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
 
@@ -228,15 +226,19 @@ In addition to the CSS custom properties in the theme YAML, this themes companio
 
 #### [Top App Bar](https://m3.material.io/components/top-app-bar/overview)
 
+Menu buttons and view name displayed at the top of the screen.
+
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/top-app-bar.png" width="500"/>
 
 #### [Navigation Bar](https://m3.material.io/components/navigation-bar/overview)
+
+View tabs displayed at the bottom of the screen, dynamically scaling with page width.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-bar.png" width="500"/>
 
 #### [Navigation Drawer](https://m3.material.io/components/navigation-drawer/overview)
 
-Desktop sidebar expanded and mobile.
+Desktop sidebar expanded and mobile modal navigation menu.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/navigation-drawer.png" width="500"/>
 
@@ -310,9 +312,13 @@ Windows that appear to display information or ask for user input, like more-info
 
 ##### [Basic Dialogs](https://m3.material.io/components/dialogs/specs#23e479cf-c5a6-4a8b-87b3-1202d51855ac)
 
+Lighter color and updated font.
+
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/basic-dialog.png" width="500"/>
 
 ##### [Full-screen Dialogs](https://m3.material.io/components/dialogs/specs#bbf1acde-f8d2-4ae1-9d51-343e96c4ac20)
+
+Background color changes on scroll and updated font.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/full-screen-dialog.png" width="500"/>
 
@@ -343,7 +349,7 @@ max: 0
 
 Check out [Material Symbols](https://github.com/beecho01/material-symbols) to use updated material icons as shown in the screenshots!
 
-### Material Color Utilities
+### Material Design 3 and Material Color Utilities
 
 This theme revolves around Material Design 3 and the tooling that its contributors have made available, especially [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) and the [Material Design 3 specification](https://m3.material.io/).
 
@@ -359,7 +365,7 @@ The JavaScript module is written in TypeScript and requires npm and Node.js to d
 
 The `material_you.yaml` file found in the `src` folder is the base version of the theme. It has defaults set for all Material Design System colors in light and dark mode, which are then used for all other theme variables. The pre-commit build pipeline will run a JavaScript file name `pre-commit.js`, which creates six versions of this theme for transparent card backgrounds, and explicit dark and light modes.
 
-### JavaScript module
+### JavaScript Module
 
 The JavaScript module is a minified file compiled using webpack. The source files are all written using TypeScript.
 
@@ -370,8 +376,8 @@ There are four main files:
 - `src/utils/styles.ts` - the component style upgrade application functions.
 - `src/material-you-utilities.ts` - the entrypoint file which calls these functions, sets up triggers, and defines the configuration panel custom element.
 
-TypeScript types and interface and constants can be found in `src/models`. Other helper functions can be found in `src/utils`.
+TypeScript types and interface and constants can be found in `src/models`, along with constants used throughout the module. Other helper functions can be found in `src/utils`.
 
-The styles used by the component style upgrade functions can be found in the `src/css` folder, where they are named after the custom elements they are applied to. They must also be added to the `src/constants/styles.ts` file elements object to be picked up by the component style upgrade functions.
+The styles used by the component style upgrade functions can be found in the `src/css` folder, where they are named after the custom elements they are applied to. They must also be added to the `src/css/index.ts` file elements object to be picked up by the component style upgrade functions.
 
-To build this theme, either make a commit (to your own fork) or run the command `npm run build`. The compiled JavaScript module is located at `dist/material-you-utilities.min.js`. Webpack can take a little bit of time to run, especially the first time you run it after opening the terminal.
+To build this module, either make a commit (to your own fork) or run the command `npm run build`. The compiled JavaScript module is located at `dist/material-you-utilities.min.js`. Webpack can take a little bit of time to run, especially the first time you run it after opening the terminal.
