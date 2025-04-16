@@ -190,6 +190,10 @@ Menu buttons and view name displayed at the top of the screen.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/top-app-bar.png" width="500"/>
 
+#### Notes
+
+- The headline is present by default for views with a single tab and subviews. The fonts for these titles has been updated and the single tab headline has been centered to match the [center-aligned top app bar](https://m3.material.io/components/top-app-bar/specs#51ac0fae-61c2-4abc-b8f9-1167bf54e875) specification. Subviews use the [small top app bar](https://m3.material.io/components/top-app-bar/specs#14e23895-ac2e-40d8-b0f7-8d016c10a225) specification and have only received minor margin adustments to match the specification.
+
 #### [Navigation Bar](https://m3.material.io/components/navigation-bar/overview)
 
 View tabs displayed at the bottom of the screen, dynamically scaling with page width.
