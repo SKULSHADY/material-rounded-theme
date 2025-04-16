@@ -26,6 +26,26 @@ ha-tabs paper-tab.iron-selected::before {
 	transform: translate(-50%, calc(-50% - var(--header-height)));
 }
 
+/* Center single tab view dashboard title */
+ha-menu-button + .main-title {
+	flex-grow: 0;
+	text-align: center;
+	width: calc(100vw - 112px);
+}
+@media (width > 870px) {
+	ha-menu-button + .main-title {
+		width: calc(100vw - 16px - var(--mdc-drawer-width, 0px));
+	}
+}
+
+/* View title font */
+.main-title {
+	font-size: var(--md-sys-typescale-title-large-size);
+	font-weight: var(--md-sys-typescale-title-large-weight);
+	line-height: var(--md-sys-typescale-title-large-line-height);
+	letter-spacing: var(--md-sys-typescale-title-large-tracking);
+}
+
 /*
  * Move menu and action items buttons to header
  * Add scroll transition to header buttons
