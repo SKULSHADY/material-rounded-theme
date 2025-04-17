@@ -1,5 +1,5 @@
 {
-	"name": "material-rounded-theme",
+	"name": "material-you-theme",
 	"version": "4.0.0",
 	"description": "A Material You and Google Home app influenced theme for Home Assistant",
 	"scripts": {
@@ -8,14 +8,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Nerwyn/material-rounded-theme.git"
+		"url": "git+https://github.com/Nerwyn/material-you-theme.git"
 	},
 	"author": "Nerwyn",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/Nerwyn/material-rounded-theme/issues"
+		"url": "https://github.com/Nerwyn/material-you-theme/issues"
 	},
-	"homepage": "https://github.com/Nerwyn/material-rounded-theme#readme",
+	"homepage": "https://github.com/Nerwyn/material-you-theme#readme",
 	"devDependencies": {
 		"js-yaml": "latest",
 		"prettier": "latest"

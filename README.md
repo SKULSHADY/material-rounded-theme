@@ -1,13 +1,13 @@
-[![GitHub Release](https://img.shields.io/github/release/Nerwyn/material-rounded-theme.svg?style=for-the-badge)](https://github.com/nerwyn/material-rounded-theme/releases)
-[![License](https://img.shields.io/github/license/Nerwyn/material-rounded-theme.svg?style=for-the-badge)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/release/Nerwyn/material-you-theme.svg?style=for-the-badge)](https://github.com/nerwyn/material-you-theme/releases)
+[![License](https://img.shields.io/github/license/Nerwyn/material-you-theme.svg?style=for-the-badge)](LICENSE)
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-blue.svg?style=for-the-badge)](https://github.com/hacs/default)
 [![Project Maintenance](https://img.shields.io/badge/maintainer-Nerwyn-blue.svg?style=for-the-badge)](https://github.com/Nerwyn)
 ![Github](https://img.shields.io/github/followers/Nerwyn.svg?style=for-the-badge)
-[![GitHub Activity](https://img.shields.io/github/last-commit/Nerwyn/material-rounded-theme?style=for-the-badge)](https://github.com/Nerwyn/material-rounded-theme/commits/main)
+[![GitHub Activity](https://img.shields.io/github/last-commit/Nerwyn/material-you-theme?style=for-the-badge)](https://github.com/Nerwyn/material-you-theme/commits/main)
 [![Community Forum](https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge)](https://community.home-assistant.io/t/material-rounded-a-google-material-you-inspired-theme/623242)
 [![Buy Me A Coffee](https://img.shields.io/badge/donate-☕buy_me_a_coffee-yellow.svg?style=for-the-badge)](https://www.buymeacoffee.com/nerwyn)
 
-[![My Home Assistant](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?repository=material-rounded-theme&owner=Nerwyn&category=Theme)
+[![My Home Assistant](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?repository=material-you-theme&owner=Nerwyn&category=Theme)
 
 # Material You Theme - A Fully Featured Implementation of Material Design 3 for Home Assistant
 
@@ -19,18 +19,18 @@ Almost all CSS custom properties in this theme have been redefined to use Materi
 
 This theme also includes "Transparent Card" versions with transparent card backgrounds. It also includes separate light and dark versions of all themes for niche use cases. These variations are combined into several different versions of the theme.
 
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-rainbow.png" width="750"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-rainbow.png" width="750"/>
 
 ## Compared to Google Home
 
 <p>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-comparison-blue-dark.png" width="375"/>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-comparison-blue-light.png" width="375"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-comparison-blue-dark.png" width="375"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-comparison-blue-light.png" width="375"/>
 </p>
 
 <p>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-comparison-red-dark.png" width="375"/>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-rounded-theme/dev/assets/material-you-comparison-red-light.png" width="375"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-comparison-red-dark.png" width="375"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-comparison-red-light.png" width="375"/>
 </p>
 
 ## Basic Theme Installation
