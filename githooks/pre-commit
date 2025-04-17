@@ -14,23 +14,3 @@ then
   exit 1
 fi
 echo Done!
-
-echo Building Material You Utilities JavaScript module...
-npx lint-staged --allow-empty
-if [ $? -ne 0 ]
-then
-  exit 1
-fi
-
-npm run build
-if [ $? -ne 0 ]
-then
-  exit 1
-fi
-
-git add dist/
-if [ $? -ne 0 ]
-then
-  exit 1
-fi
-echo Done!
