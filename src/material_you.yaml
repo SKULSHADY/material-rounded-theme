@@ -480,7 +480,7 @@ Material You:
 
   # Font
   font-family:
-    '"Google Sans", Figtree, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    'Figtree, "Google Sans", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
   primary-font-family: var(--font-family)
   paper-font-common-base_-_font-family: var(--font-family)
