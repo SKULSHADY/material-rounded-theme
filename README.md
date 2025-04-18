@@ -93,11 +93,11 @@ html {
 9. Upload this file to your Home Assistant instance, preferable in the config/www folder.
    - Your `configuration.yaml` file is found in the `config` folder. If the `www` folder does not exist create it. More information about the configuration folder can be found [here](https://www.home-assistant.io/docs/configuration/#to-find-the-configuration-directory).
 10. Navigate to a dashboard and then click `🖉 Edit dashboard` > `⋮ Open dashboard menu` > `Manage resources`.
-11. Click `+ ADD RESOURCE`.
+11. Click `+ Add Resource`.
 12. In the `URL` field enter the path to the resource file.
     - Like `/local/material-design-colors.css`
 13. Select `Resource Type` `Stylesheet`.
-14. Click `CREATE`.
+14. Click `Create`.
 15. Hard refresh (`CTRL` + `F5`) your browser or clear app/browser cache to ensure the new resource loads correctly.
 
 ## Similar Projects and Credits
