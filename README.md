@@ -17,7 +17,7 @@ Almost all CSS custom properties in this theme have been redefined to use Materi
 
 **It is strongly recommended that you install this themes companion JavaScript module, [Material You Utilities](https://github.com/Nerwyn/ha-material-you-utilities)**. With this module you will be able to generate custom color themes and modify the styles of Home Assistants components to match the Material Design 3 specification. The screenshots use this module.
 
-This theme also includes "Transparent Card" versions with transparent card backgrounds. It also includes separate light and dark versions of all themes for niche use cases. These variations are combined into several different versions of the theme.
+This theme also includes separate light and dark versions for niche use cases, like older devices that do not support light/dark mode.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-rainbow.png" width="750"/>
 
@@ -187,4 +187,4 @@ This theme revolves around Material Design 3 and the tooling that its contributo
 
 ## Developing, Modifying, and Building The Theme
 
-This theme has a build pipeline which runs on pre-commit. To setup the pre-commit hook, run the command `npm run setup`. The `material_you.yaml` file found in the `src` folder is the base version of the theme. It has defaults set for all Material Design System colors in light and dark mode, which are then used for all other theme variables. The pre-commit build pipeline will run a JavaScript file name `pre-commit.js`, which creates six versions of this theme for transparent card backgrounds, and explicit dark and light modes.
+This theme has a build pipeline which runs on pre-commit. To setup the pre-commit hook, run the command `npm run setup`. The `material_you.yaml` file found in the `src` folder is the base version of the theme. It has defaults set for all Material Design System colors in light and dark mode, which are then used for all other theme variables. The pre-commit build pipeline will run a JavaScript file name `pre-commit.js`, which creates three versions of this theme explicit light and dark modes.
