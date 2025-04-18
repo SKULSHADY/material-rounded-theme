@@ -104,7 +104,7 @@ html {
 }
 ```
 
-Follow the [above instructions](#alternativeoptional-build-your-own-theme) for uploading and installing custom CSS.
+Follow the [above instructions](#optional-applying-custom-styles-and-card-variants) for uploading and installing custom CSS.
 
 ## Similar Projects and Credits
 
