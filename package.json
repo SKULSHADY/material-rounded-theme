@@ -1,6 +1,6 @@
 {
 	"name": "material-you-theme",
-	"version": "4.0.1",
+	"version": "4.0.2",
 	"description": "A Material You and Google Home app influenced theme for Home Assistant",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
