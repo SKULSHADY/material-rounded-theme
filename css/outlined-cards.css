@@ -1,0 +1,7 @@
+/* Outlined Card */
+body {
+	--ha-card-background: var(--md-sys-color-surface);
+	--ha-card-border-width: 1px;
+	--ha-card-border-color: var(--md-sys-color-outline-variant);
+	--ha-card-box-shadow: none;
+}
