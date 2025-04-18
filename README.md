@@ -62,7 +62,7 @@ I recommend using [`Figtree`](https://fonts.google.com/specimen/Figtree) font wi
 
 While this isn't specific to this theme, you can apply custom CSS to Home Assistant's HTML DOM using frontend resource stylesheets. You can redefine theme custom properties to use alternate variables, whether it be Material You tokens or static values. This is useful for using alternate default card styles, or changing anything else you want about this theme. Doing so is especially helpful with this theme since everything is defined with Material You tokens, which are generated using the companion JavaScript Module.
 
-A several example CSS files are included [here](https://github.com/Nerwyn/material-you-theme/tree/main/css), such as the legacy Google Home 2024 theme colors and alternate card style options. To install:
+Several example CSS files are included [here](https://github.com/Nerwyn/material-you-theme/tree/main/css), such as the legacy Google Home 2024 theme colors and alternate card style options. To install:
 
 1. Upload the CSS file to your Home Assistant instance, preferable in the config/www folder.
    - Your `configuration.yaml` file is found in the `config` folder. If the `www` folder does not exist create it. More information about the configuration folder can be found [here](https://www.home-assistant.io/docs/configuration/#to-find-the-configuration-directory).
