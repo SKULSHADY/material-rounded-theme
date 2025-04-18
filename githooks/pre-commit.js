@@ -15,12 +15,6 @@ function main() {
 	output[THEME_NAME] =  structuredClone(src[THEME_NAME])
 	output[THEME_NAME]['version'] = packageInfo.version
 
-	// Create transparent card version of theme
-	const transparentCardThemeName = `${THEME_NAME} Transparent Card`
-	output[transparentCardThemeName] = structuredClone(output[THEME_NAME])
-	output[transparentCardThemeName]['ha-card-background'] = 'transparent'
-	output[transparentCardThemeName]['ha-card-box-shadow'] = 'none'
-
 	// Create separate light and dark mode versions of theme for special use cases
 	for (const themeName of Object.keys(output)) {
 		for (const mode of ['Light', 'Dark']) {
