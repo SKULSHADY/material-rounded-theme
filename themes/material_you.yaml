@@ -278,6 +278,7 @@ Material You:
   ha-dialog-surface-background: var(--md-sys-color-surface-container-high)
   ha-dialog-border-radius: var(--md-sys-shape-corner-extra-large)
   mdc-dialog-scrim-color: rgba(from var(--md-sys-color-scrim) r g b / 0.32)
+  dialog-content-overflow: hidden auto
   md-dialog-container-color: var(--md-sys-color-surface-container-high)
   md-dialog-headline-size: var(--md-sys-typescale-headline-small-size)
   md-dialog-headline-weight: var(--md-sys-typescale-headline-small-weight)
@@ -448,7 +449,7 @@ Material You:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.2
+  version: 4.0.3
 Material You Light:
   md-sys-elevation-level0: none
   md-sys-elevation-level1: >-
@@ -616,6 +617,7 @@ Material You Light:
   ha-dialog-surface-background: var(--md-sys-color-surface-container-high)
   ha-dialog-border-radius: var(--md-sys-shape-corner-extra-large)
   mdc-dialog-scrim-color: rgba(from var(--md-sys-color-scrim) r g b / 0.32)
+  dialog-content-overflow: hidden auto
   md-dialog-container-color: var(--md-sys-color-surface-container-high)
   md-dialog-headline-size: var(--md-sys-typescale-headline-small-size)
   md-dialog-headline-weight: var(--md-sys-typescale-headline-small-weight)
@@ -786,7 +788,7 @@ Material You Light:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.2
+  version: 4.0.3
   md-sys-color-primary: 'var(--md-sys-color-primary-light, #4c5c92)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-light, #ffffff)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-light, #dce1ff)'
@@ -1009,6 +1011,7 @@ Material You Dark:
   ha-dialog-surface-background: var(--md-sys-color-surface-container-high)
   ha-dialog-border-radius: var(--md-sys-shape-corner-extra-large)
   mdc-dialog-scrim-color: rgba(from var(--md-sys-color-scrim) r g b / 0.32)
+  dialog-content-overflow: hidden auto
   md-dialog-container-color: var(--md-sys-color-surface-container-high)
   md-dialog-headline-size: var(--md-sys-typescale-headline-small-size)
   md-dialog-headline-weight: var(--md-sys-typescale-headline-small-weight)
@@ -1179,7 +1182,7 @@ Material You Dark:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.2
+  version: 4.0.3
   md-sys-color-primary: 'var(--md-sys-color-primary-dark, #b5c4ff)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-dark, #1c2d61)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-dark, #344479)'

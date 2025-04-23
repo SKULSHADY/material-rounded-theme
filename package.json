@@ -1,8 +1,9 @@
 {
 	"name": "material-you-theme",
-	"version": "4.0.2",
+	"version": "4.0.3",
 	"description": "A Material You and Google Home app influenced theme for Home Assistant",
 	"scripts": {
+		"build": "node --no-warnings ./githooks/pre-commit.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"setup": "git config --add core.hooksPath githooks && npm i"
 	},

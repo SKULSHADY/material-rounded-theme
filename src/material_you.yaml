@@ -349,6 +349,7 @@ Material You:
   ha-dialog-surface-background: var(--md-sys-color-surface-container-high)
   ha-dialog-border-radius: var(--md-sys-shape-corner-extra-large)
   mdc-dialog-scrim-color: rgba(from var(--md-sys-color-scrim) r g b / 0.32)
+  dialog-content-overflow: hidden auto
 
   md-dialog-container-color: var(--md-sys-color-surface-container-high)
 
