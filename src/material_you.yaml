@@ -465,6 +465,11 @@ Material You:
   md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   hacs-default-icon-color: var(--md-sys-color-primary)
 
+  md-input-chip-label-text-size: var(--md-sys-typescale-label-large-size)
+  md-input-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
+  md-input-chip-label-text-line-height: var(--md-sys-typescale-label-large-line-height)
+  md-input-chip-label-text-tracking: var(--md-sys-typescale-label-large-tracking)
+
   # Spacings
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px

@@ -372,6 +372,10 @@ Material You:
   md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
   md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   hacs-default-icon-color: var(--md-sys-color-primary)
+  md-input-chip-label-text-size: var(--md-sys-typescale-label-large-size)
+  md-input-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
+  md-input-chip-label-text-line-height: var(--md-sys-typescale-label-large-line-height)
+  md-input-chip-label-text-tracking: var(--md-sys-typescale-label-large-tracking)
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
@@ -449,7 +453,7 @@ Material You:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.3
+  version: 4.0.4
 Material You Light:
   md-sys-elevation-level0: none
   md-sys-elevation-level1: >-
@@ -711,6 +715,10 @@ Material You Light:
   md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
   md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   hacs-default-icon-color: var(--md-sys-color-primary)
+  md-input-chip-label-text-size: var(--md-sys-typescale-label-large-size)
+  md-input-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
+  md-input-chip-label-text-line-height: var(--md-sys-typescale-label-large-line-height)
+  md-input-chip-label-text-tracking: var(--md-sys-typescale-label-large-tracking)
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
@@ -788,7 +796,7 @@ Material You Light:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.3
+  version: 4.0.4
   md-sys-color-primary: 'var(--md-sys-color-primary-light, #4c5c92)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-light, #ffffff)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-light, #dce1ff)'
@@ -1105,6 +1113,10 @@ Material You Dark:
   md-assist-chip-hover-state-layer-color: var(--md-sys-color-on-secondary-container)
   md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   hacs-default-icon-color: var(--md-sys-color-primary)
+  md-input-chip-label-text-size: var(--md-sys-typescale-label-large-size)
+  md-input-chip-label-text-weight: var(--md-sys-typescale-label-large-weight)
+  md-input-chip-label-text-line-height: var(--md-sys-typescale-label-large-line-height)
+  md-input-chip-label-text-tracking: var(--md-sys-typescale-label-large-tracking)
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
   ha-view-sections-row-gap: 18px
@@ -1182,7 +1194,7 @@ Material You Dark:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.3
+  version: 4.0.4
   md-sys-color-primary: 'var(--md-sys-color-primary-dark, #b5c4ff)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-dark, #1c2d61)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-dark, #344479)'
