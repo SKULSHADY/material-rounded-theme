@@ -455,7 +455,7 @@ Material You:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
 
-  # Chips
+  # Assist chips
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
   ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
   md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
@@ -465,6 +465,7 @@ Material You:
   md-assist-chip-pressed-state-layer-color: var(--md-sys-color-on-surface-variant)
   hacs-default-icon-color: var(--md-sys-color-primary)
 
+  # Input chips
   md-input-chip-outline-color: var(--md-sys-color-outline-variant)
   md-input-chip-focus-outline-color: var(--md-sys-color-on-surface-variant)
   md-input-chip-disabled-outline-color: var(--md-sys-color-on-surface)
