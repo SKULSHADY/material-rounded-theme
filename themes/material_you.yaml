@@ -273,6 +273,10 @@ Material You:
   sidebar-menu-button-text-color: var(--md-sys-color-on-surface-variant)
   sidebar-state-pressed-background: var(--md-sys-color-on-secondary-container)
   sidebar-background-color: var(--md-sys-color-surface-container)
+  md-list-item-hover-state-layer-color: var(--md-sys-color-on-surface)
+  md-list-item-pressed-state-layer-color: var(--md-sys-color-on-secondary-container)
+  md-list-item-hover-state-layer-opacity: 0.08
+  md-list-item-pressed-state-layer-opacity: 0.1
   app-header-text-color: var(--md-sys-color-on-surface)
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
   ha-dialog-surface-background: var(--md-sys-color-surface-container-high)
@@ -485,7 +489,7 @@ Material You:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.4
+  version: 4.0.5
 Material You Light:
   md-sys-elevation-level0: none
   md-sys-elevation-level1: >-
@@ -648,6 +652,10 @@ Material You Light:
   sidebar-menu-button-text-color: var(--md-sys-color-on-surface-variant)
   sidebar-state-pressed-background: var(--md-sys-color-on-secondary-container)
   sidebar-background-color: var(--md-sys-color-surface-container)
+  md-list-item-hover-state-layer-color: var(--md-sys-color-on-surface)
+  md-list-item-pressed-state-layer-color: var(--md-sys-color-on-secondary-container)
+  md-list-item-hover-state-layer-opacity: 0.08
+  md-list-item-pressed-state-layer-opacity: 0.1
   app-header-text-color: var(--md-sys-color-on-surface)
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
   ha-dialog-surface-background: var(--md-sys-color-surface-container-high)
@@ -860,7 +868,7 @@ Material You Light:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.4
+  version: 4.0.5
   md-sys-color-primary: 'var(--md-sys-color-primary-light, #4c5c92)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-light, #ffffff)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-light, #dce1ff)'
@@ -1078,6 +1086,10 @@ Material You Dark:
   sidebar-menu-button-text-color: var(--md-sys-color-on-surface-variant)
   sidebar-state-pressed-background: var(--md-sys-color-on-secondary-container)
   sidebar-background-color: var(--md-sys-color-surface-container)
+  md-list-item-hover-state-layer-color: var(--md-sys-color-on-surface)
+  md-list-item-pressed-state-layer-color: var(--md-sys-color-on-secondary-container)
+  md-list-item-hover-state-layer-opacity: 0.08
+  md-list-item-pressed-state-layer-opacity: 0.1
   app-header-text-color: var(--md-sys-color-on-surface)
   app-header-edit-text-color: var(--md-sys-color-on-surface-variant)
   ha-dialog-surface-background: var(--md-sys-color-surface-container-high)
@@ -1290,7 +1302,7 @@ Material You Dark:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.4
+  version: 4.0.5
   md-sys-color-primary: 'var(--md-sys-color-primary-dark, #b5c4ff)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-dark, #1c2d61)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-dark, #344479)'
