@@ -259,7 +259,6 @@ Material You:
   ha-card-border-style: none
   ha-card-border: none
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
-  paper-item-icon-color: var(--md-sys-color-on-surface-variant)
   lovelace-background: var(--md-sys-color-surface)
   view-background: var(--md-sys-color-surface)
   app-header-background-color: var(--md-sys-color-surface)
@@ -318,10 +317,6 @@ Material You:
   switch-checked-button-state-layer: var(--md-switch-checked-button-state-layer)
   switch-unchecked-button-state-layer: var(--md-switch-unchecked-button-state-layer)
   switch-unchecked-track-state-layer: var(--md-switch-unchecked-track-state-layer)
-  paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
-  paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
-  paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
-  paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
   checkbox-checked-border-color: var(--md-sys-color-primary)
   checkbox-checked-icon-color: var(--md-sys-color-on-primary)
   checkbox-unchecked-border-color: var(--md-sys-color-on-surface-variant)
@@ -332,12 +327,6 @@ Material You:
   mdc-radio-unchecked-color: var(--md-sys-color-on-surface-variant)
   slider-color: var(--md-sys-color-inverse-primary)
   slider-secondary-color: var(--md-sys-color-primary)
-  paper-slider-knob-color: var(--md-sys-color-primary)
-  paper-slider-knob-start-color: var(--md-sys-color-primary)
-  paper-slider-pin-color: var(--md-sys-color-primary)
-  paper-slider-active-color: var(--md-sys-color-primary)
-  paper-slider-secondary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
-  paper-slider-height: 4px
   md-slider-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-shadow-color: transparent
   md-slider-hover-handle-color: var(--md-sys-color-surface-container-low)
@@ -421,19 +410,11 @@ Material You:
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none
   navbar-background: var(--md-sys-color-surface-container)
-  paper-tab-ink: '#00000000'
   font-family: >-
     Figtree, "Google Sans", Roboto, -apple-system, BlinkMacSystemFont, "Segoe
     UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol"
   primary-font-family: var(--font-family)
-  paper-font-common-base_-_font-family: var(--font-family)
-  paper-font-common-code_-_font-family: var(--font-family)
-  paper-font-body1_-_font-family: var(--font-family)
-  paper-font-subhead_-_font-family: var(--font-family)
-  paper-font-headline_-_font-family: var(--font-family)
-  paper-font-caption_-_font-family: var(--font-family)
-  paper-font-title_-_font-family: var(--font-family)
   ha-card-header-font-family: var(--font-family)
   mdc-typography-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
@@ -448,6 +429,10 @@ Material You:
   ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
   ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
   ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
+  ha-font-family-body: var(--font-family)
+  ha-font-family-heading: var(--font-family)
+  ha-font-family-code: var(--font-family)
+  ha-font-family-longform: var(--font-family)
   text-primary-color: var(--md-sys-color-surface)
   text-light-primary-color: hsl(from var(--md-sys-color-surface) h s calc(l + 20))
   text-accent-color: var(--md-sys-color-on-secondary)
@@ -489,7 +474,7 @@ Material You:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.5
+  version: 4.0.6
 Material You Light:
   md-sys-elevation-level0: none
   md-sys-elevation-level1: >-
@@ -638,7 +623,6 @@ Material You Light:
   ha-card-border-style: none
   ha-card-border: none
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
-  paper-item-icon-color: var(--md-sys-color-on-surface-variant)
   lovelace-background: var(--md-sys-color-surface)
   view-background: var(--md-sys-color-surface)
   app-header-background-color: var(--md-sys-color-surface)
@@ -697,10 +681,6 @@ Material You Light:
   switch-checked-button-state-layer: var(--md-switch-checked-button-state-layer)
   switch-unchecked-button-state-layer: var(--md-switch-unchecked-button-state-layer)
   switch-unchecked-track-state-layer: var(--md-switch-unchecked-track-state-layer)
-  paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
-  paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
-  paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
-  paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
   checkbox-checked-border-color: var(--md-sys-color-primary)
   checkbox-checked-icon-color: var(--md-sys-color-on-primary)
   checkbox-unchecked-border-color: var(--md-sys-color-on-surface-variant)
@@ -711,12 +691,6 @@ Material You Light:
   mdc-radio-unchecked-color: var(--md-sys-color-on-surface-variant)
   slider-color: var(--md-sys-color-inverse-primary)
   slider-secondary-color: var(--md-sys-color-primary)
-  paper-slider-knob-color: var(--md-sys-color-primary)
-  paper-slider-knob-start-color: var(--md-sys-color-primary)
-  paper-slider-pin-color: var(--md-sys-color-primary)
-  paper-slider-active-color: var(--md-sys-color-primary)
-  paper-slider-secondary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
-  paper-slider-height: 4px
   md-slider-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-shadow-color: transparent
   md-slider-hover-handle-color: var(--md-sys-color-surface-container-low)
@@ -800,19 +774,11 @@ Material You Light:
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none
   navbar-background: var(--md-sys-color-surface-container)
-  paper-tab-ink: '#00000000'
   font-family: >-
     Figtree, "Google Sans", Roboto, -apple-system, BlinkMacSystemFont, "Segoe
     UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol"
   primary-font-family: var(--font-family)
-  paper-font-common-base_-_font-family: var(--font-family)
-  paper-font-common-code_-_font-family: var(--font-family)
-  paper-font-body1_-_font-family: var(--font-family)
-  paper-font-subhead_-_font-family: var(--font-family)
-  paper-font-headline_-_font-family: var(--font-family)
-  paper-font-caption_-_font-family: var(--font-family)
-  paper-font-title_-_font-family: var(--font-family)
   ha-card-header-font-family: var(--font-family)
   mdc-typography-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
@@ -827,6 +793,10 @@ Material You Light:
   ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
   ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
   ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
+  ha-font-family-body: var(--font-family)
+  ha-font-family-heading: var(--font-family)
+  ha-font-family-code: var(--font-family)
+  ha-font-family-longform: var(--font-family)
   text-primary-color: var(--md-sys-color-surface)
   text-light-primary-color: hsl(from var(--md-sys-color-surface) h s calc(l + 20))
   text-accent-color: var(--md-sys-color-on-secondary)
@@ -868,7 +838,7 @@ Material You Light:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.5
+  version: 4.0.6
   md-sys-color-primary: 'var(--md-sys-color-primary-light, #4c5c92)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-light, #ffffff)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-light, #dce1ff)'
@@ -1072,7 +1042,6 @@ Material You Dark:
   ha-card-border-style: none
   ha-card-border: none
   ha-config-card-border-radius: var(--md-sys-shape-corner-large)
-  paper-item-icon-color: var(--md-sys-color-on-surface-variant)
   lovelace-background: var(--md-sys-color-surface)
   view-background: var(--md-sys-color-surface)
   app-header-background-color: var(--md-sys-color-surface)
@@ -1131,10 +1100,6 @@ Material You Dark:
   switch-checked-button-state-layer: var(--md-switch-checked-button-state-layer)
   switch-unchecked-button-state-layer: var(--md-switch-unchecked-button-state-layer)
   switch-unchecked-track-state-layer: var(--md-switch-unchecked-track-state-layer)
-  paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
-  paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
-  paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
-  paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
   checkbox-checked-border-color: var(--md-sys-color-primary)
   checkbox-checked-icon-color: var(--md-sys-color-on-primary)
   checkbox-unchecked-border-color: var(--md-sys-color-on-surface-variant)
@@ -1145,12 +1110,6 @@ Material You Dark:
   mdc-radio-unchecked-color: var(--md-sys-color-on-surface-variant)
   slider-color: var(--md-sys-color-inverse-primary)
   slider-secondary-color: var(--md-sys-color-primary)
-  paper-slider-knob-color: var(--md-sys-color-primary)
-  paper-slider-knob-start-color: var(--md-sys-color-primary)
-  paper-slider-pin-color: var(--md-sys-color-primary)
-  paper-slider-active-color: var(--md-sys-color-primary)
-  paper-slider-secondary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
-  paper-slider-height: 4px
   md-slider-handle-color: var(--md-sys-color-surface-container-low)
   md-slider-handle-shadow-color: transparent
   md-slider-hover-handle-color: var(--md-sys-color-surface-container-low)
@@ -1234,19 +1193,11 @@ Material You Dark:
   app-header-edit-background-color: var(--md-sys-color-surface-container)
   app-header-selection-bar-color: none
   navbar-background: var(--md-sys-color-surface-container)
-  paper-tab-ink: '#00000000'
   font-family: >-
     Figtree, "Google Sans", Roboto, -apple-system, BlinkMacSystemFont, "Segoe
     UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol"
   primary-font-family: var(--font-family)
-  paper-font-common-base_-_font-family: var(--font-family)
-  paper-font-common-code_-_font-family: var(--font-family)
-  paper-font-body1_-_font-family: var(--font-family)
-  paper-font-subhead_-_font-family: var(--font-family)
-  paper-font-headline_-_font-family: var(--font-family)
-  paper-font-caption_-_font-family: var(--font-family)
-  paper-font-title_-_font-family: var(--font-family)
   ha-card-header-font-family: var(--font-family)
   mdc-typography-font-family: var(--font-family)
   mdc-typography-button-font-family: var(--font-family)
@@ -1261,6 +1212,10 @@ Material You Dark:
   ha-heading-card-subtitle-font-size: var(--md-sys-typescale-title-small-size)
   ha-heading-card-subtitle-font-weight: var(--md-sys-typescale-title-small-weight)
   ha-heading-card-subtitle-line-height: var(--md-sys-typescale-title-small-line-height)
+  ha-font-family-body: var(--font-family)
+  ha-font-family-heading: var(--font-family)
+  ha-font-family-code: var(--font-family)
+  ha-font-family-longform: var(--font-family)
   text-primary-color: var(--md-sys-color-surface)
   text-light-primary-color: hsl(from var(--md-sys-color-surface) h s calc(l + 20))
   text-accent-color: var(--md-sys-color-on-secondary)
@@ -1302,7 +1257,7 @@ Material You Dark:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.5
+  version: 4.0.6
   md-sys-color-primary: 'var(--md-sys-color-primary-dark, #b5c4ff)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-dark, #1c2d61)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-dark, #344479)'
