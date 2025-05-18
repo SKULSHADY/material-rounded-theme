@@ -146,14 +146,13 @@ cards:
     show_header: false
     styles: |-
       #root {
-        /* Optional, best for pop-ups with no scroll */
-        height: fit-content !important;
+        height: unset !important;
+        max-height: 100% !important
       }
       .bubble-pop-up-container {
-        /* Only recommended if using ha-card elements instead of Bubble Card elements */
+        /* Removing side padding if using ha-card elements instead of Bubble Card elements */
         padding-left: 0 !important;
         padding-right: 0 !important;
-        /* Optional, use with height: fit-content above to fix display issues */
         padding-bottom: 64px !important;
       }
   - type: custom:bubble-card
