@@ -182,7 +182,7 @@ This theme revolves around Material Design 3 and the tooling that its contributo
 
 ### Figtree Font
 
-[Figtree](https://fonts.google.com/specimen/Figtree) is a free font that is very similar to Googles proprietary font Google Sans. You can install it as a frontend resource in Home Assistant using [this URL](https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap), and it will be automatically used by this theme.
+[Figtree](https://fonts.google.com/specimen/Figtree) is a free font that is very similar to Google's proprietary font Google Sans. You can install it as a frontend resource in Home Assistant using [this URL](https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap), and it will be automatically used by this theme.
 
 ## Developing, Modifying, and Building The Theme
 
