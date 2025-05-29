@@ -20,6 +20,18 @@ Material You:
     rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 7px 8px -4px,
     rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 12px 17px 2px,
     rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 5px 22px 4px
+  md-sys-motion-expressive-spatial-fast: 350ms cubic-bezier(0.42, 1.67, 0.21, 0.90)
+  md-sys-motion-expressive-spatial-default: 500ms cubic-bezier(0.38, 1.21, 0.22, 1.00)
+  md-sys-motion-expressive-spatial-slow: 650ms cubic-bezier(0.39, 1.29, 0.35, 0.98)
+  md-sys-motion-expressive-effects-fast: 150ms cubic-bezier(0.31, 0.94, 0.34, 1.00)
+  md-sys-motion-expressive-effects-default: 200ms cubic-bezier(0.34, 0.80, 0.34, 1.00)
+  md-sys-motion-expressive-effects-slow: 300ms cubic-bezier(0.34, 0.88, 0.34, 1.00)
+  md-sys-motion-standard-spatial-fast: 350ms cubic-bezier(0.27, 1.06, 0.18, 1.00)
+  md-sys-motion-standard-spatial-default: 500ms cubic-bezier(0.27, 1.06, 0.18, 1.00)
+  md-sys-motion-standard-spatial-slow: 750ms cubic-bezier(0.27, 1.06, 0.18, 1.00)
+  md-sys-motion-standard-effects-fast: 150ms cubic-bezier(0.31, 0.94, 0.34, 1.00)
+  md-sys-motion-standard-effects-default: 200ms cubic-bezier(0.34, 0.80, 0.34, 1.00)
+  md-sys-motion-standard-effects-slow: 300ms cubic-bezier(0.34, 0.88, 0.34, 1.00)
   md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15)
   md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1)
   md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1)
@@ -474,7 +486,7 @@ Material You:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.6
+  version: 4.1.0
 Material You Light:
   md-sys-elevation-level0: none
   md-sys-elevation-level1: >-
@@ -497,6 +509,18 @@ Material You Light:
     rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 7px 8px -4px,
     rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 12px 17px 2px,
     rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 5px 22px 4px
+  md-sys-motion-expressive-spatial-fast: 350ms cubic-bezier(0.42, 1.67, 0.21, 0.90)
+  md-sys-motion-expressive-spatial-default: 500ms cubic-bezier(0.38, 1.21, 0.22, 1.00)
+  md-sys-motion-expressive-spatial-slow: 650ms cubic-bezier(0.39, 1.29, 0.35, 0.98)
+  md-sys-motion-expressive-effects-fast: 150ms cubic-bezier(0.31, 0.94, 0.34, 1.00)
+  md-sys-motion-expressive-effects-default: 200ms cubic-bezier(0.34, 0.80, 0.34, 1.00)
+  md-sys-motion-expressive-effects-slow: 300ms cubic-bezier(0.34, 0.88, 0.34, 1.00)
+  md-sys-motion-standard-spatial-fast: 350ms cubic-bezier(0.27, 1.06, 0.18, 1.00)
+  md-sys-motion-standard-spatial-default: 500ms cubic-bezier(0.27, 1.06, 0.18, 1.00)
+  md-sys-motion-standard-spatial-slow: 750ms cubic-bezier(0.27, 1.06, 0.18, 1.00)
+  md-sys-motion-standard-effects-fast: 150ms cubic-bezier(0.31, 0.94, 0.34, 1.00)
+  md-sys-motion-standard-effects-default: 200ms cubic-bezier(0.34, 0.80, 0.34, 1.00)
+  md-sys-motion-standard-effects-slow: 300ms cubic-bezier(0.34, 0.88, 0.34, 1.00)
   md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15)
   md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1)
   md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1)
@@ -838,7 +862,7 @@ Material You Light:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.6
+  version: 4.1.0
   md-sys-color-primary: 'var(--md-sys-color-primary-light, #4c5c92)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-light, #ffffff)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-light, #dce1ff)'
@@ -916,6 +940,18 @@ Material You Dark:
     rgba(from var(--md-sys-color-shadow) r g b / 0.2) 0px 7px 8px -4px,
     rgba(from var(--md-sys-color-shadow) r g b / 0.14) 0px 12px 17px 2px,
     rgba(from var(--md-sys-color-shadow) r g b / 0.12) 0px 5px 22px 4px
+  md-sys-motion-expressive-spatial-fast: 350ms cubic-bezier(0.42, 1.67, 0.21, 0.90)
+  md-sys-motion-expressive-spatial-default: 500ms cubic-bezier(0.38, 1.21, 0.22, 1.00)
+  md-sys-motion-expressive-spatial-slow: 650ms cubic-bezier(0.39, 1.29, 0.35, 0.98)
+  md-sys-motion-expressive-effects-fast: 150ms cubic-bezier(0.31, 0.94, 0.34, 1.00)
+  md-sys-motion-expressive-effects-default: 200ms cubic-bezier(0.34, 0.80, 0.34, 1.00)
+  md-sys-motion-expressive-effects-slow: 300ms cubic-bezier(0.34, 0.88, 0.34, 1.00)
+  md-sys-motion-standard-spatial-fast: 350ms cubic-bezier(0.27, 1.06, 0.18, 1.00)
+  md-sys-motion-standard-spatial-default: 500ms cubic-bezier(0.27, 1.06, 0.18, 1.00)
+  md-sys-motion-standard-spatial-slow: 750ms cubic-bezier(0.27, 1.06, 0.18, 1.00)
+  md-sys-motion-standard-effects-fast: 150ms cubic-bezier(0.31, 0.94, 0.34, 1.00)
+  md-sys-motion-standard-effects-default: 200ms cubic-bezier(0.34, 0.80, 0.34, 1.00)
+  md-sys-motion-standard-effects-slow: 300ms cubic-bezier(0.34, 0.88, 0.34, 1.00)
   md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15)
   md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1)
   md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1)
@@ -1257,7 +1293,7 @@ Material You Dark:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 4.0.6
+  version: 4.1.0
   md-sys-color-primary: 'var(--md-sys-color-primary-dark, #b5c4ff)'
   md-sys-color-on-primary: 'var(--md-sys-color-on-primary-dark, #1c2d61)'
   md-sys-color-primary-container: 'var(--md-sys-color-primary-container-dark, #344479)'
