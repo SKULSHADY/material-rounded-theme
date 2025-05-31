@@ -463,7 +463,7 @@ Material You:
   mdc-typography-button-text-transform: capitalize
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
-  mdc-fab-box-shadow: var(--md-sys-elevation-level4)
+  mdc-fab-box-shadow: var(--md-sys-elevation-level3)
 
   # Assist chips
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
