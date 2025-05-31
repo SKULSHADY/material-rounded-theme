@@ -370,6 +370,9 @@ Material You:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
   mdc-fab-box-shadow: var(--md-sys-elevation-level3)
+  mdc-shape-small: var(--md-sys-shape-corner-small)
+  mdc-shape-medium: var(--md-sys-shape-corner-medium)
+  mdc-shape-large: var(--md-sys-shape-corner-large)
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
   ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
   md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
@@ -747,6 +750,9 @@ Material You Light:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
   mdc-fab-box-shadow: var(--md-sys-elevation-level3)
+  mdc-shape-small: var(--md-sys-shape-corner-small)
+  mdc-shape-medium: var(--md-sys-shape-corner-medium)
+  mdc-shape-large: var(--md-sys-shape-corner-large)
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
   ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
   md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
@@ -1179,6 +1185,9 @@ Material You Dark:
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
   mdc-fab-box-shadow: var(--md-sys-elevation-level3)
+  mdc-shape-small: var(--md-sys-shape-corner-small)
+  mdc-shape-medium: var(--md-sys-shape-corner-medium)
+  mdc-shape-large: var(--md-sys-shape-corner-large)
   ha-assist-chip-container-shape: var(--md-sys-shape-corner-small)
   ha-assist-chip-filled-container-color: var(--md-sys-color-secondary-container)
   md-assist-chip-outline-color: var(--md-sys-color-outline-variant)
