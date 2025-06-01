@@ -257,7 +257,7 @@ Material You:
   secondary-background-color: var(--md-sys-color-secondary-container)
   dark-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l - 20))
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
-  divider-color: var(--md-sys-color-surface-container)
+  divider-color: var(--md-sys-color-outline-variant)
   scrollbar-thumb-color: '#2e3038'
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
@@ -638,7 +638,7 @@ Material You Light:
   secondary-background-color: var(--md-sys-color-secondary-container)
   dark-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l - 20))
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
-  divider-color: var(--md-sys-color-surface-container)
+  divider-color: var(--md-sys-color-outline-variant)
   scrollbar-thumb-color: '#2e3038'
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
@@ -1074,7 +1074,7 @@ Material You Dark:
   secondary-background-color: var(--md-sys-color-secondary-container)
   dark-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l - 20))
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
-  divider-color: var(--md-sys-color-surface-container)
+  divider-color: var(--md-sys-color-outline-variant)
   scrollbar-thumb-color: '#2e3038'
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)

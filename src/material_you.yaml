@@ -321,7 +321,7 @@ Material You:
   secondary-background-color: var(--md-sys-color-secondary-container)
   dark-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l - 20))
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
-  divider-color: var(--md-sys-color-surface-container)
+  divider-color: var(--md-sys-color-outline-variant)
   scrollbar-thumb-color: "#2e3038"
 
   # Error
@@ -463,7 +463,7 @@ Material You:
   mdc-typography-button-text-transform: capitalize
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
-  
+
   mdc-fab-box-shadow: var(--md-sys-elevation-level3)
   mdc-fab-extended-label-padding: 16px
 
