@@ -463,7 +463,10 @@ Material You:
   mdc-typography-button-text-transform: capitalize
   mdc-button-horizontal-padding: 12px
   mdc-button-outline-color: var(--md-sys-color-outline)
+  
   mdc-fab-box-shadow: var(--md-sys-elevation-level3)
+  mdc-fab-extended-label-padding: 16px
+
   mdc-shape-small: var(--md-sys-shape-corner-small)
   mdc-shape-medium: var(--md-sys-shape-corner-medium)
   mdc-shape-large: var(--md-sys-shape-corner-large)
