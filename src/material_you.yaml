@@ -348,7 +348,7 @@ Material You:
   margin-title-rtl: 0
 
   # Sidebar
-  sidebar-selected-text-color: var(--md-sys-color-on-secondary-container)
+  sidebar-selected-text-color: var(--md-sys-color-secondary)
   sidebar-selected-icon-color: var(--md-sys-color-on-secondary-container)
   sidebar-selected-background: var(--md-sys-color-secondary-container)
   sidebar-icon-color: var(--md-sys-color-on-surface-variant)

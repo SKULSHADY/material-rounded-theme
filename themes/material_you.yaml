@@ -276,7 +276,7 @@ Material You:
   app-header-background-color: var(--md-sys-color-surface)
   margin-title-ltr: 0
   margin-title-rtl: 0
-  sidebar-selected-text-color: var(--md-sys-color-on-secondary-container)
+  sidebar-selected-text-color: var(--md-sys-color-secondary)
   sidebar-selected-icon-color: var(--md-sys-color-on-secondary-container)
   sidebar-selected-background: var(--md-sys-color-secondary-container)
   sidebar-icon-color: var(--md-sys-color-on-surface-variant)
@@ -656,7 +656,7 @@ Material You Light:
   app-header-background-color: var(--md-sys-color-surface)
   margin-title-ltr: 0
   margin-title-rtl: 0
-  sidebar-selected-text-color: var(--md-sys-color-on-secondary-container)
+  sidebar-selected-text-color: var(--md-sys-color-secondary)
   sidebar-selected-icon-color: var(--md-sys-color-on-secondary-container)
   sidebar-selected-background: var(--md-sys-color-secondary-container)
   sidebar-icon-color: var(--md-sys-color-on-surface-variant)
@@ -1091,7 +1091,7 @@ Material You Dark:
   app-header-background-color: var(--md-sys-color-surface)
   margin-title-ltr: 0
   margin-title-rtl: 0
-  sidebar-selected-text-color: var(--md-sys-color-on-secondary-container)
+  sidebar-selected-text-color: var(--md-sys-color-secondary)
   sidebar-selected-icon-color: var(--md-sys-color-on-secondary-container)
   sidebar-selected-background: var(--md-sys-color-secondary-container)
   sidebar-icon-color: var(--md-sys-color-on-surface-variant)
