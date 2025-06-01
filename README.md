@@ -147,13 +147,15 @@ cards:
     styles: |-
       #root {
         height: unset !important;
-        max-height: 100% !important
+        max-height: 100% !important;
+        transition: transform var(--md-sys-motion-expressive-spatial-default) !important;
       }
       .bubble-pop-up-container {
+        padding-bottom: 64px !important;
+
         /* Removing side padding if using ha-card elements instead of Bubble Card elements */
         padding-left: 0 !important;
         padding-right: 0 !important;
-        padding-bottom: 64px !important;
       }
   - type: custom:bubble-card
     card_type: separator # A modified separator to mimic the bottom sheet drag handle
