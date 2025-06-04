@@ -174,11 +174,11 @@ Material You:
   md-sys-typescale-label-large-line-height: 20px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-emphasized-label-large-weight: var(--md-ref-typeface-weight-bold)
-  md-sys-typescale-emphasized-label-large-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-emphasized-label-large-size: 14px
   md-sys-typescale-emphasized-label-large-line-height: 20px
   md-sys-typescale-emphasized-label-large-tracking: 0.1px
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-tracking: 0.5px
@@ -728,11 +728,11 @@ Material You Light:
   md-sys-typescale-label-large-line-height: 20px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-emphasized-label-large-weight: var(--md-ref-typeface-weight-bold)
-  md-sys-typescale-emphasized-label-large-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-emphasized-label-large-size: 14px
   md-sys-typescale-emphasized-label-large-line-height: 20px
   md-sys-typescale-emphasized-label-large-tracking: 0.1px
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-tracking: 0.5px
@@ -1224,11 +1224,11 @@ Material You Dark:
   md-sys-typescale-label-large-line-height: 20px
   md-sys-typescale-label-large-tracking: 0.1px
   md-sys-typescale-emphasized-label-large-weight: var(--md-ref-typeface-weight-bold)
-  md-sys-typescale-emphasized-label-large-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-emphasized-label-large-size: 14px
   md-sys-typescale-emphasized-label-large-line-height: 20px
   md-sys-typescale-emphasized-label-large-tracking: 0.1px
   md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium)
+  md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold)
   md-sys-typescale-label-medium-size: 12px
   md-sys-typescale-label-medium-line-height: 16px
   md-sys-typescale-label-medium-tracking: 0.5px
