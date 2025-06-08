@@ -1,5 +1,0 @@
-/* Transparent Card */
-body {
-	--ha-card-background: transparent;
-	--ha-card-box-shadow: none;
-}

@@ -58,27 +58,11 @@ I recommend using [`Figtree`](https://fonts.google.com/specimen/Figtree) font wi
 5. Click `Create`.
 6. Hard refresh (`CTRL` + `F5`) your browser or clear app/browser cache to ensure the new resource loads correctly.
 
-## (Optional) Applying Custom Styles and Card Variants
-
-While this isn't specific to this theme, you can apply custom CSS to Home Assistant's HTML DOM using frontend resource stylesheets. You can redefine theme custom properties to use alternate variables, whether it be Material You tokens or static values. This is useful for using alternate default card styles, or changing anything else you want about this theme. Doing so is especially helpful with this theme since everything is defined with Material You tokens, which are generated using the companion JavaScript Module.
-
-Several example CSS files are included [here](https://github.com/Nerwyn/material-you-theme/tree/main/css), such as the legacy Google Home 2024 theme colors and alternate card style options. To install:
-
-1. Upload the CSS file to your Home Assistant instance, preferable in the config/www folder.
-   - Your `configuration.yaml` file is found in the `config` folder. If the `www` folder does not exist create it. More information about the configuration folder can be found [here](https://www.home-assistant.io/docs/configuration/#to-find-the-configuration-directory).
-2. Navigate to a dashboard and then click `🖉 Edit dashboard` > `⋮ Open dashboard menu` > `Manage resources`.
-3. Click `+ Add Resource`.
-4. In the `URL` field enter the path to the resource file.
-    - Like `/local/all-cards.css`
-5. Select `Resource Type` `Stylesheet`.
-6. Click `Create`.
-7. Hard refresh (`CTRL` + `F5`) your browser or clear app/browser cache to ensure the new resource loads correctly.
-
 ## (Alternative/Optional) Build Your Own Theme
 
 If you do not want to use the JavaScript module resource, you can instead create your own Material Theme using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
 
-**NOTE**: color themes created this way will not apply to iframes such as the HACS and Add-ons pages. It will also not apply to some page backgrounds like the settings and developer tools pages, which are hardcoded to a default color. It will also be superceded by any themes set using the companion JavaScript module.
+**NOTE**: color themes created this way will not apply to iframes such as the HACS and Add-ons pages. It will also not apply to some page backgrounds like the settings and developer tools pages, which are hardcoded to a default color. It will also be superceded by any themes set using the companion JavaScript module. Some users have reported that stylesheets do not work on their Home Assistant frontends due to a possible browser bug unrelated to this theme or its companion module.
 
 1. Navigate to [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
 2. Choose your theme colors. You can skip picking fonts, they are not saved to the exported files.
@@ -104,7 +88,15 @@ html {
 }
 ```
 
-Follow the [above instructions](#optional-applying-custom-styles-and-card-variants) for uploading and installing custom CSS.
+8. Upload the CSS file to your Home Assistant instance, preferable in the config/www folder.
+   - Your `configuration.yaml` file is found in the `config` folder. If the `www` folder does not exist create it. More information about the configuration folder can be found [here](https://www.home-assistant.io/docs/configuration/#to-find-the-configuration-directory).
+9. Navigate to a dashboard and then click `🖉 Edit dashboard` > `⋮ Open dashboard menu` > `Manage resources`.
+10. Click `+ Add Resource`.
+11. In the `URL` field enter the path to the resource file.
+    - Like `/local/my-md3-theme.css`
+12. Select `Resource Type` `Stylesheet`.
+13. Click `Create`.
+14. Hard refresh (`CTRL` + `F5`) your browser or clear app/browser cache to ensure the new resource loads correctly.
 
 ## Similar Projects and Credits
 
