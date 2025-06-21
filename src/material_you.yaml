@@ -505,6 +505,7 @@ Material You:
   md-slider-inactive-track-height: 24px
   md-slider-active-track-shape: 8px
   md-slider-inactive-track-shape: 8px
+  md-slider-active-track-color: var(--md-sys-color-primary)
   md-slider-inactive-track-color: var(--md-sys-color-secondary-container)
   md-slider-label-text-color: var(--md-sys-color-inverse-on-surface)
   md-slider-label-container-color: var(--md-sys-color-inverse-surface)
