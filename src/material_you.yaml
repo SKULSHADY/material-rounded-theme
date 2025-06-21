@@ -299,6 +299,7 @@ Material You:
   state-icon-color: var(--md-sys-color-on-surface-variant)
   primary-text-color: var(--md-sys-color-on-surface)
   secondary-text-color: var(--md-sys-color-on-surface-variant)
+  label-badge-text-color: var(--md-sys-color-on-surface-variant)
   input-background-color: var(--md-sys-color-surface-container-highest)
   input-label-ink-color: var(--md-sys-color-on-surface-variant)
   secondary-background-color: var(--md-sys-color-secondary-container)
