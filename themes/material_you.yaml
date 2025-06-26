@@ -248,6 +248,7 @@ Material You:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   divider-color: var(--md-sys-color-surface-container)
   scrollbar-thumb-color: '#2e3038'
+  track-color: var(--md-sys-color-inverse-primary)
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
   primary-background-color: var(--md-sys-color-surface-container)
@@ -476,7 +477,6 @@ Material You:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  track-color: var(--md-sys-color-inverse-primary)
   version: 4.0.8
 Material You Light:
   md-sys-elevation-level0: none
@@ -615,6 +615,7 @@ Material You Light:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   divider-color: var(--md-sys-color-surface-container)
   scrollbar-thumb-color: '#2e3038'
+  track-color: var(--md-sys-color-inverse-primary)
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
   primary-background-color: var(--md-sys-color-surface-container)
@@ -899,7 +900,6 @@ Material You Light:
   disabled-text-color: 'var(--disabled-text-color-light, #808080)'
   disabled-color: 'var(--disabled-color-light, #a5a5a5)'
   state-inactive-color: 'var(--state-inactive-color-light, #9e9e9e)'
-  track-color: var(--md-sys-color-inverse-primary)
 Material You Dark:
   md-sys-elevation-level0: none
   md-sys-elevation-level1: >-
@@ -1037,6 +1037,7 @@ Material You Dark:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   divider-color: var(--md-sys-color-surface-container)
   scrollbar-thumb-color: '#2e3038'
+  track-color: var(--md-sys-color-inverse-primary)
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
   primary-background-color: var(--md-sys-color-surface-container)
@@ -1321,4 +1322,3 @@ Material You Dark:
   disabled-text-color: 'var(--disabled-text-color-dark, #ffffff80)'
   disabled-color: 'var(--disabled-color-dark, #000000)'
   state-inactive-color: 'var(--state-inactive-color-dark, #484a4e)'
-  track-color: var(--md-sys-color-inverse-primary)
