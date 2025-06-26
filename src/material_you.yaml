@@ -385,6 +385,12 @@ Material You:
   divider-color: var(--md-sys-color-outline-variant)
   scrollbar-thumb-color: "#2e3038"
 
+  # Automation trace colors
+  stroke-color: var(--md-sys-color-on-surface-variant)
+  active-color: var(--md-sys-color-tertiary)
+  track-color: var(--md-sys-color-inverse-primary)
+  hover-color: var(--md-sys-color-primary)
+
   # Error
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
