@@ -248,6 +248,7 @@ Material You:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   divider-color: var(--md-sys-color-surface-container)
   scrollbar-thumb-color: '#2e3038'
+  track-color: var(--md-sys-color-inverse-primary)
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
   primary-background-color: var(--md-sys-color-surface-container)
@@ -614,6 +615,7 @@ Material You Light:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   divider-color: var(--md-sys-color-surface-container)
   scrollbar-thumb-color: '#2e3038'
+  track-color: var(--md-sys-color-inverse-primary)
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
   primary-background-color: var(--md-sys-color-surface-container)
@@ -1035,6 +1037,7 @@ Material You Dark:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   divider-color: var(--md-sys-color-surface-container)
   scrollbar-thumb-color: '#2e3038'
+  track-color: var(--md-sys-color-inverse-primary)
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
   primary-background-color: var(--md-sys-color-surface-container)
