@@ -307,7 +307,12 @@ Material You:
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   divider-color: var(--md-sys-color-surface-container)
   scrollbar-thumb-color: "#2e3038"
+
+  # Automation trace colors
+  stroke-color: var(--md-sys-color-on-surface-variant)
+  active-color: var(--md-sys-color-tertiary)
   track-color: var(--md-sys-color-inverse-primary)
+  hover-color: var(--md-sys-color-primary)
 
   # Error
   error-color: var(--md-sys-color-error)
