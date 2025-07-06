@@ -158,17 +158,20 @@ cards:
   - type: custom:bubble-card
     card_type: separator # A modified separator to mimic the bottom sheet drag handle
     styles: |-
-      .bubble-icon, .bubble-name {
+      .bubble-icon,
+      .bubble-name {
         display: none;
       }
       .bubble-line {
         margin-right: 0;
         height: 4px;
+        max-width: 32px;
+        opacity: 1;
         background: var(--md-sys-color-on-surface-variant);
       }
-      ha-card {
-        width: 32px;
-        left: calc(50% - 16px);
+      .bubble-separator {
+        height: min-content !important;
+        justify-content: center;
       }
 ```
 
