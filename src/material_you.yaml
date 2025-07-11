@@ -377,8 +377,6 @@ Material You:
   primary-text-color: var(--md-sys-color-on-surface)
   secondary-text-color: var(--md-sys-color-on-surface-variant)
   label-badge-text-color: var(--md-sys-color-on-surface-variant)
-  input-background-color: var(--md-sys-color-surface-container-highest)
-  input-label-ink-color: var(--md-sys-color-on-surface-variant)
   secondary-background-color: var(--md-sys-color-secondary-container)
   dark-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l - 20))
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
@@ -649,8 +647,10 @@ Material You:
   mdc-theme-text-icon-on-background: var(--md-sys-color-on-surface-variant)
 
   # Text Fields and Dropdowns
+  input-background-color: var(--md-sys-color-surface-container-highest)
   input-fill-color: var(--md-sys-color-surface-container-highest)
   input-ink-color: var(--md-sys-color-on-surface)
+  input-label-ink-color: var(--md-sys-color-on-surface-variant)
   input-disabled-fill-color: rgba(from var(--md-sys-color-surface-container-highest) r g b / 0.5)
   input-disabled-ink-color: var(--disabled-text-color)
   input-disabled-label-ink-color: var(--disabled-text-color)
@@ -659,8 +659,13 @@ Material You:
   input-dropdown-icon-color: var(--md-sys-color-on-surface-variant)
 
   mdc-select-fill-color: var(--md-sys-color-surface-container-highest)
+  mdc-select-ink-color: var(--md-sys-color-on-surface)
+  mdc-select-label-ink-color: var(--md-sys-color-on-surface-variant)
   mdc-select-idle-line-color: var(--md-sys-color-on-surface-variant)
   mdc-select-hover-line-color: var(--md-sys-color-primary)
+  mdc-select-dropdown-icon-color: var(--md-sys-color-on-surface-variant)
+  mdc-text-field-ink-color: var(--md-sys-color-on-surface)
+  mdc-text-field-label-ink-color: var(--md-sys-color-on-surface-variant)
   mdc-text-field-fill-color: var(--md-sys-color-surface-container-highest)
   mdc-text-field-idle-line-color: var(--md-sys-color-on-surface-variant)
   mdc-text-field-hover-line-color: var(--md-sys-color-primary)
