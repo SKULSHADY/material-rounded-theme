@@ -6,7 +6,9 @@
  * Specification version - 2021
  * Card type - elevated
  */
-html {
+:host,
+html,
+body{
 	/* Dark mode */
 	--md-sys-color-primary-dark: #b5c4ff;
 	--md-sys-color-on-primary-dark: #1c2d61;

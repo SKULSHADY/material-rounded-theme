@@ -1,5 +1,7 @@
 /* Google Home 2024 pre Material You update */
-html {
+:host,
+html,
+body {
 	/* Dark mode */
 	--md-sys-color-primary-dark: #c2e7fe;
 	--md-sys-color-on-primary-dark: #1c2d61;
