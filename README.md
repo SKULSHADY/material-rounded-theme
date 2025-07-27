@@ -68,10 +68,12 @@ If you do not want to use the JavaScript module resource, you can instead create
 5. Choose a matching set of light and dark css files with the same contrast extension (or mix and match) and open them in a text editor.
    - `light.css` and `dark.css` are standard, `-mc` is medium contrast, and `-hc` is high contrast.
 6. Find and replace (`CTRL` + `F`) all colons `:` in the CSS files and replace them with `-light:` in the light file and `-dark:` in the dark file.
-7. Copy all of the variables from one file to the other, and rename the selector (`.dark`, `.light-high-contrast`, etc) to `html`. It should look something like this:
+7. Copy all of the variables from one file to the other, and rename the selector (`.dark`, `.light-high-contrast`, etc) to `:host, html, body`. It should look something like this:
 
 ```css
-html {
+:host,
+html,
+body {
   --md-sys-color-primary-dark: rgb(242 220 130);
   --md-sys-color-surface-tint-dark: rgb(219 198 110);
   --md-sys-color-on-primary-dark: rgb(45 37 0);
