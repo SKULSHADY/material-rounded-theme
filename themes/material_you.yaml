@@ -317,53 +317,53 @@ Material You:
   dark-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l - 20))
   light-primary-color: hsl(from var(--md-sys-color-primary) h s calc(l + 20))
   divider-color: var(--md-sys-color-outline-variant)
-  scrollbar-thumb-color: '#2e3038'
+  scrollbar-thumb-color: null
   stroke-color: var(--md-sys-color-on-surface-variant)
   active-color: var(--md-sys-color-tertiary)
   track-color: var(--md-sys-color-inverse-primary)
   hover-color: var(--md-sys-color-primary)
   error-color: var(--md-sys-color-error)
   on-error-color: var(--md-sys-color-on-error)
-  warning-color: var(--md-sys-color-warning)
-  success-color: var(--md-sys-color-success)
-  info-color: var(--md-sys-color-info)
-  red-color: var(--md-sys-color-red)
-  pink-color: var(--md-sys-color-pink)
-  purple-color: var(--md-sys-color-purple)
-  deep-purple-color: var(--md-sys-color-deep-purple)
-  indigo-color: var(--md-sys-color-indigo)
-  blue-color: var(--md-sys-color-blue)
-  light-blue-color: var(--md-sys-color-light-blue)
-  cyan-color: var(--md-sys-color-cyan)
-  teal-color: var(--md-sys-color-teal)
-  green-color: var(--md-sys-color-green)
-  light-green-color: var(--md-sys-color-light-green)
-  lime-color: var(--md-sys-color-lime)
-  yellow-color: var(--md-sys-color-yellow)
-  amber-color: var(--md-sys-color-amber)
-  orange-color: var(--md-sys-color-orange)
-  deep-orange-color: var(--md-sys-color-deep-orange)
-  brown-color: var(--md-sys-color-brown)
-  light-grey-color: var(--md-sys-color-light-grey)
-  grey-color: var(--md-sys-color-grey)
-  dark-grey-color: var(--md-sys-color-dark-grey)
-  blue-grey-color: var(--md-sys-color-blue-grey)
-  black-color: var(--md-sys-color-black)
-  white-color: var(--md-sys-color-white)
-  energy-grid-consumption-color: var(--md-sys-color-energy-grid-consumption)
-  energy-grid-return-color: var(--md-sys-color-energy-grid-return)
-  energy-solar-color: var(--md-sys-color-energy-solar)
-  energy-non-fossil-color: var(--md-sys-color-energy-non-fossil)
-  energy-battery-out-color: var(--md-sys-color-energy-battery-out)
-  energy-battery-in-color: var(--md-sys-color-energy-battery-in)
-  energy-gas-color: var(--md-sys-color-energy-gas)
-  energy-water-color: var(--md-sys-color-energy-water)
+  warning-color: 'var(--md-sys-color-warning, #ffa600)'
+  success-color: 'var(--md-sys-color-success, #43a047)'
+  info-color: 'var(--md-sys-color-info, #039be5)'
+  red-color: 'var(--md-sys-color-red, #f44336)'
+  pink-color: 'var(--md-sys-color-pink, #e91e63)'
+  purple-color: 'var(--md-sys-color-purple, #926bc7)'
+  deep-purple-color: 'var(--md-sys-color-deep-purple, #6e41ab)'
+  indigo-color: 'var(--md-sys-color-indigo, #3f51b5)'
+  blue-color: 'var(--md-sys-color-blue, #2196f3)'
+  light-blue-color: 'var(--md-sys-color-light-blue, #03a9f4)'
+  cyan-color: 'var(--md-sys-color-cyan, #00bcd4)'
+  teal-color: 'var(--md-sys-color-teal, #009688)'
+  green-color: 'var(--md-sys-color-green, #4caf50)'
+  light-green-color: 'var(--md-sys-color-light-green, #8bc34a)'
+  lime-color: 'var(--md-sys-color-lime, #cddc39)'
+  yellow-color: 'var(--md-sys-color-yellow, #ffeb3b)'
+  amber-color: 'var(--md-sys-color-amber, #ffc107)'
+  orange-color: 'var(--md-sys-color-orange, #ff9800)'
+  deep-orange-color: 'var(--md-sys-color-deep-orange, #ff6f22)'
+  brown-color: 'var(--md-sys-color-brown, #795548)'
+  light-grey-color: 'var(--md-sys-color-light-grey, #bdbdbd)'
+  grey-color: 'var(--md-sys-color-grey, #9e9e9e)'
+  dark-grey-color: 'var(--md-sys-color-dark-grey, #606060)'
+  blue-grey-color: 'var(--md-sys-color-blue-grey, #607d8b)'
+  black-color: 'var(--md-sys-color-black, #000000)'
+  white-color: 'var(--md-sys-color-white, #ffffff)'
+  energy-grid-consumption-color: 'var(--md-sys-color-energy-grid-consumption, #488fc2)'
+  energy-grid-return-color: 'var(--md-sys-color-energy-grid-return, #8353d1)'
+  energy-solar-color: 'var(--md-sys-color-energy-solar, #ff9800)'
+  energy-non-fossil-color: 'var(--md-sys-color-energy-non-fossil, #0f9d58)'
+  energy-battery-out-color: 'var(--md-sys-color-energy-battery-out, #4db6ac)'
+  energy-battery-in-color: 'var(--md-sys-color-energy-battery-in, #f06292)'
+  energy-gas-color: 'var(--md-sys-color-energy-gas, #8e021b)'
+  energy-water-color: 'var(--md-sys-color-energy-water, #00bcd4)'
   primary-background-color: var(--md-sys-color-surface-container)
   card-background-color: var(--md-sys-color-surface-container-low)
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border-radius: var(--md-sys-shape-corner-extra-large)
   ha-card-box-shadow: var(--md-sys-elevation-level1)
-  ha-card-border-color: '#00000000'
+  ha-card-border-color: null
   ha-card-border-width: 0px
   ha-card-border-style: none
   ha-card-border: none
