@@ -437,7 +437,7 @@ Material You:
   ha-card-background: var(--md-sys-color-surface-container-low)
   ha-card-border-radius: var(--md-sys-shape-corner-extra-large)
   ha-card-box-shadow: var(--md-sys-elevation-level1)
-  ha-card-border-color: #00000000"
+  ha-card-border-color: "#00000000"
   ha-card-border-width: 0px
   ha-card-border-style: none
   ha-card-border: none
