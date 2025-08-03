@@ -109,7 +109,7 @@ You can then use this file as a frontend resource or by using the CSS Path/URL o
 Requires [Material You Utilities](https://github.com/Nerwyn/material-you-utilities). CSS files added this way will apply to iframes such as the HACS and Add-ons pages. It will also supercede any color themes set using the companion module.
 
 1. Navigate to the user, device, or global settings that you want this file to apply to.
-2. Click on the `Style` tab in the configuration card.
+2. Click on the `Other` tab in the configuration card.
 3. In the `URL` field enter the path to the resource file.
     - Like `/local/my-md3-theme.css`
 
