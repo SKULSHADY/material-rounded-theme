@@ -1,6 +1,6 @@
 {
 	"name": "Material You Theme - A Fully Featured Implementation of Material Design 3",
-	"homeassistant": "2025.5.0",
+	"homeassistant": "2025.8.0",
 	"render_readme": true,
 	"hide_default_branch": true
 }
