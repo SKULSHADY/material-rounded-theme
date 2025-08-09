@@ -11,7 +11,7 @@
 
 # Material You Theme - A Fully Featured Implementation of Material Design 3 for Home Assistant
 
-A theme for Home Assistant influenced by Google apps and Material Design 3 by Google on Android. The source of truth for this themes design decisions are the [Material Design 3 specifications](https://m3.material.io/). This theme and its companion module implement the latest Material Expressive updates to Material Design 3.
+A theme for Home Assistant influenced by Google apps and Material Design 3 by Google on Android. The source of truth for this theme's design decisions are the [Material Design 3 specifications](https://m3.material.io/). This theme and its companion module implement the latest Material Expressive updates to Material Design 3.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/expressive/assets/material-you-rgb.png" width="750"/>
 
@@ -108,26 +108,10 @@ Requires [Material You Utilities](https://github.com/Nerwyn/material-you-utiliti
 
 ## Similar Projects and Credits
 
-### Big Slider Card
+### [Google Home Components](https://community.home-assistant.io/t/introducing-the-google-components/916428)
 
-Use [Big Slider Card](https://github.com/nicufarmache/lovelace-big-slider-card) to create Google Home style button/slider cards for light entities. Use the following style settings to match the screenshots:
+This module is a library of Google Home style Home Assistant frontend components that uses this theme's Material Design tokens. Use it to make your Home Assistant frontend look even more like a Material Design app like shown in the screenshots!
 
-```yaml
-colorize: true
-show_percentage: true
-bold_text: true
-height: 88
-```
-
-And for lights that do not have brightness control:
-
-```yaml
-color: sandybrown
-show_percentage: false
-bold_text: true
-height: 88
-max: 0
-```
 
 ### Bubble Card
 
@@ -177,14 +161,14 @@ cards:
       }
 ```
 
-### Material Symbols
+### [Material Symbols](https://github.com/beecho01/material-symbols)
 
-Check out [Material Symbols](https://github.com/beecho01/material-symbols) to use updated material icons!
+Check out Material Symbols to use updated material icons like shown in the screenshots!
 
 ### Material Design 3 and Material Color Utilities
 
 This theme revolves around Material Design 3 and the tooling that its contributors have made available, especially [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) and the [Material Design 3 specification](https://m3.material.io/).
 
-### Figtree Font
+### [Figtree Font](https://fonts.google.com/specimen/Figtree)
 
-[Figtree](https://fonts.google.com/specimen/Figtree) is a free font that is very similar to Google's proprietary font Google Sans. You can install it as a frontend resource in Home Assistant using [this URL](https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap), and it will be automatically used by this theme.
+Figtree is a free font that is very similar to Google's proprietary font Google Sans. You can install it as a frontend resource in Home Assistant using [this URL](https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap), and it will be automatically used by this theme.
