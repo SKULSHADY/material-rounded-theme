@@ -17,7 +17,7 @@ Almost all CSS custom properties in this theme have been redefined to use Materi
 
 **It is strongly recommended that you install this themes companion JavaScript module, [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)**. With this module you will be able to generate custom color themes and modify the styles of Home Assistants components to match the Material Design 3 specification. The screenshots use this module.
 
-<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-rgb.png" width="750"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/expressive/assets/material-you-rgb.png" width="750"/>
 
 ## Basic Theme Installation
 
