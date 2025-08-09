@@ -11,7 +11,7 @@
 
 # Material You Theme - A Fully Featured Implementation of Material Design 3 for Home Assistant
 
-A theme for Home Assistant influenced by Google apps and Material Design 3 by Google on Android. The source of truth for this themes design decisions are the [Material Design 3 specifications](https://m3.material.io/).
+A theme for Home Assistant influenced by Google apps and Material Design 3 by Google on Android. The source of truth for this themes design decisions are the [Material Design 3 specifications](https://m3.material.io/). This theme and its companion module implement the latest Material Expressive updates to Material Design 3.
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/expressive/assets/material-you-rgb.png" width="750"/>
 
