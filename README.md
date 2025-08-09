@@ -17,7 +17,7 @@ Almost all CSS custom properties in this theme have been redefined to use Materi
 
 **It is strongly recommended that you install this themes companion JavaScript module, [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)**. With this module you will be able to generate custom color themes and modify the styles of Home Assistants components to match the Material Design 3 specification. The screenshots use this module.
 
-<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-rainbow.png" width="750"/>
+<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-rgb.png" width="750"/>
 
 ## Compared to Google Home
 
@@ -58,7 +58,7 @@ I recommend using [`Figtree`](https://fonts.google.com/specimen/Figtree) font wi
 
 ## (Alternative/Optional) Build Your Own Theme
 
-If you do not want to use the JavaScript module resource, you can instead create your own Material Theme using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
+You can create more customizable albeit static color themes using [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
 
 
 1. Navigate to [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
@@ -68,12 +68,13 @@ If you do not want to use the JavaScript module resource, you can instead create
 5. Choose a matching set of light and dark css files with the same contrast extension (or mix and match) and open them in a text editor.
    - `light.css` and `dark.css` are standard, `-mc` is medium contrast, and `-hc` is high contrast.
 6. Find and replace (`CTRL` + `F`) all colons `:` in the CSS files and replace them with `-light:` in the light file and `-dark:` in the dark file.
-7. Copy all of the variables from one file to the other, and rename the selector (`.dark`, `.light-high-contrast`, etc) to `:host, html, body`. It should look something like this:
+7. Copy all of the variables from one file to the other, and rename the selector (`.dark`, `.light-high-contrast`, etc) to `:host, html, body, ha-card`. It should look something like this:
 
 ```css
 :host,
 html,
-body {
+body,
+ha-card {
   --md-sys-color-primary-dark: rgb(242 220 130);
   --md-sys-color-surface-tint-dark: rgb(219 198 110);
   --md-sys-color-on-primary-dark: rgb(45 37 0);
@@ -94,7 +95,7 @@ You can then use this file as a frontend resource or by using the CSS Path/URL o
 
 ### As a Frontend Resource
 
-**NOTE**: CSS files added this way will not apply to iframes such as the HACS and Add-ons pages. It will also not apply to some page backgrounds like the settings and developer tools pages, which are hardcoded to a default color. It will also be superceded by any color themes set using the companion module. Some users have reported that stylesheets do not work on their Home Assistant frontends due to a possible browser bug unrelated to this theme or its companion module.
+**NOTE**: CSS files added this way will not apply to iframes such as the HACS and Add-ons pages. It will also not apply to some page backgrounds like the settings and developer tools pages, which are hardcoded to a default color, if the companion module is not installed. It will also be superceded by any color themes set using the companion module. Some users have reported that stylesheets do not work on their Home Assistant frontends due to a possible browser bug unrelated to this theme or its companion module.
 
 1. Navigate to a dashboard and then click `🖉 Edit dashboard` > `⋮ Open dashboard menu` > `Manage resources`.
 2. Click `+ Add Resource`.
@@ -195,9 +196,3 @@ This theme revolves around Material Design 3 and the tooling that its contributo
 ### Figtree Font
 
 [Figtree](https://fonts.google.com/specimen/Figtree) is a free font that is very similar to Google's proprietary font Google Sans. You can install it as a frontend resource in Home Assistant using [this URL](https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap), and it will be automatically used by this theme.
-
-## Developing, Modifying, and Building The Theme
-
-The theme source file is the YAML file found in the `src` folder. This theme has a build pipeline which runs on pre-commit. While this build pipeline previously was used to compile style files and build alternate theme versions, it now is only used to set the theme version variable for use in the companion module configuration panel. To setup the pre-commit hook, run the command `npm run setup`. 
-
-The `material_you.yaml` file found in the `src` folder is the theme with comments. It has defaults set for all Material Design System colors in light and dark mode, which are then used for all other theme variables. You can then copy this file (or the copy found in dist after running the build pipeline) to your Home Assistant's `config/themes/material_you` folder to replace the existing copy, and then run the Home Assistant action `frontend.reload_themes` to apply the updated theme.
