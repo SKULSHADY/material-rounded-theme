@@ -19,18 +19,6 @@ Almost all CSS custom properties in this theme have been redefined to use Materi
 
 <img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-rgb.png" width="750"/>
 
-## Compared to Google Home
-
-<p>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-comparison-blue-dark.png" width="375"/>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-comparison-blue-light.png" width="375"/>
-</p>
-
-<p>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-comparison-red-dark.png" width="375"/>
-<img src="https://raw.githubusercontent.com/Nerwyn/material-you-theme/dev/assets/material-you-comparison-red-light.png" width="375"/>
-</p>
-
 ## Basic Theme Installation
 
 1. Navigate to HACS (install from [here](https://hacs.xyz/) if you do not have it yet).
