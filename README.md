@@ -108,14 +108,14 @@ Requires [Material You Utilities](https://github.com/Nerwyn/material-you-utiliti
 
 ## Similar Projects and Credits
 
-### [Google Home Components](https://community.home-assistant.io/t/introducing-the-google-components/916428)
+### [Google Home Components](https://github.com/giovannilamarmora/lovelace-google-components)
 
-This module is a library of Google Home style Home Assistant frontend components that uses this theme's Material Design tokens. Use it to make your Home Assistant frontend look even more like a Material Design app like shown in the screenshots!
+This module is a library of Google Home style Home Assistant frontend components that uses this theme's Material Design tokens. Use it to make your Home Assistant frontend look even more like a Material Design app as shown in the screenshots!
 
 
-### Bubble Card
+### [Bubble Card](https://github.com/Clooos/Bubble-Card)
 
-This theme includes variables to style [Bubble Card](https://github.com/Clooos/Bubble-Card) elements using Material You colors and shapes. Bubble card pop-ups are equivalent to [bottom sheets](https://m3.material.io/components/bottom-sheets/overview) and have their background color and border radius set to better match its specification.
+This theme includes variables to style Bubble Card elements using Material You colors and shapes. Bubble card pop-ups are equivalent to [bottom sheets](https://m3.material.io/components/bottom-sheets/overview) and have their background color and border radius set to better match its specification.
 
 Here is the basic configuration I use to make Bubble Card pop-ups look more like modal bottom sheets.
 
@@ -165,9 +165,9 @@ cards:
 
 Check out Material Symbols to use updated material icons like shown in the screenshots!
 
-### Material Design 3 and Material Color Utilities
+### [Material Design 3](https://m3.material.io/) and [Material Color Utilities](https://github.com/material-foundation/material-color-utilities)
 
-This theme revolves around Material Design 3 and the tooling that its contributors have made available, especially [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) and the [Material Design 3 specification](https://m3.material.io/).
+This theme revolves around Material Design 3 and the tooling that its contributors have made available, especially Material Color Utilities and the Material Design 3 specification.
 
 ### [Figtree Font](https://fonts.google.com/specimen/Figtree)
 
