@@ -5,7 +5,7 @@
 	"scripts": {
 		"build": "node --no-warnings ./githooks/pre-commit.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"setup": "git config --add core.hooksPath githooks && npm i"
+		"setup": "git config --add core.hooksPath githooks && chmod +x githooks/pre-commit && npm i"
 	},
 	"repository": {
 		"type": "git",
