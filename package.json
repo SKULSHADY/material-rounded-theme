@@ -12,7 +12,7 @@
 		"url": "git+https://github.com/Nerwyn/material-you-theme.git"
 	},
 	"author": "Nerwyn",
-	"license": "ISC",
+	"license": "Apache-2.0",
 	"bugs": {
 		"url": "https://github.com/Nerwyn/material-you-theme/issues"
 	},
