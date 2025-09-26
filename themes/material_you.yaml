@@ -637,4 +637,4 @@ Material You:
   bubble-main-background-color: var(--md-sys-color-surface-container-highest)
   bubble-pop-up-main-background-color: var(--md-sys-color-surface-container-low)
   bubble-pop-up-border-radius: var(--md-sys-shape-corner-extra-large)
-  version: 5.0.1
+  version: 5.0.2
