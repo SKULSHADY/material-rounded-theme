@@ -108,7 +108,7 @@ Requires [Material You Utilities](https://github.com/Nerwyn/material-you-utiliti
 
 ## Similar Projects and Credits
 
-### [Google Home Components](https://github.com/giovannilamarmora/lovelace-google-components)
+### [Material Home Components](https://github.com/giovannilamarmora/lovelace-material-components)
 
 This module is a library of Google Home style Home Assistant frontend components that uses this theme's Material Design tokens. Use it to make your Home Assistant frontend look even more like a Material Design app as shown in the screenshots!
 
