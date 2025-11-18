@@ -37,13 +37,13 @@ Almost all CSS custom properties in this theme have been redefined to use Materi
 
 To fully utilize this theme, you should install the companion JavaScript module from [this repository](https://github.com/Nerwyn/material-you-utilities). In addition to installing it using HACS, you must add it to your `configuration.yaml` as described in its README.
 
-## (Optional) Figtree Font Installation
+## (Optional) Google Sans Flex Font Installation
 
-I recommend using [`Figtree`](https://fonts.google.com/specimen/Figtree) font with this theme, as it is very similar to the proprietary Google Sans font found in may Google apps but is free to use. If not installed the theme will use `Roboto`, which is still used by many Material You apps.
+I recommend using [Google Sans Flex](https://fonts.google.com/specimen/Google+Sans+Flex) font with this theme. It is the open source version of Google's Google/Product Sans fonts, which were previously not available for publc use. If not installed the theme has a priority list of other Material Design fonts like [Figtree](https://fonts.google.com/specimen/Figtree), [Roboto Flex](https://fonts.google.com/specimen/Roboto+Flex), and [Roboto](https://fonts.google.com/specimen/Roboto), which will be used instead.
 
 1. Navigate to a dashboard and then click `🖉 Edit dashboard` > `⋮ Open dashboard menu` > `Manage resources`.
 2. Click `+ Add Resource`.
-3. In the `URL` field enter the url https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap.
+3. In the `URL` field enter the url https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap.
 4. Select `Resource Type` `Stylesheet`.
 5. Click `Create`.
 6. Hard refresh (`CTRL` + `F5`) your browser or clear app/browser cache to ensure the new resource loads correctly.
@@ -168,7 +168,3 @@ Check out Material Symbols to use updated material icons like shown in the scree
 ### [Material Design 3](https://m3.material.io/) and [Material Color Utilities](https://github.com/material-foundation/material-color-utilities)
 
 This theme revolves around Material Design 3 and the tooling that its contributors have made available, especially Material Color Utilities and the Material Design 3 specification.
-
-### [Figtree Font](https://fonts.google.com/specimen/Figtree)
-
-Figtree is a free font that is very similar to Google's proprietary font Google Sans. You can install it as a frontend resource in Home Assistant using [this URL](https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap), and it will be automatically used by this theme.
