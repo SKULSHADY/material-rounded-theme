@@ -686,7 +686,7 @@ Material You:
   # Spacings
   horizontal-stack-card-margin: 0px 4px
   vertical-stack-card-margin: 4px 0px
-  ha-view-sections-row-gap: 18px
+  ha-view-sections-narrow-column-gap: 18px
 
   # Toolbar
   header-height: 64px
